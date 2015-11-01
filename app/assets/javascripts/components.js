@@ -4,6 +4,6 @@ var React = window.React = global.React = require('react');
 var ReactDOM = window.ReactDOM = global.ReactDOM = require('react-dom');
 var ReactDOMServer = window.ReactDOMServer = global.ReactDOMServer = require('react-dom/server');
 
-var DemoComponent = require('./components/demo_component.js');
+var App = window.App = global.App = {};
 
-window.DemoComponent = global.DemoComponent = DemoComponent;
+App.DemoComponent = require('./components/demo_component.jsx');
