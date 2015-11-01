@@ -1,0 +1,8 @@
+---
+:concurrency: 5
+:queues:
+  - default
+  - mailers
+  - mailchimp
+  - rollbar
+  - printer
