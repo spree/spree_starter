@@ -1,0 +1,13 @@
+{
+  "name": "spree-react-browserify",
+  "dependencies" : {
+    "browserify": "~> 12.0.1",
+    "browserify-incremental": "^3.0.1",
+    "coffeeify": "~> 0.6",
+    "babelify": "~> 6.4.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 4.2.0"
+  }
+}
