@@ -36,11 +36,15 @@ module SpreeReactBrowserify
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :en
+    I18n.available_locales = :en
+
+    # use Sidekiq for ActiveJob
+    config.active_job.queue_adapter = :sidekiq
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
@@ -53,5 +57,8 @@ module SpreeReactBrowserify
 
     # browserify with ES6 support
     config.browserify_rails.commandline_options = "-t babelify --extension=\"js\""
+
+    # adds support for Services
+    config.autoload_paths += %W(#{config.root}/services #{config.root}/app/services/concerns)
   end
 end
