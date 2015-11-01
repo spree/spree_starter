@@ -67,6 +67,7 @@ end
 # Heroku fix
 group :production, :staging do
   gem 'rails_12factor'
+  gem 'rack-timeout'
 end
 
 # file uploades & assets
