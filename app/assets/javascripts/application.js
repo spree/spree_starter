@@ -16,5 +16,3 @@
 //= require_self
 //= require components
 //= require react_ujs
-
-//= require global
