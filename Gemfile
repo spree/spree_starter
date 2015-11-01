@@ -73,7 +73,7 @@ end
 gem 'paperclip' # Image Rescaling for aws
 gem 'aws-sdk', '< 2.0'
 gem 'fog-aws'
-gem 'asset_sync'
+# gem 'asset_sync'
 
 # caching
 gem 'dalli' # memcache
