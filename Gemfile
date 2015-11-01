@@ -92,3 +92,4 @@ gem 'sinatra', require: nil
 
 # front end
 gem 'browserify-rails'
+gem 'haml'
