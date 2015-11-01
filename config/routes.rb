@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
+  # Spree routes
   mount Spree::Core::Engine, at: '/'
+
+  Spree::Core::Engine.routes.draw do
+
+    get '/account_link' => 'store#account_link'
+    get '/authenticity_token' => 'store#authenticity_token'
+
+  end
 
   # sidekiq web UI
   require 'sidekiq/web'

@@ -3,6 +3,4 @@
 :queues:
   - default
   - mailers
-  - mailchimp
   - rollbar
-  - printer
