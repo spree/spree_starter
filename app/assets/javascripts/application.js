@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 
+//= require_self
+//= require components
+//= require react_ujs
+
 //= require global

@@ -93,3 +93,4 @@ gem 'sinatra', require: nil
 # front end
 gem 'browserify-rails'
 gem 'haml'
+gem 'react-rails', '~> 1.4.0'
