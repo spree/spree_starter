@@ -64,17 +64,20 @@ Rails.application.configure do
   if ENV["MEMCACHEDCLOUD_SERVERS"]
     config.cache_store = :mem_cache_store, ENV["MEMCACHEDCLOUD_SERVERS"].split(','), {
       :username => ENV["MEMCACHEDCLOUD_USERNAME"],
-      :password => ENV["MEMCACHEDCLOUD_PASSWORD"]
+      :password => ENV["MEMCACHEDCLOUD_PASSWORD"],
+      :value_max_bytes => 10485760
     }
 
     client = Dalli::Client.new(ENV["MEMCACHEDCLOUD_SERVERS"].split(','), {
       :username => ENV["MEMCACHEDCLOUD_USERNAME"],
-      :password => ENV["MEMCACHEDCLOUD_PASSWORD"]
+      :password => ENV["MEMCACHEDCLOUD_PASSWORD"],
+      :value_max_bytes => 10485760
     })
 
     config.action_dispatch.rack_cache = {
       :metastore    => client,
-      :entitystore  => client
+      :entitystore  => client,
+      :verbose      => false
     }
   end
 
