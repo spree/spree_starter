@@ -1,6 +1,8 @@
 //= require jquery
 //= require jquery_ujs
 
+//= require js-routes
+
 //= require bootstrap-sprockets
 //= require jquery.payment
 //= require jquery.validate/jquery.validate.min

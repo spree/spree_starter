@@ -95,6 +95,7 @@ gem 'sinatra', require: nil
 gem 'browserify-rails'
 gem 'haml'
 gem 'react-rails', '~> 1.4.0'
+gem 'js-routes'
 
 # Spree gems
 gem 'spree', github: 'spree/spree', branch: '3-0-stable'

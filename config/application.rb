@@ -51,7 +51,7 @@ module SparkSpreeBoilerplate
 
     # react server side rendering
     config.react.server_renderer_options = {
-      files: ['spree/frontend/components.js'], # files to load for prerendering
+      files: ['spree/frontend/serverside.js'], # files to load for prerendering
       replay_console: true,     # if true, console.* will be replayed client-side
     }
 
