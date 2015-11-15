@@ -51,12 +51,13 @@ module SparkSpreeBoilerplate
 
     # react server side rendering
     config.react.server_renderer_options = {
-      files: ['spree/frontend/serverside.js'], # files to load for prerendering
+      files: ['serverside.js'], # files to load for prerendering
       replay_console: true,     # if true, console.* will be replayed client-side
     }
 
     # browserify with ES6 support
     config.browserify_rails.commandline_options = "-t babelify --extension=\"js\""
+    config.browserify_rails.source_map_environments << "development"
 
     # adds support for Services
     config.autoload_paths += %W(#{config.root}/services #{config.root}/app/services/concerns)

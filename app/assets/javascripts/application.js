@@ -14,5 +14,5 @@
 //= require spree/frontend/product
 
 //= require_self
-//= require ./components
+//= require components
 //= require react_ujs

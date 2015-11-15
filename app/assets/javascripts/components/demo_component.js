@@ -15,7 +15,6 @@ class DemoComponent extends Component {
         <p>
           {this.props.message}
         </p>
-        <AnotherComponent />
         <p>
           <a href={Routes.spree_root_path()}>Link to home page</a>
         </p>
