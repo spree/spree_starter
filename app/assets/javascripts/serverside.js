@@ -1,3 +1,3 @@
 //= require js-routes
 
-//= require ./components
+//= require components

@@ -6,4 +6,5 @@ var ReactDOMServer = global.ReactDOMServer = require('react-dom/server');
 
 var App = window.App = global.App = {};
 
-App.DemoComponent = require('components/demo_component').default;
+// components exposed for react-rails
+App.DemoComponent = require('./components/demo_component').default;
