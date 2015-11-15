@@ -6,7 +6,7 @@
     "browserify-incremental": "^3.0.1",
     "react": "^0.14.2",
     "react-bootstrap": "^0.27.3",
-    "react-dom": "^0.14.1"
+    "react-dom": "^0.14.2"
   },
   "license": "MIT",
   "engines": {
