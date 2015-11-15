@@ -61,5 +61,8 @@ module SparkSpreeBoilerplate
 
     # adds support for Services
     config.autoload_paths += %W(#{config.root}/services #{config.root}/app/services/concerns)
+
+    # use LibSass for Sass compilcation
+    config.css_compressor = :sassc
   end
 end

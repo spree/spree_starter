@@ -43,4 +43,6 @@ Rails.application.configure do
     url: '/:class/:attachment/:id_partition/:style/:filename',
     path: ':rails_root/public/:class/:attachment/:id_partition/:style/:filename',
   }
+
+  config.sass.inline_source_maps = true
 end
