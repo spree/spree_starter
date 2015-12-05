@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # ActiveModelSerializers
-gem 'active_model_serializers'
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 
 # Use Puma as the app server
 gem 'puma'
@@ -95,7 +95,7 @@ gem 'sinatra', require: nil
 # front end
 gem 'browserify-rails'
 gem 'haml'
-gem 'react-rails', '~> 1.4.0'
+gem 'react-rails'
 gem 'js-routes'
 
 # Spree gems

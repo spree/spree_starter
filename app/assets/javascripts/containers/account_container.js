@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { connect, Provider } from 'react-redux'
+import { connect } from 'react-redux'
 import { fetchAccount } from '../actions/account_actions'
 import { getAccount } from '../reducers/account_reducers'
 // import Account from '../components/account'
@@ -17,6 +17,10 @@ class AccountContainer extends Component {
       <div />
     )
   }
+}
+
+AccountContainer.propTypes = {
+  account: PropTypes.object
 }
 
 const mapStateToProps = (state) => {

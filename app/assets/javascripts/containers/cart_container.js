@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { connect, Provider } from 'react-redux'
+import { connect } from 'react-redux'
 import { fetchCart } from '../actions/cart_actions'
 import { getCart } from '../reducers/cart_reducers'
 import Cart from '../components/cart'
@@ -14,13 +14,13 @@ class CartContainer extends Component {
 
   render() {
     return (
-      <Cart total={this.props.cart.total} />
+      <Cart cart={this.props.cart} />
     )
   }
 }
 
 CartContainer.propTypes = {
-  total: PropTypes.string
+  cart: PropTypes.object
 }
 
 const mapStateToProps = (state) => {
