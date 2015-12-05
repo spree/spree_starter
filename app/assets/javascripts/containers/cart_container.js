@@ -6,15 +6,21 @@ import Cart from '../components/cart'
 
 class CartContainer extends Component {
 
-  componentDidMount() {
+  componentWillMount() {
     if(!this.props.cart.isFetching) {
       this.props.dispatch(fetchCart())
     }
   }
 
   render() {
+    const { cart } = this.props
+
+    if(!cart.data) {
+      return false
+    }
+
     return (
-      <Cart cart={this.props.cart} />
+      <Cart {...cart.data.attributes} />
     )
   }
 }
