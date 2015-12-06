@@ -6,7 +6,7 @@ export default class Cart extends Component {
       <a href={Routes.spree_cart_path()}>
         <span className="glyphicon glyphicon-shopping-cart" />
         &nbsp;
-        Cart: {this.props.total}
+        {I18n.t('spree.cart')}: {this.props.total}
       </a>
     )
   }
