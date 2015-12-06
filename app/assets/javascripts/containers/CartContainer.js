@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { fetchCart } from '../actions/cart_actions'
-import { getCart } from '../reducers/cart_reducers'
-import Cart from '../components/cart'
+import { fetchCart } from '../actions/cart'
+import { getCart } from '../reducers/cart'
+import Cart from '../components/layout/Cart'
 
 class CartContainer extends Component {
 

@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { fetchAccount } from '../actions/account_actions'
-import { getAccount } from '../reducers/account_reducers'
-import Account from '../components/account'
+import { fetchAccount } from '../actions/account'
+import { getAccount } from '../reducers/account'
+import Account from '../components/layout/Account'
 
 class AccountContainer extends Component {
 

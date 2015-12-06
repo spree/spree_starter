@@ -1,4 +1,4 @@
-import { FETCH_ACCOUNT_REQUEST, FETCH_ACCOUNT_SUCCESS, FETCH_ACCOUNT_FAILURE } from '../constants/account_constants'
+import { FETCH_ACCOUNT_REQUEST, FETCH_ACCOUNT_SUCCESS, FETCH_ACCOUNT_FAILURE } from '../constants'
 
 function fetchAccountRequest() {
   return {

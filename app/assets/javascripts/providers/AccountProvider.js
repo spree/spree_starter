@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import CartContainer from '../containers/cart_container'
+import AccountContainer from '../containers/AccountContainer'
 import store from '../stores'
 
-class CartProvider extends Component {
+class AccountProvider extends Component {
   render() {
     return (
       <Provider store={store}>
-        <CartContainer />
+        <AccountContainer />
       </Provider>
     )
   }
 }
 
-export default CartProvider
+export default AccountProvider

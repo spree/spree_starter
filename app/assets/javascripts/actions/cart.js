@@ -1,4 +1,4 @@
-import { FETCH_CART_REQUEST, FETCH_CART_SUCCESS, FETCH_CART_FAILURE } from '../constants/cart_constants'
+import { FETCH_CART_REQUEST, FETCH_CART_SUCCESS, FETCH_CART_FAILURE } from '../constants'
 
 function fetchCartRequest() {
   return {
