@@ -23,7 +23,10 @@ function fetchAccountFailure(error) {
 export function fetchAccount() {
   return dispatch => {
     dispatch(fetchAccountRequest())
-    return fetch(Routes.spree_account_link_path({format: 'json'}))
+    return fetch(
+      Routes.spree_account_link_path({format: 'json'}),
+      { credentials: 'same-origin' }
+    )
       .then(res => res.json())
       .then(json => dispatch(fetchAccountSuccess(json)))
       .catch(error => dispatch(fetchAccountFailure(error)))

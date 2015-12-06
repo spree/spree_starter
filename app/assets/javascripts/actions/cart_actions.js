@@ -23,7 +23,10 @@ function fetchCartFailure(error) {
 export function fetchCart() {
   return dispatch => {
     dispatch(fetchCartRequest())
-    return fetch(Routes.spree_cart_link_path({format: 'json'}))
+    return fetch(
+      Routes.spree_cart_link_path({format: 'json'}),
+      { credentials: 'same-origin' }
+    )
       .then(res => res.json())
       .then(json => dispatch(fetchCartSuccess(json)))
       .catch(error => dispatch(fetchCartFailure(error)))
