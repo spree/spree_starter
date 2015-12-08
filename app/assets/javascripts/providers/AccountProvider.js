@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import AccountContainer from '../containers/AccountContainer'
-import store from '../stores'
+import store from '../store'
 
 class AccountProvider extends Component {
   render() {

@@ -13,5 +13,6 @@
           %li
             = link_to Spree.t(:products), spree.products_path
         %ul.nav.navbar-nav.navbar-right
+          = react_component 'App.AccountProvider', {}, { tag: :li }
           = react_component 'App.CartProvider', {}, { tag: :li }
       / /.nav-collapse

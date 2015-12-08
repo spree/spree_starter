@@ -19,7 +19,7 @@ export default class Account extends Component {
   render() {
     if(!this.props.email) {
       return (
-        <a onClick={this.openModal.bind(this)}>
+        <a href="#" onClick={this.openModal.bind(this)}>
           {I18n.t('spree.login')}
           <AccountModal show={this.state.showModal} onHide={this.hideModal.bind(this)} />
         </a>
