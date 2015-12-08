@@ -15,5 +15,5 @@
 
     = render 'shared/footer'
 
-    - unless Rails.env.production?
+    - if Rails.env.development?
       = react_component 'App.DevToolsProvider'
