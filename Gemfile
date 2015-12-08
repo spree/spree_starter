@@ -39,6 +39,7 @@ group :development, :test do
   gem 'pry-nav'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'awesome_print'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -50,18 +51,21 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rspec-activemodel-mocks'
   gem 'rspec-activejob'
-  gem 'nyan-cat-formatter'
+  gem 'spring-commands-rspec'
   gem 'shoulda-matchers', require: false
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'ffaker'
   gem 'quiet_assets'
+  gem 'bullet'
 end
 
 group :test do
+  gem 'capybara'
   gem 'vcr'
   gem 'webmock'
+  gem 'test_after_commit'
   gem 'codeclimate-test-reporter', require: nil
 end
 
