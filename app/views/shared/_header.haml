@@ -1,0 +1,18 @@
+%header
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .container-fluid
+      .navbar-header
+        %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = logo
+      #navbar.navbar-collapse.collapse
+        %ul.nav.navbar-nav
+          %li
+            = link_to Spree.t(:products), spree.products_path
+        %ul.nav.navbar-nav.navbar-right
+          = react_component 'App.AccountProvider', {}, { tag: :li }
+          = react_component 'App.CartProvider', {}, { tag: :li }
+      / /.nav-collapse

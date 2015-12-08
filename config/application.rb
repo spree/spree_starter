@@ -15,7 +15,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module SparkSpreeBoilerplate
+module SparkStarterKit
   class Application < Rails::Application
 
     config.to_prepare do
@@ -56,8 +56,9 @@ module SparkSpreeBoilerplate
     }
 
     # browserify with ES6 support
-    config.browserify_rails.commandline_options = "-t babelify --extension=\"js\""
+    config.browserify_rails.commandline_options = "-t babelify --extension=\"js\" --fast"
     config.browserify_rails.source_map_environments << "development"
+    config.browserify_rails.use_browserifyinc = true
 
     # adds support for Services
     config.autoload_paths += %W(#{config.root}/services #{config.root}/app/services/concerns)

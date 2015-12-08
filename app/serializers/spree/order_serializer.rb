@@ -1,5 +1,5 @@
 module Spree
-  class OrderSerializer < ActiveModel::Serializer
+  class OrderSerializer < ApplicationSerializer
     attributes :id, :total
   end
 end

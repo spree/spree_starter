@@ -6,5 +6,9 @@ var ReactDOMServer = global.ReactDOMServer = require('react-dom/server');
 
 var App = window.App = global.App = {};
 
-// components exposed for react-rails
-App.DemoComponent = require('./components/demo_component').default;
+// redux providers exposed for react-rails
+App.CartProvider = require('./providers/CartProvider').default;
+App.AccountProvider = require('./providers/AccountProvider').default;
+
+// redux dev tools panel
+App.DevToolsProvider = require('./providers/DevToolsProvider').default;
