@@ -10,5 +10,7 @@ var App = window.App = global.App = {};
 App.CartProvider = require('./providers/CartProvider').default;
 App.AccountProvider = require('./providers/AccountProvider').default;
 
-// redux dev tools panel
-App.DevToolsProvider = require('./providers/DevToolsProvider').default;
+if(process.env.NODE_ENV === 'development') {
+  // redux dev tools panel
+  App.DevToolsProvider = require('./providers/DevToolsProvider').default;
+}

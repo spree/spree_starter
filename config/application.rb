@@ -56,7 +56,7 @@ module SparkStarterKit
     }
 
     # browserify with ES6 support
-    config.browserify_rails.commandline_options = "-t babelify --extension=\"js\" --fast"
+    config.browserify_rails.commandline_options = "-t babelify --extension=\"js\" -t envify --fast"
     config.browserify_rails.source_map_environments << "development"
     config.browserify_rails.use_browserifyinc = true
 
