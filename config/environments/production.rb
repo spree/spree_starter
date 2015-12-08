@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.domain = 'spree-react-browserify.herokuapp.com'
+  config.domain = 'spark-starter-kit.herokuapp.com'
   config.cdn = 's3.amazonaws.com/spree-react-browserify/'
 
   # Code is not reloaded between requests.
