@@ -83,7 +83,7 @@ gem 'rack-cache' # http caching
 gem 'kgio' # faster kgio IO system
 
 # rollbar
-gem 'rollbar', '~> 1.5.0'
+gem 'rollbar'
 
 # newrelic
 gem 'newrelic_rpm'
