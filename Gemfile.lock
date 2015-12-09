@@ -613,10 +613,12 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers!
   asset_sync
+  autoprefixer-rails
   awesome_print
   aws-sdk (< 2.0)
   better_errors
   binding_of_caller
+  bootstrap-sass
   browserify-rails
   bullet
   capybara
