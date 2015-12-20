@@ -11,15 +11,10 @@ export default class AccountModal extends Component {
   render() {
     return (
       <Modal show={this.props.show} onHide={this.props.onHide}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
+        <Modal.Header closeButton />
         <Modal.Body>
           <LoginForm />
         </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={this.props.onHide}>Close</Button>
-        </Modal.Footer>
       </Modal>
     )
   }

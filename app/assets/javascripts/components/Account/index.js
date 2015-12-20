@@ -2,6 +2,10 @@ import React, { Component, PropTypes } from 'react'
 import AccountModal from './AccountModal'
 
 export default class Account extends Component {
+  static propTypes = {
+    email: PropTypes.string
+  }
+
   constructor(props) {
     super(props)
     this.state = { showModal: false }
@@ -30,8 +34,4 @@ export default class Account extends Component {
       )
     }
   }
-}
-
-Account.propTypes = {
-  email: PropTypes.string
 }

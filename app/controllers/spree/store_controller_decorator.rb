@@ -1,6 +1,6 @@
 Spree::StoreController.class_eval do
-
-  skip_before_action :set_current_order, only: [:cart_link, :account_link, :authenticity_token]
+  skip_before_action :set_current_order, only: [:cart_link, :account_link,
+                                                :authenticity_token]
 
   def account_link
     render json: spree_current_user || Spree::User.new
@@ -13,7 +13,6 @@ Spree::StoreController.class_eval do
   end
 
   def authenticity_token
-    render text: form_authenticity_token
+    render json: { authenticityToken: form_authenticity_token }
   end
-
 end

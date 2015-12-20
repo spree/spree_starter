@@ -5,7 +5,6 @@
 //= require i18n
 //= require i18n/translations
 
-//= require bootstrap-sprockets
 //= require jquery.payment
 //= require jquery.validate/jquery.validate.min
 //= require spree
