@@ -97,9 +97,8 @@ gem 'sidekiq'
 gem 'sinatra', require: nil
 
 # front end
-gem 'browserify-rails'
 gem 'haml'
-gem 'react-rails'
+gem 'react_on_rails'
 gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 gem 'bootstrap-sass'

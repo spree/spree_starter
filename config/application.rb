@@ -49,17 +49,6 @@ module SparkStarterKit
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    # react server side rendering
-    config.react.server_renderer_options = {
-      files: ['serverside.js'], # files to load for prerendering
-      replay_console: true,     # if true, console.* will be replayed client-side
-    }
-
-    # browserify with ES6 support
-    config.browserify_rails.commandline_options = "-t babelify --extension=\"js\" -t envify --fast"
-    config.browserify_rails.source_map_environments << "development"
-    config.browserify_rails.use_browserifyinc = true
-
     # adds support for Services
     config.autoload_paths += %W(#{config.root}/services #{config.root}/app/services/concerns)
 
