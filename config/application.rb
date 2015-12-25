@@ -52,9 +52,6 @@ module SparkStarterKit
     # adds support for Services
     config.autoload_paths += %W(#{config.root}/services #{config.root}/app/services/concerns)
 
-    # use LibSass for Sass compilcation
-    config.css_compressor = :sassc
-
     if Rails.env.production?
       # CloudFlare middleware for proper visitors IP addresses
       require "#{Rails.root}/lib/cloud_flare_middleware"
