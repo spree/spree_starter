@@ -13,7 +13,7 @@ module.exports = {
   entry: [
     'react',
     'react-dom/server',
-    './app/bundles/Spree/startup/serverGlobals',
+    './js/startup/serverGlobals',
   ],
   output: {
     filename: 'server-bundle.js',
@@ -56,6 +56,6 @@ module.exports = {
     ],
   },
 
-  sassResources: ['./app/assets/styles/app-variables.scss'],
+  sassResources: ['./css/app-variables.scss'],
 
 };

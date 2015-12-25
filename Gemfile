@@ -100,8 +100,6 @@ gem 'haml'
 gem 'react_on_rails'
 gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
-gem 'bootstrap-sass'
-gem 'autoprefixer-rails'
 
 # Spree gems
 gem 'spree', github: 'spree/spree', branch: '3-0-stable'

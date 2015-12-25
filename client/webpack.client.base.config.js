@@ -23,13 +23,14 @@ module.exports = {
 
     // This will contain the app entry points defined by webpack.hot.config and webpack.rails.config
     app: [
-      './app/bundles/Spree/startup/clientGlobals',
+      './js/startup/clientGlobals',
     ],
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
     alias: {
-      libs: path.join(process.cwd(), 'app', 'libs'),
+      actions: path.join(process.cwd(), 'js', 'actions'),
+      components: path.join(process.cwd(), 'js', 'components')
     },
   },
   plugins: [
@@ -83,6 +84,6 @@ module.exports = {
   // And sass-resources-loader will load them in every CSS Module (SASS file) for you
   // (so don't need to @import them explicitly)
   // https://github.com/shakacode/sass-resources-loader
-  sassResources: ['./app/assets/styles/app-variables.scss'],
+  sassResources: ['./css/app-variables.scss'],
 
 };
