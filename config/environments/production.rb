@@ -82,8 +82,8 @@ Rails.application.configure do
   end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = config.action_mailer.asset_host = 'https://' +
-
+  # Enable serving of images, stylesheets, and JavaScripts from an asset server.
+  config.action_controller.asset_host = config.action_mailer.asset_host = 'https://' + config.cdn
   routes.default_url_options[:host] = config.action_controller.asset_host
 
   config.action_mailer.default_url_options = { host: 'https://' + config.domain }
