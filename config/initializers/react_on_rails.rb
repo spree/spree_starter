@@ -4,7 +4,7 @@ ReactOnRails.configure do |config|
 
   # Server rendering:
   # Server bundle is a single file for all server rendering of components.
-  config.server_bundle_js_file = '"app/assets/webpack/server-bundle.js'
+  config.server_bundle_js_file = 'app/assets/webpack/server-bundle.js'
   # increase if you're on JRuby
   config.server_renderer_pool_size = 1
   # seconds
