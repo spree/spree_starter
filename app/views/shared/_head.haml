@@ -7,7 +7,7 @@
 = favicon_link_tag 'favicon.ico'
 = stylesheet_link_tag 'application', media: 'screen'
 = csrf_meta_tags
-= javascript_include_tag 'application'
-/[if lt IE 9]
-  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+= env_javascript_include_tag nil, 'http://localhost:3500/vendor-bundle.js'
+= env_javascript_include_tag nil, 'http://localhost:3500/app-bundle.js'
+= env_javascript_include_tag 'application.prod', 'application.dev'
 = yield :head
