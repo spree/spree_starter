@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import AccountModal from './AccountModal'
 
+import css from './Account.scss'
+
 export default class Account extends Component {
   static propTypes = {
     email: PropTypes.string
