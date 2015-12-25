@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.domain = ENV['DOMAIN']
+  config.domain = ENV['APP_DOMAIN']
   config.cdn = ENV['CDN']
 
   # Code is not reloaded between requests.
@@ -23,7 +23,7 @@ Rails.application.configure do
   config.action_dispatch.rack_cache = true
 
   # Action mailer con host production
-  config.action_mailer.default_url_options = { :host => 'https://' + config.domain }
+  config.action_mailer.default_url_options = { host: 'https://' + config.domain }
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
