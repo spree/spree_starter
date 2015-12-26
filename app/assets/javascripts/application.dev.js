@@ -27,5 +27,4 @@
 //= require spree/frontend/checkout/payment
 //= require spree/frontend/product
 
-// This will soon be removed as it will be in vendor-bundle with react_on_rails 2.0
-//= require react_on_rails
+//= require react_ujs

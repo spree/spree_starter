@@ -1,4 +1,5 @@
 import { FETCH_AUTHENTICITY_TOKEN_REQUEST, FETCH_AUTHENTICITY_TOKEN_SUCCESS, FETCH_AUTHENTICITY_TOKEN_FAILURE } from '../constants'
+import * as api from '../api'
 
 function fetchAuthenticityTokenRequest() {
   return {

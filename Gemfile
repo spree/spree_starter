@@ -96,7 +96,7 @@ gem 'sinatra', require: nil
 
 # front end
 gem 'haml'
-gem 'react_on_rails'
+gem 'react-rails'
 gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 

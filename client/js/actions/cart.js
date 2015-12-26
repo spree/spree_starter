@@ -1,4 +1,5 @@
 import { FETCH_CART_REQUEST, FETCH_CART_SUCCESS, FETCH_CART_FAILURE } from '../constants'
+import * as api from '../api'
 
 function fetchCartRequest() {
   return {

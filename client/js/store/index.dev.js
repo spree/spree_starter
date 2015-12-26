@@ -9,12 +9,7 @@ const loggerMiddleware = createLogger()
 
 const finalCreateStore = compose(
   applyMiddleware(thunkMiddleware, loggerMiddleware),
-  DevTools.instrument(),
-  persistState(
-    window.location.href.match(
-      /[?&]debug_session=([^&]+)\b/
-    )
-  )
+  DevTools.instrument()
 )(createStore)
 
 
