@@ -1,6 +1,6 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from '../constants'
-import { getAuthenticityToken } from '../reducers/authenticityToken'
-import * as api from '../api'
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from 'constants'
+import { getAuthenticityToken } from 'reducers/authenticityToken'
+import * as api from 'libs/api'
 import { fetchAccount } from './account'
 
 function loginRequest() {

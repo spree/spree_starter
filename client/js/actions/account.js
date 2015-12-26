@@ -1,5 +1,5 @@
-import { FETCH_ACCOUNT_REQUEST, FETCH_ACCOUNT_SUCCESS, FETCH_ACCOUNT_FAILURE } from '../constants'
-import * as api from '../api'
+import { FETCH_ACCOUNT_REQUEST, FETCH_ACCOUNT_SUCCESS, FETCH_ACCOUNT_FAILURE } from 'constants'
+import * as api from 'libs/api'
 
 function fetchAccountRequest() {
   return {

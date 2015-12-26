@@ -9,7 +9,7 @@
   },
   "scripts": {
     "postinstall": "cd client && npm install",
-    "test": "rspec && npm run test:client && npm run lint",
+    "test": "npm run test:client",
     "test:client": "(cd client && npm run test --silent)",
     "lint": "(cd client && npm run lint --silent)",
     "build:clean": "rm app/assets/webpack/*",

@@ -30,7 +30,13 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
     alias: {
       actions: path.join(process.cwd(), 'js', 'actions'),
-      components: path.join(process.cwd(), 'js', 'components')
+      components: path.join(process.cwd(), 'js', 'components'),
+      constants: path.join(process.cwd(), 'js', 'constants'),
+      containers: path.join(process.cwd(), 'js', 'containers'),
+      libs: path.join(process.cwd(), 'js', 'libs'),
+      providers: path.join(process.cwd(), 'js', 'providers'),
+      reducers: path.join(process.cwd(), 'js', 'reducers'),
+      store: path.join(process.cwd(), 'js', 'store'),
     },
   },
   plugins: [
