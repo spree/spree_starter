@@ -32,6 +32,8 @@ gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'puma'
 
 group :development, :test do
+  gem 'foreman'
+
   gem 'pry'
   gem 'pry-remote'
   gem 'pry-stack_explorer'
