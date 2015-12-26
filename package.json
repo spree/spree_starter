@@ -1,7 +1,7 @@
 {
   "name": "spark-starter-kit",
-  "version": "1.1.1",
-  "description": "Code from the React Webpack tutorial.",
+  "version": "1.0",
+  "description": "Spark Solutions starter kit",
   "main": "server-express.js",
   "engines": {
     "node": "5.0.0",
@@ -30,7 +30,7 @@
     "comment",
     "example"
   ],
-  "author": "justin808",
+  "author": "killy",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sparks-solutions/spark-starter-kit/issues"
