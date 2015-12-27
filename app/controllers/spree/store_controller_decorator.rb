@@ -1,4 +1,6 @@
 Spree::StoreController.class_eval do
+  layout 'application'
+
   skip_before_action :set_current_order, only: [:cart_link, :account_link,
                                                 :authenticity_token]
 

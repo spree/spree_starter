@@ -173,6 +173,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-screenshot (1.0.11)
+      capybara (>= 1.0, < 3)
+      launchy
     carmen (1.0.2)
       activesupport (>= 3.0.0)
     cldr-plurals-runtime-rb (1.0.1)
@@ -272,6 +275,8 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.10.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     libv8 (3.16.14.13)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -501,6 +506,7 @@ DEPENDENCIES
   binding_of_caller
   bullet
   capybara
+  capybara-screenshot
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
   dalli
@@ -514,6 +520,7 @@ DEPENDENCIES
   i18n-js (>= 3.0.0.rc11)
   js-routes
   kgio
+  launchy
   newrelic_rpm
   paperclip
   pg

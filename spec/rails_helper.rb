@@ -8,6 +8,9 @@ require 'shoulda/matchers'
 require 'database_cleaner'
 require 'rspec/active_job'
 
+include Warden::Test::Helpers
+Warden.test_mode!
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -27,12 +30,24 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
-require 'support/spree_factories_with_decorators'
-require 'spree/testing_support/controller_requests'
-require 'support/order_walkthrough'
+require 'spree/testing_support/authorization_helpers'
+require 'spree/testing_support/capybara_ext'
+require 'spree/testing_support/factories'
 require 'spree/testing_support/preferences'
+require 'spree/testing_support/controller_requests'
+require 'spree/testing_support/flash'
+require 'spree/testing_support/url_helpers'
+require 'spree/testing_support/order_walkthrough'
+require 'spree/testing_support/caching'
+
 require 'vcr'
 require 'webmock/rspec'
+require 'capybara/rspec'
+require 'capybara-screenshot/rspec'
+require 'capybara/rails'
+
+Capybara.save_and_open_page_path = "#{ENV.fetch('CIRCLE_ARTIFACTS', Rails.root.join('tmp/capybara'))}"
+Capybara::Screenshot.prune_strategy = { keep: 20 }
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
@@ -64,7 +79,14 @@ RSpec.configure do |config|
   end
 
   config.include Spree::TestingSupport::Preferences
-
+  config.include Spree::TestingSupport::UrlHelpers
   config.include Spree::TestingSupport::ControllerRequests, type: :controller
+  config.include Spree::TestingSupport::Flash
+
   config.include Devise::TestHelpers, type: :controller
+
+  config.include Warden::Test::Helpers
+  config.before :suite do
+    Warden.test_mode!
+  end
 end

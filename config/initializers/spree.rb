@@ -14,7 +14,6 @@ Spree.config do |config|
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
 
-  config.layout = 'application'
   config.logo   = 'spark-logo.png'
   config.admin_interface_logo = 'spark-logo.png'
 end

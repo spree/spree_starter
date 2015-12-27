@@ -57,6 +57,8 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'launchy'
   gem 'vcr'
   gem 'webmock'
   gem 'test_after_commit'
