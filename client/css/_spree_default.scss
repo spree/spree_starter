@@ -1,5 +1,5 @@
 #spree-header {
-  background: $brand-primary asset-url('spree_header.jpg') center center;
+  background: $brand-primary url('#{$image-url-path}/spark-logo.png') center center;
   background-size: cover;
   margin-bottom: $line-height-computed;
 
