@@ -1,5 +1,7 @@
 machine:
   node:
     version: 5.1.0
-  npm:
-    version: 3.3.10
+
+dependencies:
+  pre:
+    - npm install -g npm@3.3.10
