@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.domain = 'spark-starter-kit.herokuapp.com'
-  config.cdn = 's3.amazonaws.com/spree-react-browserify/'
+  config.domain = ENV['APP_DOMAIN']
+  config.cdn = ENV['CDN']
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -23,7 +23,7 @@ Rails.application.configure do
   config.action_dispatch.rack_cache = true
 
   # Action mailer con host production
-  config.action_mailer.default_url_options = { :host => 'https://' + config.domain }
+  config.action_mailer.default_url_options = { host: 'https://' + config.domain }
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -61,18 +61,18 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  if ENV["MEMCACHEDCLOUD_SERVERS"]
+  if ENV['MEMCACHEDCLOUD_SERVERS']
     memcached_config = {
-      :username => ENV["MEMCACHEDCLOUD_USERNAME"],
-      :password => ENV["MEMCACHEDCLOUD_PASSWORD"],
+      :username => ENV['MEMCACHEDCLOUD_USERNAME'],
+      :password => ENV['MEMCACHEDCLOUD_PASSWORD'],
       :value_max_bytes => 10485760,
       :compress => true,
-      :pool_size => ENV["MEMCACHED_POOL_SIZE"] || 5
+      :pool_size => ENV['MEMCACHED_POOL_SIZE'] || 5
     }
 
-    config.cache_store = :mem_cache_store, ENV["MEMCACHEDCLOUD_SERVERS"].split(','), memcached_config
+    config.cache_store = :mem_cache_store, ENV['MEMCACHEDCLOUD_SERVERS'].split(','), memcached_config
 
-    client = Dalli::Client.new(ENV["MEMCACHEDCLOUD_SERVERS"].split(','), memcached_config)
+    client = Dalli::Client.new(ENV['MEMCACHEDCLOUD_SERVERS'].split(','), memcached_config)
 
     config.action_dispatch.rack_cache = {
       :metastore    => client,

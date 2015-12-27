@@ -1,31 +1,40 @@
 {
   "name": "spark-starter-kit",
-  "dependencies": {
-    "babel-polyfill": "^6.3.14",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "babel-preset-stage-0": "^6.3.13",
-    "babelify": "^7.2.0",
-    "browserify": "^12.0.1",
-    "browserify-incremental": "^3.0.1",
-    "envify": "^3.4.0",
-    "es6-promise": "^3.0.2",
-    "isomorphic-fetch": "^2.2.0",
-    "react": "^0.14.3",
-    "react-bootstrap": "^0.28.1",
-    "react-dom": "^0.14.3",
-    "react-redux": "^4.0.1",
-    "redux": "^3.0.5",
-    "redux-devtools": "^3.0.0",
-    "redux-devtools-dock-monitor": "^1.0.1",
-    "redux-devtools-log-monitor": "^1.0.1",
-    "redux-form": "^4.0.3",
-    "redux-logger": "^2.3.1",
-    "redux-thunk": "^1.0.2"
-  },
-  "license": "MIT",
+  "version": "0.9.0",
+  "description": "Spark Solutions starter kit",
+  "main": "server-express.js",
   "engines": {
-    "node": ">= 5.0.0"
+    "node": "5.1.0",
+    "npm": "3.3.10"
   },
-  "devDependencies": {}
+  "scripts": {
+    "postinstall": "cd client && npm install",
+    "test": "npm run test:client",
+    "test:client": "(cd client && npm run test --silent)",
+    "lint": "(cd client && npm run lint --silent)",
+    "build:clean": "rm app/assets/webpack/*",
+    "build:client": "(cd client && npm run build:client --silent)",
+    "build:server": "(cd client && npm run build:server --silent)",
+    "build:dev:client": "(cd client && npm run build:dev:client --silent)",
+    "build:dev:server": "(cd client && npm run build:dev:server --silent)",
+    "build:test:client": "(cd client && npm run build:test:client --silent)",
+    "start": "(cd client && npm run start --silent)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sparks-solutions/spark-starter-kit.git"
+  },
+  "keywords": [
+    "react",
+    "tutorial",
+    "comment",
+    "example"
+  ],
+  "author": "killy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sparks-solutions/spark-starter-kit/issues"
+  },
+  "homepage": "https://github.com/sparks-solutions/spark-starter-kit",
+  "dependencies": {}
 }
