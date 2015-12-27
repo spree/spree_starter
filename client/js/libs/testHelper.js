@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import jsdom from 'jsdom';
 import chai from 'chai';
-import chaiImmutable from 'chai-immutable';
 
 const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
 const win = doc.defaultView;
@@ -29,8 +28,6 @@ propagateToGlobal(win);
 const {
   assert, expect,
 } = chai;
-
-chai.use(chaiImmutable);
 
 export {
   React,
