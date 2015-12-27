@@ -1,31 +1,31 @@
 // Run like this:
 // cd client && node server-express.js
 
-const webpack = require('webpack');
+const webpack = require('webpack')
 
-const config = require('./webpack.client.base.config');
+const config = require('./webpack.client.base.config')
 
-const hotPort = process.env.HOT_PORT || 4000;
+const hotPort = process.env.HOT_PORT || 4000
 
-config.entry.vendor.push('bootstrap-loader');
+config.entry.vendor.push('bootstrap-loader')
 config.entry.app.push(
 
   // Webpack dev server
   'webpack-dev-server/client?http://localhost:' + hotPort,
   'webpack/hot/dev-server'
-);
+)
 
 config.output = {
 
   // this file is served directly by webpack
   filename: '[name]-bundle.js',
   path: __dirname,
-};
+}
 config.plugins.unshift(
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin()
-);
-config.devtool = 'eval-source-map';
+)
+config.devtool = 'eval-source-map'
 
 // All the styling loaders only apply to hot-reload, not rails
 config.module.loaders.push(
@@ -68,6 +68,6 @@ config.module.loaders.push(
       'sass-resources',
     ],
   }
-);
+)
 
-module.exports = config;
+module.exports = config

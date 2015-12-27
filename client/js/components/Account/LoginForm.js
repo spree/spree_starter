@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Alert, Input, ButtonInput } from 'react-bootstrap'
 import { reduxForm } from 'redux-form'
-import { login } from '../../actions/login'
+import { login } from 'actions/login'
 
 export const fields = ['email', 'password']
 
@@ -11,11 +11,11 @@ const submit = (values, dispatch) => {
       login(values.email, values.password)
     ).then((action) => {
       if (action.error) {
-        reject({_error: 'bad email / password'})
+        reject({ _error: 'bad email / password' })
       } else {
         resolve()
       }
-    });
+    })
   })
 }
 
@@ -28,7 +28,7 @@ export default class LoginForm extends Component {
   }
 
   render() {
-    const {fields: {email, password}, error, handleSubmit, submitting} = this.props
+    const { fields: { email, password }, error, handleSubmit, submitting } = this.props
 
     return (
       <form onSubmit={handleSubmit(submit)}>

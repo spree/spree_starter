@@ -1,10 +1,10 @@
 // Common webpack configuration for server bundle
 
-const webpack = require('webpack');
-const path = require('path');
+const webpack = require('webpack')
+const path = require('path')
 
-const devBuild = process.env.NODE_ENV !== 'production';
-const nodeEnv = devBuild ? 'development' : 'production';
+const devBuild = process.env.NODE_ENV !== 'production'
+const nodeEnv = devBuild ? 'development' : 'production'
 
 module.exports = {
 
@@ -58,4 +58,4 @@ module.exports = {
 
   sassResources: ['./css/app-variables.scss'],
 
-};
+}

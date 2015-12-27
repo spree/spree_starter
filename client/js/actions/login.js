@@ -6,7 +6,7 @@ import { fetchAccount } from './account'
 function loginRequest() {
   return {
     type: LOGIN_REQUEST
-  };
+  }
 }
 
 function loginSuccess(login) {

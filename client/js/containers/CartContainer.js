@@ -1,13 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { fetchCart } from '../actions/cart'
-import { getCart } from '../reducers/cart'
-import Cart from '../components/Cart'
+import { fetchCart } from 'actions/cart'
+import { getCart } from 'reducers/cart'
+import Cart from 'components/Cart'
 
 class CartContainer extends Component {
 
   componentWillMount() {
-    if(!this.props.cart.isFetching) {
+    if (!this.props.cart.isFetching) {
       this.props.dispatch(fetchCart())
     }
   }

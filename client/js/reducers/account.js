@@ -1,10 +1,10 @@
-import { FETCH_ACCOUNT_REQUEST, FETCH_ACCOUNT_SUCCESS, FETCH_ACCOUNT_FAILURE } from '../constants'
+import { FETCH_ACCOUNT_REQUEST, FETCH_ACCOUNT_SUCCESS, FETCH_ACCOUNT_FAILURE } from 'constants'
 
 export function getAccount(state) {
   return state.account
 }
 
-export function account(state = {isFetching: false}, action) {
+export function account(state = { isFetching: false }, action) {
   switch (action.type) {
     case FETCH_ACCOUNT_REQUEST:
       return Object.assign({}, state, {

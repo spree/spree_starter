@@ -23,7 +23,7 @@ export default class Account extends Component {
   }
 
   render() {
-    if(!this.props.email) {
+    if (!this.props.email) {
       return (
         <a href="#" onClick={this.openModal.bind(this)}>
           {I18n.t('spree.login')}

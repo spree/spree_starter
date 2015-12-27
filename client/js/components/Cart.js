@@ -1,6 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 
 export default class Cart extends Component {
+  static propTypes = {
+    total: PropTypes.string
+  }
+
   render() {
     return (
       <a href={Routes.spree_cart_path()}>
@@ -10,8 +14,4 @@ export default class Cart extends Component {
       </a>
     )
   }
-}
-
-Cart.propTypes = {
-  total: PropTypes.string,
 }

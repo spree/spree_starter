@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from '../constants'
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from 'constants'
 
 const initialState = {
   isLoggedIn: false,
