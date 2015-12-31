@@ -1,5 +1,5 @@
 module Spree
-  class UserSerializer < ActiveModel::Serializer
+  class UserSerializer < ApplicationSerializer
     attributes :id, :email
   end
 end

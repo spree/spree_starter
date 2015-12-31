@@ -15,12 +15,12 @@ class CartContainer extends Component {
   render() {
     const { cart } = this.props
 
-    if(!cart.data) {
+    if(!cart) {
       return false
     }
 
     return (
-      <Cart {...cart.data.attributes} />
+      <Cart {...cart} />
     )
   }
 }

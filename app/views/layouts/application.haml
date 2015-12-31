@@ -14,7 +14,6 @@
         = yield
 
     = render 'shared/footer'
-    = react_component 'Dummy', { name: 'John Doe' }, { prerender: true }
 
     - if Rails.env.development?
       = react_component 'DevTools'

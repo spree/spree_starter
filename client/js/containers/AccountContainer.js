@@ -24,12 +24,12 @@ class AccountContainer extends Component {
   render() {
     const { account, authenticityToken } = this.props
 
-    if(!account.data) {
+    if(!account) {
       return false
     }
 
     return (
-      <Account {...account.data.attributes} />
+      <Account {...account} />
     )
   }
 }

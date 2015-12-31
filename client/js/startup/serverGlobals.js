@@ -1,8 +1,8 @@
 import 'babel-polyfill'
 import ReactDOMServer from 'react-dom/server'
-import Dummy from '../components/Dummy'
+import ProductsList from '../components/ProductsList'
 
 require('es6-promise').polyfill()
 
 global.ReactDOMServer = ReactDOMServer
-global.Dummy = Dummy
+global.ProductsList = ProductsList
