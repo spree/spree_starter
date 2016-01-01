@@ -1,6 +1,6 @@
-import { React, ReactDOM, expect, TestUtils } from 'libs/testHelper'
+import { React, ReactDOM, expect, TestUtils } from '../test/libs/testHelper'
 
-import Dummy from './Dummy'
+import Dummy from '../js/components/Dummy'
 
 const {
   renderIntoDocument,

@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/sparks-solutions/spark-starter-kit",
   "scripts": {
-    "test": "NODE_PATH=./js mocha --compilers js:babel-core/register --require ./js/libs/testHelper.js --require ./js/libs/testNullCompiler.js './js/**/*.spec.@(js|jsx)'",
+    "test": "NODE_PATH=./js mocha --compilers js:babel-core/register --require ./test/libs/testHelper.js --require ./test/libs/testNullCompiler.js './test/**/*Spec.@(js|jsx)'",
     "test:debug": "npm run test -- --debug-brk",
     "start": "node server-express.js",
     "build:client": "NODE_ENV=production webpack --config webpack.client.rails.build.config.js",
