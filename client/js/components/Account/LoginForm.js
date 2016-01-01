@@ -10,7 +10,7 @@ const submit = (values, dispatch) => {
     dispatch(
       login(values.email, values.password)
     ).then((action) => {
-      if (action.error) {
+      if (action && action.error) {
         reject({ _error: 'bad email / password' })
       } else {
         resolve()
