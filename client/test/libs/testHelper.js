@@ -26,7 +26,7 @@ propagateToGlobal(win)
 
 // everything we need for our tests
 const {
-  assert, expect,
+  assert, expect
 } = chai
 
 export {
@@ -35,5 +35,5 @@ export {
   chai,
   assert,
   expect,
-  TestUtils,
+  TestUtils
 }

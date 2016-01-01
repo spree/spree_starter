@@ -8,7 +8,6 @@ const {
 } = TestUtils
 
 describe('Dummy', () => {
-
   it('renders a Dummy', () => {
     const component = renderIntoDocument(
       <Dummy
@@ -19,5 +18,4 @@ describe('Dummy', () => {
     const text = ReactDOM.findDOMNode(domComponent)
     expect(text.textContent).to.include('John Doe')
   })
-
 })
