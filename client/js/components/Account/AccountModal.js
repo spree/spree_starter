@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import { Modal, Button } from 'react-bootstrap'
-import LoginForm from './LoginForm'
+import { Modal } from 'react-bootstrap'
+import LoginForm from 'components/LoginForm'
 
 export default class AccountModal extends Component {
   static propTypes = {
