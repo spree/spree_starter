@@ -15,7 +15,7 @@ class HeaderContainer extends Component {
     cart: PropTypes.object
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (typeof document !== 'undefined') {
       if (!this.props.account.isFetching) {
         this.props.dispatch(fetchAccount())

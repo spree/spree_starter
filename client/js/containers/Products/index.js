@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { getProducts } from 'reducers/products'
-import { fetchProducts } from 'actions/products'
+import { fetchProducts, clearProducts } from 'actions/products'
 import ProductsList from 'components/ProductsList'
 
 class Products extends Component {
@@ -9,10 +9,14 @@ class Products extends Component {
     products: PropTypes.object
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (!this.props.products.isFetched) {
       this.props.dispatch(fetchProducts())
     }
+  }
+
+  componentWillUnmount() {
+    this.props.dispatch(clearProducts())
   }
 
   render() {
