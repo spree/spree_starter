@@ -2,10 +2,10 @@ import { compose, createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import rootReducer from 'reducers'
 
-const finalCreateStore = compose(
-  applyMiddleware(thunkMiddleware)
-)(createStore)
-
-const store = finalCreateStore(rootReducer)
-
-export default store
+export default props => {
+  const initialState = props
+  const composedStore = compose(
+    applyMiddleware(thunkMiddleware)
+  )
+  return composedStore(createStore)(rootReducer, initialState)
+}

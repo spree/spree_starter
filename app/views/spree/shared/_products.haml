@@ -1,1 +1,1 @@
-= react_component 'ProductsList', { products: ActiveModel::SerializableResource.new(products.to_a).serializable_hash }, { prerender: true }
+= react_component 'ProductsList', { products: json_products(products) }, { prerender: true }

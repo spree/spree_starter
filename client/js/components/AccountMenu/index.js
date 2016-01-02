@@ -3,7 +3,7 @@ import AccountModal from './AccountModal'
 
 import css from './Account.scss'
 
-export default class Account extends Component {
+export default class AccountMenu extends Component {
   static propTypes = {
     email: PropTypes.string
   }
@@ -23,7 +23,8 @@ export default class Account extends Component {
   }
 
   render() {
-    if (!this.props.email) {
+    const { account } = this.props
+    if (!account.email) {
       return (
         <a href="#" onClick={this.openModal.bind(this)}>
           {I18n.t('spree.login')}

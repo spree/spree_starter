@@ -22,4 +22,8 @@ Spree::FrontendHelper.module_eval do
     end
     flashes.html_safe
   end
+
+  def json_products(products = {})
+    ActiveModel::SerializableResource.new(products.to_a).serializable_hash
+  end
 end

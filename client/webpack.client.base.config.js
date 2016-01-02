@@ -18,13 +18,13 @@ module.exports = {
       'babel-polyfill',
       'jquery',
       'react',
-      'react-dom',
+      'react-dom'
     ],
 
     // This will contain the app entry points defined by webpack.hot.config and webpack.rails.config
     app: [
-      './js/startup/clientGlobals',
-    ],
+      './js/startup/clientGlobals'
+    ]
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
@@ -37,13 +37,15 @@ module.exports = {
       providers: path.join(process.cwd(), 'js', 'providers'),
       reducers: path.join(process.cwd(), 'js', 'reducers'),
       store: path.join(process.cwd(), 'js', 'store'),
-    },
+      routes: path.join(process.cwd(), 'js', 'routes'),
+      layouts: path.join(process.cwd(), 'js', 'layouts')
+    }
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(nodeEnv),
-      },
+        NODE_ENV: JSON.stringify(nodeEnv)
+      }
     }),
 
     // https://webpack.github.io/docs/list-of-plugins.html#2-explicit-vendor-chunk
@@ -57,8 +59,8 @@ module.exports = {
 
       // Passing Infinity just creates the commons chunk, but moves no modules into it.
       // In other words, we only put what's in the vendor entry definition in vendor-bundle.js
-      minChunks: Infinity,
-    }),
+      minChunks: Infinity
+    })
   ],
   module: {
     loaders: [
@@ -79,8 +81,8 @@ module.exports = {
       { test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery' },
 
       // Bootstrap 4
-      { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' },
-    ],
+      { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
+    ]
   },
 
   // Place here all postCSS plugins here, so postcss-loader will apply them
@@ -90,6 +92,6 @@ module.exports = {
   // And sass-resources-loader will load them in every CSS Module (SASS file) for you
   // (so don't need to @import them explicitly)
   // https://github.com/shakacode/sass-resources-loader
-  sassResources: ['./css/app-variables.scss'],
+  sassResources: ['./css/app-variables.scss']
 
 }
