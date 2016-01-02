@@ -3,15 +3,31 @@ import { connect } from 'react-redux'
 import { getProducts } from 'reducers/products'
 import { fetchProducts, clearProducts } from 'actions/products'
 import ProductsList from 'components/ProductsList'
+import Pagination from 'components/Pagination'
+
+function fullPath(location) {
+  return location.pathname + '.json' + location.search
+}
 
 class Products extends Component {
   static propTypes = {
-    products: PropTypes.object
+    products: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    dispatch: PropTypes.func.isRequired
   }
 
   componentDidMount() {
-    if (!this.props.products.isFetched) {
-      this.props.dispatch(fetchProducts())
+    const { products, location, dispatch } = this.props
+    if (!products.isFetched) {
+      dispatch(fetchProducts(fullPath(location)))
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { location, dispatch } = this.props
+    // location has changed so we need to get proper products list
+    if (nextProps.location !== location) {
+      dispatch(fetchProducts(fullPath(nextProps.location)))
     }
   }
 
@@ -20,14 +36,17 @@ class Products extends Component {
   }
 
   render() {
-    const { products } = this.props
+    const { products, location } = this.props
 
     if (!products.products) {
       return false
     }
 
     return (
-      <ProductsList products={products.products} />
+      <div>
+        <ProductsList products={products.products} />
+        <Pagination path={fullPath(location)} />
+      </div>
     )
   }
 }

@@ -21,11 +21,11 @@ function fetchProductsFailure(error) {
   }
 }
 
-export function fetchProducts() {
+export function fetchProducts(url) {
   return dispatch => {
     dispatch(fetchProductsRequest())
     return fetch(
-      Routes.spree_products_path({format: 'json'}),
+      url,
       { credentials: 'same-origin' }
     )
       .then(res => res.json())
