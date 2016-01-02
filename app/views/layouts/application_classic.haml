@@ -13,7 +13,7 @@
       .container-fluid
         = yield
 
-    = render 'shared/footer'
+    = react_component 'Footer', {}, { prerender: false }
 
     - if Rails.env.development?
       = react_component 'DevToolsProvider'
