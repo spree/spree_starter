@@ -13,11 +13,13 @@ class Products extends Component {
   static propTypes = {
     products: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired
   }
 
   componentDidMount() {
     const { products, location, dispatch } = this.props
+
     if (!products.isFetched) {
       dispatch(fetchProducts(fullPath(location)))
     }
@@ -36,7 +38,7 @@ class Products extends Component {
   }
 
   render() {
-    const { products, location } = this.props
+    const { products, location, history, dispatch } = this.props
 
     if (!products.products) {
       return false
@@ -45,7 +47,12 @@ class Products extends Component {
     return (
       <div>
         <ProductsList products={products.products} />
-        <Pagination path={fullPath(location)} />
+        <Pagination
+          location={location}
+          history={history}
+          pagination={products.meta}
+          dispatch={dispatch}
+        />
       </div>
     )
   }

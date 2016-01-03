@@ -1,4 +1,6 @@
 Spree::ProductsController.class_eval do
+  include Spree::FrontendHelper
+
   respond_to :html, :json
 
   def index
@@ -9,8 +11,9 @@ Spree::ProductsController.class_eval do
       format.html { render layout: 'application' }
       format.json do
         render json: @products,
-               each_serializer: Spree::ProductSerializer,
-               adapter: :json, root: 'products'
+               adapter: :json,
+               root: 'products',
+               meta: json_pagination(@products)
       end
     end
   end

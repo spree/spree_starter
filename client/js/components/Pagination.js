@@ -1,19 +1,35 @@
 import React from 'react'
-import UniversalLink from 'components/UniversalLink'
-
-function createPath(page) {
-  return '/products?page=' + page.toString()
-}
+import { Pagination } from 'react-bootstrap'
+import { pushPath } from 'redux-simple-router'
 
 export default (props) => {
+  const { location, history, pagination, dispatch } = props
+
+  const handleSelect = (event, pageNumber) => {
+    const newLocation = location
+    newLocation.query.page = pageNumber.eventKey.toString()
+    const newPath = history.createPath({
+      pathname: newLocation.pathname,
+      query: newLocation.query
+    })
+    dispatch(pushPath(newPath))
+  }
+
+  if (!pagination.totalPages) {
+    return false
+  }
+
   return (
-    <ul className='pagination'>
-      <li>
-        <UniversalLink to={createPath(1)}>1</UniversalLink>
-      </li>
-      <li>
-        <UniversalLink to={createPath(2)}>2</UniversalLink>
-      </li>
-    </ul>
+    <Pagination
+      prev={true}
+      next={true}
+      first={true}
+      last={true}
+      ellipsis={true}
+      items={parseInt(pagination.totalPages)}
+      maxButtons={5}
+      activePage={parseInt(location.query.page) || 1}
+      onSelect={handleSelect}
+    />
   )
 }
