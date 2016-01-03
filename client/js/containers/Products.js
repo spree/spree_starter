@@ -40,8 +40,8 @@ class Products extends Component {
   render() {
     const { products, location, history, dispatch } = this.props
 
-    if (!products.products) {
-      return false
+    if (!products.isFetched) {
+      return <div />
     }
 
     return (

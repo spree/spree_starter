@@ -15,7 +15,7 @@ export default (props) => {
     dispatch(pushPath(newPath))
   }
 
-  if (!pagination.totalPages) {
+  if (!pagination || !pagination.totalPages) {
     return false
   }
 

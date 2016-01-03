@@ -7,7 +7,8 @@ export function getProducts(state) {
 const initialState = {
   isFetching: false,
   isFetched: false,
-  products: []
+  products: [],
+  meta: []
 }
 
 export function products(state = initialState, action) {
