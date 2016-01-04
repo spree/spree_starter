@@ -5,7 +5,7 @@ export default (props) => {
   const { product } = props
 
   return (
-    <div key={product.id} className="col-md-3 col-sm-6 product-list-item" data-hook="products_list_item" itemScope="" itemType="https://schema.org/Product">
+    <div key={product.id} className="col-md-3 col-sm-4 col-xs-6 product-list-item" data-hook="products_list_item" itemScope="" itemType="https://schema.org/Product">
       <div className="panel panel-default">
         <div className="panel-body text-center product-body">
           <UniversalLink itemProp="url" to={Routes.spree_product_path(product.slug)}>

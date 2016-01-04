@@ -15,21 +15,23 @@ export default (props) => {
     dispatch(pushPath(newPath))
   }
 
-  if (!pagination || !pagination.totalPages) {
-    return false
+  if (!pagination || !pagination.totalPages || parseInt(pagination.totalPages) === 1) {
+    return <div />
   }
 
   return (
-    <Pagination
-      prev={true}
-      next={true}
-      first={true}
-      last={true}
-      ellipsis={true}
-      items={parseInt(pagination.totalPages)}
-      maxButtons={5}
-      activePage={parseInt(location.query.page) || 1}
-      onSelect={handleSelect}
-    />
+    <div>
+      <Pagination
+        prev={true}
+        next={true}
+        first={true}
+        last={true}
+        ellipsis={true}
+        items={parseInt(pagination.totalPages)}
+        maxButtons={5}
+        activePage={parseInt(location.query.page) || 1}
+        onSelect={handleSelect}
+      />
+    </div>
   )
 }

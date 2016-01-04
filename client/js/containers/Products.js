@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import Loader from 'react-loader'
 import { getProducts } from 'reducers/products'
 import { fetchProducts, clearProducts } from 'actions/products'
 import ProductsList from 'components/ProductsList'
@@ -40,12 +41,9 @@ class Products extends Component {
   render() {
     const { products, location, history, dispatch } = this.props
 
-    if (!products.isFetched) {
-      return <div />
-    }
-
     return (
       <div>
+        <Loader loaded={products.isFetched} />
         <ProductsList products={products.products} />
         <Pagination
           location={location}
