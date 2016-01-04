@@ -1,6 +1,6 @@
-import { React, ReactDOM, expect, TestUtils } from 'libs/testHelper'
+import { React, ReactDOM, expect, TestUtils } from '../test/libs/testHelper'
 
-import Dummy from './Dummy'
+import Dummy from '../js/components/Dummy'
 
 const {
   renderIntoDocument,
@@ -8,7 +8,6 @@ const {
 } = TestUtils
 
 describe('Dummy', () => {
-
   it('renders a Dummy', () => {
     const component = renderIntoDocument(
       <Dummy
@@ -19,5 +18,4 @@ describe('Dummy', () => {
     const text = ReactDOM.findDOMNode(domComponent)
     expect(text.textContent).to.include('John Doe')
   })
-
 })
