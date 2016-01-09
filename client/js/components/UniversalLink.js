@@ -7,11 +7,11 @@ import { connect } from 'react-redux'
 
 class UniversalLink extends Component {
   render() {
-    const { routing } = this.props
+    const { routing, children, to } = this.props
     if (routing && routing.path) {
-      return <Link {...this.props}>{this.props.children}</Link>
+      return <Link {...this.props}>{children}</Link>
     } else {
-      return <a {...this.props} href={this.props.to}>{this.props.children}</a>
+      return <a {...this.props} href={to}>{children}</a>
     }
   }
 }
