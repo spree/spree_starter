@@ -1,6 +1,14 @@
 module ApiHelper
   def json_records(records = {})
-    ActiveModel::SerializableResource.new(records.to_a, include: '**').serializable_hash
+    json_serialized(records.to_a)
+  end
+
+  def json_record(record = {})
+    json_serialized(record)
+  end
+
+  def json_serialized(object = {})
+    ActiveModel::SerializableResource.new(object, include: '**').serializable_hash
   end
 
   def json_pagination(object = {})
