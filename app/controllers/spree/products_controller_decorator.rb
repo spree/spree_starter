@@ -1,5 +1,5 @@
 Spree::ProductsController.class_eval do
-  include Spree::FrontendHelper
+  include ApiHelper
 
   respond_to :html, :json
 
