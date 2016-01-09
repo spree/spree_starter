@@ -31,8 +31,7 @@ module.exports = {
       store: path.join(process.cwd(), 'js', 'store'),
       routes: path.join(process.cwd(), 'js', 'routes'),
       layouts: path.join(process.cwd(), 'js', 'layouts'),
-      img: path.join(process.cwd(), 'img'),
-      css: path.join(process.cwd(), 'css')
+      pages: path.join(process.cwd(), 'js', 'pages')
     }
   },
   plugins: [

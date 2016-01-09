@@ -38,7 +38,8 @@ module.exports = {
       reducers: path.join(process.cwd(), 'js', 'reducers'),
       store: path.join(process.cwd(), 'js', 'store'),
       routes: path.join(process.cwd(), 'js', 'routes'),
-      layouts: path.join(process.cwd(), 'js', 'layouts')
+      layouts: path.join(process.cwd(), 'js', 'layouts'),
+      pages: path.join(process.cwd(), 'js', 'pages')
     }
   },
   plugins: [
