@@ -5,7 +5,7 @@ Spree::ProductsController.class_eval do
 
   def index
     @searcher = build_searcher(params.merge(include_images: true))
-    @products = @searcher.retrieve_products
+    @products = @searcher.retrieve_products.includes(:variants, :master)
     @taxonomies = Spree::Taxonomy.includes(root: :children)
     respond_to do |format|
       format.html { render layout: 'application' }
@@ -13,7 +13,8 @@ Spree::ProductsController.class_eval do
         render json: @products,
                adapter: :json,
                root: 'products',
-               meta: json_pagination(@products)
+               meta: json_pagination(@products),
+               include: '**'
       end
     end
   end

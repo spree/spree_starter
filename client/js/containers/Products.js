@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Loader from 'react-loader'
 import { getProducts } from 'reducers/products'
+import { getCurrency } from 'reducers/currency'
 import { fetchProducts, clearProducts } from 'actions/products'
 import ProductsList from 'components/ProductsList'
 import Pagination from 'components/Pagination'
@@ -13,6 +14,7 @@ function fullPath(location) {
 class Products extends Component {
   static propTypes = {
     products: PropTypes.object.isRequired,
+    currency: PropTypes.string.isRequired,
     location: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired
@@ -39,12 +41,12 @@ class Products extends Component {
   }
 
   render() {
-    const { products, location, history, dispatch } = this.props
+    const { products, currency, location, history, dispatch } = this.props
 
     return (
       <div>
         <Loader loaded={products.isFetched} />
-        <ProductsList products={products.products} />
+        <ProductsList products={products.products} currency={currency} />
         <Pagination
           location={location}
           history={history}
@@ -58,7 +60,8 @@ class Products extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    products: getProducts(state)
+    products: getProducts(state),
+    currency: getCurrency(state)
   }
 }
 
