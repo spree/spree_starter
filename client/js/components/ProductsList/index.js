@@ -3,10 +3,10 @@ import UniversalLink from 'components/UniversalLink'
 import Product from 'components/Product'
 
 export default (props) => {
-  const { products } = props
+  const { products, currency } = props
   return (
     <div>
-      {products.map((product) => <Product key={product.id} product={product} />)}
+      {products.map((product) => <Product key={product.id} product={product} currency={currency} />)}
     </div>
   )
 }
