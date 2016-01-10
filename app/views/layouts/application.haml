@@ -5,15 +5,4 @@
   %body{class: controller_name + ' ' + controller_name + '-' + action_name}
     = render 'spree/shared/google_analytics.js'
 
-    = render 'shared/header'
-
-    %main#page
-      .container-fluid
-        = flash_messages
-      .container-fluid
-        = yield
-
-    = render 'shared/footer'
-
-    - if Rails.env.development?
-      = react_component 'DevTools'
+    = yield

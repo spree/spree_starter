@@ -1,1 +1,1 @@
-= react_component 'ProductsList', { products: ActiveModel::SerializableResource.new(products.to_a).serializable_hash }, { prerender: true }
+= react_component 'ProductsList', { products: json_records(products), currency: current_currency }, default_react_opts

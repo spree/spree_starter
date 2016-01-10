@@ -1,12 +1,14 @@
-import CartProvider from 'providers/CartProvider'
-import AccountProvider from 'providers/AccountProvider'
 import ProductsList from 'components/ProductsList'
+import HeaderProvider from 'containers/HeaderProvider'
+import Footer from 'components/Footer'
+import App from '../ClientApp'
 
-window.CartProvider = CartProvider
-window.AccountProvider = AccountProvider
+window.App = App
 
 window.ProductsList = ProductsList
+window.HeaderProvider = HeaderProvider
+window.Footer = Footer
 
 if (process.env.NODE_ENV === 'development') {
-  window.DevTools = require('providers/DevToolsProvider').default
+  window.DevToolsProvider = require('containers/DevToolsProvider').default
 }

@@ -6,12 +6,16 @@ import DevTools from 'containers/DevTools'
 
 const loggerMiddleware = createLogger()
 
-const finalCreateStore = compose(
-  applyMiddleware(thunkMiddleware, loggerMiddleware),
-  DevTools.instrument()
-)(createStore)
+const finalCreateStore = (props) => {
+  const initialState = props
+  const composedStore = compose(
+    applyMiddleware(thunkMiddleware, loggerMiddleware),
+    DevTools.instrument()
+  )
+  return composedStore(createStore)(rootReducer, initialState)
+}
 
+export default finalCreateStore
 
-const store = finalCreateStore(rootReducer)
-
-export default store
+// for use with multiple providers in classic rails views
+export const createdStore = finalCreateStore()
