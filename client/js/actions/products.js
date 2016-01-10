@@ -1,5 +1,5 @@
 import { FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_FAILURE, CLEAR_PRODUCTS } from 'constants'
-import * as api from 'libs/api'
+import * as api from 'libs/apiHelper'
 
 function fetchProductsRequest() {
   return {

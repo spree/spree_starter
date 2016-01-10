@@ -7,6 +7,7 @@ import { account } from './account'
 import { login } from './login'
 import { authenticityToken } from './authenticityToken'
 import { products } from './products'
+import { product } from './product'
 
 const routing = routeReducer
 
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   account,
   authenticityToken,
   login,
-  products
+  products,
+  product
 })
 
 export default rootReducer

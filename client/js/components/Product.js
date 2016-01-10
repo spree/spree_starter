@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import UniversalLink from 'components/UniversalLink'
-import renderPrice from 'libs/renderPrice'
+import { renderPrice, renderImage } from 'libs/productHelper'
 
 export default class Product extends Component {
   static propTypes = {
@@ -21,7 +21,7 @@ export default class Product extends Component {
         <div className="panel panel-default">
           <div className="panel-body text-center product-body">
             <UniversalLink itemProp="url" to={Routes.spree_product_path(product.slug)}>
-              <img itemProp="image" alt={product.name} src={product.imageUrl} />
+              {renderImage(product, 'small')}
             </UniversalLink>
             <br />
             <UniversalLink
