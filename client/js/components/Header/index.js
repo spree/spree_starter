@@ -6,6 +6,7 @@ import UniversalLink from 'components/UniversalLink'
 const logoUrl = require('./logo.png')
 
 export default (props) => {
+  const { account, cart } = props
   return (
     <header>
       <nav className="navbar navbar-default navbar-fixed-top">
@@ -25,10 +26,10 @@ export default (props) => {
             </ul>
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <AccountMenu account={props.account} />
+                {!account.isFetching && <AccountMenu account={account} />}
               </li>
               <li>
-                <CartPreview cart={props.cart} />
+                {!cart.isFetching && <CartPreview cart={cart} />}
               </li>
             </ul>
           </div>
