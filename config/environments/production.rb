@@ -63,11 +63,11 @@ Rails.application.configure do
   # Use a different cache store in production.
   if ENV['MEMCACHEDCLOUD_SERVERS']
     memcached_config = {
-      :username => ENV['MEMCACHEDCLOUD_USERNAME'],
-      :password => ENV['MEMCACHEDCLOUD_PASSWORD'],
-      :value_max_bytes => 10485760,
-      :compress => true,
-      :pool_size => ENV['MEMCACHED_POOL_SIZE'] || 5
+      username: ENV['MEMCACHEDCLOUD_USERNAME'],
+      password: ENV['MEMCACHEDCLOUD_PASSWORD'],
+      value_max_bytes: 104_857_60,
+      compress: true,
+      pool_size: ENV['MEMCACHED_POOL_SIZE'] || 5
     }
 
     config.cache_store = :mem_cache_store, ENV['MEMCACHEDCLOUD_SERVERS'].split(','), memcached_config
@@ -75,9 +75,9 @@ Rails.application.configure do
     client = Dalli::Client.new(ENV['MEMCACHEDCLOUD_SERVERS'].split(','), memcached_config)
 
     config.action_dispatch.rack_cache = {
-      :metastore    => client,
-      :entitystore  => client,
-      :verbose      => false
+      metastore: client,
+      entitystore: client,
+      verbose: false
     }
   end
 
@@ -106,28 +106,28 @@ Rails.application.configure do
 
   # Amazon S3 for paperclip
   config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['S3_BUCKET_NAME'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    storage: :s3,
+    s3_credentials: {
+      bucket: ENV['S3_BUCKET_NAME'],
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
     },
-    s3_headers:     { 'Cache-Control' => 'max-age=31557600' },
-    :s3_protocol => :https,
-    :url => ':s3_alias_url',
-    :s3_host_alias => config.cdn,
-    :path => ':class/:attachment/:id_partition/:style/:filename'
+    s3_headers: { 'Cache-Control': 'max-age=31557600' },
+    s3_protocol: :https,
+    url: ':s3_alias_url',
+    s3_host_alias: config.cdn,
+    path: ':class/:attachment/:id_partition/:style/:filename'
   }
 
   # sendgrid mail
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => config.domain,
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: config.domain,
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
   }
 end

@@ -41,7 +41,7 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
     url: '/:class/:attachment/:id_partition/:style/:filename',
-    path: ':rails_root/public/:class/:attachment/:id_partition/:style/:filename',
+    path: ':rails_root/public/:class/:attachment/:id_partition/:style/:filename'
   }
 
   config.sass.inline_source_maps = true
