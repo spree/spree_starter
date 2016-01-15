@@ -25,6 +25,5 @@
 //= require spree/frontend/checkout
 //= require spree/frontend/checkout/address
 //= require spree/frontend/checkout/payment
-//= require spree/frontend/product
 
 //= require react_ujs
