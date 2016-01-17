@@ -20,7 +20,7 @@ bundle install
 npm install
 ```
 ```
-bundle exec rake db:setup
+bundle exec rake db:bootstrap
 ```
 
 ## Deployment
