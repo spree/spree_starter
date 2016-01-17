@@ -115,7 +115,7 @@ Rails.application.configure do
     s3_headers: { 'Cache-Control': 'max-age=31557600' },
     s3_protocol: :https,
     url: ':s3_alias_url',
-    s3_host_alias: config.cdn,
+    s3_host_alias: ENV['CDN_UPLOADS'],
     path: ':class/:attachment/:id_partition/:style/:filename'
   }
 
