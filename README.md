@@ -32,9 +32,7 @@ This repository is prepared for Heroku deployment with assets hosting on Amazon 
 Spark Starter Kit is copyright © 2015-2016
 [Spark Solutions Sp. z o.o.][spark]. It is free software,
 and may be redistributed under the terms specified in the
-[LICENCE](LICENSE) file.
-
-[LICENSE]: https://github.com/spark-solutions/spark-starter-kit/blob/master/LICENSE
+[LICENSE](LICENSE.md) file.
 
 ## About Spark Solutions
 [![Spark Solutions](http://sparksolutions.co/wp-content/uploads/2015/01/logo-ss-tr-221x100.png)][spark]
