@@ -23,6 +23,13 @@ npm install
 bundle exec rake db:bootstrap
 ```
 
+## Development
+
+To start the project just type:
+```
+foreman start -f Procfile.dev
+```
+
 ## Deployment
 
 This repository is prepared for Heroku deployment with assets hosting on Amazon S3 for production and Amazon Cloudfront as a CDN.
