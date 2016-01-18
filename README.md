@@ -34,6 +34,17 @@ foreman start -f Procfile.dev
 
 This repository is prepared for Heroku deployment with assets hosting on Amazon S3 for production and Amazon Cloudfront as a CDN.
 
+Before the first deploy, in the project directory run:
+```
+heroku buildpacks:add heroku/nodejs
+```
+```
+heroku buildpacks:add heroku/ruby
+```
+```
+heroku buildpacks:add https://github.com/gunpowderlabs/buildpack-ruby-rake-deploy-tasks
+```
+
 ## License
 
 Spark Starter Kit is copyright © 2015-2016
