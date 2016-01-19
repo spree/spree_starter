@@ -11,6 +11,9 @@ This is a starting point for all Spree/Rails related projects at Spark Solutions
  - [SPA frontend](client/js/ClientApp.js) + [classic rails views](app/views/layouts/application_classic.haml) (simple layout switcher)
  - haml as a template engine for rails views
 
+Heavily inspired by [react-webpack-rails-tutorial](https://github.com/shakacode/react-webpack-rails-tutorial/)
+ 
+
 ## Installation
 
 ```
