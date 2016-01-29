@@ -11,6 +11,9 @@ This is a starting point for all Spree/Rails related projects at Spark Solutions
  - [SPA frontend](client/js/ClientApp.js) + [classic rails views](app/views/layouts/application_classic.haml) (simple layout switcher)
  - haml as a template engine for rails views
 
+Heavily inspired by [react-webpack-rails-tutorial](https://github.com/shakacode/react-webpack-rails-tutorial/)
+ 
+
 ## Installation
 
 ```
@@ -23,9 +26,27 @@ npm install
 bundle exec rake db:bootstrap
 ```
 
+## Development
+
+To start the project just type:
+```
+foreman start -f Procfile.dev
+```
+
 ## Deployment
 
 This repository is prepared for Heroku deployment with assets hosting on Amazon S3 for production and Amazon Cloudfront as a CDN.
+
+Before the first deploy, in the project directory run:
+```
+heroku buildpacks:add heroku/nodejs
+```
+```
+heroku buildpacks:add heroku/ruby
+```
+```
+heroku buildpacks:add https://github.com/gunpowderlabs/buildpack-ruby-rake-deploy-tasks
+```
 
 ## License
 
