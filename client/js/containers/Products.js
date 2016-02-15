@@ -22,7 +22,6 @@ class Products extends Component {
 
   componentDidMount() {
     const { products, location, dispatch } = this.props
-
     if (!products.isFetched) {
       dispatch(fetchProducts(fullPath(location)))
     }
@@ -31,7 +30,7 @@ class Products extends Component {
   componentWillReceiveProps(nextProps) {
     const { location, dispatch } = this.props
     // location has changed so we need to get proper products list
-    if (nextProps.location !== location) {
+    if (fullPath(nextProps.location) != fullPath(location)) {
       dispatch(fetchProducts(fullPath(nextProps.location)))
     }
   }

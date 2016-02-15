@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import { reducer as form } from 'redux-form'
-import { routeReducer } from 'redux-simple-router'
+import { routeReducer } from 'react-router-redux'
 import { currency } from './currency'
 import { cart } from './cart'
 import { account } from './account'
