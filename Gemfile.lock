@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/masterexploder/font_assets.git
+  revision: ae8057117df86204b9ad5894e47bcbbe1e1fb4e6
+  specs:
+    font_assets (0.1.13)
+      rack
+
+GIT
   remote: git://github.com/rails-api/active_model_serializers.git
   revision: f2d59b20caa52244f907aa607bf7d8827c46cb7f
   specs:
@@ -498,6 +505,7 @@ DEPENDENCIES
   factory_girl_rails
   ffaker
   fog-aws
+  font_assets!
   foreman
   haml
   i18n-js (>= 3.0.0.rc11)
