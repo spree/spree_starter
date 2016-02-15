@@ -99,5 +99,5 @@ gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
 gem 'spree', '~> 3.0.5'
-gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable'
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
+gem 'spree_gateway', '~> 3.0.0'
+gem 'spree_auth_devise', '~> 3.0.0'

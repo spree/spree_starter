@@ -7,26 +7,6 @@ GIT
       activemodel (>= 4.0)
       railties (>= 4.0)
 
-GIT
-  remote: git://github.com/spree/spree_auth_devise.git
-  revision: f231fce43686d66fe3e6d65ba8595b4474c49895
-  branch: 3-0-stable
-  specs:
-    spree_auth_devise (3.0.0)
-      devise (~> 3.4.1)
-      devise-encryptable (= 0.1.2)
-      json
-      multi_json
-      spree_core (~> 3.0.0)
-
-GIT
-  remote: git://github.com/spree/spree_gateway.git
-  revision: 7301dc7c84c05b46427bf5003eda13ca64a48d7c
-  branch: 3-0-stable
-  specs:
-    spree_gateway (3.0.0.beta)
-      spree_core (~> 3.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -390,6 +370,12 @@ GEM
       rabl (~> 0.11.6)
       spree_core (= 3.0.5)
       versioncake (~> 2.3.1)
+    spree_auth_devise (3.0.5)
+      devise (~> 3.4.1)
+      devise-encryptable (= 0.1.2)
+      json
+      multi_json
+      spree_core (~> 3.0.0)
     spree_backend (3.0.5)
       bootstrap-sass (~> 3.3.1)
       jquery-rails (~> 4.0.3)
@@ -430,6 +416,8 @@ GEM
       jquery-rails (~> 4.0.3)
       spree_api (= 3.0.5)
       spree_core (= 3.0.5)
+    spree_gateway (3.0.0)
+      spree_core (~> 3.0.0)
     spree_sample (3.0.5)
       spree_core (= 3.0.5)
     spring (1.6.2)
@@ -476,7 +464,7 @@ GEM
       activesupport (>= 3.2)
       railties (>= 3.2)
       tzinfo
-    warden (1.2.4)
+    warden (1.2.6)
       rack (>= 1.0)
     web-console (2.2.1)
       activemodel (>= 4.0)
@@ -539,8 +527,8 @@ DEPENDENCIES
   sidekiq
   sinatra
   spree (~> 3.0.5)
-  spree_auth_devise!
-  spree_gateway!
+  spree_auth_devise (~> 3.0.0)
+  spree_gateway (~> 3.0.0)
   spring
   spring-commands-rspec
   test_after_commit
