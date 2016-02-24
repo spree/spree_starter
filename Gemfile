@@ -99,6 +99,6 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', '~> 3.0.6.1'
-gem 'spree_gateway', '~> 3.0.0'
-gem 'spree_auth_devise', '~> 3.0.0'
+gem 'spree'
+gem 'spree_gateway'
+gem 'spree_auth_devise'
