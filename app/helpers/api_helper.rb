@@ -8,7 +8,7 @@ module ApiHelper
   end
 
   def json_serialized(object = {}, options = {})
-    options.reverse_merge!(include: '**')
+    options.reverse_merge!(include: '**', scope: spree_current_user, scope_name: :spree_current_user)
     ActiveModel::SerializableResource.new(object, options).serializable_hash
   end
 
