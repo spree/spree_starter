@@ -10,18 +10,21 @@ export function login(state = initialState, action) {
   switch (action.type) {
     case LOGIN_REQUEST:
       return Object.assign({}, state, {
-        isLoggingIn: true
+        isLoggingIn: true,
+        isLoggedIn: false
       })
     case LOGIN_FAILURE:
       return Object.assign({}, state, {
         isLoggingIn: false,
+        isLoggedIn: false,
         error: action.error
       })
     case LOGIN_SUCCESS:
-      action.login.isLoggingIn = false
-      action.login.isLoggedIn = true
-      action.login.error = null
-      return Object.assign({}, state, action.login)
+      return Object.assign({}, state, action.login, {
+        isLoggingIn: false,
+        isLoggedIn: true,
+        error: null
+      })
     default:
       return state
   }

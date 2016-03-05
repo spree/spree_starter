@@ -11,8 +11,9 @@ export function account(state = { isFetching: false }, action) {
         isFetching: true
       })
     case FETCH_ACCOUNT_SUCCESS:
-      action.account.isFetching = false
-      return Object.assign({}, state, action.account)
+      return Object.assign({}, state, action.account, {
+        isFetching: false
+      })
     default:
       return state
   }

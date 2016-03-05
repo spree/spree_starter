@@ -19,12 +19,12 @@ export function products(state = initialState, action) {
         isFetched: false
       })
     case FETCH_PRODUCTS_SUCCESS:
-      action.products.isFetching = false
-      action.products.isFetched = true
-      return Object.assign({}, state, action.products)
+      return Object.assign({}, state, action.products, {
+        isFetching: false,
+        isFetched: true
+      })
     case CLEAR_PRODUCTS:
-      action.products = initialState
-      return Object.assign({}, state, action.products)
+      return initialState
     default:
       return state
   }
