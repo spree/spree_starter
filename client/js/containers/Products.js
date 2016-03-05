@@ -6,10 +6,7 @@ import { getCurrency } from 'reducers/currency'
 import { fetchProducts, clearProducts } from 'actions/products'
 import ProductsList from 'components/ProductsList'
 import Pagination from 'components/Pagination'
-
-function fullPath(location) {
-  return location.pathname + '.json' + location.search
-}
+import { fullPath, isPathEqual } from 'libs/urlHelper'
 
 class Products extends Component {
   static propTypes = {
@@ -30,7 +27,7 @@ class Products extends Component {
   componentWillReceiveProps(nextProps) {
     const { location, dispatch } = this.props
     // location has changed so we need to get proper products list
-    if (fullPath(nextProps.location) != fullPath(location)) {
+    if (!isPathEqual(nextProps.location, location)) {
       dispatch(fetchProducts(fullPath(nextProps.location)))
     }
   }
