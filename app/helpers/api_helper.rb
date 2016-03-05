@@ -1,14 +1,15 @@
 module ApiHelper
-  def json_records(records = {})
-    json_serialized(records.to_a)
+  def json_records(records = {}, options = {})
+    json_serialized(records.to_a, options)
   end
 
-  def json_record(record = {})
-    json_serialized(record)
+  def json_record(record = {}, options = {})
+    json_serialized(record, options)
   end
 
-  def json_serialized(object = {})
-    ActiveModel::SerializableResource.new(object, include: '**').serializable_hash
+  def json_serialized(object = {}, options = {})
+    options.reverse_merge!(include: '**')
+    ActiveModel::SerializableResource.new(object, options).serializable_hash
   end
 
   def json_pagination(object = {})
