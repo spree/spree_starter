@@ -11,11 +11,13 @@ export function authenticityToken(state = { isFetching: false }, action) {
         isFetching: true
       })
     case FETCH_AUTHENTICITY_TOKEN_FAILURE:
-      action.authenticityToken.isFetching = false
-      return Object.assign({}, state, action.authenticityToken)
+      return Object.assign({}, state, action.authenticityToken, {
+        isFetching: false
+      })
     case FETCH_AUTHENTICITY_TOKEN_SUCCESS:
-      action.authenticityToken.isFetching = false
-      return Object.assign({}, state, action.authenticityToken)
+      return Object.assign({}, state, action.authenticityToken, {
+        isFetching: false
+      })
     default:
       return state
   }

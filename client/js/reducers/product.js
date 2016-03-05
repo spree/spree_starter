@@ -6,8 +6,7 @@ export function getProduct(state) {
 
 const initialState = {
   isFetching: false,
-  isFetched: false,
-  product: {}
+  isFetched: false
 }
 
 export function product(state = initialState, action) {
@@ -18,12 +17,12 @@ export function product(state = initialState, action) {
         isFetched: false
       })
     case FETCH_PRODUCT_SUCCESS:
-      action.product.isFetching = false
-      action.product.isFetched = true
-      return Object.assign({}, state, action.product)
+      return Object.assign({}, state, action.product, {
+        isFetching: false,
+        isFetched: true
+      })
     case CLEAR_PRODUCT:
-      action.product = initialState
-      return Object.assign({}, state, action.product)
+      return initialState
     default:
       return state
   }

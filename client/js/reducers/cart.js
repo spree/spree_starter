@@ -11,8 +11,9 @@ export function cart(state = { isFetching: false }, action) {
         isFetching: true
       })
     case FETCH_CART_SUCCESS:
-      action.cart.isFetching = false
-      return Object.assign({}, state, action.cart)
+      return Object.assign({}, state, action.cart, {
+        isFetching: false
+      })
     default:
       return state
   }
