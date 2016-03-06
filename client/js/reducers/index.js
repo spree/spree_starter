@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import { reducer as form } from 'redux-form'
-import { routeReducer } from 'react-router-redux'
+import { routerReducer } from 'react-router-redux'
 import { currency } from './currency'
 import { cart } from './cart'
 import { account } from './account'
@@ -9,7 +9,7 @@ import { authenticityToken } from './authenticityToken'
 import { products } from './products'
 import { product } from './product'
 
-const routing = routeReducer
+const routing = routerReducer
 
 const rootReducer = combineReducers({
   form,
