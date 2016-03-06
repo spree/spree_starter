@@ -82,6 +82,10 @@ RSpec.configure do |config|
     reset_spree_preferences
   end
 
+  config.before(:each, type: :controller) do
+    @request.env['devise.mapping'] = Devise.mappings[:spree_user]
+  end
+
   config.include Spree::TestingSupport::Preferences
   config.include Spree::TestingSupport::UrlHelpers
   config.include Spree::TestingSupport::ControllerRequests, type: :controller
