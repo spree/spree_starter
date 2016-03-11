@@ -19,6 +19,7 @@ Spree::OrdersController.class_eval do
 
     if error
       respond_with(order) do |format|
+        format.json { render json: { error: error }, status: 422 }
         format.html do
           flash[:error] = error
           redirect_back_or_default(spree.root_path)
