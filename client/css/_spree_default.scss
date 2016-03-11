@@ -43,6 +43,10 @@
 .alert-error, .alert-registration_error { @extend .alert-danger; }
 .alert-alert { @extend .alert-info; }
 
+.alert {
+  margin-bottom: 0;
+}
+
 .product-body {
   height: 170px;
 }
