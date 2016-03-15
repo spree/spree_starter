@@ -4,6 +4,7 @@ import { routeReducer } from 'react-router-redux'
 import { currency } from './currency'
 import { cart } from './cart'
 import { account } from './account'
+import { alerts } from './alerts'
 import { login } from './login'
 import { authenticityToken } from './authenticityToken'
 import { products } from './products'
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   currency,
   cart,
   account,
+  alerts,
   authenticityToken,
   login,
   products,
