@@ -1,6 +1,6 @@
 import React from 'react'
 import { Pagination } from 'react-bootstrap'
-import { routeActions } from 'react-router-redux'
+import { routerActions } from 'react-router-redux'
 
 export default (props) => {
   const { location, history, pagination, dispatch } = props
@@ -12,7 +12,7 @@ export default (props) => {
       pathname: newLocation.pathname,
       query: newLocation.query
     })
-    dispatch(routeActions.push(newPath))
+    dispatch(routerActions.push(newPath))
   }
 
   if (!pagination || !pagination.totalPages || parseInt(pagination.totalPages) === 1) {

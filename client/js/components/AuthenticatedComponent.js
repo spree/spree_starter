@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { routeActions } from 'react-router-redux'
+import { routerActions } from 'react-router-redux'
 import cookies from 'cookies-js'
 import { getAccount } from 'reducers/account'
 
@@ -29,7 +29,7 @@ export function requireAuthentication(ChildComponent) {
         search: location.search
       })
       if (!account.id) {
-        dispatch(routeActions.push('/signup'))
+        dispatch(routerActions.push('/signup'))
         cookies.set('returnTo', fullPath)
       }
     }
