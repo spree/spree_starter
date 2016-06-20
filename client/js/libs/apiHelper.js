@@ -9,6 +9,7 @@ export function checkStatus(response) {
     return response.json().then(err => {
       const error = new Error(response.statusText)
       error.error = err
+      error.error.error = err.errors || err.error
       error.response = response
 
       return Promise.reject(error)
