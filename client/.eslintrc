@@ -9,6 +9,8 @@ plugins:
 globals:
   __DEBUG_SERVER_ERRORS__: true
   __SERVER_ERRORS__: true
+  Routes: true
+  I18n: true
 
 env:
   browser: true
