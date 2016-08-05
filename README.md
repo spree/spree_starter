@@ -12,18 +12,12 @@ This is a starting point for all Spree/Rails related projects at Spark Solutions
  - haml as a template engine for rails views
 
 Heavily inspired by [react-webpack-rails-tutorial](https://github.com/shakacode/react-webpack-rails-tutorial/)
- 
+
 
 ## Installation
 
 ```
-bundle install
-```
-```
-npm install
-```
-```
-bundle exec rake db:bootstrap
+bin/setup
 ```
 
 ## Development
