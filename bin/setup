@@ -24,8 +24,11 @@ Dir.chdir APP_ROOT do
   system 'DISABLE_SPRING=1 bin/rake db:migrate'
   system 'bin/rake db:seed'
 
-  puts " \n == Loading Spree sample data =="
-  system 'bin/rake spree_sample:load'
+  puts " \n Load sample data? (y/n)"
+  if gets.delete("\n") == 'y'
+    puts " \n == Loading Spree sample data =="
+    system 'bin/rake spree_sample:load'
+  end
 
   puts " \n == Removing old logs and tempfiles =="
   system 'rm -f log/*'
