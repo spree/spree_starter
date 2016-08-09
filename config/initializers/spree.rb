@@ -18,4 +18,4 @@ Spree.config do |config|
   config.admin_interface_logo = 'spark-logo.png'
 end
 
-Spree.user_class = "Spree::User"
+Spree.user_class = 'Spree::User'

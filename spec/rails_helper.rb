@@ -46,7 +46,7 @@ require 'capybara/rspec'
 require 'capybara-screenshot/rspec'
 require 'capybara/rails'
 
-Capybara.save_and_open_page_path = "#{ENV.fetch('CIRCLE_ARTIFACTS', Rails.root.join('tmp/capybara'))}"
+Capybara.save_and_open_page_path = ENV.fetch('CIRCLE_ARTIFACTS', Rails.root.join('tmp/capybara')).to_s
 Capybara::Screenshot.prune_strategy = { keep: 20 }
 
 RSpec.configure do |config|
