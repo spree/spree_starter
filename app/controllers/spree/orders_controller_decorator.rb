@@ -11,7 +11,7 @@ Spree::OrdersController.class_eval do
       begin
         order.contents.add(variant, quantity, options)
       rescue ActiveRecord::RecordInvalid => e
-        error = e.record.errors.full_messages.join(", ")
+        error = e.record.errors.full_messages.join(', ')
       end
     else
       error = Spree.t(:please_enter_reasonable_quantity)

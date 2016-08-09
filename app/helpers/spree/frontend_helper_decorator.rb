@@ -9,15 +9,14 @@ Spree::FrontendHelper.module_eval do
     }[flash_type.to_sym]
   end
 
-  def flash_messages(opts = {})
+  def flash_messages(_opts = {})
     flashes = ''
 
-    flash.to_h.except("order_completed").each do |msg_type, text|
-      if msg_type.present?
-        flashes << content_tag(:div, class: "alert alert-#{class_for(msg_type)}") do
-          content_tag(:button, '&times;'.html_safe, class: 'close', data: { dismiss: 'alert', hidden: true }) +
+    flash.to_h.except('order_completed').each do |msg_type, text|
+      next unless msg_type.present?
+      flashes << content_tag(:div, class: "alert alert-#{class_for(msg_type)}") do
+        content_tag(:button, '&times;'.html_safe, class: 'close', data: { dismiss: 'alert', hidden: true }) +
           content_tag(:span, text)
-        end
       end
     end
     flashes.html_safe
