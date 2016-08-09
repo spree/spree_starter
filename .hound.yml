@@ -1,3 +1,5 @@
+ruby:
+  config_file: .rubocop.yml
 jshint:
   enabled: false
 eslint:
