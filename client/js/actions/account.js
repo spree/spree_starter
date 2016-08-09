@@ -1,33 +1,19 @@
 import { FETCH_ACCOUNT_REQUEST, FETCH_ACCOUNT_SUCCESS, FETCH_ACCOUNT_FAILURE } from 'constants'
 import * as api from 'libs/apiHelper'
+import generateActionCreator from 'libs/generateActionCreator'
 
-function fetchAccountRequest() {
-  return {
-    type: FETCH_ACCOUNT_REQUEST
-  };
-}
-
-function fetchAccountSuccess(account) {
-  return {
-    type: FETCH_ACCOUNT_SUCCESS,
-    account
-  }
-}
-
-function fetchAccountFailure(error) {
-  return {
-    type: FETCH_ACCOUNT_FAILURE,
-    error
-  }
-}
+const fetchAccountRequest = generateActionCreator(FETCH_ACCOUNT_REQUEST)
+const fetchAccountSuccess = generateActionCreator(FETCH_ACCOUNT_SUCCESS, 'account')
+const fetchAccountFailure = generateActionCreator(FETCH_ACCOUNT_FAILURE, 'error')
 
 export function fetchAccount() {
   return dispatch => {
     dispatch(fetchAccountRequest())
     return fetch(
-      Routes.spree_account_link_path({format: 'json'}),
+      Routes.spree_account_link_path({ format: 'json' }),
       { credentials: 'same-origin' }
     )
+      .then(api.checkStatus)
       .then(res => res.json())
       .then(json => dispatch(fetchAccountSuccess(json)))
       .catch(error => dispatch(fetchAccountFailure(error)))

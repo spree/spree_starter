@@ -1,25 +1,13 @@
-import { FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_FAILURE, CLEAR_PRODUCTS } from 'constants'
+import {
+  FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_FAILURE, CLEAR_PRODUCTS
+} from 'constants'
 import * as api from 'libs/apiHelper'
+import generateActionCreator from 'libs/generateActionCreator'
 
-function fetchProductsRequest() {
-  return {
-    type: FETCH_PRODUCTS_REQUEST
-  }
-}
+const fetchProductsRequest = generateActionCreator(FETCH_PRODUCTS_REQUEST)
+const fetchProductsSuccess = generateActionCreator(FETCH_PRODUCTS_SUCCESS, 'products')
+const fetchProductsFailure = generateActionCreator(FETCH_PRODUCTS_FAILURE, 'error')
 
-function fetchProductsSuccess(products) {
-  return {
-    type: FETCH_PRODUCTS_SUCCESS,
-    products
-  }
-}
-
-function fetchProductsFailure(error) {
-  return {
-    type: FETCH_PRODUCTS_FAILURE,
-    error
-  }
-}
 
 export function fetchProducts(url) {
   return dispatch => {
@@ -28,7 +16,8 @@ export function fetchProducts(url) {
       url,
       { credentials: 'same-origin' }
     )
-      .then(res => res.json())
+      .then(api.checkStatus)
+      .then(api.parseJSON)
       .then(json => dispatch(fetchProductsSuccess(json)))
       .catch(error => dispatch(fetchProductsFailure(error)))
   }
