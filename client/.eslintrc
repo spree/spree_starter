@@ -28,6 +28,7 @@ rules:
   semi: [2, "never"]
   comma-style: [2, "last"]
   comma-dangle: [2, "never"]
+  max-len: [1, 120, 2]
 
   ### React
   jsx-quotes: [1, prefer-double]
