@@ -1,33 +1,23 @@
-import { FETCH_AUTHENTICITY_TOKEN_REQUEST, FETCH_AUTHENTICITY_TOKEN_SUCCESS, FETCH_AUTHENTICITY_TOKEN_FAILURE } from 'constants'
+import {
+  FETCH_AUTHENTICITY_TOKEN_REQUEST, FETCH_AUTHENTICITY_TOKEN_SUCCESS,
+  FETCH_AUTHENTICITY_TOKEN_FAILURE
+} from 'constants'
 import * as api from 'libs/apiHelper'
+import generateActionCreator from 'libs/generateActionCreator'
 
-function fetchAuthenticityTokenRequest() {
-  return {
-    type: FETCH_AUTHENTICITY_TOKEN_REQUEST
-  };
-}
+const fetchAuthenticityTokenRequest = generateActionCreator(FETCH_AUTHENTICITY_TOKEN_REQUEST)
+const fetchAuthenticityTokenSuccess = generateActionCreator(FETCH_AUTHENTICITY_TOKEN_SUCCESS, 'authenticityToken')
+const fetchAuthenticityTokenFailure = generateActionCreator(FETCH_AUTHENTICITY_TOKEN_FAILURE, 'error')
 
-function fetchAuthenticityTokenSuccess(authenticityToken) {
-  return {
-    type: FETCH_AUTHENTICITY_TOKEN_SUCCESS,
-    authenticityToken
-  }
-}
-
-function fetchAuthenticityTokenFailure(error) {
-  return {
-    type: FETCH_AUTHENTICITY_TOKEN_FAILURE,
-    error
-  }
-}
 
 export function fetchAuthenticityToken() {
   return dispatch => {
     dispatch(fetchAuthenticityTokenRequest())
     return fetch(
-      Routes.spree_authenticity_token_path({format: 'json'}),
+      Routes.spree_authenticity_token_path({ format: 'json' }),
       { credentials: 'same-origin' }
     )
+      .then(api.checkStatus)
       .then(res => res.json())
       .then(res => dispatch(fetchAuthenticityTokenSuccess(res)))
       .catch(error => dispatch(fetchAuthenticityTokenFailure(error)))
