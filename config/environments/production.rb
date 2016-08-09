@@ -1,7 +1,5 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.domain = ENV['APP_DOMAIN']
-  config.cdn = ENV['CDN']
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -23,7 +21,9 @@ Rails.application.configure do
   config.action_dispatch.rack_cache = true
 
   # Action mailer con host production
-  config.action_mailer.default_url_options = { host: 'https://' + config.domain }
+  if ENV['APP_DOMAIN']
+    config.action_mailer.default_url_options = { host: 'https://' + ENV['APP_DOMAIN'] }
+  end
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -82,10 +82,10 @@ Rails.application.configure do
   end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = config.action_mailer.asset_host = 'https://' + config.cdn
-  routes.default_url_options[:host] = config.action_controller.asset_host
-
-  config.action_mailer.default_url_options = { host: 'https://' + config.domain }
+  if ENV['CDN']
+    config.action_controller.asset_host = config.action_mailer.asset_host = 'https://' + ENV['CDN']
+    routes.default_url_options[:host] = config.action_controller.asset_host
+  end
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -105,31 +105,35 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Amazon S3 for paperclip
-  config.paperclip_defaults = {
-    storage: :s3,
-    s3_credentials: {
-      bucket: ENV['S3_BUCKET_NAME'],
-      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-    },
-    s3_headers: { 'Cache-Control': 'max-age=31557600' },
-    s3_protocol: :https,
-    url: ':s3_alias_url',
-    s3_host_alias: ENV['CDN_UPLOADS'],
-    path: ':class/:attachment/:id_partition/:style/:filename'
-  }
+  if ENV['AWS_ACCESS_KEY_ID'] && ENV['AWS_SECRET_ACCESS_KEY'] && ENV['S3_BUCKET_NAME']
+    config.paperclip_defaults = {
+      storage: :s3,
+      s3_credentials: {
+        bucket: ENV['S3_BUCKET_NAME'],
+        access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+        secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+      },
+      s3_headers: { 'Cache-Control': 'max-age=31557600' },
+      s3_protocol: :https,
+      url: ':s3_alias_url',
+      s3_host_alias: ENV['CDN_UPLOADS'],
+      path: ':class/:attachment/:id_partition/:style/:filename'
+    }
+  end
 
   # sendgrid mail
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD'],
-    domain: config.domain,
-    address: 'smtp.sendgrid.net',
-    port: 587,
-    authentication: :plain,
-    enable_starttls_auto: true
-  }
+  if ENV['SENDGRID_USERNAME'] && ENV['SENDGRID_PASSWORD']
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      user_name: ENV['SENDGRID_USERNAME'],
+      password: ENV['SENDGRID_PASSWORD'],
+      domain: ENV['APP_DOMAIN'],
+      address: 'smtp.sendgrid.net',
+      port: 587,
+      authentication: :plain,
+      enable_starttls_auto: true
+    }
+  end
 
   # fix for fonts CORS issues with CloudFront
   config.font_assets.origin = '*'
