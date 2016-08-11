@@ -10,29 +10,33 @@ export default (props) => {
   return (
     <header>
       <nav className="navbar navbar-default navbar-fixed-top">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <UniversalLink to="/">
-              <img src={logoUrl} />
-            </UniversalLink>
-          </div>
-          <div id="#navbar" className="navbar-collapse collapse">
-            <ul className="nav navbar-nav">
-              <li>
-                <UniversalLink to={Routes.spree_products_path()}>
-                  {I18n.t('spree.products')}
-                </UniversalLink>
-              </li>
-            </ul>
-            <ul className="nav navbar-nav navbar-right">
-              <li>
-                {!account.isFetching && <AccountMenu account={account} />}
-              </li>
-              <li>
-                {!cart.isFetching && <CartPreview cart={cart} />}
-              </li>
-            </ul>
-          </div>
+        <div className="navbar-header">
+          <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+          </button>
+        </div>
+        <UniversalLink to="/" className="navbar-brand">
+          <img src={logoUrl} />
+        </UniversalLink>
+        <div className="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul className="nav navbar-nav navbar-left">
+            <li>
+              <UniversalLink to={Routes.spree_products_path()}>
+                {I18n.t('spree.products')}
+              </UniversalLink>
+            </li>
+          </ul>
+          <ul className="nav navbar-nav navbar-right">
+            <li>
+              {!account.isFetching && <AccountMenu account={account} />}
+            </li>
+            <li>
+              {!cart.isFetching && <CartPreview cart={cart} />}
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
