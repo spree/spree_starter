@@ -1,42 +1,3 @@
-#spree-header {
-  background: $brand-primary url('#{$image-url-path}/spark-logo.png') center center;
-  background-size: cover;
-  margin-bottom: $line-height-computed;
-
-  #header {
-    background: rgba($gray-darker, 0.4);
-    padding: $line-height-computed 0;
-  }
-
-  #logo {
-    margin-bottom: 10px;
-
-    img {
-      width: 306px;
-    }
-  }
-
-  .nav a {
-    color: white;
-
-    &:hover, &:focus {
-      background: rgba($gray-darker, 0.4);
-    }
-  }
-
-  .navbar {
-    border: 0;
-    margin-bottom: 0;
-  }
-}
-
-#spree-footer {
-  background: $gray-dark;
-  padding-top: $padding-base-horizontal;
-  margin-top: $line-height-computed;
-  color: white;
-}
-
 // -- Spree Layout Custom Rules -------------------------
 
 .alert-notice { @extend .alert-success; }
@@ -98,8 +59,28 @@ table {
   padding: 5px;
 }
 
-.navbar-header > a > img {
-  height: 50px;
+.navbar-fixed-top {
+  .navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+
+    & > img {
+      height: 50px;
+      display: inline-block;
+      margin-top: -15px;
+    }
+  }
+
+  .navbar-toggle {
+    z-index: 3;
+  }
+  .navbar-right {
+    margin-right: 0;
+  }
 }
 
 #page {
