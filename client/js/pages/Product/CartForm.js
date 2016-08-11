@@ -33,7 +33,7 @@ class CartForm extends Component {
             defaultChecked={this.props.selectedVariant.id === variant.id}
           />
           &nbsp;
-          {variant.optionsText}
+          {variant.options_text}
         </label>
       </div>
     )

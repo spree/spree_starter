@@ -3,7 +3,7 @@ import React from 'react'
 export default (props) => {
   const { product } = props
 
-  if (!product.productProperties.length) {
+  if (!product.product_properties.length) {
     return <div />
   }
 
@@ -12,7 +12,7 @@ export default (props) => {
       <h3 className="product-section-title">{I18n.t('spree.properties')}</h3>
       <table id="product-properties" className="table table-striped" data-hook="">
         <tbody>
-          {product.productProperties.map((property, index) => {
+          {product.product_properties.map((property, index) => {
             return (
               <tr key={property.id} className={index % 2 && 'even' || 'odd'}>
                 <td><strong>{property.name}</strong></td>

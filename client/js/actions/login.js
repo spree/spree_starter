@@ -12,7 +12,7 @@ export function login(email, password) {
   return (dispatch, getState) => {
     dispatch(loginRequest())
 
-    const authenticityToken = getAuthenticityToken(getState()).authenticityToken
+    const authenticityToken = getAuthenticityToken(getState()).authenticity_token
 
     const formData = new FormData()
     formData.append('spree_user[email]', email)

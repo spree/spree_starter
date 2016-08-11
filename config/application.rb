@@ -59,8 +59,6 @@ module SparkStarterKit
       files: ['application.server.js'], # files to load for prerendering
       replay_console: true, # if true, console.* will be replayed client-side
     }
-    # use camel case convention for react components props
-    config.react.camelize_props = true
 
     if Rails.env.production?
       # CloudFlare middleware for proper visitors IP addresses

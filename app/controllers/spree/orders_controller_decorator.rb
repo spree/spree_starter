@@ -1,4 +1,7 @@
 Spree::OrdersController.class_eval do
+  helper Spree::Api::ApiHelpers
+  include Spree::ApiFrontendFixConcern
+
   # Adds a new item to the order (creating a new order if none already exists)
   def populate
     order    = current_order(create_order_if_necessary: true)
@@ -27,7 +30,10 @@ Spree::OrdersController.class_eval do
       end
     else
       respond_with(order) do |format|
-        format.json { render json: order }
+        format.json do
+          @order = order
+          render 'spree/api/v1/orders/show', layout: false
+        end
         format.html { redirect_to cart_path }
       end
     end
