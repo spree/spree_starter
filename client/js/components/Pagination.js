@@ -15,7 +15,7 @@ export default (props) => {
     dispatch(routerActions.push(newPath))
   }
 
-  if (!pagination || !pagination.totalPages || parseInt(pagination.totalPages) === 1) {
+  if (!pagination || !pagination.total_pages || parseInt(pagination.total_pages, 10) === 1) {
     return <div />
   }
 
@@ -27,9 +27,9 @@ export default (props) => {
         first={true}
         last={true}
         ellipsis={true}
-        items={parseInt(pagination.totalPages)}
+        items={parseInt(pagination.total_pages, 10)}
         maxButtons={5}
-        activePage={parseInt(location.query.page) || 1}
+        activePage={parseInt(location.query.page, 10) || 1}
         onSelect={handleSelect}
       />
     </div>
