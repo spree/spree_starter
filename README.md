@@ -38,9 +38,6 @@ heroku buildpacks:add heroku/nodejs
 ```
 heroku buildpacks:add heroku/ruby
 ```
-```
-heroku buildpacks:add https://github.com/gunpowderlabs/buildpack-ruby-rake-deploy-tasks
-```
 
 ## License
 
