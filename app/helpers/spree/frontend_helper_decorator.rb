@@ -2,6 +2,7 @@ Spree::FrontendHelper.module_eval do
   def class_for(flash_type)
     {
       success: 'success',
+      registration_error: 'danger',
       error:   'danger',
       alert:   'danger',
       warning: 'warning',
