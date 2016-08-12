@@ -8,7 +8,6 @@ const fetchProductsRequest = generateActionCreator(FETCH_PRODUCTS_REQUEST)
 const fetchProductsSuccess = generateActionCreator(FETCH_PRODUCTS_SUCCESS, 'products')
 const fetchProductsFailure = generateActionCreator(FETCH_PRODUCTS_FAILURE, 'error')
 
-
 export function fetchProducts(url) {
   return dispatch => {
     dispatch(fetchProductsRequest())
