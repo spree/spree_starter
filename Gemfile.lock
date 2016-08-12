@@ -455,10 +455,9 @@ GEM
     thread_safe (0.3.5)
     tilt (2.0.5)
     truncate_html (0.9.3)
-    twitter_cldr (3.4.0)
+    twitter_cldr (3.5.0)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.0.0)
-      json (~> 1.0)
       tzinfo
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
