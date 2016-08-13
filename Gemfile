@@ -19,7 +19,7 @@ gem 'therubyracer', platforms: :ruby
 # gem 'bcrypt', '~> 3.1.7'
 
 # ActiveModelSerializers
-gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
+gem 'active_model_serializers', '~> 0.10.2'
 
 # Use Puma as the app server
 gem 'puma'
