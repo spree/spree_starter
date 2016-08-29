@@ -19,7 +19,7 @@ const submit = (values, dispatch) => {
   })
 }
 
-export default class LoginForm extends Component {
+export class LoginForm extends Component {
   static propTypes = {
     fields: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
