@@ -11,6 +11,18 @@ ActionFilter:
 Alias:
   Enabled: false
 
+AlignArray:
+  Enabled: false
+
+AlignHash:
+  Enabled: false
+
+AlignParameters:
+  Enabled: false
+
+AndOr:
+  Enabled: false
+
 ArrayJoin:
   Enabled: false
 
@@ -84,7 +96,16 @@ Encoding:
 EvenOdd:
   Enabled: false
 
+ExtraSpacing:
+  Enabled: false
+
 FileName:
+  Enabled: false
+
+FindBy:
+  Enabled: false
+
+FindEach:
   Enabled: false
 
 FlipFlop:
@@ -99,10 +120,19 @@ GlobalVars:
 GuardClause:
   Enabled: false
 
+HashSyntax:
+  Enabled: false
+
 IfUnlessModifier:
   Enabled: false
 
 IfWithSemicolon:
+  Enabled: false
+
+IndentArray:
+  Enabled: false
+
+IndentHash:
   Enabled: false
 
 InlineComment:
@@ -118,7 +148,7 @@ LineEndConcatenation:
   Enabled: false
 
 LineLength:
-  Max: 120
+  Enabled: false
 
 MethodLength:
   Enabled: false
@@ -153,6 +183,9 @@ OpMethod:
 ParameterLists:
   Enabled: false
 
+ParenthesesAroundCondition:
+  Enabled: false
+
 PercentLiteralDelimiters:
   Enabled: false
 
@@ -167,6 +200,9 @@ Proc:
   Enabled: false
 
 RaiseArgs:
+  Enabled: false
+
+RedundantSelf:
   Enabled: false
 
 RegexpLiteral:
@@ -197,6 +233,12 @@ TrailingCommaInLiteral:
   Enabled: false
 
 TrivialAccessors:
+  Enabled: false
+
+UnlessElse:
+  Enabled: false
+
+UnneededInterpolation:
   Enabled: false
 
 VariableInterpolation:
