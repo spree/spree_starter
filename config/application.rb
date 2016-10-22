@@ -55,7 +55,13 @@ module SparkStarterKit
     config.react.server_renderer_pool_size  ||= 1  # ExecJS doesn't allow more than one on MRI
     config.react.server_renderer_timeout    ||= 20 # seconds
     config.react.server_renderer = React::ServerRendering::SprocketsRenderer
+
+    js_polyfill = File.read(File.join("lib/server_side_rendering/set_timeout_polyfill.js"))
+
     config.react.server_renderer_options = {
+      # temporarily polyfill setTimeout() for SSR
+      # remove this if covered by react-rails
+      code: js_polyfill,
       files: ['application.server.js'], # files to load for prerendering
       replay_console: true, # if true, console.* will be replayed client-side
     }
