@@ -17,7 +17,7 @@ export function alerts(state = initialState, action) {
       const lastId = state.lastId
       let message = action.alert.error || action.alert.message
 
-      message = _.isArray(message) ? message.join('<br/>') : message
+      message = Array.isArray(message) ? message.join('<br/>') : message
       alerts[lastId] = { message, type: action.alertType }
 
       return Object.assign({}, state, { alerts, lastId: lastId + 1 })
