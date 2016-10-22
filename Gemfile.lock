@@ -303,7 +303,7 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.1)
-    react-rails (1.8.0)
+    react-rails (1.9.0)
       babel-transpiler (>= 0.7.0)
       coffee-script-source (~> 1.8)
       connection_pool
