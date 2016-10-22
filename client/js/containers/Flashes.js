@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import classNames from 'classnames'
 import { getAlerts } from 'reducers/alerts'
 import css from './Flashes.scss'
-import _ from 'lodash'
 import Flash from 'components/Flash'
 
 const Flashes = (props) => {
@@ -12,12 +11,12 @@ const Flashes = (props) => {
   return (
     <div className={classNames({ [`${css.fixed}`]: fixed })}>
       {
-        _.map(alerts, (flash, key) =>
+        Object.keys(alerts).map(key =>
           <Flash
             dispatch={dispatch}
             id={parseInt(key, 10)}
             key={key}
-            {...flash}
+            {...alerts[key]}
           />
         )
       }
