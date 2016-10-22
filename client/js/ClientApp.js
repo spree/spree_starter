@@ -22,7 +22,7 @@ export default (props) => {
           <Router history={history}>
             {routes}
           </Router>
-          <DevTools />
+          {!window.devToolsExtension && <DevTools/>}
         </div>
       </Provider>
     )
