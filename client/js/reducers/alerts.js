@@ -1,5 +1,7 @@
 import { ADD_ALERT, CLEAR_ALERT, REMOVE_ALERT } from 'constants'
-import _ from 'lodash'
+
+import cloneDeep from 'lodash/cloneDeep'
+import unset from 'lodash/unset'
 
 export function getAlerts(state) {
   return state.alerts
@@ -13,7 +15,7 @@ const initialState = {
 export function alerts(state = initialState, action) {
   switch (action.type) {
     case ADD_ALERT: {
-      const alerts = _.cloneDeep(state.alerts)
+      const alerts = cloneDeep(state.alerts)
       const lastId = state.lastId
       let message = action.alert.error || action.alert.message
 
@@ -25,8 +27,8 @@ export function alerts(state = initialState, action) {
     case CLEAR_ALERT:
       return initialState
     case REMOVE_ALERT: {
-      const alerts = _.cloneDeep(state.alerts)
-      _.unset(alerts, action.id)
+      const alerts = cloneDeep(state.alerts)
+      unset(alerts, action.id)
 
       return Object.assign({}, state, { alerts })
     }
