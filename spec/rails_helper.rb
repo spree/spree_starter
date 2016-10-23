@@ -73,7 +73,7 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
-  config.before(:suite) do
+  config.before(type: :feature) do
     EnsureAssetsCompiled.check_built_assets
   end
 
