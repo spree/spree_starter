@@ -4,8 +4,8 @@
   "description": "Spark Solutions starter kit",
   "main": "server-express.js",
   "engines": {
-    "node": "5.1.0",
     "npm": "3.3.10"
+    "node": "6.9.1",
   },
   "scripts": {
     "postinstall": "cd client && npm install",
