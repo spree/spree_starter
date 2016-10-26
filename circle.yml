@@ -9,4 +9,4 @@ machine:
 
 dependencies:
   pre:
-    - npm install -g npm@3.3.10
+    - npm install -g npm@3.10.8
