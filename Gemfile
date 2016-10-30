@@ -89,7 +89,6 @@ gem 'newrelic_rpm'
 
 # sidekiq
 gem 'sidekiq'
-gem 'sinatra', require: nil
 
 # front end
 gem 'haml'
