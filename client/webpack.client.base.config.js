@@ -33,6 +33,7 @@ module.exports = {
       components: path.join(process.cwd(), 'js', 'components'),
       constants: path.join(process.cwd(), 'js', 'constants'),
       containers: path.join(process.cwd(), 'js', 'containers'),
+      img: path.join(process.cwd(), '', 'img'),
       libs: path.join(process.cwd(), 'js', 'libs'),
       providers: path.join(process.cwd(), 'js', 'providers'),
       reducers: path.join(process.cwd(), 'js', 'reducers'),
