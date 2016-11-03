@@ -45,4 +45,10 @@ Rails.application.configure do
   }
 
   config.sass.inline_source_maps = true
+
+  # http caching with rack-cache gem
+  if ENV['HTTP_CACHE']
+    config.action_controller.perform_caching = true
+    config.action_dispatch.rack_cache = true
+  end
 end
