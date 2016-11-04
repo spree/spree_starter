@@ -1,7 +1,8 @@
-// we need this to be sure that there is at least one 1 png file generated
-// in app/assets/webpack
+// we need this to be sure that there is at least one 1 png and jpg file
+// generated in app/assets/webpack
 #dummy {
   background: $brand-primary url('#{$image-url-path}/spark-logo.png') center center;
+  background-image: url('#{$image-url-path}/spark-logo.jpg');
 }
 
 // -- Spree Layout Custom Rules -------------------------
