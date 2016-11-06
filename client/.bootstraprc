@@ -8,8 +8,8 @@ bootstrapVersion: 3
 # Webpack loaders, order matters
 styleLoaders:
   - style
-  - css
-  - sass
+  - css?sourceMap
+  - sass?sourceMap
 
 # Extract styles to stand-alone css file
 # Different settings for different environments can be used,

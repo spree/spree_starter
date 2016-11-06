@@ -48,14 +48,14 @@ module.exports = {
       {
         test: /\.css$/,
         loaders: [
-          'css/locals?modules&importLoaders=0&localIdentName=[name]__[local]__[hash:base64:5]'
+          'css/locals?modules&sourceMap&importLoaders=0&localIdentName=[name]__[local]__[hash:base64:5]'
         ]
       },
       {
         test: /\.scss$/,
         loaders: [
-          'css/locals?modules&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:5]',
-          'sass',
+          'css/locals?modules&sourceMap&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:5]',
+          'sass?sourceMap',
           'sass-resources'
         ]
       },
