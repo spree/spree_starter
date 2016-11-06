@@ -2,7 +2,6 @@
 
 const webpack = require('webpack')
 const path = require('path')
-const autoprefixer = require('autoprefixer')
 
 const devBuild = process.env.NODE_ENV !== 'production'
 const nodeEnv = devBuild ? 'development' : 'production'
@@ -86,9 +85,6 @@ module.exports = {
       { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
     ]
   },
-
-  // Place here all postCSS plugins here, so postcss-loader will apply them
-  postcss: [autoprefixer],
 
   // Place here all SASS files with variables, mixins etc.
   // And sass-resources-loader will load them in every CSS Module (SASS file) for you

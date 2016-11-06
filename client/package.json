@@ -37,7 +37,6 @@
     "jscs": "jscs --verbose ."
   },
   "dependencies": {
-    "autoprefixer": "^6.3.3",
     "babel": "6.5.2",
     "babel-cli": "6.18.0",
     "babel-core": "6.18.0",
@@ -71,7 +70,6 @@
     "node-sass": "^3.4.2",
     "node-uuid": "^1.4.7",
     "object.omit": "^2.0.0",
-    "postcss-loader": "^0.9.1",
     "react": "^0.14.7",
     "react-bootstrap": "^0.28.3",
     "react-dom": "^0.14.7",
