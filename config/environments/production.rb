@@ -14,6 +14,12 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  # Enable Rack::Cache to put a simple HTTP cache in front of your application
+  # Add `rack-cache` to your Gemfile before enabling this.
+  # For large-scale production use, consider using a caching reverse proxy like
+  # NGINX, varnish or squid.
+  config.action_dispatch.rack_cache = true
+
   # Action mailer con host production
   if ENV['APP_DOMAIN']
     config.action_mailer.default_url_options = { host: 'https://' + ENV['APP_DOMAIN'] }
@@ -65,6 +71,14 @@ Rails.application.configure do
     }
 
     config.cache_store = :mem_cache_store, ENV['MEMCACHEDCLOUD_SERVERS'].split(','), memcached_config
+
+    client = Dalli::Client.new(ENV['MEMCACHEDCLOUD_SERVERS'].split(','), memcached_config)
+
+    config.action_dispatch.rack_cache = {
+      metastore: client,
+      entitystore: client,
+      verbose: false
+    }
   end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
