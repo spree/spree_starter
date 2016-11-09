@@ -8,6 +8,6 @@ Spree::Image.class_eval do
                     },
                     default_style: :product,
                     convert_options: {
-                      all: '-strip -auto-orient -colorspace sRGB'
+                      all: '-strip -auto-orient -colorspace sRGB -density 300 -quality 100'
                     }
 end
