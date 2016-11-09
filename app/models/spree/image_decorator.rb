@@ -1,13 +1,25 @@
 Spree::Image.class_eval do
   has_attached_file :attachment,
                     styles: {
-                      mini: '48x48>',
-                      small: '100x100>',
-                      product: '240x240>',
-                      large: '600x600>'
+                      mini: {
+                        geometry: '48x48>',
+                        source_file_options: '-density 500 -quality 100'
+                      },
+                      small: {
+                        geometry: '100x100>',
+                        source_file_options: '-density 500 -quality 100'
+                      },
+                      product: {
+                        geometry: '240x240>',
+                        source_file_options: '-density 500 -quality 100'
+                      },
+                      large: {
+                        geometry: '600x600>',
+                        source_file_options: '-density 500 -quality 100'
+                      }
                     },
                     default_style: :product,
                     convert_options: {
-                      all: '-strip -auto-orient -colorspace sRGB -density 300 -quality 100'
+                      all: '-strip -auto-orient -colorspace sRGB'
                     }
 end
