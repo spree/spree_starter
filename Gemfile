@@ -96,6 +96,7 @@ gem 'haml'
 gem 'react-rails'
 gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
+gem 'retina_rails', '~> 2.0.0'
 
 # Spree gems
 gem 'spree', '~> 3.1.1'

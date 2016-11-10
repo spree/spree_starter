@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620111933) do
+ActiveRecord::Schema.define(version: 20161110101428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20160620111933) do
     t.text     "alt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "retina_dimensions"
   end
 
   add_index "spree_assets", ["position"], name: "index_spree_assets_on_position", using: :btree
