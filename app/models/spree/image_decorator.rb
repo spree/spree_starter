@@ -10,6 +10,6 @@ Spree::Image.class_eval do
                     },
                     default_style: :product,
                     convert_options: {
-                      all: '-strip -auto-orient -colorspace sRGB'
+                      all: '-auto-orient -colorspace sRGB'
                     }
 end
