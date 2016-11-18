@@ -22,7 +22,7 @@ Rails.application.configure do
 
   # Action mailer con host production
   if ENV['APP_DOMAIN']
-    config.action_mailer.default_url_options = { host: 'https://' + ENV['APP_DOMAIN'] }
+    routes.default_url_options = config.action_mailer.default_url_options = { host: 'https://' + ENV['APP_DOMAIN'] }
   end
 
   # Disable serving static files from the `/public` folder by default since
@@ -84,7 +84,6 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   if ENV['CDN']
     config.action_controller.asset_host = config.action_mailer.asset_host = 'https://' + ENV['CDN']
-    routes.default_url_options[:host] = config.action_controller.asset_host
   end
 
   # Ignore bad email addresses and do not raise email delivery errors.
