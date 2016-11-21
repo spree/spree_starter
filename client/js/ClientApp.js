@@ -14,6 +14,7 @@ export default (props) => {
   const history = syncHistoryWithStore(browserHistory, store)
 
   if (process.env.NODE_ENV === 'development') {
+    window.store = store
     const DevTools = require('containers/DevTools').default
     return (
       <Provider store={store}>
@@ -21,7 +22,7 @@ export default (props) => {
           <Router history={history}>
             {routes}
           </Router>
-          <DevTools />
+          {!window.devToolsExtension && <DevTools/>}
         </div>
       </Provider>
     )

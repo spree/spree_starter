@@ -5,18 +5,19 @@ import rootReducer from 'reducers'
 import DevTools from 'containers/DevTools'
 
 const loggerMiddleware = createLogger()
+const devTooling = window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument()
 
 const finalCreateStore = (initialState = {}, reduxRouterMiddleware = undefined) => {
   let composedStore
   if (reduxRouterMiddleware) {
     composedStore = compose(
       applyMiddleware(thunkMiddleware, loggerMiddleware, reduxRouterMiddleware),
-      DevTools.instrument()
+      devTooling
     )
   } else {
     composedStore = compose(
       applyMiddleware(thunkMiddleware, loggerMiddleware),
-      DevTools.instrument()
+      devTooling
     )
   }
   return composedStore(createStore)(rootReducer, initialState)
