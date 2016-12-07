@@ -39,17 +39,15 @@ export function requireAuthentication(ChildComponent) {
 
       return (
         <div>
-          {account.id && <ChildComponent {...this.props}/> || null}
+          {account.id && <ChildComponent {...this.props} /> || null}
         </div>
       )
     }
   }
 
-  const mapStateToProps = (state) => {
-    return {
+  const mapStateToProps = (state) => ({
       account: getAccount(state)
-    }
-  }
+  })
 
   return connect(mapStateToProps)(AuthenticatedComponent)
 }

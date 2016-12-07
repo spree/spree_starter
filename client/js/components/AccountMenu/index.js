@@ -11,6 +11,7 @@ export default class AccountMenu extends Component {
   constructor(props) {
     super(props)
     this.state = { showModal: false }
+    this.hideModal = this.hideModal.bind(this)
   }
 
   openModal(e) {
@@ -28,7 +29,7 @@ export default class AccountMenu extends Component {
       return (
         <a href="#" onClick={this.openModal.bind(this)}>
           {I18n.t('spree.login')}
-          <AccountModal show={this.state.showModal} onHide={this.hideModal.bind(this)} />
+          <AccountModal show={this.state.showModal} onHide={this.hideModal} />
         </a>
       )
     } else {

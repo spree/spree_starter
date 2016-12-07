@@ -1,5 +1,4 @@
 import React from 'react'
-import UniversalLink from 'components/UniversalLink'
 import Product from 'components/Product'
 
 export default (props) => {

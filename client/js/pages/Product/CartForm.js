@@ -11,7 +11,10 @@ class CartForm extends Component {
     handleChange: PropTypes.func,
     dispatch: PropTypes.func.isRequired
   }
-
+  constructor(props) {
+    super(props)
+    this.handleChange = (variantId) => this.handleChange.bind(this, variantId)
+  }
   handleSubmit() {
     const { variantId, quantity } = this.refs
     this.props.dispatch(addToCart(variantId.value, quantity.getValue()))
@@ -29,10 +32,9 @@ class CartForm extends Component {
             type="radio"
             name="variantId"
             value={variant.id}
-            onChange={this.handleChange.bind(this, variant.id)}
+            onChange={this.handleChange(variant.id)}
             defaultChecked={this.props.selectedVariant.id === variant.id}
           />
-          &nbsp;
           {variant.options_text}
         </label>
       </div>

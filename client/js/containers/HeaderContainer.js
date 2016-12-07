@@ -42,12 +42,10 @@ class HeaderContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    account: getAccount(state),
-    cart: getCart(state),
-    authenticityToken: getAuthenticityToken(state)
-  }
-}
+const mapStateToProps = (state) => ({
+  account: getAccount(state),
+  cart: getCart(state),
+  authenticityToken: getAuthenticityToken(state)
+})
 
 export default connect(mapStateToProps)(HeaderContainer)

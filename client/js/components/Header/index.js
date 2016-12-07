@@ -18,9 +18,9 @@ export default (props) => {
             <span className="icon-bar" />
           </button>
         </div>
-        <UniversalLink to="/" className="navbar-brand">
+        <a href="/" className="navbar-brand">
           <img src={logoUrl} />
-        </UniversalLink>
+        </a>
         <div className="collapse navbar-collapse" id="navbar-collapse-1">
           <ul className="nav navbar-nav navbar-left">
             <li>
