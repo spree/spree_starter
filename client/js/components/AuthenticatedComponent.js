@@ -39,7 +39,7 @@ export function requireAuthentication(ChildComponent) {
 
       return (
         <div>
-          {account.id && <ChildComponent {...this.props} /> || null}
+          {account.id ? <ChildComponent {...this.props} /> : null}
         </div>
       )
     }
