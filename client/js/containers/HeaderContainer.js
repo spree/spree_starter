@@ -42,7 +42,7 @@ class HeaderContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   account: getAccount(state),
   cart: getCart(state),
   authenticityToken: getAuthenticityToken(state)

@@ -22,6 +22,6 @@ UniversalLink.propTypes = {
   to: PropTypes.string
 }
 
-const mapStateToProps = (state) => ({ routing: state.routing })
+const mapStateToProps = state => ({ routing: state.routing })
 
 export default connect(mapStateToProps)(UniversalLink)

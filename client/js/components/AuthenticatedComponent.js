@@ -45,7 +45,7 @@ export function requireAuthentication(ChildComponent) {
     }
   }
 
-  const mapStateToProps = (state) => ({
+  const mapStateToProps = state => ({
       account: getAccount(state)
   })
 

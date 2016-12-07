@@ -54,7 +54,7 @@ class Products extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     products: getProducts(state),
     currency: getCurrency(state)
