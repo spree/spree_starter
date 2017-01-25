@@ -5,7 +5,7 @@ export function checkStatus(response) {
     return response
   }
 
-  if (response.body) {
+  if (response.body || response._bodyBlob) {
     return response.json().then(err => {
       const error = new Error(response.statusText)
       error.error = err
