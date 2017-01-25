@@ -316,7 +316,9 @@ GEM
     ref (2.0.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
-    rollbar (2.13.3)
+    retina_rails (2.0.4)
+      rails (>= 3.2.0)
+    rollbar (2.12.0)
       multi_json
     rspec-activejob (0.6.1)
       activejob (>= 4.2)
@@ -520,6 +522,7 @@ DEPENDENCIES
   rails (= 4.2.7.1)
   rails_12factor
   react-rails
+  retina_rails (~> 2.0.0)
   rollbar
   rspec-activejob
   rspec-activemodel-mocks
