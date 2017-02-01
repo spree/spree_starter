@@ -19,15 +19,15 @@ Dir.chdir APP_ROOT do
   # we're doing this in seperate tasks because
   # of some buggy migrations with spring
   puts " \n == Preparing database =="
-  system 'DISABLE_SPRING=1 bin/rake db:drop'
-  system 'DISABLE_SPRING=1 bin/rake db:create'
-  system 'DISABLE_SPRING=1 bin/rake db:migrate'
-  system 'DISABLE_SPRING=1 bin/rake db:seed'
+  system 'DISABLE_SPRING=1 bin/rails db:drop'
+  system 'DISABLE_SPRING=1 bin/rails db:create'
+  system 'DISABLE_SPRING=1 bin/rails db:migrate'
+  system 'DISABLE_SPRING=1 bin/rails db:seed'
 
   puts " \n Load sample data? (y/n)"
   if gets.delete("\n") == 'y'
     puts " \n == Loading Spree sample data =="
-    system 'bin/rake spree_sample:load'
+    system 'bin/rails spree_sample:load'
   end
 
   puts " \n == Removing old logs and tempfiles =="

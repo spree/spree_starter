@@ -3,15 +3,15 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
+gem 'rails', '5.0.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
@@ -48,7 +48,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'ffaker'
-  gem 'quiet_assets'
   gem 'bullet'
 end
 
@@ -61,7 +60,6 @@ group :test do
   gem 'launchy'
   gem 'vcr'
   gem 'webmock'
-  gem 'test_after_commit'
   gem 'codeclimate-test-reporter', require: nil
 end
 
@@ -98,6 +96,6 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', '~> 3.1.1'
-gem 'spree_gateway', '~> 3.1.0'
-gem 'spree_auth_devise', '~> 3.1.0'
+gem 'spree', '~> 3.2.0.rc1'
+gem 'spree_gateway', '~> 3.2.0.beta'
+gem 'spree_auth_devise', '~> 3.2.0.beta'

@@ -64,6 +64,7 @@ module SparkStarterKit
       code: js_polyfill,
       files: ['application.server.js'], # files to load for prerendering
       replay_console: true, # if true, console.* will be replayed client-side
+      code: 'var window = this; ', # window object was removed from react-rails
     }
 
     if Rails.env.production?

@@ -1,6 +1,6 @@
 module Spree
   class VariantSerializer < ApplicationSerializer
-    attributes :id, :is_master, :name, :options_text, :sku, :weight, :height, :width, :depth, :stock_items_count
+    attributes :id, :is_master, :name, :options_text, :sku, :weight, :height, :width, :depth
     attribute :backorderable?, key: :backorderable
 
     def backorderable?
