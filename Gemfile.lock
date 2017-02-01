@@ -448,8 +448,6 @@ GEM
       activerecord (>= 4.1, < 5.1)
       state_machines-activemodel (>= 0.3.0)
     stringex (2.7.0)
-    test_after_commit (1.1.0)
-      activerecord (>= 3.2)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -540,7 +538,6 @@ DEPENDENCIES
   spree_gateway (~> 3.2.0.beta)
   spring
   spring-commands-rspec
-  test_after_commit
   therubyracer
   uglifier
   vcr

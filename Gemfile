@@ -60,7 +60,6 @@ group :test do
   gem 'launchy'
   gem 'vcr'
   gem 'webmock'
-  gem 'test_after_commit'
   gem 'codeclimate-test-reporter', require: nil
 end
 
