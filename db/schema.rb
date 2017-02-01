@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201125556) do
+ActiveRecord::Schema.define(version: 20170201153063) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 20170201125556) do
   end
 
   create_table "spree_adjustments", force: :cascade do |t|
-    t.integer  "source_id"
     t.string   "source_type"
-    t.integer  "adjustable_id"
+    t.integer  "source_id"
     t.string   "adjustable_type"
+    t.integer  "adjustable_id"
     t.decimal  "amount",          precision: 10, scale: 2
     t.string   "label"
     t.boolean  "mandatory"
@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(version: 20170201125556) do
   end
 
   create_table "spree_assets", force: :cascade do |t|
-    t.integer  "viewable_id"
     t.string   "viewable_type"
+    t.integer  "viewable_id"
     t.integer  "attachment_width"
     t.integer  "attachment_height"
     t.integer  "attachment_file_size"
@@ -84,7 +84,6 @@ ActiveRecord::Schema.define(version: 20170201125556) do
     t.text     "alt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "retina_dimensions"
     t.index ["position"], name: "index_spree_assets_on_position", using: :btree
     t.index ["viewable_id"], name: "index_assets_on_viewable_id", using: :btree
     t.index ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type", using: :btree
@@ -92,8 +91,8 @@ ActiveRecord::Schema.define(version: 20170201125556) do
 
   create_table "spree_calculators", force: :cascade do |t|
     t.string   "type"
-    t.integer  "calculable_id"
     t.string   "calculable_type"
+    t.integer  "calculable_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.text     "preferences"
@@ -193,8 +192,8 @@ ActiveRecord::Schema.define(version: 20170201125556) do
   end
 
   create_table "spree_log_entries", force: :cascade do |t|
-    t.integer  "source_id"
     t.string   "source_type"
+    t.integer  "source_id"
     t.text     "details"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -321,8 +320,8 @@ ActiveRecord::Schema.define(version: 20170201125556) do
   create_table "spree_payments", force: :cascade do |t|
     t.decimal  "amount",               precision: 10, scale: 2, default: "0.0", null: false
     t.integer  "order_id"
-    t.integer  "source_id"
     t.string   "source_type"
+    t.integer  "source_id"
     t.integer  "payment_method_id"
     t.string   "state"
     t.string   "response_code"
@@ -770,8 +769,8 @@ ActiveRecord::Schema.define(version: 20170201125556) do
     t.string   "action"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.integer  "originator_id"
     t.string   "originator_type"
+    t.integer  "originator_id"
     t.index ["stock_item_id"], name: "index_spree_stock_movements_on_stock_item_id", using: :btree
   end
 
@@ -1017,8 +1016,8 @@ ActiveRecord::Schema.define(version: 20170201125556) do
   end
 
   create_table "spree_zone_members", force: :cascade do |t|
-    t.integer  "zoneable_id"
     t.string   "zoneable_type"
+    t.integer  "zoneable_id"
     t.integer  "zone_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
