@@ -19,7 +19,7 @@ namespace :assets do
 
     # Critical to manually copy non js/css assets to public/assets as we don't want to fingerprint them
     sh 'cp -rf app/assets/webpack/*.woff* app/assets/webpack/*.svg app/assets/webpack/*.ttf '\
-       'app/assets/webpack/*.eot* app/assets/webpack/*.png app/assets/webpack/*.jpg public/assets'
+       'app/assets/webpack/*.eot* app/assets/webpack/*.png app/assets/webpack/*.jpg public/assets > /dev/null 2>&1'
 
     # TODO: We should be gzipping these
   end
