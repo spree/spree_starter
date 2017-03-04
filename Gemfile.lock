@@ -210,7 +210,7 @@ GEM
     kgio (2.11.0)
     launchy (2.4.3)
       addressable (~> 2.3)
-    libv8 (3.16.14.17)
+    libv8 (5.3.332.38.5)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -221,6 +221,8 @@ GEM
     mime-types-data (3.2016.0521)
     mimemagic (0.3.0)
     mini_portile2 (2.1.0)
+    mini_racer (0.1.9)
+      libv8 (~> 5.3)
     minitest (5.10.1)
     monetize (1.6.0)
       money (~> 6.8)
@@ -318,7 +320,6 @@ GEM
       railties (>= 3.2)
       tilt
     redis (3.3.3)
-    ref (2.0.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rollbar (2.14.0)
@@ -448,9 +449,6 @@ GEM
       activerecord (>= 4.1, < 5.1)
       state_machines-activemodel (>= 0.3.0)
     stringex (2.7.0)
-    therubyracer (0.12.3)
-      libv8 (~> 3.16.14.15)
-      ref
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.6)
@@ -513,6 +511,7 @@ DEPENDENCIES
   js-routes
   kgio
   launchy
+  mini_racer
   newrelic_rpm
   paperclip
   pg
@@ -538,7 +537,6 @@ DEPENDENCIES
   spree_gateway (~> 3.2.0.beta)
   spring
   spring-commands-rspec
-  therubyracer
   uglifier
   vcr
   web-console (~> 3.0)
