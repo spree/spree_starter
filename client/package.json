@@ -63,7 +63,7 @@
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^2.2.0",
     "jquery-ujs": "^1.2.0",
-    "loader-utils": "^0.2.12",
+    "loader-utils": "^1.0.3",
     "lodash.clonedeep": "^4.5.0",
     "lodash.filter": "^4.6.0",
     "lodash.map": "^4.6.0",
