@@ -82,7 +82,7 @@
     "redux": "^3.3.1",
     "redux-form": "^4.1.16",
     "redux-thunk": "^1.0.3",
-    "resolve-url-loader": "^1.4.3",
+    "resolve-url-loader": "^2.0.2",
     "sass-loader": "^4.0.0",
     "sass-resources-loader": "1.1.0",
     "style-loader": "^0.13.0",
