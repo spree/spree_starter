@@ -84,7 +84,7 @@
     "redux-thunk": "^1.0.3",
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^4.0.0",
-    "sass-resources-loader": "1.1.0",
+    "sass-resources-loader": "^1.2.1",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.13"
