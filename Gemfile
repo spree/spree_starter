@@ -12,8 +12,8 @@ gem 'sass-rails'
 gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+
+gem 'mini_racer'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
