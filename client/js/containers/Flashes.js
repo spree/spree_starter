@@ -30,6 +30,6 @@ Flashes.propTypes = {
   fixed: PropTypes.bool
 }
 
-const mapStateToProps = (state) => ({ ...getAlerts(state) })
+const mapStateToProps = state => ({ ...getAlerts(state) })
 
 export default connect(mapStateToProps)(Flashes)

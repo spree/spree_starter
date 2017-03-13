@@ -12,12 +12,12 @@ class CartForm extends Component {
     dispatch: PropTypes.func.isRequired
   }
 
-  handleSubmit() {
+  handleSubmit = () => {
     const { variantId, quantity } = this.refs
     this.props.dispatch(addToCart(variantId.value, quantity.getValue()))
   }
 
-  handleChange(variantId) {
+  handleChange = (variantId) => {
     this.props.handleChange(variantId)
   }
 
@@ -29,10 +29,9 @@ class CartForm extends Component {
             type="radio"
             name="variantId"
             value={variant.id}
-            onChange={this.handleChange.bind(this, variant.id)}
+            onChange={this.handleChange(variant.id)}
             defaultChecked={this.props.selectedVariant.id === variant.id}
           />
-          &nbsp;
           {variant.options_text}
         </label>
       </div>
@@ -45,14 +44,13 @@ class CartForm extends Component {
 
   render() {
     const { master, variants, selectedVariant } = this.props
-    const handleSubmit = this.handleSubmit.bind(this)
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <Row>
           {variants && variants.length > 0 && this.renderVariants()}
           <input type="hidden" ref="variantId" value={selectedVariant && selectedVariant.id || master.id} />
           <Input type="number" ref="quantity" defaultValue={1} />
-          <ButtonInput onClick={handleSubmit}>
+          <ButtonInput onClick={this.handleSubmit}>
             {I18n.t('spree.add_to_cart')}
           </ButtonInput>
         </Row>

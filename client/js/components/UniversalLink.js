@@ -10,10 +10,10 @@ const UniversalLink = (props) => {
   const { routing, children, to } = props
 
   if (getRoutingLocation(routing)) {
-    return <Link {...props}>{children}</Link>
+    return <Link to={to}>{children}</Link>
   }
 
-  return <a {...props} href={to}>{children}</a>
+  return <a href={to}>{children}</a>
 }
 
 UniversalLink.propTypes = {
@@ -22,6 +22,6 @@ UniversalLink.propTypes = {
   to: PropTypes.string
 }
 
-const mapStateToProps = (state) => ({ routing: state.routing })
+const mapStateToProps = state => ({ routing: state.routing })
 
 export default connect(mapStateToProps)(UniversalLink)

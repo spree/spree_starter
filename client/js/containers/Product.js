@@ -46,11 +46,9 @@ class Product extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    product: getProduct(state),
-    currency: getCurrency(state)
-  }
-}
+const mapStateToProps = state => ({
+  product: getProduct(state),
+  currency: getCurrency(state)
+})
 
 export default connect(mapStateToProps)(Product)
