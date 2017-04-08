@@ -99,7 +99,7 @@
     "eslint-plugin-react": "^4.0.0",
     "expect": "^1.14.0",
     "express": "^4.13.4",
-    "jsdom": "^8.0.2",
+    "jsdom": "^9.12.0",
     "mocha": "^2.4.5",
     "react-addons-test-utils": "^0.14.7",
     "react-transform-hmr": "^1.0.2",
