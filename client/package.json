@@ -106,7 +106,7 @@
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.1.0",
-    "redux-logger": "^2.7.0",
+    "redux-logger": "^3.0.1",
     "should": "^8.2.2",
     "sleep": "^3.0.1",
     "webpack-dev-server": "^1.14.1"
