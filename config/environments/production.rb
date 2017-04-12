@@ -72,7 +72,7 @@ Rails.application.configure do
       username: ENV['MEMCACHEDCLOUD_USERNAME'],
       password: ENV['MEMCACHEDCLOUD_PASSWORD'],
       value_max_bytes: 104_857_60,
-      compress: true,
+      compress: false,
       pool_size: ENV['MEMCACHED_POOL_SIZE'] || 5
     }
 
