@@ -71,7 +71,7 @@ end
 
 # file uploades & assets
 gem 'paperclip' # Image Rescaling for aws
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk'
 gem 'fog-aws'
 
 # caching
