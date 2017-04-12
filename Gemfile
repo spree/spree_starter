@@ -94,6 +94,9 @@ gem 'react-rails'
 gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
+# error handling
+gem 'gaffe'
+
 # Spree gems
 gem 'spree', '~> 3.2.1'
 gem 'spree_gateway', '~> 3.2.0.beta'
