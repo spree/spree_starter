@@ -206,7 +206,6 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kgio (2.11.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     libv8 (5.3.332.38.5)
@@ -505,7 +504,6 @@ DEPENDENCIES
   haml
   i18n-js (>= 3.0.0.rc11)
   js-routes
-  kgio
   launchy
   mini_racer
   newrelic_rpm

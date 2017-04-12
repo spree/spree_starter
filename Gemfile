@@ -77,7 +77,6 @@ gem 'fog-aws'
 # caching
 gem 'dalli' # memcache
 gem 'rack-cache' # http caching
-gem 'kgio' # faster kgio IO system
 
 # rollbar
 gem 'rollbar'
