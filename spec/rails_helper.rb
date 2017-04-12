@@ -79,7 +79,9 @@ RSpec.configure do |config|
 
   config.before :each do
     Rails.cache.clear
-    reset_spree_preferences
+    reset_spree_preferences do |config|
+      # config.my_custom_preference = 10
+    end
   end
 
   config.before(:each, type: :controller) do
