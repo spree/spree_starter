@@ -1,0 +1,11 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'shared/head' %>
+  </head>
+  <body class='<%= "#{controller_name}" + " " + "#{controller_name}" + "-" + "#{action_name}" %>'>
+    <%= render 'spree/shared/google_analytics.js' %>
+    <%= yield %>
+  </body>
+</html>
