@@ -88,7 +88,6 @@ gem 'newrelic_rpm'
 gem 'sidekiq'
 
 # front end
-gem 'haml'
 gem 'react-rails'
 gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
