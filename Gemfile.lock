@@ -179,8 +179,6 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    haml (4.0.7)
-      tilt
     hashdiff (0.3.2)
     highline (1.6.21)
     htmlentities (4.3.4)
@@ -501,7 +499,6 @@ DEPENDENCIES
   fog-aws
   font_assets!
   foreman
-  haml
   i18n-js (>= 3.0.0.rc11)
   js-routes
   launchy
