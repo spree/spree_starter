@@ -11,12 +11,12 @@ const Flashes = (props) => {
   return (
     <div className={classNames({ [`${css.fixed}`]: fixed })}>
       {
-        Object.keys(alerts).map(key =>
+        alerts && alerts.map(alert =>
           <Flash
             dispatch={dispatch}
-            id={parseInt(key, 10)}
-            key={key}
-            {...alerts[key]}
+            id={alert.id}
+            key={alert.id}
+            {...alert}
           />
         )
       }
@@ -24,12 +24,16 @@ const Flashes = (props) => {
   )
 }
 
+Flashes.defaultProps = {
+  alerts: []
+}
+
 Flashes.propTypes = {
-  alerts: PropTypes.object,
+  alerts: PropTypes.arrayOf(PropTypes.object),
   dispatch: PropTypes.func.isRequired,
   fixed: PropTypes.bool
 }
 
-const mapStateToProps = (state) => ({ ...getAlerts(state) })
+const mapStateToProps = state => ({ ...getAlerts(state) })
 
 export default connect(mapStateToProps)(Flashes)
