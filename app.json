@@ -21,6 +21,9 @@
     "DEPLOY_TASKS": {
       "required": true
     },
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
     "LANG": {
       "required": true
     },
