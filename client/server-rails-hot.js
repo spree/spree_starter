@@ -12,6 +12,7 @@ const compiler = webpack(webpackConfig)
 const devServer = new WebpackDevServer(compiler, {
   contentBase: 'http://lvh.me:' + hotRailsPort,
   publicPath: webpackConfig.output.publicPath,
+  headers: { 'Access-Control-Allow-Origin': '*' },
   hot: true,
   inline: true,
   historyApiFallback: true,
