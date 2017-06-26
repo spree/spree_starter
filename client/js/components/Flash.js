@@ -19,7 +19,7 @@ const Flash = (props) => {
 }
 
 Flash.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   dispatch: PropTypes.func.isRequired,
   flash: PropTypes.object.isRequired,
   message: PropTypes.string.isRequired,
