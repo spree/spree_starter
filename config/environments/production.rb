@@ -20,11 +20,6 @@ Rails.application.configure do
   # NGINX, varnish or squid.
   config.action_dispatch.rack_cache = true
 
-  # Action mailer con host production
-  if ENV['APP_DOMAIN']
-    routes.default_url_options = config.action_mailer.default_url_options = { host: 'https://' + ENV['APP_DOMAIN'] }
-  end
-
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
@@ -87,9 +82,16 @@ Rails.application.configure do
     }
   end
 
+  heroku_app_url = ENV['HEROKU_APP_NAME'].present? && "#{ENV['HEROKU_APP_NAME']}.herokuapp.com"
+
+  # Action mailer con host production
+  if (host = heroku_app_url || ENV['APP_DOMAIN']).present?
+    routes.default_url_options = config.action_mailer.default_url_options = { host: "https://#{host}" }
+  end
+
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  if ENV['CDN']
-    config.action_controller.asset_host = config.action_mailer.asset_host = 'https://' + ENV['CDN']
+  if (host = heroku_app_url || ENV['CDN']).present?
+    config.action_controller.asset_host = config.action_mailer.asset_host = "https://#{host}"
   end
 
   # Ignore bad email addresses and do not raise email delivery errors.
