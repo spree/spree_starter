@@ -68,12 +68,12 @@ end
 # Heroku fix
 group :production, :staging do
   gem 'rack-timeout'
-  gem 'font_assets', github: 'masterexploder/font_assets'
+  gem 'font_assets'
 end
 
 # file uploades & assets
 gem 'paperclip' # Image Rescaling for aws
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk', '>= 2.0'
 gem 'fog-aws'
 
 # caching
