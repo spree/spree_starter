@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.5'
+gem 'rails', '5.1.3'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -49,6 +49,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'ffaker'
   gem 'bullet'
+
+  gem 'listen'
 end
 
 # Access an IRB console on exception pages or by using <%= console %> in views

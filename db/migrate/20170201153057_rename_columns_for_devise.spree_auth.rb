@@ -1,5 +1,5 @@
 # This migration comes from spree_auth (originally 20101026184950)
-class RenameColumnsForDevise < ActiveRecord::Migration
+class RenameColumnsForDevise < ActiveRecord::Migration[4.2]
   def up
     return if column_exists?(:spree_users, :password_salt)
     rename_column :spree_users, :crypted_password, :encrypted_password
