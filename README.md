@@ -54,7 +54,7 @@ heroku buildpacks:add heroku/ruby
 
 ## License
 
-Spark Starter Kit is copyright © 2015-2016
+Spark Starter Kit is copyright © 2015-2017
 [Spark Solutions Sp. z o.o.][spark]. It is free software,
 and may be redistributed under the terms specified in the
 [LICENSE](LICENSE.md) file.
