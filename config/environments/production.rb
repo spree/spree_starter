@@ -68,7 +68,8 @@ Rails.application.configure do
       password: ENV['MEMCACHEDCLOUD_PASSWORD'],
       value_max_bytes: 104_857_60,
       compress: false,
-      pool_size: ENV['MEMCACHED_POOL_SIZE'] || 5
+      pool_size: ENV['MEMCACHED_POOL_SIZE'] || 5,
+      expires_in: 1.week
     }
 
     config.cache_store = :mem_cache_store, ENV['MEMCACHEDCLOUD_SERVERS'].split(','), memcached_config
