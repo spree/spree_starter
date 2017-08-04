@@ -26,6 +26,20 @@ To start the project just type:
 bin/start
 ```
 
+## Runnint tests
+
+Before running the test suite remember to fire up docker-compose:
+
+```
+docker-compose start
+```
+
+And after that you can just use plain normal rspec:
+
+```
+rspec
+```
+
 ## Deployment
 
 This repository is prepared for Heroku deployment with assets hosting on Amazon S3 for production and Amazon Cloudfront as a CDN.
