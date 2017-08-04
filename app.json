@@ -12,12 +12,6 @@
     "AWS_SECRET_ACCESS_KEY": {
       "required": true
     },
-    "CDN": {
-      "required": true
-    },
-    "CDN_UPLOADS": {
-      "required": true
-    },
     "DEPLOY_TASKS": {
       "required": true
     },
