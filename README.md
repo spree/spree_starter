@@ -10,10 +10,10 @@ This is a starting point for all Spree/Rails related projects at Spark Solutions
  - ReactJS with [Hot Reload](https://github.com/gaearon/babel-plugin-react-transform), [Redux](https://github.com/rackt/redux), [React-router](https://github.com/rackt/react-router) and [server side rendering](https://github.com/reactjs/react-rails#server-rendering) via therubyracer and [react-rails](https://github.com/reactjs/react-rails) gem
  - [SPA frontend](client/js/ClientApp.js) + [classic rails views](app/views/layouts/application_classic.html.erb) (simple layout switcher)
 
-Heavily inspired by [react-webpack-rails-tutorial](https://github.com/shakacode/react-webpack-rails-tutorial/)
-
 
 ## Installation
+
+You will need [docker](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 
 ```
 bin/setup
@@ -23,7 +23,21 @@ bin/setup
 
 To start the project just type:
 ```
-foreman start -f Procfile.dev
+bin/start
+```
+
+## Runnint tests
+
+Before running the test suite remember to fire up docker-compose:
+
+```
+docker-compose start
+```
+
+And after that you can just use plain normal rspec:
+
+```
+rspec
 ```
 
 ## Deployment

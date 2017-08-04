@@ -24,6 +24,8 @@ default: &default
 development:
   <<: *default
   database: spark-starter-kit_development
+  host: localhost
+  username: postgres
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +60,8 @@ development:
 test:
   <<: *default
   database: spark-starter-kit_test
+  host: localhost
+  username: postgres
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
