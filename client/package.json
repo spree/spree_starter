@@ -4,8 +4,8 @@
   "description": "Spark Solutions starter kit",
   "main": "server-express.js",
   "engines": {
-    "node": "6.9.1",
-    "npm": "3.10.8"
+    "node": "8.2.1",
+    "npm": "5.3.0"
   },
   "repository": {
     "type": "git",
