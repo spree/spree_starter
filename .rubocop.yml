@@ -72,7 +72,7 @@ CyclomaticComplexity:
 Delegate:
   Enabled: false
 
-DeprecatedHashMethods:
+PreferredHashMethods:
   Enabled: false
 
 Documentation:
