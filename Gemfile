@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.5'
+gem 'rails', '5.1.3'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -49,6 +49,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'ffaker'
   gem 'bullet'
+
+  gem 'listen'
 end
 
 # Access an IRB console on exception pages or by using <%= console %> in views
@@ -66,12 +68,12 @@ end
 # Heroku fix
 group :production, :staging do
   gem 'rack-timeout'
-  gem 'font_assets', github: 'masterexploder/font_assets'
+  gem 'font_assets'
 end
 
 # file uploades & assets
 gem 'paperclip' # Image Rescaling for aws
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk', '>= 2.0'
 gem 'fog-aws'
 
 # caching
@@ -93,6 +95,6 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', '~> 3.2.1'
+gem 'spree', '~> 3.3.0.rc3'
 gem 'spree_gateway', '~> 3.3'
 gem 'spree_auth_devise', '~> 3.3'
