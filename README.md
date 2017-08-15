@@ -26,9 +26,9 @@ To start the project just type:
 bin/start
 ```
 
-## Runnint tests
+## Running tests
 
-Before running the test suite remember to fire up docker-compose:
+Before running the test suite remember to fire up docker-compose (if it's not running already):
 
 ```
 docker-compose start
