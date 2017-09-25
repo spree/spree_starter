@@ -21,6 +21,7 @@ Spree::StoreController.class_eval do
   end
 
   def authenticity_token
+    response.header['Cache-Control'] = 'no-store'
     render json: { authenticity_token: form_authenticity_token }
   end
 end
