@@ -14,8 +14,9 @@ export function fetchAuthenticityToken() {
   return dispatch => {
     dispatch(fetchAuthenticityTokenRequest())
     return fetch(
-      Routes.spree_authenticity_token_path({ format: 'json' }),
-      { credentials: 'same-origin' }
+      Routes.spree_authenticity_token_path({ format: 'json', time: Date.now() }),
+      { credentials: 'same-origin' },
+      { cache: 'no-store' }
     )
       .then(api.checkStatus)
       .then(res => res.json())
