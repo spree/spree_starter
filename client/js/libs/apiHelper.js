@@ -1,3 +1,4 @@
+global.fetch = undefined
 require('isomorphic-fetch')
 
 export function checkStatus(response) {
