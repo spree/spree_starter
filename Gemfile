@@ -51,6 +51,7 @@ group :development, :test do
   gem 'bullet'
 
   gem 'listen'
+  gem 'rubocop', require: false
 end
 
 # Access an IRB console on exception pages or by using <%= console %> in views
