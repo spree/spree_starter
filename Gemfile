@@ -67,7 +67,7 @@ group :test do
 end
 
 # Heroku fix
-group :production, :staging do
+group :production do
   gem 'rack-timeout'
   gem 'font_assets'
 end
