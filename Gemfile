@@ -43,7 +43,6 @@ group :development, :test do
   gem 'rspec-activemodel-mocks'
   gem 'rspec-activejob'
   gem 'spring-commands-rspec'
-  gem 'shoulda-matchers', require: false
   gem 'factory_bot'
   gem 'factory_bot_rails'
   gem 'database_cleaner'
