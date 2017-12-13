@@ -44,8 +44,8 @@ group :development, :test do
   gem 'rspec-activejob'
   gem 'spring-commands-rspec'
   gem 'shoulda-matchers', require: false
-  gem 'factory_girl'
-  gem 'factory_girl_rails'
+  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'ffaker'
   gem 'bullet'
