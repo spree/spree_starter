@@ -5,12 +5,21 @@ extends: eslint-config-airbnb
 
 plugins:
   - react
+  - import
+
+settings:
+  import/resolver:
+    webpack:
+      config: 'webpack.client.base.config.js'
 
 globals:
   __DEBUG_SERVER_ERRORS__: true
   __SERVER_ERRORS__: true
   Routes: true
   I18n: true
+  analytics: true
+  ga: true
+  window: true
 
 env:
   browser: true
@@ -25,10 +34,27 @@ rules:
   ### Stylistic issues
   indent: [1, 2, { SwitchCase: 1, VariableDeclarator: 2 }]
   id-length: [1, { min: 2, exceptions: [_, e, i, k, v] }]
-  semi: [2, "never"]
-  comma-style: [2, "last"]
-  comma-dangle: [2, "never"]
-  max-len: [1, 120, 2]
+  semi: [1, never]
+  comma-style: [1, last]
+  comma-dangle: [1, never]
+  object-curly-newline: 1
+  object-curly-spacing: 1
+  prefer-destructuring: 0
+  global-require: 1
+
+  prefer-template: 1
+  function-paren-newline: 1
+  no-mixed-operators: 1
+  max-len: [1, 150, 2]
+  arrow-parens: 1
+  no-else-return: 1
+
+  import/prefer-default-export: 0
+  import/first: 1
+  import/extensions: 0
+  import/no-extraneous-dependencies: 0 # this is messed with our client directory setup
+  import/no-unresolved: 0 # same as previous
+  impot/export: 0
 
   ### React
   jsx-quotes: [1, prefer-double]
@@ -46,9 +72,13 @@ rules:
   react/no-did-update-set-state: 0
   react/no-multi-comp: 2
   react/no-unknown-property: 2
-  react/prop-types: 1
+  react/prop-types: 2
   react/react-in-jsx-scope: 2
-  react/require-extension: [1, { extensions: [.js, .jsx] }]
+  react/jsx-filename-extension: [1, { extensions: [.js, .jsx] }]
   react/self-closing-comp: 2
   react/sort-comp: 0                                                            # Should be 1. `statics` should be on top.
-  react/wrap-multilines: 2
+  react/jsx-wrap-multilines: 2
+  react/prefer-stateless-function: 1
+  react/jsx-max-props-per-line: 1
+  react/forbid-prop-types: 0
+  react/require-default-props: 1
