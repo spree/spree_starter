@@ -5,7 +5,7 @@ ruby '2.4.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.1.4'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.18'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -73,7 +73,7 @@ end
 
 # file uploades & assets
 gem 'paperclip' # Image Rescaling for aws
-gem 'aws-sdk', '>= 2.0'
+gem 'aws-sdk-s3'
 gem 'fog-aws'
 
 # caching
