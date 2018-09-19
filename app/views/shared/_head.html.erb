@@ -4,14 +4,10 @@
 </title>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport"/>
+
 <%= raw(meta_data_tags) %>
 <%= canonical_tag(current_store.url) %>
-<%= favicon_link_tag 'favicon.ico' %>
 <%= csrf_meta_tags %>
 <%= render 'spree/shared/paths' %>
-<%= env_stylesheet_link_tag 'application.prod', 'application.dev', media: 'all' %>
 <%= render partial: 'shared/rollbar', formats: :js unless Rails.env.development? %>
-<%= env_javascript_include_tag nil, 'http://localhost:3500/vendor-bundle.js' %>
-<%= env_javascript_include_tag nil, 'http://localhost:3500/app-bundle.js' %>
-<%= env_javascript_include_tag 'application.prod', 'application.dev' %>
 <%= yield :head %>

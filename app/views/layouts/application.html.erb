@@ -6,9 +6,9 @@
   </head>
   <body class='<%= "#{controller_name}" + " " + "#{controller_name}" + "-" + "#{action_name}" %>'>
     <%= render 'spree/shared/google_analytics.js' %>
-    <%= react_component("HelloWorld", { greeting: "Hello from react-rails." }) %>
     <%= yield %>
 
+    <div id='root'>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
