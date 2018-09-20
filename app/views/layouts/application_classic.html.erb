@@ -5,7 +5,6 @@
   </head>
   <body class='<%= "#{controller_name}" + " " + "#{controller_name}" + "-" + "#{action_name}" %>'>
     <%= render 'spree/shared/google_analytics.js' %>
-    <%= react_component 'HeaderProvider', {}, { prerender: false } %>
     <main id="page">
       <div class="container-fluid">
         <%= flash_messages %>
@@ -14,9 +13,5 @@
         <%= yield %>
       </div>
     </main>
-    <%= react_component 'Footer', {}, { prerender: false } %>
-    <% if Rails.env.development? %>
-      <%= react_component 'DevToolsProvider' %>
-    <% end %>
   </body>
 </html>

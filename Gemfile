@@ -90,7 +90,8 @@ gem 'newrelic_rpm'
 gem 'sidekiq'
 
 # front end
-gem 'react-rails', '~> 1.10'
+gem 'react-rails', '~> 2.4.7'
+gem 'webpacker', '~> 3.5'
 gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 

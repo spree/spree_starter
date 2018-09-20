@@ -1,0 +1,17 @@
+import actionTypes from 'constants'
+
+export const initialState = {
+  name: ''
+}
+
+export default function (state = initialState, action) {
+  switch (action.type) {
+    case actionTypes.SAMPLE_ACTION:
+      return {
+        ...state,
+        name: action.payload
+      }
+    default:
+      return state
+  }
+}
