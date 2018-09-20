@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { connect } from 'react-redux'
 import { sampleSubmit } from 'actions/index'
 
+import styles from '../styles'
+
 class HelloWorld extends Component {
   constructor (props) {
     super(props)
@@ -30,7 +32,7 @@ class HelloWorld extends Component {
   render () {
     return (
       <React.Fragment>
-        <div>
+        <div className={styles.container}>
           Greeting: {this.props.name}
         </div>
         <input type='text'
