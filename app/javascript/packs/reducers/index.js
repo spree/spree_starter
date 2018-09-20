@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux'
 
-import sampleReducer from './sampleReducer'
+import sampleReducer, { initialState as sampleReducerInitialState } from './sampleReducer'
+
+export const initialStates = {
+  sampleReducer: sampleReducerInitialState
+}
 
 const rootReducer = combineReducers({
   sampleReducer
