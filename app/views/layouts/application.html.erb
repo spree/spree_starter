@@ -8,8 +8,9 @@
     <%= render 'spree/shared/google_analytics.js' %>
     <%= yield %>
 
-    <%= react_component 'HelloWorldContainer', { name: 'SOMEONE' }, { prerender: false } %>
+    <%= react_component 'Store', { sampleReducer: { name: 'SOMEONE' } }, { prerender: false } %>
+    <%= react_component 'HelloWorldProvider', {}, { prerender: false } %>
     <%= javascript_pack_tag 'application' %>
-    <%= stylesheet_pack_tag 'styles' %>
+    <%= stylesheet_pack_tag 'application' %>
   </body>
 </html>

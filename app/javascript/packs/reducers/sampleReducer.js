@@ -6,7 +6,7 @@ export const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case actionTypes.SAMPLE_ACTION:
+    case actionTypes.CHANGE_NAME:
       return {
         ...state,
         name: action.payload

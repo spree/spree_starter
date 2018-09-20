@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { connect } from 'react-redux'
 import { sampleSubmit } from 'actions/index'
 
-import styles from '../styles'
+import styles from '../styles/hello-world'
 
 class HelloWorld extends Component {
   constructor (props) {
