@@ -10,7 +10,7 @@ import '../application.scss'
 
 console.log('Hello World from Webpacker')
 
-// Support component names which are placed under components alias folder name
-const componentRequireContext = require.context('components', true)
+// Support component names which are placed under containers alias folder name
+const componentRequireContext = require.context('containers', true)
 const ReactRailsUJS = require('react_ujs')
 ReactRailsUJS.useContext(componentRequireContext)

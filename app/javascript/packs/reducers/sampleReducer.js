@@ -1,7 +1,7 @@
 import actionTypes from 'constants'
 
-const initialState = {
-  name: 'Arsen'
+export const initialState = {
+  name: ''
 }
 
 export default function (state = initialState, action) {
