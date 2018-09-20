@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_19_164437) do
+ActiveRecord::Schema.define(version: 2018_09_20_084316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -975,7 +975,6 @@ ActiveRecord::Schema.define(version: 2018_09_19_164437) do
   end
 
   create_table "spree_trackers", id: :serial, force: :cascade do |t|
-    t.string "environment"
     t.string "analytics_id"
     t.boolean "active", default: true
     t.datetime "created_at", null: false
