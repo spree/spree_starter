@@ -15,6 +15,8 @@ gem 'coffee-rails'
 
 gem 'mini_racer'
 
+gem 'bootsnap', require: false
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -72,9 +74,7 @@ group :production do
 end
 
 # file uploades & assets
-gem 'paperclip' # Image Rescaling for aws
-gem 'aws-sdk-s3'
-gem 'fog-aws'
+gem 'aws-sdk-s3', require: false
 
 # caching
 gem 'dalli' # memcache
