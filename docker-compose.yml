@@ -1,7 +1,7 @@
 version: '3'
 services:
   postgres:
-    image: postgres:9.6-alpine
+    image: postgres:10.0-alpine
     ports:
       - 5432:5432
   redis:

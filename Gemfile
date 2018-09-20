@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.1.4'
+gem 'rails', '5.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use SCSS for stylesheets
@@ -14,6 +14,8 @@ gem 'uglifier'
 gem 'coffee-rails'
 
 gem 'mini_racer'
+
+gem 'bootsnap', require: false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -72,9 +74,7 @@ group :production do
 end
 
 # file uploades & assets
-gem 'paperclip' # Image Rescaling for aws
-gem 'aws-sdk-s3'
-gem 'fog-aws'
+gem 'aws-sdk-s3', require: false
 
 # caching
 gem 'dalli' # memcache
@@ -95,6 +95,7 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', '~> 3.4'
+gem 'spree', '~> 3.6'
 gem 'spree_gateway'
 gem 'spree_auth_devise'
+gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
