@@ -10,6 +10,6 @@
 console.log('Hello World from Webpacker')
 
 // Support component names which are placed under containers alias folder name
-const componentRequireContext = require.context('containers', true)
+const componentRequireContext = require.context('providers', true)
 const ReactRailsUJS = require('react_ujs')
 ReactRailsUJS.useContext(componentRequireContext)

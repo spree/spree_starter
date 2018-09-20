@@ -18,7 +18,7 @@ module.exports = {
       reducers: path.join(process.cwd(), 'app/javascript/packs', 'reducers'),
       src: path.join(process.cwd(), 'app/javascript/packs', 'src'),
       store: path.join(process.cwd(), 'app/javascript/packs', 'store'),
-      containers: path.join(process.cwd(), 'app/javascript/packs', 'containers')
+      providers: path.join(process.cwd(), 'app/javascript/packs', 'providers')
     }
   }
 }
