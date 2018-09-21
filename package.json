@@ -4,22 +4,11 @@
   "description": "Spark Solutions starter kit",
   "main": "server-express.js",
   "engines": {
-    "node": "8.2.1",
-    "npm": "5.3.0"
+    "node": "8.11.2",
+    "npm": "5.3.0",
+    "yarn": "1.9.4"
   },
-  "scripts": {
-    "postinstall": "cd client && npm install",
-    "test": "npm run test:client",
-    "test:client": "(cd client && npm run test --silent)",
-    "lint": "(cd client && npm run lint --silent)",
-    "build:clean": "rm app/assets/webpack/*",
-    "build:client": "(cd client && npm run build:client --silent)",
-    "build:server": "(cd client && npm run build:server --silent)",
-    "build:dev:client": "(cd client && npm run build:dev:client --silent)",
-    "build:dev:server": "(cd client && npm run build:dev:server --silent)",
-    "build:test:client": "(cd client && npm run build:test:client --silent)",
-    "start": "(cd client && npm run start --silent)"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/sparks-solutions/spark-starter-kit.git"
@@ -36,5 +25,24 @@
     "url": "https://github.com/sparks-solutions/spark-starter-kit/issues"
   },
   "homepage": "https://github.com/sparks-solutions/spark-starter-kit",
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "caniuse-lite": "^1.0.30000885",
+    "mirror-creator": "^1.1.0",
+    "node-sass": "^4.9.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-redux": "^5.0.7",
+    "react_ujs": "^2.4.4",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "webpack-merge": "^4.1.4"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
+  }
 }
