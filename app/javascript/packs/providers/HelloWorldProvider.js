@@ -6,11 +6,16 @@ import store from 'providers/Store'
 import HelloWorld from 'components/HelloWorld'
 
 const HelloWorldProvider = (props) => {
-  return (
-    <Provider store={getStore()}>
-      <HelloWorld />
-    </Provider>
-  )
+  // makes sure store is initialized before component
+  if (getStore()) {
+    return (
+      <Provider store={getStore()}>
+        <HelloWorld />
+      </Provider>
+    )
+  } else {
+    return <span />
+  }
 }
 
 export default HelloWorldProvider

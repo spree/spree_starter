@@ -1,1 +1,1 @@
-docker-compose up -d && killall -9 node; foreman start -f Procfile.dev
+docker-compose up -d && killall -9 node; rails s

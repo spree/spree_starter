@@ -8,7 +8,7 @@ let store = null
 export const getStore = () => store
 
 const Store = (props) => {
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+  const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
   const middlewares = [thunkMiddleware]
 
   if (process.env.NODE_ENV === 'development') {
