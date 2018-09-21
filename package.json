@@ -1,0 +1,8 @@
+{
+  "name": "spark-starter-kit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:spark-solutions/spark-starter-kit.git",
+  "author": "Spark Solutions <we@sparksolutions.co>",
+  "license": "MIT"
+}
