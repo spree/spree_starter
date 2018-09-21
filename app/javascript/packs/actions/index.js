@@ -1,5 +1,5 @@
 import actionTypes from 'constants'
 
-export const sampleSubmit = (name) => (
+export const nameSubmit = (name) => (
   { type: actionTypes.CHANGE_NAME, payload: name }
 )

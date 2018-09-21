@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { connect } from 'react-redux'
-import { sampleSubmit } from 'actions/index'
+import { nameSubmit } from 'actions/index'
 
-import styles from '../styles/hello-world'
+import '../styles/hello-world'
 
 class HelloWorld extends Component {
   constructor (props) {
@@ -26,29 +26,38 @@ class HelloWorld extends Component {
   onClickSubmit (e) {
     e.preventDefault()
 
-    this.props.sampleSubmit(this.state.name)
+    this.props.nameSubmit(this.state.name)
   }
 
   render () {
     return (
       <React.Fragment>
-        <div className={styles.container}>
-          Greeting: {this.props.name}
+        <div className='hello-world-text'>
+          <div>
+            I'm sample react/redux component
+          </div>
+          <div>
+            Greetings: {this.props.name}
+          </div>
         </div>
-        <input type='text'
-               value={this.state.name}
-               onChange={this.handleInputChange}
-        />
-        <button onClick={this.onClickSubmit}>
-          save name
-        </button>
+        <form onSubmit={this.onClickSubmit} className='hello-world-form'>
+          <input type='text'
+                 className='hello-world-input'
+                 value={this.state.name}
+                 onChange={this.handleInputChange}
+          />
+          <button onClick={this.onClickSubmit} className='hello-world-button'>
+            save name
+          </button>
+        </form>
       </React.Fragment>
     )
   }
 }
 
 HelloWorld.propTypes = {
-  greeting: PropTypes.string
+  name: PropTypes.string,
+  nameSubmit: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -56,7 +65,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  sampleSubmit
+  nameSubmit
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HelloWorld)
