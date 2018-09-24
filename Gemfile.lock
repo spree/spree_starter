@@ -33,11 +33,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_model_serializers (0.10.7)
-      actionpack (>= 4.1, < 6)
-      activemodel (>= 4.1, < 6)
-      case_transform (>= 0.2)
-      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (5.2.1)
       activesupport (= 5.2.1)
       globalid (>= 0.3.6)
@@ -84,7 +79,7 @@ GEM
     aws-sdk-kms (1.9.0)
       aws-sdk-core (~> 3, >= 3.26.0)
       aws-sigv4 (~> 1.0)
-    aws-sdk-s3 (1.19.0)
+    aws-sdk-s3 (1.20.0)
       aws-sdk-core (~> 3, >= 3.26.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.0)
@@ -126,8 +121,6 @@ GEM
       launchy
     carmen (1.0.2)
       activesupport (>= 3.0.0)
-    case_transform (0.2)
-      activesupport
     cldr-plurals-runtime-rb (1.0.1)
     climate_control (0.2.0)
     codeclimate-test-reporter (1.0.8)
@@ -201,7 +194,6 @@ GEM
       railties (>= 3.2)
       sprockets-rails
     json (2.1.0)
-    jsonapi-renderer (0.2.0)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.0.1)
@@ -376,7 +368,7 @@ GEM
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     safe_yaml (1.0.4)
-    sass (3.5.7)
+    sass (3.6.0)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -522,7 +514,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers (~> 0.10.2)
   awesome_print
   aws-sdk-s3
   better_errors
