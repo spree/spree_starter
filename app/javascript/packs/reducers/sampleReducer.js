@@ -1,10 +1,10 @@
-import actionTypes from 'constants'
+import actionTypes from 'constants/index'
 
 export const initialState = {
   name: ''
 }
 
-export default function (state = initialState, action) {
+export default function(state = initialState, action) {
   switch (action.type) {
     case actionTypes.CHANGE_NAME:
       return {
