@@ -1,6 +1,4 @@
 Spree::StoreController.class_eval do
-  layout 'application_classic'
-
   helper Spree::Api::ApiHelpers
   include Spree::ApiFrontendFixConcern
 

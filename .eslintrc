@@ -7,11 +7,6 @@ plugins:
   - react
   - import
 
-settings:
-  import/resolver:
-    webpack:
-      config: 'webpack.client.base.config.js'
-
 globals:
   __DEBUG_SERVER_ERRORS__: true
   __SERVER_ERRORS__: true
