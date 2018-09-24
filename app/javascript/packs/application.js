@@ -8,7 +8,7 @@
 // layout file, like app/views/layouts/application.html.erb
 
 // Support component names which are placed under containers alias folder name
-const componentRequireContext = require.context('providers', true)
 import ReactRailsUJS from 'react_ujs'
+const componentRequireContext = require.context('providers', true)
 
 ReactRailsUJS.useContext(componentRequireContext)
