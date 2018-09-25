@@ -1,64 +1,142 @@
 version: 2
 jobs:
-  build: # runs not using Workflows must have a `build` job as entry point
-    working_directory: ~/spark-starter-kit # directory where steps will run
-    docker: # run the steps with Docker
-      - image: circleci/ruby:2.5.1-node-browsers # ...with this image as the primary container; this is where all `steps` will run
-        environment: # environment variables for primary container
-          PGHOST: localhost
-          PGUSER: postgres
-          BUNDLE_JOBS: 4
-          BUNDLE_RETRY: 3
-          RAILS_ENV: test
-      - image: circleci/postgres:10.0-alpine
-        environment:
-          POSTGRES_USER: postgres
-          POSTGRES_DB: spark-starter-kit_test
-    steps: # a collection of executable commands
-      - checkout # special step to check out source code to working directory
-
+  install_ruby_dependencies:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    working_directory: ~/spark-starter-kit
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - ruby-dependencies-v6-{{ checksum "Gemfile.lock" }}
       - run:
           name: Which bundler?
           command: bundle -v
-
-      # bundle install
-      - restore_cache:
-          keys:
-            - spark-starter-kit-{{ checksum "Gemfile.lock" }}
-
       - run:
           name: Bundle Install
           command: |
-            bundle check || bundle install --path vendor/bundle --deployment
-
+            bundle check || bundle install --deployment
       - save_cache:
-          key: spark-starter-kit-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
+          key: ruby-dependencies-v6-{{ checksum "Gemfile.lock" }}
 
-      # yarn install
+  install_javascript_dependencies:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    working_directory: ~/spark-starter-kit
+    steps:
+      - checkout
       - restore_cache:
           keys:
-            - javascript-cache-v1-{{ checksum "package.json" }}
-
+            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
       - run:
+          name: Install Yarn
           command: yarn install --ignore-engines
-
       - save_cache:
-          key: javascript-cache-v1-{{ checksum "package.json" }}
           paths:
             - node_modules
+          key: javascript-dependencies-v1-{{ checksum "yarn.lock" }}
 
-      # setup db
+  run_rubocop:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    working_directory: ~/spark-starter-kit
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - ruby-dependencies-v6-{{ checksum "Gemfile.lock" }}
+      - restore_cache:
+          keys:
+            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
+      - run:
+          name: Set bundle path
+          command: bundle config --local path vendor/bundle
+      - run:
+          name: Rubocop Check
+          command: bundle exec rubocop || true
+
+  run_reek:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    working_directory: ~/spark-starter-kit
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - ruby-dependencies-v6-{{ checksum "Gemfile.lock" }}
+      - restore_cache:
+          keys:
+            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
+      - run:
+          name: Set bundle path
+          command: bundle config --local path vendor/bundle
+      - run:
+          name: Reek Check
+          command: bundle exec reek || true
+
+  run_brakeman:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    working_directory: ~/spark-starter-kit
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - ruby-dependencies-v6-{{ checksum "Gemfile.lock" }}
+      - restore_cache:
+          keys:
+            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
+      - run:
+          name: Set bundle path
+          command: bundle config --local path vendor/bundle
+      - run:
+          name: Brakeman Check
+          command: bundle exec brakeman --skip-files vendor/bundle/
+
+  run_tests:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+      - image: postgres:10.4
+    working_directory: ~/spark-starter-kit
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - ruby-dependencies-v6-{{ checksum "Gemfile.lock" }}
+      - restore_cache:
+          keys:
+            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
+      - run:
+          name: Set bundle path
+          command: bundle config --local path vendor/bundle
       - run:
           name: Wait for DB
-          command: dockerize -wait tcp://localhost:5432 -timeout 1m
-
+          command: dockerize -wait tcp://localhost:5432
       - run:
-          name: Setup databse
-          command: bundle exec rake db:schema:load --trace
-
-      # rspec
+          name: Setup DB
+          command: bundle exec rails db:create db:schema:load
       - run:
-          name: Run rspec
+          name: Run Rspec
           command: bundle exec rspec
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - install_ruby_dependencies
+      - install_javascript_dependencies
+      - run_rubocop:
+          requires:
+            - install_ruby_dependencies
+      - run_reek:
+          requires:
+            - install_ruby_dependencies
+      - run_brakeman:
+          requires:
+            - install_ruby_dependencies
+      - run_tests:
+          requires:
+            - install_ruby_dependencies
+            - install_javascript_dependencies

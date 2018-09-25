@@ -10,11 +10,12 @@ AllCops:
 
   Exclude:
     - db/schema.rb
-    - db/migrate/*.spree.rb
-    - db/migrate/*.spree_auth.rb
-    - db/migrate/*.spree_gateway.rb
-    - db/migrate/*.spree_api.rb
-    - client
+    - db/migrate/**/*
+    - vendor/bundle/**/*
+    - app/javascript/**/*
+    - node_modules/**/*
+    - config/**/*
+    - bin/**/*
 
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
