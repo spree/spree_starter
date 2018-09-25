@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Spark Solutions starter kit",
   "main": "index.js",
-  "repository": "git@github.com:spark-solutions/spark-starter-kit.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sparks-solutions/spark-starter-kit.git"
+  },
   "author": "Spark Solutions <we@sparksolutions.co>",
   "license": "MIT",
   "engines": {
@@ -12,10 +15,6 @@
     "yarn": "1.9.4"
   },
   "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sparks-solutions/spark-starter-kit.git"
-  },
   "keywords": [
     "react",
     "tutorial",
@@ -57,7 +56,8 @@
     "eslint-plugin-standard": "^4.0.0",
     "prettier": "^1.14.3",
     "redux-logger": "^3.0.6",
-    "standard-react": "^4.0.0"
+    "standard-react": "^4.0.0",
+    "webpack-dev-server": "2.11.2"
   },
   "peerDependencies": {
     "caniuse-lite": "^1.0.30000887"
