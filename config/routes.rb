@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   Spree::Core::Engine.routes.draw do
     get '/account_link' => 'store#account_link'
     get '/authenticity_token' => 'store#authenticity_token'
+    get '/react_sample' => 'react_sample#index'
   end
 
   # sidekiq web UI
