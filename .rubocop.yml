@@ -6,7 +6,7 @@ AllCops:
   # line option.
   UseCache: true
 
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.5.1
 
   Exclude:
     - db/schema.rb
@@ -50,7 +50,7 @@ BlockLength:
     - 'spec/factories/**/*'
 
 Metrics/AbcSize:
- Max: 45
+  Max: 45
 
 Style/StringLiterals:
   EnforcedStyle: single_quotes
@@ -74,7 +74,10 @@ Style/SymbolArray:
 Style/GuardClause:
   Enabled: false
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
   Enabled: false
 
 Style/BarePercentLiterals:

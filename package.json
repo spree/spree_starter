@@ -1,8 +1,65 @@
 {
   "name": "spark-starter-kit",
   "version": "1.0.0",
+  "description": "Spark Solutions starter kit",
   "main": "index.js",
-  "repository": "git@github.com:spark-solutions/spark-starter-kit.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sparks-solutions/spark-starter-kit.git"
+  },
   "author": "Spark Solutions <we@sparksolutions.co>",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": "8.11.2",
+    "npm": "5.3.0",
+    "yarn": "1.9.4"
+  },
+  "scripts": {},
+  "keywords": [
+    "react",
+    "tutorial",
+    "comment",
+    "example"
+  ],
+  "bugs": {
+    "url": "https://github.com/sparks-solutions/spark-starter-kit/issues"
+  },
+  "homepage": "https://github.com/sparks-solutions/spark-starter-kit",
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "mirror-creator": "^1.1.0",
+    "node-sass": "^4.9.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-redux": "^5.0.7",
+    "react_ujs": "^2.4.4",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "webpack-merge": "^4.1.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.6.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-jsx": "^6.0.2",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "prettier": "^1.14.3",
+    "redux-logger": "^3.0.6",
+    "standard-react": "^4.0.0",
+    "webpack-dev-server": "2.11.2"
+  },
+  "peerDependencies": {
+    "caniuse-lite": "^1.0.30000887"
+  }
 }
