@@ -1,0 +1,7 @@
+detectors:
+  IrresponsibleModule:
+    enabled: false # disable class/module comments requirement
+
+exclude_paths:
+  - vendor/bundle
+  - db/migrate

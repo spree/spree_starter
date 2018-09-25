@@ -131,7 +131,7 @@ GEM
     awesome_print (1.8.0)
     aws-eventstream (1.0.1)
     aws-partitions (1.104.0)
-    aws-sdk-core (3.27.0)
+    aws-sdk-core (3.27.1)
       aws-eventstream (~> 1.0)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.0)
@@ -144,6 +144,10 @@ GEM
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.0)
     aws-sigv4 (1.0.3)
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -161,6 +165,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    brakeman (4.3.1)
     builder (3.2.3)
     bullet (5.7.6)
       activesupport (>= 3.0.0)
@@ -169,7 +174,7 @@ GEM
     cancancan (2.3.0)
     canonical-rails (0.2.4)
       rails (>= 4.1, < 5.3)
-    capybara (3.7.2)
+    capybara (3.8.1)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -183,6 +188,8 @@ GEM
       activesupport (>= 3.0.0)
     cldr-plurals-runtime-rb (1.0.1)
     climate_control (0.2.0)
+    codeclimate-engine-rb (0.4.1)
+      virtus (~> 1.0)
     codeclimate-test-reporter (1.0.8)
       simplecov (<= 0.13)
     coderay (1.1.2)
@@ -201,6 +208,8 @@ GEM
       polyglot
       rails (>= 4.1)
       rainbow (>= 2.1.0)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
     devise (4.4.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -239,6 +248,7 @@ GEM
       concurrent-ruby (~> 1.0)
     i18n-js (3.0.11)
       i18n (>= 0.6.6, < 2)
+    ice_nine (0.11.2)
     jaro_winkler (1.5.1)
     jmespath (1.4.0)
     jquery-rails (4.3.3)
@@ -263,6 +273,7 @@ GEM
       activerecord
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
+    kwalify (0.7.2)
     launchy (2.4.3)
       addressable (~> 2.3)
     libv8 (6.7.288.46.1)
@@ -285,7 +296,7 @@ GEM
     mini_magick (4.8.0)
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
-    mini_racer (0.2.0)
+    mini_racer (0.2.1)
       libv8 (>= 6.3)
     minitest (5.11.3)
     monetize (1.9.0)
@@ -387,6 +398,11 @@ GEM
       railties (>= 3.2)
       tilt
     redis (4.0.2)
+    reek (5.1.0)
+      codeclimate-engine-rb (~> 0.4.0)
+      kwalify (~> 0.7.0)
+      parser (>= 2.5.0.0, < 2.6, != 2.5.1.1)
+      rainbow (>= 2.0, < 4.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -416,7 +432,7 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
-    rubocop (0.59.1)
+    rubocop (0.59.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -500,6 +516,11 @@ GEM
       activesupport (>= 3.2)
       railties (>= 3.2)
       tzinfo
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.7.0)
@@ -530,6 +551,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootsnap
+  brakeman
   bullet
   capybara
   capybara-screenshot
@@ -557,10 +579,11 @@ DEPENDENCIES
   rack-timeout
   rails (= 5.2.1)
   react-rails (~> 2.4.7)
+  reek
   rollbar
   rspec-activejob
   rspec-activemodel-mocks
-  rspec-rails (~> 3.0)
+  rspec-rails (~> 3.8.0)
   rubocop
   sass-rails
   sidekiq

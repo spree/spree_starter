@@ -36,7 +36,7 @@ group :development, :test do
   gem 'spring'
 
   # testing
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 3.8.0'
   gem 'rspec-activemodel-mocks'
   gem 'rspec-activejob'
   gem 'spring-commands-rspec'
@@ -48,6 +48,9 @@ group :development, :test do
 
   gem 'listen'
   gem 'rubocop', require: false
+
+  gem 'reek'
+  gem 'brakeman'
 end
 
 # Access an IRB console on exception pages or by using <%= console %> in views
