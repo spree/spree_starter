@@ -32,7 +32,7 @@ jobs:
             - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
       - run:
           name: Install Yarn
-          command: yarn install --ignore-engines
+          command: yarn install --ignore-engines --frozen-lockfile --ignore-scripts
       - save_cache:
           paths:
             - node_modules

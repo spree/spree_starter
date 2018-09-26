@@ -44,13 +44,20 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'ffaker'
-  gem 'bullet'
 
   gem 'listen'
   gem 'rubocop', require: false
 
+  # code analyzers
   gem 'reek'
   gem 'brakeman'
+
+  # monitoring
+  gem 'bullet'
+  gem 'rack-mini-profiler', require: false
+  gem 'flamegraph'
+  gem 'stackprof'
+  gem 'memory_profiler'
 end
 
 # Access an IRB console on exception pages or by using <%= console %> in views
