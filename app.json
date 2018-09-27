@@ -77,6 +77,18 @@
     },
     "SENDGRID_USERNAME": {
       "required": true
+    },
+    "BUCKETEER_AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "BUCKETEER_AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "BUCKETEER_AWS_REGION": {
+      "required": true
+    },
+    "BUCKETEER_BUCKET_NAME": {
+      "required": true
     }
   },
   "formation": {
@@ -88,7 +100,8 @@
     "heroku-postgresql",
     "rediscloud",
     "rollbar",
-    "sendgrid"
+    "sendgrid",
+    "bucketeer"
   ],
   "buildpacks": [
     {
