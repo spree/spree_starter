@@ -10,8 +10,6 @@ gem 'pg', '~> 0.18'
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails'
 
 gem 'mini_racer'
 
@@ -93,7 +91,7 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', '~> 3.6'
+gem 'spree', '~> 3.7.0.alpha', github: 'spree/spree', branch: 'master'
 gem 'spree_gateway'
 gem 'spree_auth_devise'
 gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'

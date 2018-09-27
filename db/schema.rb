@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_20_101028) do
+ActiveRecord::Schema.define(version: 2018_09_27_142726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -228,6 +228,47 @@ ActiveRecord::Schema.define(version: 2018_09_20_101028) do
     t.index ["source_id", "source_type"], name: "index_spree_log_entries_on_source_id_and_source_type"
   end
 
+  create_table "spree_oauth_access_grants", force: :cascade do |t|
+    t.integer "resource_owner_id", null: false
+    t.bigint "application_id", null: false
+    t.string "token", null: false
+    t.integer "expires_in", null: false
+    t.text "redirect_uri", null: false
+    t.datetime "created_at", null: false
+    t.datetime "revoked_at"
+    t.string "scopes"
+    t.index ["application_id"], name: "index_spree_oauth_access_grants_on_application_id"
+    t.index ["token"], name: "index_spree_oauth_access_grants_on_token", unique: true
+  end
+
+  create_table "spree_oauth_access_tokens", force: :cascade do |t|
+    t.integer "resource_owner_id"
+    t.bigint "application_id"
+    t.string "token", null: false
+    t.string "refresh_token"
+    t.integer "expires_in"
+    t.datetime "revoked_at"
+    t.datetime "created_at", null: false
+    t.string "scopes"
+    t.string "previous_refresh_token", default: "", null: false
+    t.index ["application_id"], name: "index_spree_oauth_access_tokens_on_application_id"
+    t.index ["refresh_token"], name: "index_spree_oauth_access_tokens_on_refresh_token", unique: true
+    t.index ["resource_owner_id"], name: "index_spree_oauth_access_tokens_on_resource_owner_id"
+    t.index ["token"], name: "index_spree_oauth_access_tokens_on_token", unique: true
+  end
+
+  create_table "spree_oauth_applications", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "uid", null: false
+    t.string "secret", null: false
+    t.text "redirect_uri", null: false
+    t.string "scopes", default: "", null: false
+    t.boolean "confidential", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["uid"], name: "index_spree_oauth_applications_on_uid", unique: true
+  end
+
   create_table "spree_option_type_prototypes", id: :serial, force: :cascade do |t|
     t.integer "prototype_id"
     t.integer "option_type_id"
@@ -304,7 +345,7 @@ ActiveRecord::Schema.define(version: 2018_09_20_101028) do
     t.datetime "approved_at"
     t.boolean "confirmation_delivered", default: false
     t.boolean "considered_risky", default: false
-    t.string "guest_token"
+    t.string "token"
     t.datetime "canceled_at"
     t.integer "canceler_id"
     t.integer "store_id"
@@ -318,10 +359,10 @@ ActiveRecord::Schema.define(version: 2018_09_20_101028) do
     t.index ["confirmation_delivered"], name: "index_spree_orders_on_confirmation_delivered"
     t.index ["considered_risky"], name: "index_spree_orders_on_considered_risky"
     t.index ["created_by_id"], name: "index_spree_orders_on_created_by_id"
-    t.index ["guest_token"], name: "index_spree_orders_on_guest_token"
     t.index ["number"], name: "index_spree_orders_on_number", unique: true
     t.index ["ship_address_id"], name: "index_spree_orders_on_ship_address_id"
     t.index ["store_id"], name: "index_spree_orders_on_store_id"
+    t.index ["token"], name: "index_spree_orders_on_token"
     t.index ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id"
   end
 
@@ -381,6 +422,8 @@ ActiveRecord::Schema.define(version: 2018_09_20_101028) do
     t.decimal "amount", precision: 10, scale: 2
     t.string "currency"
     t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["deleted_at"], name: "index_spree_prices_on_deleted_at"
     t.index ["variant_id", "currency"], name: "index_spree_prices_on_variant_id_and_currency"
     t.index ["variant_id"], name: "index_spree_prices_on_variant_id"
@@ -1090,4 +1133,6 @@ ActiveRecord::Schema.define(version: 2018_09_20_101028) do
     t.index ["kind"], name: "index_spree_zones_on_kind"
   end
 
+  add_foreign_key "spree_oauth_access_grants", "spree_oauth_applications", column: "application_id"
+  add_foreign_key "spree_oauth_access_tokens", "spree_oauth_applications", column: "application_id"
 end
