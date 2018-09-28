@@ -5,10 +5,8 @@
 This is a starting point for all Spree/Rails related projects at Spark Solutions, it contains:
  - Ruby on Rails
  - [Spree Commerce](https://spreecommerce.org)
- - [Webpack](https://webpack.github.io/) for asset bundling (JS/CSS/Sass/images) with hot reload
- - [Babel](https://babeljs.io/) 6 for EcmaScript 2015 / ES6 support
- - ReactJS with [Hot Reload](https://github.com/gaearon/babel-plugin-react-transform), [Redux](https://github.com/rackt/redux), [React-router](https://github.com/rackt/react-router) and [server side rendering](https://github.com/reactjs/react-rails#server-rendering) via therubyracer and [react-rails](https://github.com/reactjs/react-rails) gem
- - [SPA frontend](client/js/ClientApp.js) + [classic rails views](app/views/layouts/application_classic.html.erb) (simple layout switcher)
+ - Webpack via Webpacker gem
+ - React with Redux
 
 
 ## Installation
