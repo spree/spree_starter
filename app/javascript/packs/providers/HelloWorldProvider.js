@@ -1,4 +1,5 @@
 import React from 'react'
+import { hot } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import { getStore } from 'providers/Store'
 
@@ -17,4 +18,4 @@ const HelloWorldProvider = () => {
   }
 }
 
-export default HelloWorldProvider
+export default hot(module)(HelloWorldProvider)
