@@ -8,7 +8,9 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v6-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v6-{{ .Branch }}--{{ checksum "Gemfile.lock" }}-{{ checksum ".ruby-version" }}
+            - ruby-dependencies-v6-{{ .Branch }}--{{ checksum ".ruby-version" }}
+            - ruby-dependencies-v6-{{ checksum ".ruby-version" }}
       - run:
           name: Which bundler?
           command: bundle -v
@@ -19,7 +21,7 @@ jobs:
       - save_cache:
           paths:
             - vendor/bundle
-          key: ruby-dependencies-v6-{{ checksum "Gemfile.lock" }}
+          key: ruby-dependencies-v6-{{ .Branch }}--{{ checksum "Gemfile.lock" }}-{{ checksum ".ruby-version" }}
 
   install_javascript_dependencies:
     docker:
@@ -29,71 +31,19 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
+            - javascript-dependencies-v3-{{ .Branch }}--{{ checksum "yarn.lock" }}
+            - javascript-dependencies-v3-{{ checksum "yarn.lock" }}
+            - javascript-dependencies-v3
+      - run:
+          name: Which yarn?
+          command: yarn -v
       - run:
           name: Install Yarn
-          command: yarn install --ignore-engines --frozen-lockfile --ignore-scripts
+          command: yarn install --ignore-engines
       - save_cache:
           paths:
             - node_modules
-          key: javascript-dependencies-v1-{{ checksum "yarn.lock" }}
-
-  run_rubocop:
-    docker:
-      - image: circleci/ruby:2.5.1-node-browsers
-    working_directory: ~/spark-starter-kit
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - ruby-dependencies-v6-{{ checksum "Gemfile.lock" }}
-      - restore_cache:
-          keys:
-            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
-      - run:
-          name: Set bundle path
-          command: bundle config --local path vendor/bundle
-      - run:
-          name: Rubocop Check
-          command: bundle exec rubocop || true
-
-  run_reek:
-    docker:
-      - image: circleci/ruby:2.5.1-node-browsers
-    working_directory: ~/spark-starter-kit
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - ruby-dependencies-v6-{{ checksum "Gemfile.lock" }}
-      - restore_cache:
-          keys:
-            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
-      - run:
-          name: Set bundle path
-          command: bundle config --local path vendor/bundle
-      - run:
-          name: Reek Check
-          command: bundle exec reek || true
-
-  run_brakeman:
-    docker:
-      - image: circleci/ruby:2.5.1-node-browsers
-    working_directory: ~/spark-starter-kit
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - ruby-dependencies-v6-{{ checksum "Gemfile.lock" }}
-      - restore_cache:
-          keys:
-            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
-      - run:
-          name: Set bundle path
-          command: bundle config --local path vendor/bundle
-      - run:
-          name: Brakeman Check
-          command: bundle exec brakeman --skip-files vendor/bundle/
+          key: javascript-dependencies-v3-{{ .Branch }}--{{ checksum "yarn.lock" }}
 
   run_tests:
     docker:
@@ -104,10 +54,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v6-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v6-{{ .Branch }}--{{ checksum "Gemfile.lock" }}-{{ checksum ".ruby-version" }}
+            - ruby-dependencies-v6-{{ .Branch }}--{{ checksum ".ruby-version" }}
+            - ruby-dependencies-v6-{{ checksum ".ruby-version" }}
       - restore_cache:
           keys:
-            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
+            - javascript-dependencies-v3-{{ .Branch }}--{{ checksum "yarn.lock" }}
+            - javascript-dependencies-v3-{{ checksum "yarn.lock" }}
+            - javascript-dependencies-v3
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
@@ -127,15 +81,6 @@ workflows:
     jobs:
       - install_ruby_dependencies
       - install_javascript_dependencies
-      - run_rubocop:
-          requires:
-            - install_ruby_dependencies
-      - run_reek:
-          requires:
-            - install_ruby_dependencies
-      - run_brakeman:
-          requires:
-            - install_ruby_dependencies
       - run_tests:
           requires:
             - install_ruby_dependencies

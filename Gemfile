@@ -48,10 +48,6 @@ group :development, :test do
   gem 'listen'
   gem 'rubocop', require: false
 
-  # code analyzers
-  gem 'reek'
-  gem 'brakeman'
-
   # monitoring
   gem 'bullet'
   gem 'rack-mini-profiler', require: false
