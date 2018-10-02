@@ -96,3 +96,6 @@ gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
 
 # Sentry Client
 gem 'sentry-raven'
+
+# Scout Client
+gem 'scout_apm'
