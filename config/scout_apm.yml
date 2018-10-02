@@ -1,0 +1,7 @@
+common: &defaults
+  name: spark-starter-kit
+  key: <%= ENV['SCOUT_KEY'] %>
+  monitor: true
+
+production:
+  <<: *defaults

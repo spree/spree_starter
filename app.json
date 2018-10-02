@@ -30,12 +30,6 @@
     "MEMCACHEDCLOUD_USERNAME": {
       "required": true
     },
-    "NEW_RELIC_LICENSE_KEY": {
-      "required": true
-    },
-    "NEW_RELIC_LOG": {
-      "required": true
-    },
     "PAPERTRAIL_API_TOKEN": {
       "required": true
     },
@@ -55,12 +49,6 @@
       "required": true
     },
     "REDISCLOUD_URL": {
-      "required": true
-    },
-    "ROLLBAR_ACCESS_TOKEN": {
-      "required": true
-    },
-    "ROLLBAR_ENDPOINT": {
       "required": true
     },
     "S3_BUCKET_NAME": {
@@ -89,19 +77,31 @@
     },
     "BUCKETEER_BUCKET_NAME": {
       "required": true
+    },
+    "SENTRY_DSN": {
+      "required": true
+    },
+    "SCOUT_KEY": {
+      "required": true
+    },
+    "SCOUT_LOG_LEVEL": {
+      "required": true
+    },
+    "SCOUT_MONITOR": {
+      "required": true
     }
   },
   "formation": {
   },
   "addons": [
     "memcachedcloud",
-    "newrelic",
     "papertrail",
     "heroku-postgresql",
     "rediscloud",
-    "rollbar",
     "sendgrid",
-    "bucketeer"
+    "bucketeer",
+    "sentry",
+    "scout"
   ],
   "buildpacks": [
     {
