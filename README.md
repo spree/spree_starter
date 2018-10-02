@@ -1,6 +1,6 @@
 ## Spark Starter Kit
 
-[![Circle CI](https://circleci.com/gh/spark-solutions/spark-starter-kit.svg?style=svg)](https://circleci.com/gh/spark-solutions/spark-starter-kit) [![Code Climate](https://codeclimate.com/repos/567faf288109dc0e7000368c/badges/aaaf9d43a643ff68fddc/gpa.svg)](https://codeclimate.com/repos/567faf288109dc0e7000368c/feed) [![Test Coverage](https://codeclimate.com/repos/567faf288109dc0e7000368c/badges/aaaf9d43a643ff68fddc/coverage.svg)](https://codeclimate.com/repos/567faf288109dc0e7000368c/coverage)
+[![Circle CI](https://circleci.com/gh/spark-solutions/spark-starter-kit.svg?style=svg)](https://circleci.com/gh/spark-solutions/spark-starter-kit) [![Maintainability](https://api.codeclimate.com/v1/badges/d240686c99b3d35eb61b/maintainability)](https://codeclimate.com/github/spark-solutions/spark-starter-kit/maintainability)
 
 This is a starting point for all Spree/Rails related projects at Spark Solutions, it contains:
  - Ruby on Rails
