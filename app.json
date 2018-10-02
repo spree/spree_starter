@@ -57,12 +57,6 @@
     "REDISCLOUD_URL": {
       "required": true
     },
-    "ROLLBAR_ACCESS_TOKEN": {
-      "required": true
-    },
-    "ROLLBAR_ENDPOINT": {
-      "required": true
-    },
     "S3_BUCKET_NAME": {
       "required": true
     },
@@ -89,6 +83,9 @@
     },
     "BUCKETEER_BUCKET_NAME": {
       "required": true
+    },
+    "SENTRY_DSN": {
+      "required": true
     }
   },
   "formation": {
@@ -99,9 +96,9 @@
     "papertrail",
     "heroku-postgresql",
     "rediscloud",
-    "rollbar",
     "sendgrid",
-    "bucketeer"
+    "bucketeer",
+    "sentry"
   ],
   "buildpacks": [
     {
