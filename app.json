@@ -30,12 +30,6 @@
     "MEMCACHEDCLOUD_USERNAME": {
       "required": true
     },
-    "NEW_RELIC_LICENSE_KEY": {
-      "required": true
-    },
-    "NEW_RELIC_LOG": {
-      "required": true
-    },
     "PAPERTRAIL_API_TOKEN": {
       "required": true
     },
@@ -86,19 +80,28 @@
     },
     "SENTRY_DSN": {
       "required": true
+    },
+    "SCOUT_KEY": {
+      "required": true
+    },
+    "SCOUT_LOG_LEVEL": {
+      "required": true
+    },
+    "SCOUT_MONITOR": {
+      "required": true
     }
   },
   "formation": {
   },
   "addons": [
     "memcachedcloud",
-    "newrelic",
     "papertrail",
     "heroku-postgresql",
     "rediscloud",
     "sendgrid",
     "bucketeer",
-    "sentry"
+    "sentry",
+    "scout"
   ],
   "buildpacks": [
     {
