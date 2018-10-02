@@ -79,9 +79,6 @@ gem 'aws-sdk-s3', require: false
 gem 'dalli' # memcache
 gem 'rack-cache' # http caching
 
-# newrelic
-gem 'newrelic_rpm'
-
 # sidekiq
 gem 'sidekiq'
 
