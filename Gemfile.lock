@@ -149,10 +149,6 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.12)
-    better_errors (2.5.0)
-      coderay (>= 1.0.0)
-      erubi (>= 1.0.0)
-      rack (>= 0.9.0)
     bindex (0.5.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
@@ -532,8 +528,6 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   aws-sdk-s3
-  better_errors
-  binding_of_caller
   bootsnap
   bullet
   capybara
