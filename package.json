@@ -35,6 +35,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-hot-loader": "^4.3.11",
     "react-redux": "^5.0.7",
     "react_ujs": "^2.4.4",
     "redux": "^4.0.0",
@@ -55,7 +56,6 @@
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^4.0.0",
     "prettier": "^1.14.3",
-    "react-hot-loader": "^4.3.11",
     "redux-logger": "^3.0.6",
     "standard-react": "^4.0.0",
     "webpack-dev-server": "2.11.2"
