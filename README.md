@@ -68,6 +68,9 @@ heroku buildpacks:add heroku/nodejs
 ```
 heroku buildpacks:add heroku/ruby
 ```
+```
+heroku labs:enable runtime-dyno-metadata
+```
 
 ## License
 
