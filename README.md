@@ -8,12 +8,31 @@ This is a starting point for all Spree/Rails related projects at Spark Solutions
  - Webpack via Webpacker gem
  - React with Redux
 
-
 ## Installation
 
-You will need [docker](https://store.docker.com/editions/community/docker-ce-desktop-mac)
+### Install required tools and dependencies:
+ - [Docker](https://www.docker.com/community-edition#/download)
+ - [Homebrew](https://brew.sh/) if you're on OSX
+ - PostgreSQL client - `brew install postgresql` or `apt-get install postgresql-client`
+ - [RVM](https://rvm.io/) - `rvm use`
+ - [NVM](https://github.com/creationix/nvm) - `nvm use`
+ - Yarn - `npm install -g yarn`
+ - Bundler - `gem install bundler`
 
+### Stop local PostgreSQL Server
+
+#### OS X
 ```
+brew services stop postgresql
+```
+
+#### Linux
+```bash
+service postgresql stop
+```
+
+### Run setup script
+```bash
 bin/setup
 ```
 
