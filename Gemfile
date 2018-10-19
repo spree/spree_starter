@@ -57,8 +57,12 @@ group :development, :test do
   gem 'memory_profiler'
 end
 
-# Access an IRB console on exception pages or by using <%= console %> in views
-gem 'web-console', '~> 3.0', group: :development
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 3.0'
+
+  gem 'letter_opener'
+end
 
 group :test do
   gem 'capybara'
