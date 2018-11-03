@@ -15,6 +15,7 @@ pickle-email-*.html
 .idea
 .pt
 .ruby-gemset
+.env
 debug
 /spree
 /public/assets

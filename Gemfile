@@ -55,6 +55,8 @@ group :development, :test do
   gem 'flamegraph'
   gem 'stackprof'
   gem 'memory_profiler'
+
+  gem 'dotenv-rails'
 end
 
 group :development do
