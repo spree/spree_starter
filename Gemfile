@@ -24,6 +24,8 @@ gem 'bootsnap', require: false
 # Use Puma as the app server
 gem 'puma'
 
+gem 'awesome_print'
+
 group :development, :test do
   gem 'foreman'
 
@@ -31,7 +33,6 @@ group :development, :test do
   gem 'pry-remote'
   gem 'pry-stack_explorer'
   gem 'pry-nav'
-  gem 'awesome_print'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -55,6 +56,8 @@ group :development, :test do
   gem 'flamegraph'
   gem 'stackprof'
   gem 'memory_profiler'
+
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -71,6 +74,9 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'codeclimate-test-reporter', require: nil
+
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
 
 # Heroku fix
