@@ -8,12 +8,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v6-{{ .Branch }}-{{ checksum "Gemfile.lock" }}-{{ checksum ".ruby-version" }}
-            - ruby-dependencies-v6-{{ .Branch }}-{{ checksum ".ruby-version" }}
+            - ruby-dependencies-v6-{{ checksum ".ruby-version" }}-{{ checksum "Gemfile.lock" }}
             - ruby-dependencies-v6-{{ checksum ".ruby-version" }}
       - run:
           name: Which bundler?
           command: bundle -v
+      - run:
+          name: Set bundle path
+          command: bundle config --local path vendor/bundle
       - run:
           name: Bundle Install
           command: |
@@ -21,7 +23,7 @@ jobs:
       - save_cache:
           paths:
             - vendor/bundle
-          key: ruby-dependencies-v6-{{ .Branch }}-{{ checksum "Gemfile.lock" }}-{{ checksum ".ruby-version" }}
+          key: ruby-dependencies-v6-{{ checksum ".ruby-version" }}-{{ checksum "Gemfile.lock" }}
 
   install_javascript_dependencies:
     docker:
@@ -31,7 +33,6 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - javascript-dependencies-v3-{{ .Branch }}-{{ checksum "yarn.lock" }}
             - javascript-dependencies-v3-{{ checksum "yarn.lock" }}
             - javascript-dependencies-v3
       - run:
@@ -43,7 +44,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: javascript-dependencies-v3-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: javascript-dependencies-v3-{{ checksum "yarn.lock" }}
 
   run_tests:
     docker:
@@ -54,12 +55,10 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v6-{{ .Branch }}-{{ checksum "Gemfile.lock" }}-{{ checksum ".ruby-version" }}
-            - ruby-dependencies-v6-{{ .Branch }}-{{ checksum ".ruby-version" }}
+            - ruby-dependencies-v6-{{ checksum ".ruby-version" }}-{{ checksum "Gemfile.lock" }}
             - ruby-dependencies-v6-{{ checksum ".ruby-version" }}
       - restore_cache:
           keys:
-            - javascript-dependencies-v3-{{ .Branch }}-{{ checksum "yarn.lock" }}
             - javascript-dependencies-v3-{{ checksum "yarn.lock" }}
             - javascript-dependencies-v3
       - run:
