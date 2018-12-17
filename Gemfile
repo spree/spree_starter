@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.5.1'
+ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.2.1'
+gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -102,7 +102,7 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', '~> 3.7.0.alpha', github: 'spree/spree', branch: 'master'
+gem 'spree', '~> 3.7.0.beta', github: 'spree/spree', branch: 'master'
 gem 'spree_gateway'
 gem 'spree_auth_devise'
 gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
