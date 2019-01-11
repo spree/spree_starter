@@ -102,7 +102,7 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', '~> 3.7.0.beta', github: 'spree/spree', branch: 'master'
+gem 'spree', '~> 3.7.0.rc1'
 gem 'spree_gateway'
 gem 'spree_auth_devise'
 gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
