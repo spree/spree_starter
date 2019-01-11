@@ -106,6 +106,7 @@ gem 'spree', '~> 3.7.0.rc1'
 gem 'spree_gateway'
 gem 'spree_auth_devise'
 gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
+gem 'spree_multi_vendor', github: 'spree-contrib/spree_multi_vendor'
 
 # Sentry Client
 gem 'sentry-raven'

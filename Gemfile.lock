@@ -7,6 +7,15 @@ GIT
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
 
+GIT
+  remote: git://github.com/spree-contrib/spree_multi_vendor.git
+  revision: e3d8e512e199e02308e20e8a268ac7783adedff4
+  specs:
+    spree_multi_vendor (0.2.0)
+      spree_backend (>= 3.2.0, < 4.0)
+      spree_core (>= 3.2.0, < 4.0)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -603,6 +612,7 @@ DEPENDENCIES
   spree_analytics_trackers!
   spree_auth_devise
   spree_gateway
+  spree_multi_vendor!
   spring
   spring-commands-rspec
   stackprof
