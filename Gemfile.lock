@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/spark-solutions/spree.git
-  revision: 420199c6e94bf44eb405d211f1bdf74c45ac17c6
+  revision: 3dbaa1a1d3fa2a102ac16ea7d92c21c1623aad07
   branch: fix/admin-privilages-fixes
   specs:
     spree (3.7.0.rc1)
@@ -61,7 +61,7 @@ GIT
 
 GIT
   remote: git://github.com/spark-solutions/spree_multi_vendor.git
-  revision: 77462b46607cddc2bfd92e29549395e333d885c6
+  revision: 3c233e549a72ee359e2a53bc2bd3e2ed8dad168b
   branch: feature/oms
   specs:
     spree_multi_vendor (0.2.0)
