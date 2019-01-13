@@ -102,11 +102,12 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', '~> 3.7.0.rc1'
+gem 'spree', '~> 3.7.0.rc1', github: 'spark-solutions/spree', branch: 'fix/admin-privilages-fixes'
 gem 'spree_gateway'
 gem 'spree_auth_devise'
 gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
-gem 'spree_multi_vendor', github: 'spree-contrib/spree_multi_vendor'
+# gem 'spree_multi_vendor', github: 'spree-contrib/spree_multi_vendor'
+gem 'spree_multi_vendor', github: 'spark-solutions/spree_multi_vendor', branch: 'feature/oms'
 
 # Sentry Client
 gem 'sentry-raven'
