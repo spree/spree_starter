@@ -2,17 +2,17 @@ version: 2
 jobs:
   install_ruby_dependencies:
     docker:
-      - image: circleci/ruby:2.5.1-node-browsers
+      - image: circleci/ruby:2.6.1-node-browsers
     working_directory: ~/spark-starter-kit
+    environment:
+      BUNDLE_JOBS: 4
+      BUNDLE_RETRY: 3
     steps:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v6-{{ checksum ".ruby-version" }}-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v6-{{ checksum ".ruby-version" }}
-      - run:
-          name: Which bundler?
-          command: bundle -v
+            - ruby-dependencies-v1-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v1
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
@@ -23,44 +23,47 @@ jobs:
       - save_cache:
           paths:
             - vendor/bundle
-          key: ruby-dependencies-v6-{{ checksum ".ruby-version" }}-{{ checksum "Gemfile.lock" }}
-
+          key: ruby-dependencies-v1-{{ checksum "Gemfile.lock" }}
   install_javascript_dependencies:
     docker:
-      - image: circleci/ruby:2.5.1-node-browsers
+      - image: circleci/ruby:2.6.1-node-browsers
     working_directory: ~/spark-starter-kit
     steps:
       - checkout
       - restore_cache:
           keys:
-            - javascript-dependencies-v3-{{ checksum "yarn.lock" }}
-            - javascript-dependencies-v3
+            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
+            - javascript-dependencies-v1
       - run:
           name: Which yarn?
           command: yarn -v
       - run:
           name: Install Yarn
-          command: yarn install --ignore-engines
+          command: yarn install
       - save_cache:
           paths:
             - node_modules
-          key: javascript-dependencies-v3-{{ checksum "yarn.lock" }}
+          key: javascript-dependencies-v1-{{ checksum "yarn.lock" }}
 
   run_tests:
     docker:
-      - image: circleci/ruby:2.5.1-node-browsers
-      - image: postgres:10.4
+      - image: circleci/ruby:2.6.1-node-browsers
+      - image: postgres:11.0-alpine
+    parallelism: 2
+    environment:
+      DB_PORT: 5432
+      RAILS_ENV: test
     working_directory: ~/spark-starter-kit
     steps:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v6-{{ checksum ".ruby-version" }}-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v6-{{ checksum ".ruby-version" }}
+            - ruby-dependencies-v1-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v1
       - restore_cache:
           keys:
-            - javascript-dependencies-v3-{{ checksum "yarn.lock" }}
-            - javascript-dependencies-v3
+            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
+            - javascript-dependencies-v1
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
@@ -72,7 +75,17 @@ jobs:
           command: bundle exec rails db:create db:schema:load
       - run:
           name: Run Rspec
-          command: bundle exec rspec
+          command: |
+            TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+            bundle exec rspec --format progress \
+                              --format RspecJunitFormatter \
+                              -o ~/rspec/rspec.xml \
+                              -- ${TESTFILES}
+      - store_test_results:
+          path: ~/rspec
+
+      - store_artifacts:
+          path: tmp/capybara
 
 workflows:
   version: 2

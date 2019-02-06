@@ -1,23 +1,19 @@
 const path = require('path')
 
 module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        include: path.resolve(__dirname, '../')
-      }
-    ]
-  },
   resolve: {
     alias: {
-      actions: path.join(process.cwd(), 'app/javascript/packs', 'actions'),
-      components: path.join(process.cwd(), 'app/javascript/packs', 'components'),
-      constants: path.join(process.cwd(), 'app/javascript/packs', 'constants'),
-      reducers: path.join(process.cwd(), 'app/javascript/packs', 'reducers'),
-      src: path.join(process.cwd(), 'app/javascript/packs', 'src'),
-      store: path.join(process.cwd(), 'app/javascript/packs', 'store'),
-      providers: path.join(process.cwd(), 'app/javascript/packs', 'providers')
+      actions: path.join(process.cwd(), 'app/javascript/src', 'actions'),
+      icons: path.join(process.cwd(), 'app/assets', 'icons'),
+      fonts: path.join(process.cwd(), 'app/assets', 'fonts'),
+      components: path.join(process.cwd(), 'app/javascript/src', 'components'),
+      constants: path.join(process.cwd(), 'app/javascript/src', 'constants'),
+      containers: path.join(process.cwd(), 'app/javascript/src', 'containers'),
+      reducers: path.join(process.cwd(), 'app/javascript/src', 'reducers'),
+      src: path.join(process.cwd(), 'app/javascript/src', 'src'),
+      store: path.join(process.cwd(), 'app/javascript/src', 'store'),
+      providers: path.join(process.cwd(), 'app/javascript/src', 'providers'),
+      libs: path.join(process.cwd(), 'app/javascript/src', 'libs')
     }
   }
 }

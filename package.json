@@ -10,9 +10,9 @@
   "author": "Spark Solutions <we@sparksolutions.co>",
   "license": "MIT",
   "engines": {
-    "node": ">= 8.12.0",
+    "node": ">= 8.10.0",
     "npm": ">= 5.3.0",
-    "yarn": ">= 1.7.0"
+    "yarn": ">= 1.5.0"
   },
   "scripts": {},
   "keywords": [
@@ -40,6 +40,7 @@
     "react_ujs": "^2.4.4",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
+    "resolve-url-loader": "^3.0.0",
     "webpack-merge": "^4.1.4"
   },
   "devDependencies": {

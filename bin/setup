@@ -16,6 +16,9 @@ chdir APP_ROOT do
   puts " \n == Starting docker-compose =="
   system 'docker-compose up -d'
 
+  puts " \n == Copy .env.sample to .env =="
+  system 'cp -n .env.sample .env'
+
   puts '== Installing dependencies =='
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install')
@@ -29,19 +32,11 @@ chdir APP_ROOT do
   #   cp 'config/database.yml.sample', 'config/database.yml'
   # end
 
-  # we're doing this in seperate tasks because
-  # of some buggy migrations with spring
-  puts " \n == Preparing database =="
+  puts "\n== Preparing database =="
   system 'DISABLE_SPRING=1 bin/rails db:drop -s'
   system 'DISABLE_SPRING=1 bin/rails db:create'
   system 'DISABLE_SPRING=1 bin/rails db:migrate'
   system 'DISABLE_SPRING=1 bin/rails db:seed'
-
-  puts " \n Load sample data? (y/n)"
-  if gets.delete("\n") == 'y'
-    puts " \n == Loading Spree sample data =="
-    system 'bin/rails spree_sample:load'
-  end
 
   puts "\n== Removing old logs and tempfiles =="
   system! 'bin/rails log:clear tmp:clear'
