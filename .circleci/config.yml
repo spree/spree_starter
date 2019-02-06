@@ -14,11 +14,6 @@ jobs:
             - ruby-dependencies-v1-{{ checksum "Gemfile.lock" }}
             - ruby-dependencies-v1
       - run:
-          name: Install bundler 2.0
-          command: |
-            gem uninstall bundler -a -x
-            gem install bundler:2.0.1
-      - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
       - run:
@@ -61,11 +56,6 @@ jobs:
     working_directory: ~/spark-starter-kit
     steps:
       - checkout
-      - run:
-          name: Install bundler 2.0
-          command: |
-            gem uninstall bundler -a -x
-            gem install bundler:2.0.1
       - restore_cache:
           keys:
             - ruby-dependencies-v1-{{ checksum "Gemfile.lock" }}
