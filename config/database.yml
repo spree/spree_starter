@@ -26,6 +26,7 @@ development:
   database: spark-starter-kit_development
   host: localhost
   username: postgres
+  port: <%= ENV.fetch('DB_PORT', '45432') %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,6 +63,7 @@ test:
   database: spark-starter-kit_test
   host: localhost
   username: postgres
+  port: <%= ENV.fetch('DB_PORT', '45432') %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

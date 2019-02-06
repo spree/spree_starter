@@ -1,14 +1,10 @@
 version: '3'
 services:
   postgres:
-    image: postgres:10.0-alpine
+    image: postgres:11.0-alpine
     ports:
-      - 5432:5432
+      - 45432:5432
   redis:
-    image: redis:4.0-alpine
+    image: redis:5.0-alpine
     ports:
-      - 6379:6379
-  memcached:
-    image: memcached:1.5-alpine
-    ports:
-      - 11211:11211
+      - 46379:6379
