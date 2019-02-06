@@ -61,7 +61,7 @@ Rails.application.configure do
   config.log_tags = [ :request_id ]
 
   # Use a different cache store in production.
-    if ENV['MEMCACHEDCLOUD_SERVERS']
+  if ENV['MEMCACHEDCLOUD_SERVERS']
     memcached_config = {
       username: ENV['MEMCACHEDCLOUD_USERNAME'],
       password: ENV['MEMCACHEDCLOUD_PASSWORD'],
