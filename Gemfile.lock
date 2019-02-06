@@ -1,10 +1,10 @@
 GIT
   remote: git://github.com/spree-contrib/spree_analytics_trackers.git
-  revision: 0d8a991823d58f470c95acdc62a99d6aaa61f5fb
+  revision: 5dacc3f68bfa0cd0f3d8bff546363c870342cc60
   specs:
-    spree_analytics_trackers (1.0.0.rc2)
-      spree_backend (>= 3.1.0, < 4.0)
-      spree_core (>= 3.1.0, < 4.0)
+    spree_analytics_trackers (1.0.0)
+      spree_backend (>= 3.1.0, < 5.0)
+      spree_core (>= 3.1.0, < 5.0)
       spree_extension
 
 GEM
@@ -60,20 +60,20 @@ GEM
       activerecord (~> 5.0)
     acts_as_list (0.9.17)
       activerecord (>= 3.0)
-    addressable (2.5.2)
+    addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
     ast (2.4.0)
-    autoprefixer-rails (9.4.4)
+    autoprefixer-rails (9.4.7)
       execjs
     awesome_nested_set (3.1.4)
       activerecord (>= 4.0.0, < 5.3)
     awesome_print (1.8.0)
     aws-eventstream (1.0.1)
-    aws-partitions (1.131.0)
-    aws-sdk-core (3.44.2)
+    aws-partitions (1.136.0)
+    aws-sdk-core (3.46.0)
       aws-eventstream (~> 1.0)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.0)
@@ -81,7 +81,7 @@ GEM
     aws-sdk-kms (1.13.0)
       aws-sdk-core (~> 3, >= 3.39.0)
       aws-sigv4 (~> 1.0)
-    aws-sdk-s3 (1.30.0)
+    aws-sdk-s3 (1.30.1)
       aws-sdk-core (~> 3, >= 3.39.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.0)
@@ -105,9 +105,9 @@ GEM
       uniform_notifier (~> 1.11)
     camertron-eprun (1.1.1)
     cancancan (2.3.0)
-    canonical-rails (0.2.4)
-      rails (>= 4.1, < 5.3)
-    capybara (3.12.0)
+    canonical-rails (0.2.5)
+      rails (>= 4.1, < 6.1)
+    capybara (3.13.2)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -170,11 +170,11 @@ GEM
       railties (>= 3.2, < 6.0)
     erubi (1.8.0)
     execjs (2.7.0)
-    factory_bot (4.11.1)
-      activesupport (>= 3.0.0)
-    factory_bot_rails (4.11.1)
-      factory_bot (~> 4.11.1)
-      railties (>= 3.0.0)
+    factory_bot (5.0.0)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.0.0)
+      factory_bot (~> 5.0.0)
+      railties (>= 4.2.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     fast_jsonapi (1.5)
@@ -191,12 +191,12 @@ GEM
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashdiff (0.3.8)
-    highline (2.0.0)
+    highline (2.0.1)
     htmlentities (4.3.4)
-    i18n (1.5.1)
+    i18n (1.5.3)
       concurrent-ruby (~> 1.0)
-    i18n-js (3.2.0)
-      i18n (>= 0.8.0, < 2)
+    i18n-js (3.2.1)
+      i18n (>= 0.6.6)
     io-like (0.3.0)
     jaro_winkler (1.5.2)
     jmespath (1.4.0)
@@ -210,6 +210,7 @@ GEM
       railties (>= 3.2)
       sprockets-rails
     json (2.1.0)
+    jsonapi-rspec (0.0.2)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.0.1)
@@ -257,7 +258,7 @@ GEM
     msgpack (1.2.6)
     multipart-post (2.0.0)
     nio4r (2.3.1)
-    nokogiri (1.10.0)
+    nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     paperclip (6.1.0)
@@ -266,10 +267,10 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
-    parallel (1.12.1)
+    parallel (1.13.0)
     paranoia (2.4.1)
       activerecord (>= 4.0, < 5.3)
-    parser (2.5.3.0)
+    parser (2.6.0.0)
       ast (~> 2.4.0)
     pg (1.1.4)
     polyglot (0.3.5)
@@ -300,7 +301,7 @@ GEM
     rack (2.0.6)
     rack-cache (1.8.0)
       rack (>= 0.4)
-    rack-mini-profiler (1.0.1)
+    rack-mini-profiler (1.0.2)
       rack (>= 1.2.0)
     rack-protection (2.0.5)
       rack
@@ -351,9 +352,9 @@ GEM
       tilt
     redis (4.1.0)
     regexp_parser (1.3.0)
-    responders (2.4.0)
-      actionpack (>= 4.2.0, < 5.3)
-      railties (>= 4.2.0, < 5.3)
+    responders (2.4.1)
+      actionpack (>= 4.2.0, < 6.0)
+      railties (>= 4.2.0, < 6.0)
     rspec-activejob (0.6.1)
       activejob (>= 4.2)
       rspec-mocks
@@ -369,7 +370,7 @@ GEM
     rspec-mocks (3.8.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
-    rspec-rails (3.8.1)
+    rspec-rails (3.8.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
@@ -378,7 +379,9 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
-    rubocop (0.62.0)
+    rspec_junit_formatter (0.4.1)
+      rspec-core (>= 2, < 4, != 2.12.0)
+    rubocop (0.63.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -410,7 +413,7 @@ GEM
     selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
-    sentry-raven (2.8.0)
+    sentry-raven (2.9.0)
       faraday (>= 0.7.6, < 1.0)
     sidekiq (5.2.5)
       connection_pool (~> 2.2, >= 2.2.2)
@@ -423,38 +426,38 @@ GEM
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
     slop (3.6.0)
-    spree (3.7.0.rc1)
-      spree_api (= 3.7.0.rc1)
-      spree_backend (= 3.7.0.rc1)
-      spree_cmd (= 3.7.0.rc1)
-      spree_core (= 3.7.0.rc1)
-      spree_frontend (= 3.7.0.rc1)
-      spree_sample (= 3.7.0.rc1)
-    spree_api (3.7.0.rc1)
+    spree (3.7.0)
+      spree_api (= 3.7.0)
+      spree_backend (= 3.7.0)
+      spree_cmd (= 3.7.0)
+      spree_core (= 3.7.0)
+      spree_frontend (= 3.7.0)
+      spree_sample (= 3.7.0)
+    spree_api (3.7.0)
       doorkeeper (~> 5.0)
       fast_jsonapi (~> 1.5)
       rabl (~> 0.13.1)
-      spree_core (= 3.7.0.rc1)
+      spree_core (= 3.7.0)
       versioncake (~> 3.4.0)
-    spree_auth_devise (3.4.2)
+    spree_auth_devise (3.5.0)
       devise (~> 4.4.0)
       devise-encryptable (= 0.2.0)
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
-    spree_backend (3.7.0.rc1)
+    spree_backend (3.7.0)
       bootstrap-sass (~> 3.4)
       jquery-rails (~> 4.3)
       jquery-ui-rails (~> 6.0.1)
       select2-rails (= 3.5.9.1)
-      spree_api (= 3.7.0.rc1)
-      spree_core (= 3.7.0.rc1)
-    spree_cmd (3.7.0.rc1)
+      spree_api (= 3.7.0)
+      spree_core (= 3.7.0)
+    spree_cmd (3.7.0)
       thor (~> 0.14)
-    spree_core (3.7.0.rc1)
+    spree_core (3.7.0)
       activemerchant (~> 1.67)
       acts-as-taggable-on (~> 6.0)
       acts_as_list (~> 0.8)
-      awesome_nested_set (~> 3.1.3)
+      awesome_nested_set (~> 3.1.4)
       cancancan (~> 2.0)
       carmen (~> 1.0.0)
       deface (~> 1.0)
@@ -475,19 +478,20 @@ GEM
       state_machines-activerecord (~> 0.5)
       stringex
       twitter_cldr (~> 4.3)
-    spree_extension (0.0.5)
+    spree_extension (0.0.9)
       activerecord (>= 4.2)
-    spree_frontend (3.7.0.rc1)
+      spree_core
+    spree_frontend (3.7.0)
       bootstrap-sass (~> 3.4)
       canonical-rails (~> 0.2.3)
       jquery-rails (~> 4.3)
-      spree_api (= 3.7.0.rc1)
-      spree_core (= 3.7.0.rc1)
-    spree_gateway (3.4.0)
+      spree_api (= 3.7.0)
+      spree_core (= 3.7.0)
+    spree_gateway (3.4.1)
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
-    spree_sample (3.7.0.rc1)
-      spree_core (= 3.7.0.rc1)
+    spree_sample (3.7.0)
+      spree_core (= 3.7.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-commands-rspec (1.0.4)
@@ -574,6 +578,7 @@ DEPENDENCIES
   foreman
   i18n-js (>= 3.0.0.rc11)
   js-routes
+  jsonapi-rspec
   launchy
   letter_opener
   listen
@@ -588,18 +593,19 @@ DEPENDENCIES
   rack-cache
   rack-mini-profiler
   rack-timeout
-  rails (~> 5.2.1)
+  rails (~> 5.2.2)
   react-rails (~> 2.4.7)
   rspec-activejob
   rspec-activemodel-mocks
-  rspec-rails (~> 3.8.0)
+  rspec-rails (~> 3.8)
+  rspec_junit_formatter
   rubocop
   sass-rails
   scout_apm
   selenium-webdriver
   sentry-raven
   sidekiq
-  spree (~> 3.7.0.rc1)
+  spree (~> 3.7.0)
   spree_analytics_trackers!
   spree_auth_devise
   spree_gateway
@@ -613,7 +619,7 @@ DEPENDENCIES
   webpacker (~> 3.5)
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.6.1p33
 
 BUNDLED WITH
-   1.16.6
+   2.0.1

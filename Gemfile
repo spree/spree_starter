@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.5.3'
+ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.1'
+gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -27,6 +27,7 @@ gem 'puma'
 gem 'awesome_print'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'foreman'
 
   gem 'pry'
@@ -38,9 +39,11 @@ group :development, :test do
   gem 'spring'
 
   # testing
-  gem 'rspec-rails', '~> 3.8.0'
+  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec_junit_formatter'
   gem 'rspec-activemodel-mocks'
   gem 'rspec-activejob'
+  gem 'jsonapi-rspec'
   gem 'spring-commands-rspec'
   gem 'factory_bot'
   gem 'factory_bot_rails'
@@ -56,8 +59,6 @@ group :development, :test do
   gem 'flamegraph'
   gem 'stackprof'
   gem 'memory_profiler'
-
-  gem 'dotenv-rails'
 end
 
 group :development do
@@ -102,7 +103,7 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', '~> 3.7.0.rc1'
+gem 'spree', '~> 3.7.0'
 gem 'spree_gateway'
 gem 'spree_auth_devise'
 gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
