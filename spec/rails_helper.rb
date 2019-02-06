@@ -40,6 +40,10 @@ require 'spree/testing_support/url_helpers'
 require 'spree/testing_support/order_walkthrough'
 require 'spree/testing_support/caching'
 
+# API v2 helpers
+require 'spree/api/testing_support/v2/base'
+require 'spree/api/testing_support/v2/current_order'
+
 require 'vcr'
 require 'webmock/rspec'
 require 'capybara/rspec'
