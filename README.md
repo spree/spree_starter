@@ -3,6 +3,7 @@
 [![Circle CI](https://circleci.com/gh/spark-solutions/spark-starter-kit.svg?style=svg)](https://circleci.com/gh/spark-solutions/spark-starter-kit) [![Maintainability](https://api.codeclimate.com/v1/badges/d240686c99b3d35eb61b/maintainability)](https://codeclimate.com/github/spark-solutions/spark-starter-kit/maintainability)
 
 This is a starting point for all Spree/Rails related projects at Spark Solutions, it contains:
+
  - Ruby on Rails
  - [Spree Commerce](https://spreecommerce.org)
  - Webpack via Webpacker gem
@@ -19,19 +20,8 @@ This is a starting point for all Spree/Rails related projects at Spark Solutions
  - Yarn - `npm install -g yarn`
  - Bundler - `gem install bundler`
 
-### Stop local PostgreSQL Server
-
-#### OS X
-```
-brew services stop postgresql
-```
-
-#### Linux
-```bash
-service postgresql stop
-```
-
 ### Run setup script
+
 ```bash
 bin/setup
 ```
@@ -39,7 +29,8 @@ bin/setup
 ## Development
 
 To start the project just type:
-```
+
+```bash
 bin/start
 ```
 
@@ -47,34 +38,19 @@ bin/start
 
 Before running the test suite remember to fire up docker-compose (if it's not running already):
 
-```
-docker-compose start
+```bash
+docker-compose up -d
 ```
 
 And after that you can just use plain normal rspec:
 
-```
-rspec
-```
-
-## Deployment
-
-This repository is prepared for Heroku deployment with assets hosting on Amazon S3 for production and Amazon Cloudfront as a CDN.
-
-Before the first deploy, in the project directory run:
-```
-heroku buildpacks:add heroku/nodejs
-```
-```
-heroku buildpacks:add heroku/ruby
-```
-```
-heroku labs:enable runtime-dyno-metadata
+```bash
+bundle exec rspec
 ```
 
 ## License
 
-Spark Starter Kit is copyright © 2015-2017
+Spark Starter Kit is copyright © 2015-2019
 [Spark Solutions Sp. z o.o.][spark]. It is free software,
 and may be redistributed under the terms specified in the
 [LICENSE](LICENSE.md) file.
