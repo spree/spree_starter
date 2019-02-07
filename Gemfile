@@ -98,7 +98,7 @@ gem 'sidekiq'
 
 # front end
 gem 'react-rails', '~> 2.4.7'
-gem 'webpacker', '~> 3.5'
+gem 'webpacker', '>= 4.0.x'
 gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
