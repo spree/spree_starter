@@ -34,6 +34,14 @@ To start the project just type:
 bin/start
 ```
 
+### Hot Module Replacement
+
+Before firing up the rails server you need to start `webpack-dev-server`
+
+```bash
+bin/webpack-dev-server
+```
+
 ## Running tests
 
 Before running the test suite remember to fire up docker-compose (if it's not running already):
