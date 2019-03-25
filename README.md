@@ -2,7 +2,7 @@
 
 [![Circle CI](https://circleci.com/gh/spark-solutions/spark-starter-kit.svg?style=svg)](https://circleci.com/gh/spark-solutions/spark-starter-kit) [![Maintainability](https://api.codeclimate.com/v1/badges/d240686c99b3d35eb61b/maintainability)](https://codeclimate.com/github/spark-solutions/spark-starter-kit/maintainability)
 
-This is a starting point for all Spree/Rails related projects at Spark Solutions, it contains:
+This is a starting point for all [Spree](https://spreecommerce.org)/Rails related projects at [Spark Solutions][spark], it contains:
 
  - Ruby on Rails
  - [Spree Commerce](https://spreecommerce.org)
