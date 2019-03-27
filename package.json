@@ -39,7 +39,7 @@
     "formik": "^1.4.2",
     "lodash": "^4.17.11",
     "mirror-creator": "^1.1.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.11.0",
     "postcss-cssnext": "^3.1.0",
     "prop-types": "^15.6.2",
     "react": "16.8.0",
