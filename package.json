@@ -34,6 +34,7 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^4.0.0-rc.7",
+    "@spree/storefront-api-v2-sdk": "^2.0.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.23",
     "formik": "^1.4.2",
     "lodash": "^4.17.11",
