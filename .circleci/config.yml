@@ -3,7 +3,7 @@ jobs:
   install_ruby_dependencies:
     docker:
       - image: circleci/ruby:2.6.1-node-browsers
-    working_directory: ~/spark-starter-kit
+    working_directory: ~/app
     environment:
       BUNDLE_JOBS: 4
       BUNDLE_RETRY: 3
@@ -27,7 +27,7 @@ jobs:
   install_javascript_dependencies:
     docker:
       - image: circleci/ruby:2.6.1-node-browsers
-    working_directory: ~/spark-starter-kit
+    working_directory: ~/app
     steps:
       - checkout
       - restore_cache:
@@ -53,7 +53,7 @@ jobs:
     environment:
       DB_PORT: 5432
       RAILS_ENV: test
-    working_directory: ~/spark-starter-kit
+    working_directory: ~/app
     steps:
       - checkout
       - restore_cache:
