@@ -3,7 +3,7 @@ jobs:
   install_ruby_dependencies:
     docker:
       - image: circleci/ruby:2.6.1-node-browsers
-    working_directory: ~/spark-starter-kit
+    working_directory: ~/app
     environment:
       BUNDLE_JOBS: 4
       BUNDLE_RETRY: 3
@@ -11,8 +11,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v1-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v1
+            - ruby-dependencies-v2-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v2
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
@@ -23,17 +23,17 @@ jobs:
       - save_cache:
           paths:
             - vendor/bundle
-          key: ruby-dependencies-v1-{{ checksum "Gemfile.lock" }}
+          key: ruby-dependencies-v2-{{ checksum "Gemfile.lock" }}
   install_javascript_dependencies:
     docker:
       - image: circleci/ruby:2.6.1-node-browsers
-    working_directory: ~/spark-starter-kit
+    working_directory: ~/app
     steps:
       - checkout
       - restore_cache:
           keys:
-            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
-            - javascript-dependencies-v1
+            - javascript-dependencies-v2-{{ checksum "yarn.lock" }}
+            - javascript-dependencies-v2
       - run:
           name: Which yarn?
           command: yarn -v
@@ -43,7 +43,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: javascript-dependencies-v1-{{ checksum "yarn.lock" }}
+          key: javascript-dependencies-v2-{{ checksum "yarn.lock" }}
 
   run_tests:
     docker:
@@ -53,17 +53,17 @@ jobs:
     environment:
       DB_PORT: 5432
       RAILS_ENV: test
-    working_directory: ~/spark-starter-kit
+    working_directory: ~/app
     steps:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v1-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v1
+            - ruby-dependencies-v2-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v2
       - restore_cache:
           keys:
-            - javascript-dependencies-v1-{{ checksum "yarn.lock" }}
-            - javascript-dependencies-v1
+            - javascript-dependencies-v2-{{ checksum "yarn.lock" }}
+            - javascript-dependencies-v2
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
