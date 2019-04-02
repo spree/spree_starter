@@ -345,7 +345,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    react-rails (2.4.7)
+    react-rails (2.5.0)
       babel-transpiler (>= 0.7.0)
       connection_pool
       execjs
@@ -595,7 +595,7 @@ DEPENDENCIES
   rack-mini-profiler
   rack-timeout
   rails (~> 5.2.3)
-  react-rails (~> 2.4.7)
+  react-rails (~> 2.5.0)
   rspec-activejob
   rspec-activemodel-mocks
   rspec-rails (~> 3.8)
