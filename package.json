@@ -73,7 +73,7 @@
     "prettier": "^1.14.3",
     "redux-logger": "^3.0.6",
     "standard-react": "^4.0.0",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.3.0"
   },
   "peerDependencies": {
     "caniuse-lite": "^1.0.30000887"
