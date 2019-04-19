@@ -6850,10 +6850,10 @@ react-hot-loader@^4.3.11:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
-react-hotkeys@2.0.0-pre3:
-  version "2.0.0-pre3"
-  resolved "https://registry.yarnpkg.com/react-hotkeys/-/react-hotkeys-2.0.0-pre3.tgz#fd9b63536af2f7e175107def9ea5a68ec158eedb"
-  integrity sha512-Qm/YxUOSszVPz40oCz011+iaKxK7ySxoiIJFqTnPjzXDx8H8DnnjQ9RGoi+vEiQoIzPkBWaTBDg61gK5LRApww==
+react-hotkeys@2.0.0-pre5:
+  version "2.0.0-pre5"
+  resolved "https://registry.yarnpkg.com/react-hotkeys/-/react-hotkeys-2.0.0-pre5.tgz#b9c828f689dff529627ff3f7289de3a4367837b9"
+  integrity sha512-uBIDTME3WUJjBHPUiDLnkmRKq3lk4IIsYGYcDentCyXFV4Sb3Iyxh6tyJQlG2taa87wYIB5tynPOnMFxV53+vg==
   dependencies:
     prop-types "^15.6.1"
 
