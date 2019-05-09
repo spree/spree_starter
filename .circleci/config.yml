@@ -2,7 +2,7 @@ version: 2
 jobs:
   install_ruby_dependencies:
     docker:
-      - image: circleci/ruby:2.6.1-node-browsers
+      - image: circleci/ruby:2.6-node-browsers
     working_directory: ~/app
     environment:
       BUNDLE_JOBS: 4
@@ -26,7 +26,7 @@ jobs:
           key: ruby-dependencies-v2-{{ checksum "Gemfile.lock" }}
   install_javascript_dependencies:
     docker:
-      - image: circleci/ruby:2.6.1-node-browsers
+      - image: circleci/ruby:2.6-node-browsers
     working_directory: ~/app
     steps:
       - checkout
@@ -47,7 +47,7 @@ jobs:
 
   run_tests:
     docker:
-      - image: circleci/ruby:2.6.1-node-browsers
+      - image: circleci/ruby:2.6-node-browsers
       - image: postgres:11.0-alpine
     parallelism: 2
     environment:
@@ -73,6 +73,15 @@ jobs:
       - run:
           name: Setup DB
           command: bundle exec rails db:create db:schema:load
+      - run:
+          name: Install Chromedriver latest version
+          command: |
+            sudo apt-get update
+            sudo apt-get install lsb-release libappindicator3-1
+            curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo dpkg -i google-chrome.deb
+            sudo sed -i 's|HERE/chrome"|HERE/chrome" --no-sandbox|g' /opt/google/chrome/google-chrome
+            rm google-chrome.deb
       - run:
           name: Run Rspec
           command: |
