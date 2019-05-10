@@ -2,6 +2,9 @@ require_relative 'boot'
 
 require 'rails/all'
 
+# filipper memoizing
+require 'flipper/middleware/memoizer'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -58,5 +61,8 @@ module SparkStarterKit
       require "#{Rails.root}/lib/cloud_flare_middleware"
       config.middleware.insert_before(0, Rack::CloudFlareMiddleware)
     end
+
+    # flipper memoizing
+    config.middleware.use Flipper::Middleware::Memoizer
   end
 end
