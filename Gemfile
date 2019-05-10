@@ -113,3 +113,9 @@ gem 'sentry-raven'
 
 # Scout Client
 gem 'scout_apm'
+
+# feature toggle
+gem 'flipper'
+gem 'flipper-active_record'
+gem 'flipper-redis'
+gem 'flipper-ui'
