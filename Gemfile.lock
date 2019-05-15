@@ -253,7 +253,7 @@ GEM
     mini_magick (4.8.0)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
-    mini_racer (0.2.5)
+    mini_racer (0.2.6)
       libv8 (>= 6.9.411)
     minitest (5.11.3)
     monetize (1.9.1)
