@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/spark-solutions/spree_homepage.git
+  revision: 91d4b8d34f753db2c0430074c1d2ff4bdeb0f0e2
+  specs:
+    spree_homepage (0.0.1.alpha)
+      instagram
+      spree_backend (>= 3.2.0, < 5.0)
+      spree_core (>= 3.2.0, < 5.0)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -170,6 +180,8 @@ GEM
       railties (>= 4.2.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.13.1)
+      faraday (>= 0.7.4, < 1.0)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
     ffaker (2.11.0)
@@ -196,12 +208,18 @@ GEM
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashdiff (0.3.9)
+    hashie (3.6.0)
     highline (2.0.2)
     htmlentities (4.3.4)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     i18n-js (3.2.2)
       i18n (>= 0.6.6)
+    instagram (0.8.4)
+      faraday (~> 0.7)
+      faraday_middleware (~> 0.8)
+      hashie (>= 0.4.0)
+      multi_json (~> 1.0.3)
     io-like (0.3.0)
     jaro_winkler (1.5.2)
     jmespath (1.4.0)
@@ -261,6 +279,7 @@ GEM
     money (6.13.3)
       i18n (>= 0.6.4, <= 2)
     msgpack (1.2.10)
+    multi_json (1.0.4)
     multipart-post (2.1.0)
     nio4r (2.3.1)
     nokogiri (1.10.3)
@@ -619,6 +638,7 @@ DEPENDENCIES
   spree_analytics_trackers
   spree_auth_devise
   spree_gateway
+  spree_homepage!
   spring
   spring-commands-rspec
   stackprof
