@@ -3522,14 +3522,14 @@ form-data@~2.3.2:
     combined-stream "1.0.6"
     mime-types "^2.1.12"
 
-formik@^1.4.2:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/formik/-/formik-1.4.3.tgz#a3bece72f545981f8fc825c21d5292d9aac524d2"
-  integrity sha512-rwwcCPhidgiACnh1RBY8vp+Zp9ompHxezuGeIqmOh9RvmNCB8GCupoCWdDkWB0DZ1MBoDl76swB2v/FbMxeEmw==
+formik@^1.5.7:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/formik/-/formik-1.5.7.tgz#2fc5fc2f0c693cdc4e8c9dad3a10eb4c4e131ff5"
+  integrity sha512-kZo8lS4WzfC2uivnSkE9DOuX9x+jVjCtIZOlb1A4lHGeURyuLt6eDfwGJzNlcP0lXIwmpANKzegiB8j60B54TA==
   dependencies:
     create-react-context "^0.2.2"
     deepmerge "^2.1.1"
-    hoist-non-react-statics "^2.5.5"
+    hoist-non-react-statics "^3.3.0"
     lodash "^4.17.11"
     lodash-es "^4.17.11"
     prop-types "^15.6.1"
@@ -3861,10 +3861,17 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^2.5.0, hoist-non-react-statics@^2.5.5:
+hoist-non-react-statics@^2.5.0:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
+
+hoist-non-react-statics@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
+  integrity sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
+  dependencies:
+    react-is "^16.7.0"
 
 home-or-tmp@^2.0.0:
   version "2.0.0"
@@ -6805,6 +6812,11 @@ react-is@^16.6.0:
   version "16.8.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.0.tgz#518db476214f3fb0716af9f82dfd420225ae970f"
   integrity sha512-LOy+3La39aduxaPfuj+lCXC5RQ8ukjVPAAsFJ3yQ+DIOLf4eR9OMKeWKF0IzjRyE95xMj5QELwiXGgfQsIJguA==
+
+react-is@^16.7.0:
+  version "16.8.6"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
+  integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
