@@ -533,7 +533,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.6.0)
     uniform_notifier (1.12.1)
-    vcr (4.0.0)
+    vcr (5.0.0)
     versioncake (3.4.0)
       actionpack (>= 3.2)
       activesupport (>= 3.2)
