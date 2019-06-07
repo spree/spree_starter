@@ -200,7 +200,7 @@ GEM
     htmlentities (4.3.4)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    i18n-js (3.2.2)
+    i18n-js (3.3.0)
       i18n (>= 0.6.6)
     io-like (0.3.0)
     jaro_winkler (1.5.2)
