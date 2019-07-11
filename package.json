@@ -37,7 +37,7 @@
     "@spree/storefront-api-v2-sdk": "^2.0.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.23",
     "formik": "^1.4.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "mirror-creator": "^1.1.0",
     "node-sass": "^4.12.0",
     "postcss-cssnext": "^3.1.0",
