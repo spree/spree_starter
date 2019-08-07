@@ -6880,9 +6880,12 @@ react@16.8.0:
     prop-types "^15.6.2"
     scheduler "^0.13.0"
 
-react_ujs@^2.4.4:
-  version "2.4.4"
-  resolved "https://registry.yarnpkg.com/react_ujs/-/react_ujs-2.4.4.tgz#49bac535d24024a96b0a35d7514d18188aea42bc"
+react_ujs@^2.4.4, react_ujs@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/react_ujs/-/react_ujs-2.5.0.tgz#b8481818233f54aee2cbee0328baf6eaea290824"
+  integrity sha512-uRtlv3ITYv6BGHYO3Z4pS1K2JJtIT2Sz345g/bCbMdwraZZ0BLyq4SnESIkiDmg7SX3bJchb2OmQUSwPjbXB3A==
+  dependencies:
+    react_ujs "^2.4.4"
 
 read-cache@^1.0.0:
   version "1.0.0"
