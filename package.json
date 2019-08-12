@@ -48,7 +48,7 @@
     "react-hotkeys": "2.0.0-pre3",
     "react-redux": "^5.0.7",
     "react-tippy": "^1.2.3",
-    "react_ujs": "^2.4.4",
+    "react_ujs": "^2.6.0",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "resolve-url-loader": "^3.0.1",
