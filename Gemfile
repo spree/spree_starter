@@ -99,7 +99,7 @@ gem 'rack-cache' # http caching
 gem 'sidekiq'
 
 # front end
-gem 'react-rails', '~> 2.5.0'
+gem 'react-rails', '~> 2.6.0'
 gem 'webpacker', '>= 4.0.x'
 gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
