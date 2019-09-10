@@ -2,18 +2,37 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `rails
+# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_10_153157) do
+ActiveRecord::Schema.define(version: 2019_09_10_123207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "action_mailbox_inbound_emails", force: :cascade do |t|
+    t.integer "status", default: 0, null: false
+    t.string "message_id", null: false
+    t.string "message_checksum", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["message_id", "message_checksum"], name: "index_action_mailbox_inbound_emails_uniqueness", unique: true
+  end
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -81,10 +100,14 @@ ActiveRecord::Schema.define(version: 2019_05_10_153157) do
     t.integer "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.datetime "deleted_at"
     t.index ["country_id"], name: "index_spree_addresses_on_country_id"
+    t.index ["deleted_at"], name: "index_spree_addresses_on_deleted_at"
     t.index ["firstname"], name: "index_addresses_on_firstname"
     t.index ["lastname"], name: "index_addresses_on_lastname"
     t.index ["state_id"], name: "index_spree_addresses_on_state_id"
+    t.index ["user_id"], name: "index_spree_addresses_on_user_id"
   end
 
   create_table "spree_adjustments", id: :serial, force: :cascade do |t|
@@ -141,8 +164,8 @@ ActiveRecord::Schema.define(version: 2019_05_10_153157) do
 
   create_table "spree_countries", id: :serial, force: :cascade do |t|
     t.string "iso_name"
-    t.string "iso"
-    t.string "iso3"
+    t.string "iso", null: false
+    t.string "iso3", null: false
     t.string "name"
     t.integer "numcode"
     t.boolean "states_required", default: false
@@ -150,6 +173,8 @@ ActiveRecord::Schema.define(version: 2019_05_10_153157) do
     t.boolean "zipcode_required", default: true
     t.index "lower((iso_name)::text)", name: "index_spree_countries_on_lower_iso_name", unique: true
     t.index "lower((name)::text)", name: "index_spree_countries_on_lower_name", unique: true
+    t.index ["iso"], name: "index_spree_countries_on_iso", unique: true
+    t.index ["iso3"], name: "index_spree_countries_on_iso3", unique: true
   end
 
   create_table "spree_credit_cards", id: :serial, force: :cascade do |t|
@@ -195,6 +220,48 @@ ActiveRecord::Schema.define(version: 2019_05_10_153157) do
     t.text "preferences"
     t.index ["active"], name: "index_spree_gateways_on_active"
     t.index ["test_mode"], name: "index_spree_gateways_on_test_mode"
+  end
+
+  create_table "spree_home_page_fields", force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.string "description", default: "", null: false
+    t.string "name", default: "", null: false
+    t.string "field_type", default: "", null: false
+    t.bigint "home_page_section_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["home_page_section_id"], name: "index_spree_home_page_fields_on_home_page_section_id"
+  end
+
+  create_table "spree_home_page_sections", force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.string "description", default: "", null: false
+    t.string "name", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "visible", default: true
+    t.boolean "mobile_visible", default: true
+    t.integer "position", default: 0
+    t.index ["position"], name: "index_spree_home_page_sections_on_position"
+  end
+
+  create_table "spree_instagram_posts", force: :cascade do |t|
+    t.text "data"
+    t.string "instagram_id"
+    t.boolean "show", default: true
+    t.bigint "spree_instagram_setting_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instagram_id"], name: "index_spree_instagram_posts_on_instagram_id"
+    t.index ["spree_instagram_setting_id"], name: "index_spree_instagram_posts_on_spree_instagram_setting_id"
+  end
+
+  create_table "spree_instagram_settings", force: :cascade do |t|
+    t.string "access_token", default: "", null: false
+    t.string "target_account", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "code", default: "", null: false
   end
 
   create_table "spree_inventory_units", id: :serial, force: :cascade do |t|
