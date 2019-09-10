@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 6.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -27,8 +27,10 @@ gem 'puma'
 gem 'awesome_print'
 
 group :development, :test do
-  gem 'dotenv-rails'
-  gem 'foreman'
+  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+  # foreman doesn't allow us to update dotenv-rails which is required for Rails 6
+  # for now please use gem install foreman
+  # gem 'foreman', '~> 0.85'
 
   gem 'pry'
   gem 'pry-remote'
@@ -103,9 +105,9 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', '~> 3.7.2'
+gem 'spree', '~> 4.0.0.beta'
 gem 'spree_gateway'
-gem 'spree_auth_devise'
+gem 'spree_auth_devise', '~> 4.0.0.rc2'
 gem 'spree_analytics_trackers'
 
 # Sentry Client
@@ -116,6 +118,6 @@ gem 'scout_apm'
 
 # feature toggle
 gem 'flipper'
-gem 'flipper-active_record'
+gem 'flipper-active_record', '~> 0.16', github: 'mokhan/flipper', branch: 'rails-6'
 gem 'flipper-redis'
 gem 'flipper-ui'
