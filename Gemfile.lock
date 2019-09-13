@@ -544,11 +544,11 @@ GEM
     vcr (5.0.0)
     warden (1.2.8)
       rack (>= 2.0.6)
-    web-console (3.7.0)
-      actionview (>= 5.0)
-      activemodel (>= 5.0)
+    web-console (4.0.1)
+      actionview (>= 6.0.0)
+      activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
-      railties (>= 5.0)
+      railties (>= 6.0.0)
     webmock (3.7.2)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -627,7 +627,7 @@ DEPENDENCIES
   stackprof
   uglifier
   vcr
-  web-console (~> 3.0)
+  web-console (~> 4.0)
   webmock
   webpacker (>= 4.0.x)
 
