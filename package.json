@@ -44,7 +44,7 @@
     "prop-types": "^15.6.2",
     "react": "16.8.0",
     "react-dom": "16.9.0",
-    "react-hot-loader": "^4.3.11",
+    "react-hot-loader": "^4.12.14",
     "react-hotkeys": "2.0.0-pre3",
     "react-redux": "^5.0.7",
     "react-tippy": "^1.2.3",
