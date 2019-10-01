@@ -168,7 +168,7 @@ GEM
     dalli (2.7.10)
     database_cleaner (1.7.0)
     debug_inspector (0.0.3)
-    deface (1.5.1)
+    deface (1.5.2)
       nokogiri (>= 1.6)
       polyglot
       rails (>= 4.1)
@@ -460,7 +460,7 @@ GEM
       fast_jsonapi (~> 1.5)
       rabl (~> 0.14.2)
       spree_core (= 4.0.0.rc3)
-    spree_auth_devise (4.0.0.rc2)
+    spree_auth_devise (4.0.0)
       deface (~> 1.0)
       devise (~> 4.7)
       devise-encryptable (= 0.2.0)
@@ -626,7 +626,7 @@ DEPENDENCIES
   sidekiq
   spree (~> 4.0.0.rc3)
   spree_analytics_trackers
-  spree_auth_devise (~> 4.0.0.rc2)
+  spree_auth_devise (~> 4.0.0)
   spree_gateway
   spring
   spring-commands-rspec
