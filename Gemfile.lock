@@ -510,7 +510,7 @@ GEM
       jquery-rails (~> 4.3)
       spree_api (= 4.0.0.rc3)
       spree_core (= 4.0.0.rc3)
-    spree_gateway (3.6.4)
+    spree_gateway (3.6.6)
       spree_core (>= 3.1.0, < 5.0)
       spree_extension
     spree_sample (4.0.0.rc3)
