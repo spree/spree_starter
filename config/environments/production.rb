@@ -87,7 +87,7 @@ Rails.application.configure do
   end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  if (host = heroku_app_url || ENV['CDN']).present?
+  if (host = ENV['CDN'] || heroku_app_url).present?
     config.action_controller.asset_host = config.action_mailer.asset_host = "https://#{host}"
   end
 
