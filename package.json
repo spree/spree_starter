@@ -10,7 +10,7 @@
   "author": "Spark Solutions <we@sparksolutions.co>",
   "license": "MIT",
   "engines": {
-    "node": ">= 8.10.0",
+    "node": ">= 8.16.0",
     "npm": ">= 5.3.0",
     "yarn": ">= 1.5.0"
   },
