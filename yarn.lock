@@ -818,16 +818,14 @@
     webpack-cli "^3.3.10"
     webpack-sources "^1.4.3"
 
-"@spree/storefront-api-v2-sdk@^2.0.1":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@spree/storefront-api-v2-sdk/-/storefront-api-v2-sdk-2.2.0.tgz#f4533ba831733956e9d3924c66d7fdce264702e9"
-  integrity sha512-Sr1DKbr6deY454UwmWeDYttuYHJoNJwuhXPQUZEdu+lyETGeMlCPgk1O9UBrt197og0NonBDkNlikylPYMYCZg==
+"@spree/storefront-api-v2-sdk@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@spree/storefront-api-v2-sdk/-/storefront-api-v2-sdk-4.0.3.tgz#b6196a24743669f1e869ce036e365657439cd502"
+  integrity sha512-F6sEtY0K8rEygCiBoDdIaNmQYcJIBxPkYlf7p1n9hLcbAvXPO2VP7EVL4GB6PDsAYidPLFHpc0eT9tQJ8qu6Jw==
   dependencies:
-    axios "^0.18.0"
+    axios "^0.19.0"
     lodash "^4.17.11"
     qs "^6.6.0"
-    reflect-metadata "^0.1.13"
-    tsyringe "^3.0.1"
 
 "@types/events@*":
   version "3.0.0"
@@ -1348,10 +1346,10 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.9.0.tgz#24390e6ad61386b0a747265754d2a17219de862c"
   integrity sha512-Uvq6hVe90D0B2WEnUqtdgY1bATGz3mw33nH9Y+dmA+w5DHvUmBgkr5rM/KCHpCsiFNRUfokW/szpPPgMK2hm4A==
 
-axios@^0.18.0:
-  version "0.18.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.1.tgz#ff3f0de2e7b5d180e757ad98000f1081b87bcea3"
-  integrity sha512-0BfJq4NSfQXd+SkFdrvFbG7addhYSBA2mQwISr46pD6E5iqkWg02RAs8vyTT/j0RTnoYmeXauBuSv1qKwR179g==
+axios@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
+  integrity sha512-1uvKqKQta3KBxIz14F2v06AEHZ/dIoeKfbTRkK1E5oqjDnuEerLmYTgJB5AiQZHJcljpg1TuRzdjDR06qNk0DQ==
   dependencies:
     follow-redirects "1.5.10"
     is-buffer "^2.0.2"
@@ -7344,11 +7342,6 @@ redux@^4.0.0:
     loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
 
-reflect-metadata@^0.1.13:
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
-  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
-
 regenerate-unicode-properties@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-8.1.0.tgz#ef51e0f0ea4ad424b77bf7cb41f3e015c70a3f0e"
@@ -8520,13 +8513,6 @@ tslib@^1.9.0, tslib@^1.9.3:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-
-tsyringe@^3.0.1:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/tsyringe/-/tsyringe-3.4.0.tgz#76c9517b8db6b8fac38bc371694ae6545ee9576e"
-  integrity sha512-Ol5x1/mP4Q5vnsZGIYWGURe4CKmAqUz4uEGhew+NYp0sA5a6gbqw6/2C1gqde11fuDfiZ5F07dVeBdyGlhDCNg==
-  dependencies:
-    tslib "^1.9.3"
 
 tty-browserify@0.0.0:
   version "0.0.0"
