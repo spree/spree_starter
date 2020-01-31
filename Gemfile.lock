@@ -165,7 +165,7 @@ GEM
     css_parser (1.7.1)
       addressable
     dalli (2.7.10)
-    database_cleaner (1.7.0)
+    database_cleaner (1.8.1)
     debug_inspector (0.0.3)
     deface (1.5.3)
       nokogiri (>= 1.6)
