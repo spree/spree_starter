@@ -200,7 +200,7 @@ GEM
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
     ffaker (2.13.0)
-    ffi (1.12.1)
+    ffi (1.12.2)
     flamegraph (0.9.5)
     font_assets (0.1.14)
       rack

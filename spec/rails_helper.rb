@@ -4,9 +4,6 @@ require 'spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-require 'database_cleaner'
-require 'rspec/active_job'
-require 'selenium/webdriver'
 
 include Warden::Test::Helpers
 Warden.test_mode!
@@ -43,15 +40,6 @@ require 'spree/testing_support/caching'
 # API v2 helpers
 require 'spree/api/testing_support/v2/base'
 require 'spree/api/testing_support/v2/current_order'
-
-require 'vcr'
-require 'webmock/rspec'
-require 'capybara/rspec'
-require 'capybara-screenshot/rspec'
-require 'capybara/rails'
-
-Capybara.save_path = ENV.fetch('CIRCLE_ARTIFACTS', Rails.root.join('tmp/capybara')).to_s
-Capybara::Screenshot.prune_strategy = { keep: 20 }
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

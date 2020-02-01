@@ -1,3 +1,7 @@
+require 'capybara/rspec'
+require 'capybara-screenshot/rspec'
+require 'capybara/rails'
+
 # capybara-screenshot
 Capybara.save_path = ENV.fetch('CIRCLE_ARTIFACTS', Rails.root.join('tmp', 'capybara')).to_s
 Capybara::Screenshot.prune_strategy = { keep: 20 }
