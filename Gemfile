@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.6.3'
+ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
@@ -78,8 +78,7 @@ group :test do
   gem 'webmock'
   gem 'codeclimate-test-reporter', require: nil
 
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
 end
 
 # Heroku fix
@@ -105,9 +104,9 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', '~> 4.0.0.rc3'
+gem 'spree', '~> 4.1.0.rc1'
 gem 'spree_gateway'
-gem 'spree_auth_devise', '~> 4.0.0.rc2'
+gem 'spree_auth_devise', '~> 4.1.0.rc1'
 gem 'spree_analytics_trackers'
 
 # Sentry Client

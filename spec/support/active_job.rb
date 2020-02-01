@@ -1,3 +1,5 @@
+require 'rspec/active_job'
+
 RSpec.configure do |config|
   config.include(RSpec::ActiveJob)
 
