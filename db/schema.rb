@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_123207) do
+ActiveRecord::Schema.define(version: 2020_02_01_102644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -222,48 +222,6 @@ ActiveRecord::Schema.define(version: 2019_09_10_123207) do
     t.index ["test_mode"], name: "index_spree_gateways_on_test_mode"
   end
 
-  create_table "spree_home_page_fields", force: :cascade do |t|
-    t.string "title", default: "", null: false
-    t.string "description", default: "", null: false
-    t.string "name", default: "", null: false
-    t.string "field_type", default: "", null: false
-    t.bigint "home_page_section_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["home_page_section_id"], name: "index_spree_home_page_fields_on_home_page_section_id"
-  end
-
-  create_table "spree_home_page_sections", force: :cascade do |t|
-    t.string "title", default: "", null: false
-    t.string "description", default: "", null: false
-    t.string "name", default: "", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "visible", default: true
-    t.boolean "mobile_visible", default: true
-    t.integer "position", default: 0
-    t.index ["position"], name: "index_spree_home_page_sections_on_position"
-  end
-
-  create_table "spree_instagram_posts", force: :cascade do |t|
-    t.text "data"
-    t.string "instagram_id"
-    t.boolean "show", default: true
-    t.bigint "spree_instagram_setting_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["instagram_id"], name: "index_spree_instagram_posts_on_instagram_id"
-    t.index ["spree_instagram_setting_id"], name: "index_spree_instagram_posts_on_spree_instagram_setting_id"
-  end
-
-  create_table "spree_instagram_settings", force: :cascade do |t|
-    t.string "access_token", default: "", null: false
-    t.string "target_account", default: "", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "code", default: "", null: false
-  end
-
   create_table "spree_inventory_units", id: :serial, force: :cascade do |t|
     t.string "state"
     t.integer "variant_id"
@@ -471,7 +429,9 @@ ActiveRecord::Schema.define(version: 2019_09_10_123207) do
     t.boolean "auto_capture"
     t.text "preferences"
     t.integer "position", default: 0
+    t.bigint "store_id"
     t.index ["id", "type"], name: "index_spree_payment_methods_on_id_and_type"
+    t.index ["store_id"], name: "index_spree_payment_methods_on_store_id"
   end
 
   create_table "spree_payments", id: :serial, force: :cascade do |t|
@@ -1033,6 +993,9 @@ ActiveRecord::Schema.define(version: 2019_09_10_123207) do
     t.boolean "default", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "facebook"
+    t.string "twitter"
+    t.string "instagram"
     t.index "lower((code)::text)", name: "index_spree_stores_on_lower_code", unique: true
     t.index ["default"], name: "index_spree_stores_on_default"
     t.index ["url"], name: "index_spree_stores_on_url"
