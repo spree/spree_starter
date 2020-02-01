@@ -82,6 +82,7 @@ RSpec.configure do |config|
     reset_spree_preferences do |config|
       # config.my_custom_preference = 10
     end
+    create(:store)
   end
 
   config.before(:each, type: :controller) do
