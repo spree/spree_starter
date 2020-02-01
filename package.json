@@ -30,7 +30,7 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/plugin-syntax-jsx": "7.2.0",
+    "@babel/plugin-syntax-jsx": "7.8.3",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^4.0.7",
