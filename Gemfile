@@ -78,8 +78,7 @@ group :test do
   gem 'webmock'
   gem 'codeclimate-test-reporter', require: nil
 
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
 end
 
 # Heroku fix

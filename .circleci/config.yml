@@ -74,15 +74,6 @@ jobs:
           name: Setup DB
           command: bundle exec rails db:create db:schema:load
       - run:
-          name: Install Chromedriver latest version
-          command: |
-            sudo apt-get update
-            sudo apt-get install lsb-release libappindicator3-1
-            curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-            sudo dpkg -i google-chrome.deb
-            sudo sed -i 's|HERE/chrome"|HERE/chrome" --no-sandbox|g' /opt/google/chrome/google-chrome
-            rm google-chrome.deb
-      - run:
           name: Run Rspec
           command: |
             TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
