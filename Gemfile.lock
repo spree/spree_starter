@@ -160,7 +160,7 @@ GEM
     css_parser (1.7.1)
       addressable
     dalli (2.7.10)
-    database_cleaner (1.8.1)
+    database_cleaner (1.8.2)
     debug_inspector (0.0.3)
     deface (1.5.3)
       nokogiri (>= 1.6)
@@ -404,7 +404,7 @@ GEM
     ruby-progressbar (1.10.1)
     ruby-vips (2.0.17)
       ffi (~> 1.9)
-    rubyzip (2.1.0)
+    rubyzip (2.2.0)
     safe_yaml (1.0.5)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
