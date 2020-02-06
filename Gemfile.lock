@@ -546,7 +546,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.6.1)
     uniform_notifier (1.13.0)
-    vcr (5.0.0)
+    vcr (5.1.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (4.0.1)
