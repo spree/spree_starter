@@ -46,7 +46,7 @@
     "react-dom": "16.12.0",
     "react-hot-loader": "^4.3.11",
     "react-hotkeys": "2.0.0",
-    "react-redux": "^7.1.3",
+    "react-redux": "^7.2.0",
     "react-tippy": "^1.2.3",
     "react_ujs": "^2.6.0",
     "redux": "^4.0.0",
