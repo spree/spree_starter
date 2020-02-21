@@ -58,7 +58,7 @@ GEM
     activejob (6.0.2.1)
       activesupport (= 6.0.2.1)
       globalid (>= 0.3.6)
-    activemerchant (1.104.0)
+    activemerchant (1.105.0)
       activesupport (>= 4.2)
       builder (>= 2.1.2, < 4.0.0)
       i18n (>= 0.6.9)
@@ -506,7 +506,7 @@ GEM
       spree_api (= 4.1.0.rc3)
       spree_core (= 4.1.0.rc3)
       turbolinks (~> 5.2.0)
-    spree_gateway (3.7.0)
+    spree_gateway (3.7.1)
       spree_core (>= 3.1.0, < 5.0)
       spree_extension
     spree_sample (4.1.0.rc3)
