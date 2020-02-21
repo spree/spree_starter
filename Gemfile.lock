@@ -58,7 +58,7 @@ GEM
     activejob (6.0.2.1)
       activesupport (= 6.0.2.1)
       globalid (>= 0.3.6)
-    activemerchant (1.104.0)
+    activemerchant (1.105.0)
       activesupport (>= 4.2)
       builder (>= 2.1.2, < 4.0.0)
       i18n (>= 0.6.9)
@@ -453,7 +453,7 @@ GEM
       fast_jsonapi (~> 1.5)
       rabl (~> 0.14.2)
       spree_core (= 4.1.0.rc3)
-    spree_auth_devise (4.1.0.rc1)
+    spree_auth_devise (4.1.0)
       deface (~> 1.0)
       devise (~> 4.7)
       devise-encryptable (= 0.2.0)
@@ -627,7 +627,7 @@ DEPENDENCIES
   sidekiq
   spree (~> 4.1.0.rc3)
   spree_analytics_trackers
-  spree_auth_devise (~> 4.1.0.rc1)
+  spree_auth_devise (~> 4.1.0)
   spree_gateway
   spring
   spring-commands-rspec
