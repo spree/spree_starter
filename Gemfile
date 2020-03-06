@@ -41,7 +41,7 @@ group :development, :test do
   gem 'spring'
 
   # testing
-  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', '~> 4.0.0.beta4'
   gem 'rspec_junit_formatter'
   gem 'rspec-activemodel-mocks'
   gem 'rspec-activejob'
@@ -104,9 +104,9 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', '~> 4.1.0.rc3'
-gem 'spree_gateway'
-gem 'spree_auth_devise', '~> 4.1.0'
+gem 'spree', '~> 4.1'
+gem 'spree_gateway', '~> 3.7'
+gem 'spree_auth_devise', '~> 4.1'
 gem 'spree_analytics_trackers'
 
 # Sentry Client
@@ -117,6 +117,6 @@ gem 'scout_apm'
 
 # feature toggle
 gem 'flipper'
-gem 'flipper-active_record', '~> 0.16', github: 'mokhan/flipper', branch: 'rails-6'
+gem 'flipper-active_record'
 gem 'flipper-redis'
 gem 'flipper-ui'

@@ -1,4 +1,4 @@
-Copyright (c) 2015-2017 Spark Solutions Sp. z o.o.
+Copyright (c) 2015-2020 Spark Solutions Sp. z o.o.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
