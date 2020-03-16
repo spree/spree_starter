@@ -41,7 +41,7 @@ group :development, :test do
   gem 'spring'
 
   # testing
-  gem 'rspec-rails', '~> 4.0.0.beta4'
+  gem 'rspec-rails', '~> 4.0.0.rc1'
   gem 'rspec_junit_formatter'
   gem 'rspec-activemodel-mocks'
   gem 'rspec-activejob'
