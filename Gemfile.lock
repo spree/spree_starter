@@ -412,7 +412,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    scout_apm (2.6.6)
+    scout_apm (2.6.7)
       parser
     select2-rails (3.5.10)
       thor (~> 0.14)
