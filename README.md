@@ -1,4 +1,4 @@
-## Spark Starter Kit
+# Spark Starter Kit
 
 [![Circle CI](https://circleci.com/gh/spark-solutions/spark-starter-kit.svg?style=svg)](https://circleci.com/gh/spark-solutions/spark-starter-kit) [![Maintainability](https://api.codeclimate.com/v1/badges/d240686c99b3d35eb61b/maintainability)](https://codeclimate.com/github/spark-solutions/spark-starter-kit/maintainability)
 
@@ -11,14 +11,11 @@ This is a starting point for all [Spree](https://spreecommerce.org)/Rails relate
 
 ## Installation
 
-### Install required tools and dependencies:
- - [Docker](https://www.docker.com/community-edition#/download)
- - [Homebrew](https://brew.sh/) if you're on OSX
- - PostgreSQL client - `brew install postgresql` or `apt-get install postgresql-client`
- - [RVM](https://rvm.io/) - `rvm use`
- - [NVM](https://github.com/creationix/nvm) - `nvm use`
- - Yarn - `npm install -g yarn`
- - Bundler - `gem install bundler`
+### Install required tools and dependencies
+
+* [Docker](https://www.docker.com/community-edition#/download)
+* bundler
+* yarn
 
 ### Run setup script
 
@@ -28,26 +25,18 @@ bin/setup
 
 ## Development
 
-To start the project just type:
+### Running rails console
 
 ```bash
-bin/start
+docker-compose run web rails c
 ```
 
-### Hot Module Replacement
-
-Before firing up the rails server you need to start `webpack-dev-server`
-
-```bash
-bin/webpack-dev-server
-```
-
-## Running tests
+### Running tests
 
 Before running the test suite remember to fire up docker-compose (if it's not running already):
 
 ```bash
-docker-compose up -d
+docker-compose run web bash
 ```
 
 And after that you can just use plain normal rspec:
@@ -55,6 +44,75 @@ And after that you can just use plain normal rspec:
 ```bash
 bundle exec rspec
 ```
+
+### Adding new gems
+
+Update `Gemfile` and run:
+
+```bash
+bundle install
+docker-compose build
+```
+
+You will need to restart the server if running:
+
+```bash
+docker-compose restart
+```
+
+### Updating gems
+
+```bash
+bundle update spree
+docker-compose build
+```
+
+### Conventions
+
+#### Namespaces
+
+* `Spree` - Spree-specific models, controllers, services
+* `SparkStarterKit` - all custom-made models, controllers, services specifically for SparkStarterKit marketplace
+
+#### Using Dependencies system
+
+Rather than writing decorators for Services please use [dependency injecton](https://guides.spreecommerce.org/developer/customization/dependencies.html).
+
+#### Spree Decorators
+
+All decorators should use `Module.prepend` pattern.
+
+1. Controllers
+
+    Place them in `app/controllers/spark_starter_kit/spree/home_controller_decorator.rb`, eg.
+
+    ```ruby
+    module SparkStarterKit
+      module Spree
+        module HomeControllerDecorator
+          # ...
+        end
+      end
+    end
+
+    ::Spree::HomeController.prepend(SparkStarterKit::Spree::HomneControllerDecorator)
+    ```
+
+2. Models
+
+    Place them in `app/models/spark_starter_kit/spree/product_decorator.rb`, eg.
+
+    ```ruby
+    module SparkStarterKit
+      module Spree
+        module ProductDecorator
+          # ...
+        end
+      end
+    end
+
+    ::Spree::Product.prepend(SparkStarterKit::Spree::ProductDecorator)
+    ```
 
 ## License
 
