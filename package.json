@@ -70,7 +70,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.0",
-    "prettier": "^1.14.3",
+    "prettier": "^2.0.4",
     "redux-logger": "^3.0.6",
     "webpack-dev-server": "^3.10.1"
   },
