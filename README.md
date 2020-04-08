@@ -72,7 +72,7 @@ docker-compose build
 #### Namespaces
 
 * `Spree` - Spree-specific models, controllers, services
-* `SparkStarterKit` - all custom-made models, controllers, services specifically for SparkStarterKit marketplace
+* `SparkStarterKit` - all custom-made models, controllers, services specifically for SparkStarterKit application
 
 #### Using Dependencies system
 
