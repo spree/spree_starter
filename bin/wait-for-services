@@ -1,0 +1,5 @@
+until nc -z -v -w30 $DB_HOST $DB_PORT; do
+ echo 'Waiting for PostgreSQL...'
+ sleep 1
+done
+echo "PostgreSQL is up and running!"
