@@ -116,7 +116,7 @@ All decorators should use `Module.prepend` pattern.
 
 ## License
 
-Spark Starter Kit is copyright © 2015-2019
+Spark Starter Kit is copyright © 2015-2020
 [Spark Solutions Sp. z o.o.][spark]. It is free software,
 and may be redistributed under the terms specified in the
 [LICENSE](LICENSE.md) file.
