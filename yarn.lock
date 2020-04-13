@@ -925,10 +925,10 @@
     webpack-cli "^3.3.11"
     webpack-sources "^1.4.3"
 
-"@spree/storefront-api-v2-sdk@^4.0.5":
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/@spree/storefront-api-v2-sdk/-/storefront-api-v2-sdk-4.0.5.tgz#626de1ae858acd5acfe0f1269ad466efab955ab1"
-  integrity sha512-DccCeUADpkyn1I5sSqqQSR7etA4xbxVOvipQe0LiWHL8be++AFHasmTqQGN2PhC6Irq9QfDoDG3iHiiA6bMxfA==
+"@spree/storefront-api-v2-sdk@^4.0.6":
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/@spree/storefront-api-v2-sdk/-/storefront-api-v2-sdk-4.0.6.tgz#1748e368fd6e60ac62852ad41565fb476948d57a"
+  integrity sha512-urp1xom123ewqyNxgchFHPA3pgMV8fPyxIQCvRuqEwfpXanV4GB7b1aLRtVyf2xktfi7xoZm/2QjMAoXsHHSvQ==
   dependencies:
     axios "^0.19.0"
     lodash "^4.17.11"
