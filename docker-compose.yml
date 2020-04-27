@@ -30,6 +30,7 @@ services:
       REDIS_URL: redis://redis:6379/0
       DB_HOST: postgres
       DB_PORT: 5432
+      WEBPACKER_DEV_SERVER_HOST: webpacker
   webpacker:
     build:
       context: .
