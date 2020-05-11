@@ -73,7 +73,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "prettier": "^2.0.4",
     "redux-logger": "^3.0.6",
-    "webpack-dev-server": "^3.10.1"
+    "webpack-dev-server": "^3.11.0"
   },
   "peerDependencies": {
     "caniuse-lite": "^1.0.30000887"
