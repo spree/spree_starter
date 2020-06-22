@@ -32,7 +32,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-syntax-jsx": "7.8.3",
     "@babel/plugin-transform-async-to-generator": "^7.8.3",
-    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^5.1.1",
     "@spree/storefront-api-v2-sdk": "^4.1.0",
