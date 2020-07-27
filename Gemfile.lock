@@ -176,7 +176,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
-    ffaker (2.14.0)
+    ffaker (2.16.0)
     ffi (1.12.2)
     flamegraph (0.9.5)
     flipper (0.17.2)
