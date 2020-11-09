@@ -1,9 +1,11 @@
 version: '3.7'
 services:
   postgres:
-    image: postgres:11.0-alpine
+    image: postgres:12.2-alpine
     ports:
       - "5432:5432"
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
       - 'postgres:/var/lib/postgresql/data'
   redis:
@@ -31,6 +33,7 @@ services:
       DB_HOST: postgres
       DB_PORT: 5432
       WEBPACKER_DEV_SERVER_HOST: webpacker
+      DISABLE_SPRING: 1
   webpacker:
     build:
       context: .
@@ -60,6 +63,7 @@ services:
       REDIS_URL: redis://redis:6379/0
       DB_HOST: postgres
       DB_PORT: 5432
+      DISABLE_SPRING: 1
 
 volumes:
   redis:
