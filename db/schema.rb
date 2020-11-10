@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_06_111338) do
+ActiveRecord::Schema.define(version: 2020_11_09_101753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -160,6 +160,25 @@ ActiveRecord::Schema.define(version: 2020_03_06_111338) do
     t.index ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type"
     t.index ["deleted_at"], name: "index_spree_calculators_on_deleted_at"
     t.index ["id", "type"], name: "index_spree_calculators_on_id_and_type"
+  end
+
+  create_table "spree_checks", force: :cascade do |t|
+    t.bigint "payment_method_id"
+    t.bigint "user_id"
+    t.string "account_holder_name"
+    t.string "account_holder_type"
+    t.string "routing_number"
+    t.string "account_number"
+    t.string "account_type", default: "checking"
+    t.string "status"
+    t.string "last_digits"
+    t.string "gateway_customer_profile_id"
+    t.string "gateway_payment_profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["payment_method_id"], name: "index_spree_checks_on_payment_method_id"
+    t.index ["user_id"], name: "index_spree_checks_on_user_id"
   end
 
   create_table "spree_countries", id: :serial, force: :cascade do |t|
@@ -431,6 +450,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_111338) do
     t.integer "position", default: 0
     t.bigint "store_id"
     t.index ["id", "type"], name: "index_spree_payment_methods_on_id_and_type"
+    t.index ["id"], name: "index_spree_payment_methods_on_id"
     t.index ["store_id"], name: "index_spree_payment_methods_on_store_id"
   end
 
@@ -448,6 +468,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_111338) do
     t.string "number"
     t.string "cvv_response_code"
     t.string "cvv_response_message"
+    t.string "intent_client_key"
     t.index ["number"], name: "index_spree_payments_on_number", unique: true
     t.index ["order_id"], name: "index_spree_payments_on_order_id"
     t.index ["payment_method_id"], name: "index_spree_payments_on_payment_method_id"
@@ -1093,7 +1114,9 @@ ActiveRecord::Schema.define(version: 2020_03_06_111338) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "engine", default: 0, null: false
+    t.integer "store_id"
     t.index ["active"], name: "index_spree_trackers_on_active"
+    t.index ["store_id"], name: "index_spree_trackers_on_store_id"
   end
 
   create_table "spree_users", id: :serial, force: :cascade do |t|
