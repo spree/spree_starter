@@ -999,13 +999,13 @@
     webpack-cli "^3.3.12"
     webpack-sources "^1.4.3"
 
-"@spree/storefront-api-v2-sdk@^4.1.0":
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/@spree/storefront-api-v2-sdk/-/storefront-api-v2-sdk-4.4.1.tgz#2634677e569e3b10ce36335a26ea3607f624ae59"
-  integrity sha512-1zWgMlLf0wJ77yA0ZyQl7A2uGnTyjzAma2nKgS1AcsFPzO881wXWXDRLNgAb4m8462BLAqejla6W4KBNWq9FGw==
+"@spree/storefront-api-v2-sdk@^4.4.2":
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/@spree/storefront-api-v2-sdk/-/storefront-api-v2-sdk-4.4.2.tgz#1c02218aec06c7917733bfeb8c0d7e39ffa1baf2"
+  integrity sha512-md5+QIS/ymUaXSOvd/wgdJJWucVKeeGkeTzud28ku9Ac9YoSeslVOP2ckRS2YkoiPjErR1KEr5pT1Wj/jzo/hg==
   dependencies:
     axios "^0.19.0"
-    lodash "^4.17.11"
+    lodash "^4.17.20"
     qs "^6.6.0"
 
 "@types/glob@^7.1.1":
@@ -5136,7 +5136,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.5, lodash@~4.17.10:
+lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.5, lodash@~4.17.10:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
