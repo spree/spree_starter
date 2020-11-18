@@ -120,3 +120,7 @@ gem 'flipper'
 gem 'flipper-active_record'
 gem 'flipper-redis'
 gem 'flipper-ui'
+
+# better logging
+gem 'lograge'
+gem 'remote_syslog_logger'

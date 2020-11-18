@@ -28,7 +28,7 @@ Rails.application.configure do
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
-  
+
   # Minimize JS code
   config.assets.js_compressor = :uglifier
 
@@ -55,7 +55,37 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :info
+  config.log_level = ENV.fetch('RAILS_LOG_LEVEL', :info).to_sym
+
+  # lograge
+  if ENV.fetch('LOGRAGE_DISABLED', false)
+    config.lograge.enabled = true
+    config.lograge.formatter = -> (data) {
+      tag = "[HTTP REQUEST] [#{data.delete(:status)} #{data.delete(:method)} #{data.delete(:path)} .#{(data.delete(:format) || 'format_missing').upcase}]"
+      "#{tag} : #{data.to_json}"
+    }
+    config.lograge.custom_options = lambda do |event|
+      exceptions = %w(controller action format id slug permalink)
+      {
+        timestamp: event.time.utc,
+        host: event.payload[:host],
+        params: event.payload[:params].except(*exceptions),
+        user_id: event.payload[:user_id],
+        source_ip: event.payload[:source_ip]
+      }
+    end
+
+    # disable action view logs
+    config.action_view.logger = Rack::NullLogger.new(STDOUT)
+  end
+
+  # papertrail config
+  if ENV['PAPERTRAIL_HOSTNAME'].present? && ENV['PAPERTRAIL_REMOTE_PORT'].present?
+    remote_syslog_logger = RemoteSyslogLogger.new(ENV['PAPERTRAIL_HOSTNAME'],
+                                                  ENV['PAPERTRAIL_REMOTE_PORT'],
+                                                  program: "spree-#{ENV['RAILS_ENV']}")
+    config.logger = ActiveSupport::TaggedLogging.new remote_syslog_logger
+  end
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
