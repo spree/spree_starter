@@ -99,7 +99,7 @@ gem 'sidekiq'
 
 # front end
 gem 'react-rails', '~> 2.6.0'
-gem 'webpacker', '>= 4.0.x'
+gem 'webpacker', '~> 5.1'
 gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
@@ -120,3 +120,6 @@ gem 'flipper'
 gem 'flipper-active_record'
 gem 'flipper-redis'
 gem 'flipper-ui'
+
+#SendGrid
+gem 'sendgrid-actionmailer'

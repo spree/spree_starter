@@ -124,19 +124,14 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
-    # sendgrid mail
-    if ENV['SENDGRID_USERNAME'].present? && ENV['SENDGRID_PASSWORD'].present?
-      config.action_mailer.delivery_method = :smtp
-      config.action_mailer.smtp_settings = {
-        user_name: ENV['SENDGRID_USERNAME'],
-        password: ENV['SENDGRID_PASSWORD'],
-        domain: ENV['APP_DOMAIN'],
-        address: 'smtp.sendgrid.net',
-        port: 587,
-        authentication: :plain,
-        enable_starttls_auto: true
-      }
-    end
+  # sendgrid mail
+  if ENV['SENDGRID_API_KEY'].present?
+    config.action_mailer.delivery_method = :sendgrid_actionmailer
+    config.action_mailer.sendgrid_actionmailer_settings = {
+      api_key: ENV['SENDGRID_API_KEY'],
+      raise_delivery_errors: true
+    }
+  end
 
     # fix for fonts CORS issues with CloudFront
     config.font_assets.origin = '*'
