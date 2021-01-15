@@ -247,7 +247,7 @@ GEM
     listen (3.4.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.8.0)
+    loofah (2.9.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -516,8 +516,7 @@ GEM
       spree_api (= 4.1.13)
       spree_core (= 4.1.13)
       turbolinks (~> 5.2.0)
-    spree_gateway (3.9.2)
-      deface
+    spree_gateway (3.9.3)
       spree_core (>= 3.7.0, < 5.0)
       spree_extension
     spree_sample (4.1.13)
@@ -641,7 +640,7 @@ DEPENDENCIES
   spree (~> 4.1)
   spree_analytics_trackers
   spree_auth_devise (~> 4.1)
-  spree_gateway (~> 3.7)
+  spree_gateway (~> 3.9)
   spring
   spring-commands-rspec
   stackprof
