@@ -172,10 +172,6 @@ GEM
       aws-sigv4 (~> 1.1)
     aws-sigv4 (1.2.2)
       aws-eventstream (~> 1, >= 1.0.2)
-    babel-source (5.8.35)
-    babel-transpiler (0.7.0)
-      babel-source (>= 4.0, < 6)
-      execjs (~> 2.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
     binding_of_caller (1.0.0)
@@ -434,12 +430,6 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    react-rails (2.6.1)
-      babel-transpiler (>= 0.7.0)
-      connection_pool
-      execjs
-      railties (>= 3.2)
-      tilt
     redis (4.2.5)
     regexp_parser (1.8.2)
     responders (3.0.1)
@@ -644,7 +634,6 @@ DEPENDENCIES
   rack-mini-profiler
   rack-timeout
   rails (~> 6.1.1)
-  react-rails (~> 2.6.0)
   rspec-activejob
   rspec-activemodel-mocks
   rspec-rails (~> 4.0.0)
