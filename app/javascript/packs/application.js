@@ -8,10 +8,5 @@
 // layout file, like app/views/layouts/application.html.erb
 
 // Support component names which are placed under containers alias folder name
-import ReactRailsUJS from 'react_ujs'
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
-
-const componentRequireContext = require.context('providers', true)
-
-ReactRailsUJS.useContext(componentRequireContext)

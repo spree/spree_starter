@@ -6,8 +6,6 @@ This is a starting point for all [Spree](https://spreecommerce.org)/Rails relate
 
  - Ruby on Rails
  - [Spree Commerce](https://spreecommerce.org)
- - Webpack via Webpacker gem
- - React with Redux
 
 ## Installation
 
