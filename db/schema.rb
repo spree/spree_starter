@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_101753) do
+ActiveRecord::Schema.define(version: 2021_01_15_131242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_101753) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.datetime "deleted_at"
+    t.string "label"
     t.index ["country_id"], name: "index_spree_addresses_on_country_id"
     t.index ["deleted_at"], name: "index_spree_addresses_on_deleted_at"
     t.index ["firstname"], name: "index_addresses_on_firstname"
@@ -345,6 +346,8 @@ ActiveRecord::Schema.define(version: 2020_11_09_101753) do
     t.integer "position", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "filterable", default: true, null: false
+    t.index ["filterable"], name: "index_spree_option_types_on_filterable"
     t.index ["name"], name: "index_spree_option_types_on_name"
     t.index ["position"], name: "index_spree_option_types_on_position"
   end
@@ -414,6 +417,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_101753) do
     t.integer "state_lock_version", default: 0, null: false
     t.decimal "taxable_adjustment_total", precision: 10, scale: 2, default: "0.0", null: false
     t.decimal "non_taxable_adjustment_total", precision: 10, scale: 2, default: "0.0", null: false
+    t.boolean "store_owner_notification_delivered"
     t.index ["approver_id"], name: "index_spree_orders_on_approver_id"
     t.index ["bill_address_id"], name: "index_spree_orders_on_bill_address_id"
     t.index ["canceler_id"], name: "index_spree_orders_on_canceler_id"
@@ -490,6 +494,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_101753) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "compare_at_amount", precision: 10, scale: 2
     t.index ["deleted_at"], name: "index_spree_prices_on_deleted_at"
     t.index ["variant_id", "currency"], name: "index_spree_prices_on_variant_id_and_currency"
     t.index ["variant_id"], name: "index_spree_prices_on_variant_id"
@@ -520,6 +525,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_101753) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position", default: 0
+    t.boolean "show_property", default: true
     t.index ["position"], name: "index_spree_product_properties_on_position"
     t.index ["product_id"], name: "index_product_properties_on_product_id"
     t.index ["property_id"], name: "index_spree_product_properties_on_property_id"
@@ -554,6 +560,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_101753) do
     t.integer "taxon_id"
     t.integer "position"
     t.index ["position"], name: "index_spree_products_taxons_on_position"
+    t.index ["product_id", "taxon_id"], name: "index_spree_products_taxons_on_product_id_and_taxon_id", unique: true
     t.index ["product_id"], name: "index_spree_products_taxons_on_product_id"
     t.index ["taxon_id"], name: "index_spree_products_taxons_on_taxon_id"
   end
@@ -1017,6 +1024,16 @@ ActiveRecord::Schema.define(version: 2020_11_09_101753) do
     t.string "facebook"
     t.string "twitter"
     t.string "instagram"
+    t.string "supported_currencies"
+    t.string "default_locale"
+    t.string "customer_support_email"
+    t.integer "default_country_id"
+    t.text "description"
+    t.text "address"
+    t.string "contact_phone"
+    t.string "new_order_notifications_email"
+    t.integer "checkout_zone_id"
+    t.string "seo_robots"
     t.index "lower((code)::text)", name: "index_spree_stores_on_lower_code", unique: true
     t.index ["default"], name: "index_spree_stores_on_default"
     t.index ["url"], name: "index_spree_stores_on_url"
@@ -1200,7 +1217,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_101753) do
     t.integer "zone_members_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "kind"
+    t.string "kind", default: "state"
     t.index ["default_tax"], name: "index_spree_zones_on_default_tax"
     t.index ["kind"], name: "index_spree_zones_on_kind"
   end
