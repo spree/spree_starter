@@ -108,7 +108,6 @@ gem 'spree', github: 'spree/spree', branch: 'master'
 gem 'spree_gateway', '~> 3.9'
 gem 'spree_auth_devise', '~> 4.3'
 gem 'spree_analytics_trackers'
-gem 'deface', github: 'spree/deface', branch: 'master'
 
 # Sentry Client
 gem 'sentry-raven'
