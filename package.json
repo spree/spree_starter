@@ -39,7 +39,7 @@
     "postcss-cssnext": "^3.1.0",
     "resolve-url-loader": "^3.0.1",
     "typescript": "*",
-    "webpack": "^4.0.0",
+    "webpack": "^5.15.0",
     "webpack-merge": "^4.1.4",
     "yarn": "^1.22.0"
   },
