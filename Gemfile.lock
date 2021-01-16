@@ -438,6 +438,8 @@ GEM
       tilt
     redis (4.2.5)
     regexp_parser (1.8.2)
+    remote_syslog_logger (1.0.4)
+      syslog_protocol
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -554,6 +556,7 @@ GEM
       activerecord (>= 5.1)
       state_machines-activemodel (>= 0.8.0)
     stringex (2.8.5)
+    syslog_protocol (0.9.2)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -642,6 +645,7 @@ DEPENDENCIES
   rack-timeout
   rails (~> 6.0.3)
   react-rails (~> 2.6.0)
+  remote_syslog_logger
   rspec-activejob
   rspec-activemodel-mocks
   rspec-rails (~> 4.0.0)
