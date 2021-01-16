@@ -40,7 +40,7 @@
     "resolve-url-loader": "^3.0.1",
     "typescript": "*",
     "webpack": "^4.0.0",
-    "webpack-merge": "^4.1.4",
+    "webpack-merge": "^5.7.3",
     "yarn": "^1.22.0"
   },
   "devDependencies": {
