@@ -43,8 +43,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  if ENV[:BUCKETEER_AWS_ACCESS_KEY_ID].present? && ENV['BUCKETEER_AWS_SECRET_ACCESS_KEY'].present? &&
-    ENV['BUCKETEER_AWS_REGION'].present? && ENV['BUCKETEER_BUCKET_NAME'].present?
+  if ENV['BUCKETEER_AWS_ACCESS_KEY_ID'].present? && ENV['BUCKETEER_AWS_SECRET_ACCESS_KEY'].present?
     config.active_storage.service = :amazon
   else
     config.active_storage.service = :local
@@ -66,13 +65,13 @@ Rails.application.configure do
   config.log_tags = [ :request_id ]
 
   # Use a different cache store in production.
-  if ENV['MEMCACHEDCLOUD_SERVERS']
+  if ENV['MEMCACHEDCLOUD_SERVERS'].present?
     memcached_config = {
       username: ENV['MEMCACHEDCLOUD_USERNAME'],
       password: ENV['MEMCACHEDCLOUD_PASSWORD'],
       value_max_bytes: 104_857_60,
       compress: false,
-      pool_size: ENV['MEMCACHED_POOL_SIZE'] || 5,
+      pool_size: ENV.fetch('MEMCACHED_POOL_SIZE', 5).to_i,
       expires_in: 1.week
     }
 
@@ -87,16 +86,18 @@ Rails.application.configure do
     }
   end
 
-  heroku_app_url = ENV['HEROKU_APP_NAME'].present? && "#{ENV['HEROKU_APP_NAME']}.herokuapp.com"
+  heroku_app_url = ENV['HEROKU_APP_NAME'].present? ? "#{ENV['HEROKU_APP_NAME']}.herokuapp.com" : nil
+  app_host = ENV.fetch('APP_DOMAIN', heroku_app_url)
+  cdn_host = ENV.fetch('CDN', heroku_app_url)
 
   # Action mailer con host production
-  if (host = heroku_app_url || ENV['APP_DOMAIN']).present?
-    routes.default_url_options = config.action_mailer.default_url_options = { host: "https://#{host}" }
+  if app_host.present?
+    routes.default_url_options = config.action_mailer.default_url_options = { host: "https://#{app_host}" }
   end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  if (host = ENV['CDN'] || heroku_app_url).present?
-    config.action_controller.asset_host = config.action_mailer.asset_host = "https://#{host}"
+  if cdn_host.present?
+    config.action_controller.asset_host = config.action_mailer.asset_host = "https://#{cdn_host}"
   end
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
