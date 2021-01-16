@@ -514,7 +514,7 @@ GEM
       spree_backend (>= 4.1.0, < 5.0)
       spree_core (>= 4.1.0, < 5.0)
       spree_extension
-    spree_auth_devise (4.3.0)
+    spree_auth_devise (4.3.1)
       devise (~> 4.7)
       devise-encryptable (= 0.2.0)
       spree_core (>= 4.1, < 5.0)
