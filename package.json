@@ -35,7 +35,7 @@
     "@rails/webpacker": "^5.1.1",
     "@spree/storefront-api-v2-sdk": "^4.4.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.23",
-    "node-sass": "^4.14.0",
+    "node-sass": "^5.0.0",
     "postcss-cssnext": "^3.1.0",
     "resolve-url-loader": "^3.0.1",
     "typescript": "*",
