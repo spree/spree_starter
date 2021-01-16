@@ -121,5 +121,8 @@ gem 'flipper-active_record'
 gem 'flipper-redis'
 gem 'flipper-ui'
 
-#SendGrid
+# SendGrid
 gem 'sendgrid-actionmailer'
+
+# logging
+gem 'remote_syslog_logger'

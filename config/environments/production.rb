@@ -28,7 +28,7 @@ Rails.application.configure do
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
-  
+
   # Minimize JS code
   config.assets.js_compressor = :uglifier
 
@@ -122,6 +122,14 @@ Rails.application.configure do
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
+  end
+
+  # papertrail config
+  if ENV['PAPERTRAIL_HOSTNAME'].present? && ENV['PAPERTRAIL_REMOTE_PORT'].present?
+    remote_syslog_logger = RemoteSyslogLogger.new(ENV['PAPERTRAIL_HOSTNAME'],
+                                                  ENV['PAPERTRAIL_REMOTE_PORT'],
+                                                  program: "spree-#{ENV['RAILS_ENV']}")
+    config.logger = ActiveSupport::TaggedLogging.new remote_syslog_logger
   end
 
   # sendgrid mail
