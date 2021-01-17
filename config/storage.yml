@@ -1,9 +1,11 @@
 test:
   service: Disk
+  public: true
   root: <%= Rails.root.join("tmp/storage") %>
 
 local:
   service: Disk
+  public: true
   root: <%= Rails.root.join("storage") %>
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
@@ -13,6 +15,7 @@ amazon:
   secret_access_key: <%= ENV['BUCKETEER_AWS_SECRET_ACCESS_KEY'] %>
   region: <%= ENV['BUCKETEER_AWS_REGION'] %>
   bucket: <%= ENV['BUCKETEER_BUCKET_NAME'] %>
+  public: true
   upload:
     cache_control: 'public, max-age=31536000'
 
