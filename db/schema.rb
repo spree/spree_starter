@@ -1139,14 +1139,13 @@ ActiveRecord::Schema.define(version: 2021_01_18_105722) do
   end
 
   create_table "spree_trackers", id: :serial, force: :cascade do |t|
+    t.string "environment"
     t.string "analytics_id"
     t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "engine", default: 0, null: false
-    t.integer "store_id"
     t.index ["active"], name: "index_spree_trackers_on_active"
-    t.index ["store_id"], name: "index_spree_trackers_on_store_id"
   end
 
   create_table "spree_users", id: :serial, force: :cascade do |t|
