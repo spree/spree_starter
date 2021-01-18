@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: spark-starter-kit_development
+  database: spree_starter_development
   host: <%= ENV.fetch('DB_HOST', 'localhost') %>
   username: postgres
   port: <%= ENV.fetch('DB_PORT', '5432') %>
@@ -60,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: spark-starter-kit_test
+  database: spree_starter_test
   host: <%= ENV.fetch('DB_HOST', 'localhost') %>
   username: postgres
   port: <%= ENV.fetch('DB_PORT', '5432') %>

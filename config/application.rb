@@ -9,7 +9,7 @@ require 'flipper/middleware/memoizer'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module SparkStarterKit
+module SpreeStarter
   class Application < Rails::Application
     config.to_prepare do
       # Load application's model / class decorators

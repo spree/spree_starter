@@ -1,11 +1,11 @@
 {
-  "name": "spark-starter-kit",
+  "name": "spree_starter",
   "version": "1.0.0",
   "description": "Spark Solutions starter kit",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sparks-solutions/spark-starter-kit.git"
+    "url": "https://github.com/sparks-solutions/spree_starter.git"
   },
   "author": "Spark Solutions <we@sparksolutions.co>",
   "license": "MIT",
@@ -20,9 +20,9 @@
     "ecommerce"
   ],
   "bugs": {
-    "url": "https://github.com/sparks-solutions/spark-starter-kit/issues"
+    "url": "https://github.com/sparks-solutions/spree_starter/issues"
   },
-  "homepage": "https://github.com/sparks-solutions/spark-starter-kit",
+  "homepage": "https://github.com/sparks-solutions/spree_starter",
   "dependencies": {
     "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
