@@ -6,7 +6,7 @@ AllCops:
   # line option.
   UseCache: true
 
-  TargetRubyVersion: 2.5.1
+  TargetRubyVersion: 2.7.2
 
   Exclude:
     - db/schema.rb
