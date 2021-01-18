@@ -103,10 +103,9 @@ gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
-gem 'spree', github: 'spree/spree', branch: 'master'
+gem 'spree', '~> 4.2.0.rc3'
 gem 'spree_gateway', '~> 3.9'
 gem 'spree_auth_devise', '~> 4.3'
-gem 'spree_analytics_trackers'
 
 # Sentry Client
 gem 'sentry-raven'
