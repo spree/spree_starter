@@ -1,0 +1,45 @@
+version: 1
+update_configs:
+  - package_manager: "ruby:bundler"
+    directory: "/"
+    update_schedule: "live"
+    automerged_updates:
+      - match:
+          dependency_name: "spree*"
+          update_type: "semver:patch"
+      - match:
+          dependency_name: "rails"
+          update_type: "semver:patch"
+      - match:
+          dependency_name: "rubocop*"
+      - match:
+          dependency_name: "puma"
+      - match:
+          dependency_name: "rack*"
+      - match:
+          dependency_name: "sentry-raven"
+      - match:
+          dependency_name: "scout_apm"
+      - match:
+          dependency_name: "flipper*"
+          update_type: "semver:minor"
+      - match:
+          dependency_name: "sidekiq"
+          update_type: "semver:minor"
+      - match:
+          dependency_name: "aws-sdk-s3"
+          update_type: "semver:minor"
+      - match:
+          dependency_name: "mini_racer"
+      - match:
+          dependency_name: "sass-rails"
+      - match:
+          dependency_name: "awesome_print"
+      - match:
+          dependency_name: "pry*"
+      - match:
+          dependency_name: "rspec*"
+      - match:
+          dependency_name: "webdrivers"
+      - match:
+          dependency_name: "sendgrid-actionmailer"
