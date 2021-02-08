@@ -28,29 +28,9 @@ gem 'awesome_print'
 
 group :development, :test do
   gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
-  # foreman doesn't allow us to update dotenv-rails which is required for Rails 6
-  # for now please use gem install foreman
-  # gem 'foreman', '~> 0.85'
-
-  gem 'pry'
-  gem 'pry-remote'
-  gem 'pry-stack_explorer'
-  gem 'pry-nav'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  # testing
-  gem 'rspec-rails', '~> 4.0.0'
-  gem 'rspec_junit_formatter'
-  gem 'rspec-activemodel-mocks'
-  gem 'rspec-activejob'
-  gem 'jsonapi-rspec'
-  gem 'spring-commands-rspec'
-  gem 'factory_bot'
-  gem 'factory_bot_rails'
-  gem 'database_cleaner'
-  gem 'ffaker'
 
   gem 'listen'
   gem 'rubocop', require: false
@@ -61,6 +41,8 @@ group :development, :test do
   gem 'flamegraph'
   gem 'stackprof'
   gem 'memory_profiler'
+
+  gem 'webmock'
 end
 
 group :development do
@@ -71,14 +53,8 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
-  gem 'capybara-screenshot'
-  gem 'launchy'
   gem 'vcr'
-  gem 'webmock'
   gem 'codeclimate-test-reporter', require: nil
-
-  gem 'webdrivers'
 end
 
 # Heroku fix
@@ -107,6 +83,7 @@ gem 'spree', '~> 4.2.0.rc4'
 gem 'spree_gateway', '~> 3.9'
 gem 'spree_auth_devise', '~> 4.3'
 gem 'spree_i18n', '~> 5.0'
+gem 'spree_dev_tools', require: false, group: %w[test development]
 
 # Sentry Client
 gem 'sentry-raven'
