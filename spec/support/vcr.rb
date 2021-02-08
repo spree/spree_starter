@@ -1,6 +1,7 @@
 require 'vcr'
 require 'webmock/rspec'
 require 'uri'
+require 'webdrivers'
 
 driver_hosts = Webdrivers::Common.subclasses.map { |driver| URI(driver.base_url).host }
 driver_hosts << 'codeclimate.com'
