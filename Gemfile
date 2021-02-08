@@ -33,7 +33,8 @@ group :development, :test do
   gem 'spring'
 
   gem 'listen'
-  gem 'rubocop', require: false
+
+  gem 'rspec_junit_formatter'
 
   # monitoring
   gem 'bullet'
