@@ -103,3 +103,5 @@ gem 'sendgrid-actionmailer'
 
 # logging
 gem 'remote_syslog_logger'
+
+gem 'activerecord-nulldb-adapter'
