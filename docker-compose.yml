@@ -65,7 +65,15 @@ services:
       DB_PORT: 5432
       DISABLE_SPRING: 1
 
+  cli:
+    image: mcr.microsoft.com/azure-cli
+    working_dir: /root
+    volumes:
+      - azurecli:/root
+      - ./deploy:/root/deploy
+
 volumes:
   redis:
   postgres:
   bundle_cache:
+  azurecli:
