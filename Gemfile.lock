@@ -82,7 +82,7 @@ GEM
       execjs
     awesome_nested_set (3.4.0)
       activerecord (>= 4.0.0, < 7.0)
-    awesome_print (1.8.0)
+    awesome_print (1.9.2)
     aws-eventstream (1.1.0)
     aws-partitions (1.429.0)
     aws-sdk-core (3.112.0)
