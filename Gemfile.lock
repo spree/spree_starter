@@ -186,7 +186,7 @@ GEM
     ffi (1.15.0)
     flamegraph (0.9.5)
     flatpickr (4.6.6.0)
-    flipper (0.20.3)
+    flipper (0.20.4)
     flipper-active_record (0.20.3)
       activerecord (>= 5.0, < 7)
       flipper (~> 0.20.3)
