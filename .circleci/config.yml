@@ -2,7 +2,7 @@ version: 2
 jobs:
   install_ruby_dependencies:
     docker:
-      - image: circleci/ruby:2.7-node-browsers
+      - image: circleci/ruby:2.7.3-node-browsers
     working_directory: ~/app
     environment:
       BUNDLE_JOBS: 4
