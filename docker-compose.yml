@@ -11,6 +11,7 @@ services:
     volumes:
       - 'redis:/data'
   web:
+    image: spree_starter
     depends_on:
       - 'postgres'
       - 'redis'
@@ -31,9 +32,7 @@ services:
       WEBPACKER_DEV_SERVER_HOST: webpacker
       DISABLE_SPRING: 1
   webpacker:
-    build:
-      context: .
-      dockerfile: Dockerfile.development
+    image: spree_starter
     environment:
       - NODE_ENV=development
       - RAILS_ENV=development
@@ -44,12 +43,10 @@ services:
     ports:
       - '3035:3035'
   worker:
+    image: spree_starter
     depends_on:
       - 'postgres'
       - 'redis'
-    build:
-      context: .
-      dockerfile: Dockerfile.development
     command: bundle exec sidekiq -C config/sidekiq.yml
     volumes:
       - 'bundle_cache:/bundle'

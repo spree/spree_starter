@@ -1,6 +1,5 @@
 
 rm -rf .env && cp -f .env.sample .env &&
-docker-compose pull &&
 docker-compose build web &&
 docker-compose run --rm web bash -c '
   bin/wait-for-services &&
