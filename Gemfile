@@ -75,7 +75,7 @@ gem 'rack-cache' # http caching
 gem 'sidekiq'
 
 # front end
-gem 'webpacker', '~> 5.1'
+gem 'webpacker', '~> 5.3'
 gem 'js-routes'
 gem 'i18n-js', '>= 3.0.0.rc11'
 
