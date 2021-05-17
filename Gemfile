@@ -11,9 +11,6 @@ gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails'
-
 gem 'mini_racer'
 
 gem 'bootsnap', require: false
@@ -55,7 +52,6 @@ end
 
 group :test do
   gem 'vcr'
-  gem 'codeclimate-test-reporter', require: nil
 end
 
 # Heroku fix
@@ -76,8 +72,6 @@ gem 'sidekiq'
 
 # front end
 gem 'webpacker', '~> 5.3'
-gem 'js-routes'
-gem 'i18n-js', '>= 3.0.0.rc11'
 
 # Spree gems
 gem 'spree', '~> 4.2'
