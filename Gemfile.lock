@@ -149,8 +149,6 @@ GEM
       activesupport (>= 3.0.0)
     childprocess (3.0.0)
     cldr-plurals-runtime-rb (1.1.0)
-    codeclimate-test-reporter (1.0.9)
-      simplecov (<= 0.13)
     coderay (1.1.3)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -246,8 +244,6 @@ GEM
     htmlentities (4.3.4)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
-    i18n-js (3.8.2)
-      i18n (>= 0.6.6)
     i18n_data (0.13.0)
     image_processing (1.12.1)
       mini_magick (>= 4.9.5, < 5)
@@ -262,8 +258,6 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
-    js-routes (1.4.14)
-      railties (>= 4)
     json (2.5.1)
     jsonapi-rspec (0.0.11)
       rspec-core
@@ -680,8 +674,6 @@ DEPENDENCIES
   aws-sdk-s3
   bootsnap
   bullet
-  codeclimate-test-reporter
-  coffee-rails
   dalli
   dotenv-rails (~> 2.1, >= 2.1.1)
   flamegraph
@@ -690,8 +682,6 @@ DEPENDENCIES
   flipper-redis
   flipper-ui
   font_assets
-  i18n-js (>= 3.0.0.rc11)
-  js-routes
   letter_opener
   listen
   memory_profiler
