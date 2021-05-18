@@ -71,7 +71,7 @@ gem 'rack-cache' # http caching
 gem 'sidekiq'
 
 # front end
-gem 'webpacker', '~> 5.3'
+gem 'webpacker', '~> 5.4'
 
 # Spree gems
 gem 'spree', '~> 4.2'
