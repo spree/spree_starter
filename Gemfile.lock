@@ -469,7 +469,7 @@ GEM
     sawyer (0.8.2)
       addressable (>= 2.3.5)
       faraday (> 0.8, < 2.0)
-    scout_apm (4.1.0)
+    scout_apm (4.1.1)
       parser
     select2-rails (4.0.13)
     selenium-webdriver (3.142.7)
