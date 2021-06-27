@@ -74,10 +74,13 @@ gem 'sidekiq'
 gem 'webpacker', '~> 5.4'
 
 # Spree gems
-gem 'spree', '~> 4.2'
-gem 'spree_gateway', '~> 3.9'
-gem 'spree_auth_devise', '~> 4.3'
-gem 'spree_i18n', '~> 5.0'
+gem 'spree'
+gem 'spree_frontend'
+gem 'spree_backend'
+gem 'spree_sample'
+gem 'spree_gateway'
+gem 'spree_auth_devise'
+gem 'spree_i18n', '>= 5.0'
 gem 'spree_dev_tools', require: false, group: %w[test development]
 
 # Sentry Client
