@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_082036) do
+ActiveRecord::Schema.define(version: 2021_07_05_155834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -568,6 +568,14 @@ ActiveRecord::Schema.define(version: 2021_02_25_082036) do
     t.index ["tax_category_id"], name: "index_spree_products_on_tax_category_id"
   end
 
+  create_table "spree_products_stores", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "store_id"
+    t.index ["product_id", "store_id"], name: "index_spree_products_stores_on_product_id_and_store_id", unique: true
+    t.index ["product_id"], name: "index_spree_products_stores_on_product_id"
+    t.index ["store_id"], name: "index_spree_products_stores_on_store_id"
+  end
+
   create_table "spree_products_taxons", id: :serial, force: :cascade do |t|
     t.integer "product_id"
     t.integer "taxon_id"
@@ -629,6 +637,11 @@ ActiveRecord::Schema.define(version: 2021_02_25_082036) do
     t.index ["product_group_id"], name: "index_promotion_rules_on_product_group_id"
     t.index ["promotion_id"], name: "index_spree_promotion_rules_on_promotion_id"
     t.index ["user_id"], name: "index_promotion_rules_on_user_id"
+  end
+
+  create_table "spree_promotion_rules_stores", id: false, force: :cascade do |t|
+    t.integer "promotion_rule_id"
+    t.integer "store_id"
   end
 
   create_table "spree_promotions", id: :serial, force: :cascade do |t|
@@ -1111,7 +1124,9 @@ ActiveRecord::Schema.define(version: 2021_02_25_082036) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position", default: 0
+    t.integer "store_id"
     t.index ["position"], name: "index_spree_taxonomies_on_position"
+    t.index ["store_id"], name: "index_spree_taxonomies_on_store_id"
   end
 
   create_table "spree_taxons", id: :serial, force: :cascade do |t|

@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/spree-contrib/spree-multi-domain.git
+  revision: 70c91f296fcefd2d20d2e27eda8f4f5703e6d0e2
+  specs:
+    spree_multi_domain (4.0.0)
+      deface
+      spree (>= 4.2.0.rc4, < 5.0)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -173,6 +182,11 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
+    deface (1.8.1)
+      nokogiri (>= 1.6)
+      polyglot
+      rails (>= 5.2)
+      rainbow (>= 2.1.0)
     devise (4.8.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -323,6 +337,7 @@ GEM
     parser (3.0.1.1)
       ast (~> 2.4.1)
     pg (1.2.3)
+    polyglot (0.3.5)
     popper_js (1.16.0)
     premailer (1.15.0)
       addressable
@@ -706,6 +721,7 @@ DEPENDENCIES
   spree_frontend
   spree_gateway
   spree_i18n (>= 5.0)
+  spree_multi_domain!
   spree_sample
   spring
   stackprof
