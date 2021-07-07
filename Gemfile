@@ -40,14 +40,14 @@ group :development, :test do
   gem 'stackprof'
   gem 'memory_profiler'
 
-  gem 'webmock'
+  gem 'webmock', '>= 3.12.2'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 4.0'
 
-  gem 'letter_opener'
+  gem 'letter_opener', '>= 1.7.0'
 end
 
 group :test do
@@ -74,14 +74,14 @@ gem 'sidekiq'
 gem 'webpacker', '~> 5.4'
 
 # Spree gems
-gem 'spree'
-gem 'spree_frontend'
-gem 'spree_backend'
-gem 'spree_sample'
-gem 'spree_gateway'
-gem 'spree_auth_devise'
-gem 'spree_i18n', '>= 5.0'
-gem 'spree_dev_tools', require: false, group: %w[test development]
+gem 'spree', '>= 4.2.5'
+gem 'spree_frontend', '>= 4.2.5'
+gem 'spree_backend', '>= 4.2.5'
+gem 'spree_sample', '>= 4.2.5'
+gem 'spree_gateway', '>= 3.9.3'
+gem 'spree_auth_devise', '>= 4.3.4'
+gem 'spree_i18n', '>= 5.0.1'
+gem 'spree_dev_tools', '>= 0.1.8', require: false, group: %w[test development]
 
 # Sentry Client
 gem 'sentry-raven'
