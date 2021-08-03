@@ -316,7 +316,7 @@ GEM
     octokit (4.21.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
-    oj (3.12.2)
+    oj (3.12.3)
     orm_adapter (0.5.0)
     parallel (1.20.1)
     paranoia (2.4.3)
