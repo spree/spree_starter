@@ -1,5 +1,12 @@
 FROM ruby:2.7.3
 
+# SETUP USER
+ARG USER_ID
+ARG GROUP_ID
+
+RUN addgroup --gid $GROUP_ID user
+RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
+
 # SET CHROME WEB DRIVER VARIABLES
 ENV CHROMEDRIVER_VERSION 80.0.3987.16
 ENV CHROMEDRIVER_DIR /chromedriver
@@ -52,7 +59,12 @@ ENV BUNDLE_GEMFILE=/app/Gemfile \
 ENV PATH="${BUNDLE_BIN}:${PATH}"
 
 COPY Gemfile Gemfile.lock ./
+
+RUN chown -R user:user /app
+
 RUN bundle install
+
+USER $USER_ID
 
 EXPOSE 3000
 
