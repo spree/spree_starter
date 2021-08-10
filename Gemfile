@@ -81,6 +81,7 @@ gem 'spree_sample'
 gem 'spree_gateway'
 gem 'spree_auth_devise'
 gem 'spree_i18n', '>= 5.0'
+gem 'spree_multi_vendor', " ~> 2.2"
 gem 'spree_dev_tools', require: false, group: %w[test development]
 
 # Sentry Client
