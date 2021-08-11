@@ -74,10 +74,12 @@ gem 'sidekiq'
 gem 'webpacker', '~> 5.4'
 
 # Spree gems
-gem 'spree'
-gem 'spree_frontend'
-gem 'spree_backend'
-gem 'spree_sample'
+spree_opts = '~> 4.3.0.rc1'
+gem 'spree', spree_opts
+gem 'spree_frontend', spree_opts
+gem 'spree_backend', spree_opts
+gem 'spree_sample', spree_opts
+gem 'spree_emails', spree_opts
 gem 'spree_gateway'
 gem 'spree_auth_devise'
 gem 'spree_i18n', '>= 5.0'
