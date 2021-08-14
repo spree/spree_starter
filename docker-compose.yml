@@ -26,7 +26,6 @@ services:
     volumes:
       - 'bundle_cache:/bundle'
       - '.:/app'
-      - .env:/app/.env
     environment:
       REDIS_URL: redis://redis:6379/0
       DB_HOST: postgres
@@ -63,7 +62,6 @@ services:
     volumes:
       - 'bundle_cache:/bundle'
       - '.:/app'
-      - .env:/app/.env
     environment:
       REDIS_URL: redis://redis:6379/0
       DB_HOST: postgres
