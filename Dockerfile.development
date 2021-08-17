@@ -1,5 +1,13 @@
 FROM ruby:2.7.3
 
+# SETUP USER
+ARG USER_ID
+ARG GROUP_ID
+ARG USER_NAME=user
+
+RUN addgroup --gid $GROUP_ID $USER_NAME
+RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID $USER_NAME
+
 # SET CHROME WEB DRIVER VARIABLES
 ENV CHROMEDRIVER_VERSION 80.0.3987.16
 ENV CHROMEDRIVER_DIR /chromedriver
@@ -31,7 +39,7 @@ RUN apt-get update -yq \
 
 ENV PATH $CHROMEDRIVER_DIR:$PATH
 
-# Clean cache and temp files, fix permissions
+# Clean cache and temp files
 RUN apt-get clean -qy \
   && rm -rf /var/lib/apt/lists/*
 
@@ -52,7 +60,12 @@ ENV BUNDLE_GEMFILE=/app/Gemfile \
 ENV PATH="${BUNDLE_BIN}:${PATH}"
 
 COPY Gemfile Gemfile.lock ./
+
 RUN bundle install
+
+# fix permissions & switch to regular user
+RUN chown -R $USER_NAME:$USER_NAME /app /bundle
+USER $USER_ID
 
 EXPOSE 3000
 
