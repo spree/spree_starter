@@ -47,8 +47,10 @@ jobs:
 
   run_tests:
     docker:
-      - image: postgres:11.0-alpine
       - image: circleci/ruby:2.7.4-node-browsers
+      - image: postgres:13.0-alpine
+        environment:
+          POSTGRES_HOST_AUTH_METHOD: trust
     parallelism: 2
     environment:
       RAILS_ENV: test
