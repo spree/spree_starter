@@ -2,7 +2,7 @@
 
 [![Circle CI](https://circleci.com/gh/spree/spree_starter.svg?style=svg)](https://circleci.com/gh/spree/spree_starter) [![Maintainability](https://api.codeclimate.com/v1/badges/d240686c99b3d35eb61b/maintainability)](https://codeclimate.com/github/spree/spree_starter/maintainability)
 
-This is a Ruby on Rails application minimal template with [Spree Commerce](https://spreecommerce.org) pre-installed, fully dockerized and ready to be deployed to Heroku.
+This a dockerized [Spree Commerce](https://spreecommerce.org) application template ready to for local development and deployment to cloud providers.
 
 ## Launch on Heroku
 
@@ -20,33 +20,42 @@ This is a Ruby on Rails application minimal template with [Spree Commerce](https
 bin/setup
 ```
 
-### Import sample data such as products, categories, etc (optionally)
+### (Optional) Import sample data such as products, categories, etc
 
 ```bash
 docker-compose run web rake spree_sample:load
 ```
 
-## Running the project
+### Launching local server
 
 ```bash
 docker-compose up
 ```
 
+## Updating
+
+```bash
+bundle update spree
+docker-compose build
+```
+
+For additional instructions please visit [Spree Upgrade Guides](https://dev-docs.spreecommerce.org/upgrades)
+
 ## Development
 
-### Running rails console
+### Launching rails console
 
 ```bash
 docker-compose run web rails c
 ```
 
-### Running tests
+### Launching bash console
 
 ```bash
 docker-compose run web bash
-bundle exec rspec
 ```
 
+## Customization
 ### Adding new gems
 
 Update `Gemfile` and run
@@ -60,13 +69,6 @@ You will need to restart the server if running:
 
 ```bash
 docker-compose restart
-```
-
-### Updating gems
-
-```bash
-bundle update spree
-docker-compose build
 ```
 
 ## Environment variables

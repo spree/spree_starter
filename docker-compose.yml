@@ -28,21 +28,7 @@ services:
       REDIS_URL: redis://redis:6379/0
       DB_HOST: postgres
       DB_PORT: 5432
-      WEBPACKER_DEV_SERVER_HOST: webpacker
       DISABLE_SPRING: 1
-  webpacker:
-    build:
-      context: .
-      dockerfile: Dockerfile.development
-    environment:
-      - NODE_ENV=development
-      - RAILS_ENV=development
-      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
-    command: ./bin/webpack-dev-server
-    volumes:
-      - '.:/app'
-    ports:
-      - '3035:3035'
   worker:
     depends_on:
       - 'postgres'
