@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.7.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.4'
+gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -79,7 +79,7 @@ gem 'spree_sample', spree_opts
 gem 'spree_emails', spree_opts
 gem 'spree_gateway'
 gem 'spree_auth_devise'
-gem 'spree_i18n', '>= 5.0'
+gem 'spree_i18n', '>= 5.0.1'
 gem 'spree_dev_tools', require: false, group: %w[test development]
 
 # Sentry Client
