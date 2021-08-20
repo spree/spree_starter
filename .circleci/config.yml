@@ -2,7 +2,7 @@ version: 2
 jobs:
   install_ruby_dependencies:
     docker:
-      - image: circleci/ruby:2.7.3-node-browsers
+      - image: circleci/ruby:2.7.4-node-browsers
     working_directory: ~/app
     environment:
       BUNDLE_JOBS: 4
@@ -26,7 +26,7 @@ jobs:
           key: ruby-dependencies-v2-{{ checksum "Gemfile.lock" }}
   install_javascript_dependencies:
     docker:
-      - image: circleci/ruby:2.7.3-node-browsers
+      - image: circleci/ruby:2.7.4-node-browsers
     working_directory: ~/app
     steps:
       - checkout
@@ -47,8 +47,10 @@ jobs:
 
   run_tests:
     docker:
-      - image: circleci/ruby:2.7.3-node-browsers
-      - image: postgres:11.0-alpine
+      - image: circleci/ruby:2.7.4-node-browsers
+      - image: postgres:13.0-alpine
+        environment:
+          POSTGRES_HOST_AUTH_METHOD: trust
     parallelism: 2
     environment:
       RAILS_ENV: test
