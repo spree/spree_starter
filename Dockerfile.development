@@ -11,13 +11,6 @@ RUN apt-get update -yq \
   # RAILS PACKAGES NEEDED
   && apt-get update \
   && apt-get install -y --no-install-recommends imagemagick postgresql-client \
-  # INSTALL NODE
-  && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
-  && apt-get install -y --no-install-recommends nodejs \
-  # INSTALL YARN
-  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-  && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
-  && apt-get update && apt-get install yarn \
   # INSTALL CHROME WEB DRIVER
   && apt-get update \
   && apt-get install -y xvfb \
@@ -37,9 +30,6 @@ RUN apt-get clean -qy \
 
 RUN mkdir /app
 WORKDIR /app
-
-COPY package.json yarn.lock
-RUN yarn install
 
 # install specific version of bundler
 RUN gem install bundler -v 2.1.4

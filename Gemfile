@@ -70,9 +70,6 @@ gem 'rack-cache' # http caching
 # sidekiq
 gem 'sidekiq'
 
-# front end
-gem 'webpacker', '~> 5.4'
-
 # Spree gems
 spree_opts = '~> 4.3.0.rc1'
 gem 'spree', spree_opts

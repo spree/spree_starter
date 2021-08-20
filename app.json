@@ -1,11 +1,12 @@
 {
   "name": "Spree Commerce Demo",
-  "description": "Spree is a complete open source e-commerce solution built with Ruby on Rails",
+  "description": "Spree is a is a headless open source e-commerce platform for global brands",
   "keywords": [
     "spree commerce",
     "spree",
     "ecommerce",
-    "rails ecommerce"
+    "headless commerce",
+    "global commerce"
   ],
   "logo": "https://spreecommerce.org/wp-content/uploads/2019/09/spree-60x60@2x.png",
   "website": "https://spreecommerce.org",
