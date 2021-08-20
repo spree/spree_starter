@@ -41,10 +41,6 @@ jobs:
           keys:
             - ruby-dependencies-v2-{{ checksum "Gemfile.lock" }}
             - ruby-dependencies-v2
-      - restore_cache:
-          keys:
-            - javascript-dependencies-v2-{{ checksum "yarn.lock" }}
-            - javascript-dependencies-v2
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
