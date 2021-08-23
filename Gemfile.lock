@@ -353,6 +353,8 @@ GEM
     rack (2.2.3)
     rack-cache (1.12.1)
       rack (>= 0.4)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-mini-profiler (2.3.2)
       rack (>= 1.2.0)
     rack-protection (2.1.0)
@@ -698,6 +700,7 @@ DEPENDENCIES
   pg
   puma
   rack-cache
+  rack-cors
   rack-mini-profiler
   rack-timeout
   rails (~> 6.1.4)

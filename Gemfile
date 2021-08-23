@@ -88,6 +88,9 @@ gem 'sentry-raven'
 # Scout Client
 gem 'scout_apm'
 
+# Rack CORS Middleware
+gem 'rack-cors'
+
 # feature toggle
 gem 'flipper'
 gem 'flipper-active_record'
