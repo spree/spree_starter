@@ -11,8 +11,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v3-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v3
+            - ruby-dependencies-v4-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v4
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
@@ -23,7 +23,7 @@ jobs:
       - save_cache:
           paths:
             - vendor/bundle
-          key: ruby-dependencies-v3-{{ checksum "Gemfile.lock" }}
+          key: ruby-dependencies-v4-{{ checksum "Gemfile.lock" }}
 
   run_tests:
     docker:
@@ -39,8 +39,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v3-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v3
+            - ruby-dependencies-v4-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v4
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
