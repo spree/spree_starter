@@ -2,7 +2,7 @@ version: 2
 jobs:
   install_ruby_dependencies:
     docker:
-      - image: circleci/ruby:2.7.4
+      - image: circleci/ruby:3.0.1
     working_directory: ~/app
     environment:
       BUNDLE_JOBS: 4
@@ -11,8 +11,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v2-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v2
+            - ruby-dependencies-v3-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v3
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
@@ -23,11 +23,11 @@ jobs:
       - save_cache:
           paths:
             - vendor/bundle
-          key: ruby-dependencies-v2-{{ checksum "Gemfile.lock" }}
+          key: ruby-dependencies-v3-{{ checksum "Gemfile.lock" }}
 
   run_tests:
     docker:
-      - image: circleci/ruby:2.7.4
+      - image: circleci/ruby:3.0.1
       - image: postgres:13.0-alpine
         environment:
           POSTGRES_HOST_AUTH_METHOD: trust
@@ -39,8 +39,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v2-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v2
+            - ruby-dependencies-v3-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v3
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
