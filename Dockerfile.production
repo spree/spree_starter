@@ -16,7 +16,7 @@ RUN mkdir /app
 WORKDIR /app
 
 # install specific version of bundler
-RUN gem install bundler -v 2.1.4
+RUN gem install bundler -v 2.2.15
 
 ENV BUNDLE_GEMFILE=/app/Gemfile \
   BUNDLE_JOBS=20 \

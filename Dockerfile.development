@@ -1,28 +1,12 @@
 FROM ruby:3.0.1
 
-# SET CHROME WEB DRIVER VARIABLES
-ENV CHROMEDRIVER_VERSION 80.0.3987.16
-ENV CHROMEDRIVER_DIR /chromedriver
-
 RUN apt-get update -yq \
   && apt-get upgrade -yq \
   #ESSENTIALS
   && apt-get install -y -qq --no-install-recommends build-essential curl git-core vim passwd unzip cron gcc wget netcat \
   # RAILS PACKAGES NEEDED
   && apt-get update \
-  && apt-get install -y --no-install-recommends imagemagick postgresql-client \
-  # INSTALL CHROME WEB DRIVER
-  && apt-get update \
-  && apt-get install -y xvfb \
-  && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-  && echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list \
-  && apt-get update \
-  && apt-get install -y google-chrome-stable \
-  && mkdir $CHROMEDRIVER_DIR \
-  && wget -q --continue -P $CHROMEDRIVER_DIR "http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" \
-  && unzip $CHROMEDRIVER_DIR/chromedriver* -d $CHROMEDRIVER_DIR
-
-ENV PATH $CHROMEDRIVER_DIR:$PATH
+  && apt-get install -y --no-install-recommends imagemagick postgresql-client
 
 # Clean cache and temp files, fix permissions
 RUN apt-get clean -qy \
@@ -32,7 +16,7 @@ RUN mkdir /app
 WORKDIR /app
 
 # install specific version of bundler
-RUN gem install bundler -v 2.1.4
+RUN gem install bundler -v 2.2.15
 
 ENV BUNDLE_GEMFILE=/app/Gemfile \
   BUNDLE_JOBS=20 \
