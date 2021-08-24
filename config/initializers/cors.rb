@@ -8,9 +8,9 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors, debug: ENV.fetc
     origins ENV.fetch('ALLOWED_ORIGIN_HOSTS', 'localhost').split(',')
 
     resource '*',
-      :headers => :any,
-      :methods => [:get, :post, :delete, :put, :patch, :options, :head],
-      :max_age => 0
+      headers: :any,
+      methods: %i[get post delete put patch options head],
+      max_age: 0
   end
 end
 
