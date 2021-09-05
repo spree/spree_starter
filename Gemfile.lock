@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/sass/sassc-ruby.git
+  revision: 4fce2b635ca5d616a8b1381c64846410bc785ea4
+  specs:
+    sassc (2.4.0)
+      ffi (~> 1.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -460,8 +467,6 @@ GEM
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
-    sassc (2.4.0)
-      ffi (~> 1.9)
     sassc-rails (2.1.2)
       railties (>= 4.0.0)
       sassc (>= 2.0)
@@ -707,6 +712,7 @@ DEPENDENCIES
   remote_syslog_logger
   rspec_junit_formatter
   sass-rails
+  sassc!
   scout_apm
   sendgrid-actionmailer
   sentry-raven

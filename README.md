@@ -10,33 +10,62 @@ This a dockerized [Spree Commerce](https://spreecommerce.org) application templa
 
 ## Local Installation
 
-### Install required tools and dependencies:
+### Using Docker (Recommended)
+#### Install required tools and dependencies:
 
-  * [Docker](https://www.docker.com/community-edition#/download) with docker-compose
+  * [Docker](https://www.docker.com/community-edition#/download)
 
-### Run setup script
+#### Run setup script
 
 ```bash
 bin/setup
 ```
 
-### (Optional) Import sample data such as products, categories, etc
+This will automatically launch the application at `http://localhost:3000`
+
+#### (Optional) Import sample data such as products, categories, etc
 
 ```bash
 docker-compose run web rake spree_sample:load
 ```
 
-### Launching local server
+#### Launching local server
 
 ```bash
 docker-compose up
 ```
 
-## Updating
+### Without Docker (not recommended for beginners)
+
+#### Install required tools and dependencies
+
+1. RVM - https://rvm.io/
+2. Ruby - `rvm install 3.0.2`
+3. Bundler - `gem install bundler`
+4. (MacOS) HomeBrew - https://brew.sh/
+5. (MacOS) PostgreSQL - `brew install postgresql`
+6. (MacOS) Redis - `brew install redis`
+7. (MacOS) ImageMagick - `brew install imagemagick`
+
+#### Run setup script
 
 ```bash
-bundle update spree
-docker-compose build
+bin/setup-no-docker
+```
+
+## Updating
+
+### Connect to the docker container
+```bash
+docker-compose run web bash
+```
+
+### Run update commands
+
+```
+bundle update
+bin/rails spree:install:migrations
+bin/rails db:migrate
 ```
 
 For additional instructions please visit [Spree Upgrade Guides](https://dev-docs.spreecommerce.org/upgrades)
