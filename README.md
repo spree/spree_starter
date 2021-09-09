@@ -4,9 +4,13 @@
 
 This a dockerized [Spree Commerce](https://spreecommerce.org) application template ready to for local development and deployment to cloud providers.
 
-## Launch on Heroku
+## Deploy in the cloud
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+<a href="https://render.com/deploy?repo=https://github.com/spree/spree_stater">
+  <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height=32>
+</a>
 
 ## Local Installation
 
