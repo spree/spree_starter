@@ -1,0 +1,18 @@
+databases:
+  - name: spree
+    databaseName: spree
+    user: spree
+
+services:
+  - type: web
+    name: spree
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: spree
+          property: connectionString
+      - key: SECRET_KEY_BASE
+        generateValue: true
