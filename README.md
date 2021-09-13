@@ -25,7 +25,7 @@ This a dockerized [Spree Commerce](https://spreecommerce.org) application templa
 bin/setup
 ```
 
-This will automatically launch the application at `http://localhost:3000`
+This will automatically launch the application at `http://localhost:4000`
 
 #### (Optional) Import sample data such as products, categories, etc
 
