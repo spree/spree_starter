@@ -71,9 +71,8 @@ gem 'rack-cache' # http caching
 gem 'sidekiq'
 
 # Spree gems
-spree_opts = '~> 4.3.0.rc1'
+spree_opts = '>= 4.3.0'
 gem 'spree', spree_opts
-gem 'spree_frontend', spree_opts
 gem 'spree_backend', spree_opts
 gem 'spree_sample', spree_opts
 gem 'spree_emails', spree_opts
@@ -90,12 +89,6 @@ gem 'scout_apm'
 
 # Rack CORS Middleware
 gem 'rack-cors'
-
-# feature toggle
-gem 'flipper'
-gem 'flipper-active_record'
-gem 'flipper-redis'
-gem 'flipper-ui'
 
 # SendGrid
 gem 'sendgrid-actionmailer'
