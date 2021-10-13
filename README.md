@@ -1,4 +1,4 @@
-# Spree Starter (formerly Spark Starter Kit)
+# Spree Starter
 
 [![Circle CI](https://circleci.com/gh/spree/spree_starter.svg?style=svg)](https://circleci.com/gh/spree/spree_starter) [![Maintainability](https://api.codeclimate.com/v1/badges/d240686c99b3d35eb61b/maintainability)](https://codeclimate.com/github/spree/spree_starter/maintainability)
 
@@ -25,7 +25,7 @@ This a dockerized [Spree Commerce](https://spreecommerce.org) application templa
 bin/setup
 ```
 
-This will automatically launch the application at `http://localhost:4000`
+This will automatically launch the application at `http://localhost:4000/admin`
 
 #### (Optional) Import sample data such as products, categories, etc
 
@@ -56,6 +56,13 @@ docker-compose up
 ```bash
 bin/setup-no-docker
 ```
+
+## Adding Storefront
+
+Spree is a [headless e-commerce platform](https://dev-docs.spreecommerce.org/getting-started/headless-commerce) which you can use with any storefront you like. We have pre-built integrations with:
+
+* [Next.js Commerce](https://dev-docs.spreecommerce.org/storefronts/next.js-commerce)
+* [Vue Storefront](https://dev-docs.spreecommerce.org/storefronts/vue-storefront)
 
 ## Updating
 

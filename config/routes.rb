@@ -9,13 +9,4 @@ Rails.application.routes.draw do
       password == Rails.application.secrets.sidekiq_password
   end
   mount Sidekiq::Web, at: '/sidekiq'
-
-  # flipper web UI
-  flipper_app = Flipper::UI.app(Flipper.instance) do |builder|
-    builder.use Rack::Auth::Basic do |username, password|
-      username == Rails.application.secrets.flipper_username &&
-        password == Rails.application.secrets.flipper_password
-    end
-  end
-  mount flipper_app, at: '/flipper'
 end
