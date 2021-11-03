@@ -5,4 +5,7 @@
   - mailers
   - sentry
   - active_storage_analysis
+  - active_storage_purge
+  - spree_stock_location_stock_items
   - spree_webhooks
+
