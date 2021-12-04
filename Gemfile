@@ -70,11 +70,11 @@ gem 'rack-cache' # http caching
 gem 'sidekiq'
 
 # Spree gems
-spree_opts = { github: 'spree/spree', branch: 'main' }
+spree_opts = '>= 4.4.0.rc1'
 gem 'spree', spree_opts
 gem 'spree_sample', spree_opts
 gem 'spree_emails', spree_opts
-gem 'spree_backend', { github: 'spree/spree_backend', branch: 'main' }
+gem 'spree_backend', spree_opts
 gem 'spree_gateway'
 gem 'spree_auth_devise'
 gem 'spree_i18n', '>= 5.0'
