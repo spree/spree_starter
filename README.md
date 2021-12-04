@@ -43,13 +43,19 @@ docker-compose up
 
 #### Install required tools and dependencies
 
-1. RVM - https://rvm.io/
-2. Ruby - `rvm install 3.0.2`
-3. Bundler - `gem install bundler`
-4. (MacOS) HomeBrew - https://brew.sh/
-5. (MacOS) PostgreSQL - `brew install postgresql`
-6. (MacOS) Redis - `brew install redis`
-7. (MacOS) ImageMagick - `brew install imagemagick`
+1. HomeBrew - https://brew.sh/
+2. Install required packages
+
+      ```bash
+      brew install gpg postgresql redis imagemagick
+      createuser -P -d postgres
+      ```
+
+3. RVM - https://rvm.io/
+4. NVM - https://github.com/nvm-sh/nvm
+5. Ruby - `rvm install 3.0.2`
+6. Node - `nvm install`
+7. Yarn - `npm -g install yarn`
 
 #### Run setup script
 
