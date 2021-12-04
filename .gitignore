@@ -49,3 +49,5 @@ node_modules
 yarn-debug.log*
 .yarn-integrity
 /yarn-error.log
+/app/assets/builds/*
+!/app/assets/builds/.keep
