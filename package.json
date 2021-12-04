@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@spree/dashboard": "^0.0.3",
+    "@spree/dashboard": "^0.1.0",
     "esbuild": "^0.14.1"
   },
   "scripts": {

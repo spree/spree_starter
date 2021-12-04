@@ -17,10 +17,10 @@
   resolved "https://registry.yarnpkg.com/@rails/request.js/-/request.js-0.0.5.tgz#5ea896085f1c82bacca0e32aa918c8cd003a3d30"
   integrity sha512-EDw3d5oCSPFn/os7C41+61urT5J5n+bMXK2NTQVhJI8VCPAIVbvFGjZIQI0a9zJ9KuaWKHM6IjXTRakKemlzoA==
 
-"@spree/dashboard@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@spree/dashboard/-/dashboard-0.0.3.tgz#efa6488953d8dc2b3dd1011dd82e79464bb314a1"
-  integrity sha512-a5txJwwZ7uxq3HVBpq3dlwcO+rPzmqmj9IMMDNyPr3iTPQpZmoX6pL3xcJ9h/Bc8ddfPBqETI8S7YxRjY4GwGA==
+"@spree/dashboard@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@spree/dashboard/-/dashboard-0.1.0.tgz#5c8b14d2a9a67a30112bc5ec1990127ebd39a8af"
+  integrity sha512-cet27rLWyB792yRPcWjfLNbwOZzoQ8LvOU+ovCl/J/0Avz2x4G9f4/fJLdB0MwxuCItB8fqc61xeR5cai4Zgxg==
   dependencies:
     "@hotwired/stimulus" "^3.0.1"
     "@hotwired/turbo" "^7.0.1"
