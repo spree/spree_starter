@@ -9,9 +9,8 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier'
-
-gem 'mini_racer'
+# gem 'uglifier'
+gem 'terser'
 
 gem 'bootsnap', require: false
 
