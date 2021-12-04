@@ -9,9 +9,8 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier'
-
-gem 'mini_racer'
+# gem 'uglifier'
+gem 'terser'
 
 gem 'bootsnap', require: false
 
@@ -71,11 +70,11 @@ gem 'rack-cache' # http caching
 gem 'sidekiq'
 
 # Spree gems
-spree_opts = '>= 4.3.0'
+spree_opts = '>= 4.4.0.rc1'
 gem 'spree', spree_opts
-gem 'spree_backend', spree_opts
 gem 'spree_sample', spree_opts
 gem 'spree_emails', spree_opts
+gem 'spree_backend', spree_opts
 gem 'spree_gateway'
 gem 'spree_auth_devise'
 gem 'spree_i18n', '>= 5.0'
