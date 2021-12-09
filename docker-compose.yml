@@ -17,7 +17,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.development
-    command: bash -c "rm -rf tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0 -p 4000"
+    command: bash -c "rm -rf tmp/pids/server.pid && yarn install && yarn build && bundle exec rails s -b 0.0.0.0 -p 4000"
     ports:
       - '${DOCKER_HOST_WEB_PORT:-4000}:4000'
     volumes:
