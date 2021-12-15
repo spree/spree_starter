@@ -3,11 +3,11 @@ source 'https://rubygems.org'
 ruby '3.0.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.4'
+gem 'rails', '~> 6.1.4', '>= 6.1.4.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails'
+gem 'sass-rails', '>= 6.0.0'
 # Use Uglifier as compressor for JavaScript assets
 # gem 'uglifier'
 gem 'terser'
@@ -23,7 +23,7 @@ gem 'puma'
 gem 'awesome_print'
 
 group :development, :test do
-  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+  gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -44,7 +44,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 4.0'
+  gem 'web-console', '~> 4.2', '>= 4.2.0'
 
   gem 'letter_opener'
 end
@@ -76,9 +76,9 @@ gem 'spree_sample', spree_opts
 gem 'spree_emails', spree_opts
 gem 'spree_backend', spree_opts
 gem 'spree_gateway'
-gem 'spree_auth_devise'
-gem 'spree_i18n', '>= 5.0'
-gem 'spree_dev_tools', require: false, group: %w[test development]
+gem 'spree_auth_devise', '>= 4.4.2'
+gem 'spree_i18n', '>= 5.0.1'
+gem 'spree_dev_tools', '>= 0.1.11', require: false, group: %w[test development]
 
 # Sentry Client
 gem 'sentry-raven'
