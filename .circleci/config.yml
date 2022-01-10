@@ -2,7 +2,7 @@ version: 2
 jobs:
   install_ruby_dependencies:
     docker:
-      - image: circleci/ruby:3.0.2
+      - image: circleci/ruby:3.0.3
     working_directory: ~/app
     environment:
       BUNDLE_JOBS: 4
@@ -27,7 +27,7 @@ jobs:
 
   run_tests:
     docker:
-      - image: circleci/ruby:3.0.2
+      - image: circleci/ruby:3.0.3
       - image: postgres:13.0-alpine
         environment:
           POSTGRES_HOST_AUTH_METHOD: trust

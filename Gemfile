@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.0.2'
+ruby '3.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.4'
@@ -70,7 +70,7 @@ gem 'rack-cache' # http caching
 gem 'sidekiq'
 
 # Spree gems
-spree_opts = '>= 4.4.0.rc1'
+spree_opts = '>= 4.4.0.rc2'
 gem 'spree', spree_opts
 gem 'spree_sample', spree_opts
 gem 'spree_emails', spree_opts

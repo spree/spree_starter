@@ -40,5 +40,5 @@ FileUtils.chdir APP_ROOT do
   system! 'bin/rails restart'
 
   puts "\n== Starting application server =="
-  system! 'bin/rails s'
+  system! 'bin/dev'
 end
