@@ -71,13 +71,13 @@ gem 'sidekiq'
 
 # Spree gems
 spree_opts = '>= 4.4.0'
-gem 'spree', spree_opts
-gem 'spree_sample', spree_opts
-gem 'spree_emails', spree_opts
-gem 'spree_backend', spree_opts
+gem 'spree', '>= 4.4.0', spree_opts
+gem 'spree_sample', '>= 4.4.0', spree_opts
+gem 'spree_emails', '>= 4.4.0', spree_opts
+gem 'spree_backend', '>= 4.4.0', spree_opts
 gem 'spree_gateway'
 gem 'spree_auth_devise'
-gem 'spree_i18n', '>= 5.0'
+gem 'spree_i18n', '>= 5.0.1'
 gem 'spree_dev_tools', require: false, group: %w[test development]
 
 # Sentry Client
