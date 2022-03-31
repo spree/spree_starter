@@ -18,7 +18,7 @@ gem 'bootsnap', require: false
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Puma as the app server
-gem 'puma'
+gem 'puma', '>= 5.6.4'
 
 gem 'awesome_print'
 
