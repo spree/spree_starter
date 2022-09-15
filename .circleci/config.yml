@@ -2,7 +2,7 @@ version: 2
 jobs:
   install_ruby_dependencies:
     docker:
-      - image: circleci/ruby:3.0.3
+      - image: cimg/ruby:3.0.3-node
     working_directory: ~/app
     environment:
       BUNDLE_JOBS: 4
@@ -27,7 +27,7 @@ jobs:
 
   run_tests:
     docker:
-      - image: circleci/ruby:3.0.3
+      - image: cimg/ruby:3.0.3-node
       - image: postgres:13.0-alpine
         environment:
           POSTGRES_HOST_AUTH_METHOD: trust
@@ -48,16 +48,17 @@ jobs:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432
       - run:
+          name: Bundle install
+          command: bundle check || bundle install --deployment
+      - run:
           name: Setup DB
           command: bundle exec rails db:create db:schema:load
       - run:
           name: Run Rspec
           command: |
-            TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
             bundle exec rspec --format documentation \
                               --format RspecJunitFormatter \
-                              -o ~/rspec/rspec.xml \
-                              -- ${TESTFILES}
+                              -o ~/rspec/rspec.xml
       - store_test_results:
           path: ~/rspec
 
