@@ -10,5 +10,4 @@ docker-compose run --rm web bash -c '
   bundle exec rails db:migrate &&
   bundle exec rails db:seed &&
   rm -rf tmp/latest.dump
-' &&
-docker-compose up
+'
