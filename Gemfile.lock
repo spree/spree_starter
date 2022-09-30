@@ -60,6 +60,17 @@ GIT
       spree_core (>= 4.5.0.alpha)
 
 GIT
+  remote: https://github.com/spree/spree_auth_devise.git
+  revision: 60032d83b66aabfb594c7bf2c21e0eeffcc834cd
+  branch: main
+  specs:
+    spree_auth_devise (4.4.2)
+      devise (~> 4.7)
+      devise-encryptable (= 0.2.0)
+      spree_core (>= 4.5.0.alpha)
+      spree_extension
+
+GIT
   remote: https://github.com/spree/spree_backend.git
   revision: 1e59d2eade545d04d0203fb4c1a16f700246f872
   branch: main
@@ -81,6 +92,15 @@ GIT
       spree (>= 4.4.0)
       sprockets (~> 4.0)
       tinymce-rails (~> 5.0)
+
+GIT
+  remote: https://github.com/spree/spree_gateway.git
+  revision: 8215a4af9a33cf1d6cb1522e7276fa355cf74412
+  branch: main
+  specs:
+    spree_gateway (3.9.4)
+      spree_core (>= 3.7.0)
+      spree_extension
 
 GEM
   remote: https://rubygems.org/
@@ -564,11 +584,6 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    spree_auth_devise (4.4.2)
-      devise (~> 4.7)
-      devise-encryptable (= 0.2.0)
-      spree_core (>= 4.3.0.rc1)
-      spree_extension
     spree_dev_tools (0.2.0)
       appraisal
       awesome_print
@@ -600,9 +615,6 @@ GEM
     spree_extension (0.0.9)
       activerecord (>= 4.2)
       spree_core
-    spree_gateway (3.9.4)
-      spree_core (>= 3.7.0)
-      spree_extension
     spree_i18n (5.0.1)
       i18n_data
       kaminari-i18n
@@ -707,11 +719,11 @@ DEPENDENCIES
   sentry-raven
   sidekiq
   spree!
-  spree_auth_devise
+  spree_auth_devise!
   spree_backend!
   spree_dev_tools
   spree_emails!
-  spree_gateway
+  spree_gateway!
   spree_i18n (>= 5.0)
   spree_sample!
   spring
