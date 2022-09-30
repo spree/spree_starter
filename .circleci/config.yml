@@ -45,6 +45,9 @@ jobs:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
       - run:
+          name: Install libvips
+          command: sudo apt-get install libvips
+      - run:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432
       - run:
