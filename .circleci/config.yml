@@ -27,7 +27,7 @@ jobs:
 
   run_tests:
     docker:
-      - image: cimg/ruby:3.0.3-node
+      - image: circleci/ruby:3.0.3-node-browsers
       - image: postgres:13.0-alpine
         environment:
           POSTGRES_HOST_AUTH_METHOD: trust
