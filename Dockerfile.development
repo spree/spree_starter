@@ -6,7 +6,7 @@ RUN apt-get update -yq \
   && apt-get install -y -qq --no-install-recommends build-essential curl git-core vim passwd unzip cron gcc wget netcat \
   # RAILS PACKAGES NEEDED
   && apt-get update \
-  && apt-get install -y --no-install-recommends imagemagick postgresql-client \
+  && apt-get install -y --no-install-recommends imagemagick postgresql-client libvips \
   # INSTALL NODE
   && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
   && apt-get install -y --no-install-recommends nodejs \
