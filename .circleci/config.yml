@@ -1,4 +1,5 @@
 version: 2
+
 jobs:
   install_ruby_dependencies:
     machine:
@@ -16,6 +17,11 @@ jobs:
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
+      - run:
+          name: install ruby 3.0.3
+          command: |
+            rvm install 3.0.3
+            rvm use 3.0.3
       - run:
           name: Bundle Install
           command: |
