@@ -22,3 +22,25 @@ require File.expand_path('../../config/environment', __FILE__)
 
 require 'webdrivers/chromedriver'
 require 'spree_dev_tools/rspec/spec_helper'
+require 'net/ping'
+
+
+def wait_for_docker
+  timeout_in_s = 400
+  Timeout.timeout(timeout_in_s) do
+    until %x(docker inspect -f {{.State.Running}} spree_starter-main_web_1).include?("true")
+      sleep 2
+    end
+    sleep 20
+  end
+end
+
+def wait_for_server
+  timeout_in_s = 400
+  Timeout.timeout(timeout_in_s) do
+    until Net::Ping::HTTP.new('http://127.0.0.1:4000/admin').ping?
+      sleep 2
+    end
+  end
+end
+
