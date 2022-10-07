@@ -228,6 +228,7 @@ GEM
     flatpickr (4.6.6.0)
     font_assets (0.1.14)
       rack
+    foreman (0.87.2)
     friendly_id (5.4.2)
       activerecord (>= 4.0.0)
     gem-release (2.2.2)
@@ -675,6 +676,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.1, >= 2.1.1)
   flamegraph
   font_assets
+  foreman
   letter_opener
   listen
   memory_profiler
