@@ -21,7 +21,7 @@ jobs:
           name: install ruby 3.0.3
           command: |
             rvm install 3.0.3
-            rvm use 3.0.3
+            rvm --default use 3.0.3
       - run:
           name: Bundle Install
           command: |
