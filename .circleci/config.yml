@@ -1,8 +1,8 @@
 version: 2
 jobs:
   install_ruby_dependencies:
-    docker:
-      - image: cimg/ruby:3.0.3-node
+    machine:
+      image: ubuntu-2004:202111-01
     working_directory: ~/app
     environment:
       BUNDLE_JOBS: 4
@@ -26,11 +26,8 @@ jobs:
           key: ruby-dependencies-v4-{{ checksum "Gemfile.lock" }}
 
   run_tests:
-    docker:
-      - image: cimg/ruby:3.0.3-node
-      - image: postgres:13.0-alpine
-        environment:
-          POSTGRES_HOST_AUTH_METHOD: trust
+    machine:
+      image: ubuntu-2004:202111-01
     parallelism: 2
     environment:
       RAILS_ENV: test
