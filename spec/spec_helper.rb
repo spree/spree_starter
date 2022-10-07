@@ -43,4 +43,3 @@ def wait_for_server
     end
   end
 end
-
