@@ -315,6 +315,7 @@ GEM
     msgpack (1.4.4)
     multi_json (1.15.0)
     multipart-post (2.1.1)
+    net-ping (2.0.8)
     nio4r (2.5.8)
     nokogiri (1.13.3)
       mini_portile2 (~> 2.8.0)
@@ -677,6 +678,7 @@ DEPENDENCIES
   letter_opener
   listen
   memory_profiler
+  net-ping
   oj
   pg
   puma
