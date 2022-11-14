@@ -42,6 +42,7 @@ docker-compose up
 
 * [Docker](https://www.docker.com/community-edition#/download)
 * Ruby 3.0.3
+* [libvips](https://www.libvips.org/install.html)
 
 #### Run setup script
 
@@ -66,10 +67,10 @@ docker-compose run web rake spree_sample:load
 #### Install required tools and dependencies
 
 1. HomeBrew - https://brew.sh/
-2. Install required packages
+2. Install required packages: GPG, PostgreSQL, Redis, ImageMagick, and VIPS
 
       ```bash
-      brew install gpg postgresql redis imagemagick
+      brew install gpg postgresql redis imagemagick vips
       createuser -P -d postgres
       ```
 
@@ -147,6 +148,17 @@ docker-compose restart
 | DB_POOL | database connection pool | 5 |
 | MEMCACHED_POOL_SIZE | memcache connection pool | 5 |
 | SENDGRID_API_KEY | API key to interface Sendgrid API | |
+
+## Troubleshooting
+
+### libvips error
+
+If you are building the application using the latest code, you may encounter the following libvips error:
+```
+LoadError: Could not open library 'vips.so.42'
+```
+This error is usually an indication that you do not have libvips installed locally on your machine. Check that libvips is installed with `vips -v`, and if it is not installed, follow [installation instructions here](https://www.libvips.org/install.html).
+
 
 ## License
 
