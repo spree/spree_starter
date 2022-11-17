@@ -163,7 +163,7 @@ This error is usually an indication that you do not have libvips installed local
 
 This issue is specific to running with [spree_legacy_frontend](https://github.com/spree/spree_legacy_frontend).
 
-If you notice that the 'Add to Cart' button is disabled on product pages, try the troubleshooting instructions found in the spree_legacy_frontend ReadMe. <-ADD LINK HERE!
+If you notice that the 'Add to Cart' button is disabled on product pages, try the [troubleshooting instructions](https://github.com/spree/spree_legacy_frontend#disabled-add-to-cart-button-issue) found in the spree_legacy_frontend ReadMe.
 
 
 ## License
