@@ -163,16 +163,7 @@ This error is usually an indication that you do not have libvips installed local
 
 This issue is specific to running with [spree_legacy_frontend](https://github.com/spree/spree_legacy_frontend).
 
-If you notice that the 'Add to Cart' button is disabled on product pages, try the following:
-* run `yarn build` again in your main repo
-* if that doesn't fix the issue, try running the following setup commands again:
-  ```
-  bin/rails javascript:install:esbuild
-  bin/rails turbo:install
-  bin/rails g spree:frontend:install
-  ```
-
-This issue may come up if you switch the source of your `spree_frontend` in your Gemfile, e.g. from github to a local path, etc.
+If you notice that the 'Add to Cart' button is disabled on product pages, try the troubleshooting instructions found in the spree_legacy_frontend ReadMe. <-ADD LINK HERE!
 
 
 ## License
