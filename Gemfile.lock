@@ -179,7 +179,7 @@ GEM
       activesupport (= 7.0.4)
     activerecord-nulldb-adapter (0.8.0)
       activerecord (>= 5.2.0, < 7.1)
-    activerecord-typedstore (1.5.0)
+    activerecord-typedstore (1.5.1)
       activerecord (>= 6.1)
     activestorage (7.0.4)
       actionpack (= 7.0.4)
@@ -327,7 +327,7 @@ GEM
     flatpickr (4.6.11.0)
     font_assets (0.1.14)
       rack
-    friendly_id (5.4.2)
+    friendly_id (5.5.0)
       activerecord (>= 4.0.0)
     gem-release (2.2.2)
     github_changelog_generator (1.16.4)
@@ -419,12 +419,14 @@ GEM
       net-protocol
     net-protocol (0.1.3)
       timeout
-    net-smtp (0.3.2)
+    net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.13.8-x86_64-darwin)
+    nokogiri (1.13.9-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.8-x86_64-linux)
+    nokogiri (1.13.9-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
     octokit (4.25.1)
       faraday (>= 1, < 3)
@@ -432,7 +434,7 @@ GEM
     oj (3.13.21)
     orm_adapter (0.5.0)
     parallel (1.22.1)
-    paranoia (2.6.0)
+    paranoia (2.6.1)
       activerecord (>= 5.1, < 7.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
@@ -689,9 +691,10 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.1)
+    zeitwerk (2.6.6)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-darwin-21
   x86_64-linux
 
