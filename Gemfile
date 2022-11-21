@@ -78,6 +78,7 @@ gem 'spree_gateway', github: 'spree/spree_gateway', branch: 'main'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: 'main'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: 'main'
 gem 'spree_dev_tools', require: false, group: %w[test development]
+gem 'spree_frontend', github: 'spree/spree_legacy_frontend', branch: 'main'
 
 # Sentry Client
 gem 'sentry-raven'
