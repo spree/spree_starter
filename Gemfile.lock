@@ -734,6 +734,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.1, >= 2.1.1)
   flamegraph
   font_assets
+  jsbundling-rails
   letter_opener
   listen
   memory_profiler
@@ -765,6 +766,7 @@ DEPENDENCIES
   spring
   stackprof
   terser
+  turbo-rails
   vcr
   web-console (~> 4.0)
   webmock
