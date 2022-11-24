@@ -116,7 +116,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_legacy_frontend.git
-  revision: c1a03249053c08b13a679ea42cd571597639e3ce
+  revision: d4f484fb1a9600b47e8a7685241019cc4c1b3a3c
   branch: main
   specs:
     spree_frontend (4.5.0.alpha)
