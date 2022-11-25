@@ -1,18 +1,25 @@
 databases:
-  - name: spree
+  - name: spree_legacy_frontend_db
     databaseName: spree
     user: spree
+    region: frankfurt
 
 services:
   - type: web
-    name: spree
+    name: spree_legacy_frontend_web
     env: ruby
+    region: frankfurt
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: spree
+          name: spree_legacy_frontend_db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: spree_legacy_frontend_redis
           property: connectionString
       - key: SECRET_KEY_BASE
         generateValue: true
@@ -20,3 +27,9 @@ services:
         value: 'spree@example.com'
       - key: ADMIN_PASSWORD
         value: 'spree123'
+  - type: redis
+    name: spree_legacy_frontend_redis
+    region: frankfurt
+    ipAllowList: [] # only allow internal connections
+
+
