@@ -2,13 +2,11 @@ databases:
   - name: spree
     databaseName: spree
     user: spree
-    region: frankfurt
 
 services:
   - type: web
     name: spree
     env: ruby
-    region: frankfurt
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
