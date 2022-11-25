@@ -4,18 +4,38 @@ This a dockerized [Spree Commerce](https://spreecommerce.org) application templa
 
 ## Deploy in the cloud
 
+### Using Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+### Using Render
 <a href="https://render.com/deploy?repo=https://github.com/spree/spree_starter/tree/main">
   <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height=32>
 </a>
+
+Note that sample data does not automatically get loaded when deploying to Render with the default configuration. In order to add sample data, run the following commands in the web service shell:
+```shell
+bundle exec rails db:seed
+bundle exec rake spree_sample:load
+```
+
+#### Deploying to Render with Spree Legacy Frontend
+To deploy to render with the Spree Legacy Frontend, first follow the instructions in the [legacy frontend ReadMe](https://github.com/spree/spree_legacy_frontend#installation) on adding the appropriate gems to your gemfile, and update the web service build command to use `bin/render-build-legacy-frontend.sh`, like so:
+```yaml
+services:
+  - type: web
+    name: spree
+    env: ruby
+    buildCommand: "./bin/render-build-legacy-frontend.sh"
+```
+
+After that, you'll be ready to deploy to render.
 
 ## Local Installation
 
 ### Using Docker (Recommended)
 #### Install required tools and dependencies:
 
-  * [Docker](https://www.docker.com/community-edition#/download)
+* [Docker](https://www.docker.com/community-edition#/download)
 
 #### Run setup script
 
