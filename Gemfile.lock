@@ -73,8 +73,8 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_auth_devise.git
-  revision: 1fa984a7eb7f43775cb1652ff5a3a7d84974ff02
-  branch: check-for-frontend-gem
+  revision: 0de310f918728960a89880679694a4a1162115ec
+  branch: main
   specs:
     spree_auth_devise (4.4.2)
       devise (~> 4.7)
