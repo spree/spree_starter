@@ -17,7 +17,7 @@ services:
       - key: REDIS_URL
         fromService:
           type: redis
-          name: spree_legacy_frontend_redis
+          name: spree_legacy_redis
           property: connectionString
       - key: SECRET_KEY_BASE
         generateValue: true
@@ -26,8 +26,7 @@ services:
       - key: ADMIN_PASSWORD
         value: 'spree123'
   - type: redis
-    name: spree_legacy_frontend_redis
-    region: frankfurt
+    name: spree_legacy_redis
     ipAllowList: [] # only allow internal connections
 
 
