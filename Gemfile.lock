@@ -73,7 +73,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_auth_devise.git
-  revision: 60032d83b66aabfb594c7bf2c21e0eeffcc834cd
+  revision: 0de310f918728960a89880679694a4a1162115ec
   branch: main
   specs:
     spree_auth_devise (4.4.2)
@@ -626,7 +626,7 @@ GEM
       spree_core
       timecop
       webdrivers (~> 4.3)
-    spree_extension (0.0.9)
+    spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
     spring (4.1.0)
