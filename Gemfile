@@ -70,13 +70,13 @@ gem 'rack-cache' # http caching
 gem 'sidekiq'
 
 # Spree gems
-gem 'spree', github: 'spree/spree', branch: 'main'
-gem 'spree_sample', github: 'spree/spree', branch: 'main'
-gem 'spree_emails', github: 'spree/spree', branch: 'main'
-gem 'spree_backend', github: 'spree/spree_backend', branch: 'main'
-gem 'spree_gateway', github: 'spree/spree_gateway', branch: 'main'
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: 'main'
-gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: 'main'
+gem 'spree', '~> 4.5'
+gem 'spree_sample', '~> 4.5'
+gem 'spree_emails', '~> 4.5'
+gem 'spree_backend', '~> 4.5'
+gem 'spree_gateway', '~> 3.10'
+gem 'spree_auth_devise', '~> 4.5'
+gem 'spree_i18n', '~> 5.1'
 gem 'spree_dev_tools', require: false, group: %w[test development]
 
 # Sentry Client
