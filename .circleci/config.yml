@@ -27,7 +27,7 @@ jobs:
 
   run_tests:
     docker:
-      - image: cimg/ruby:3.0.3-node
+      - image: circleci/ruby:3.0.3-node-browsers
       - image: postgres:13.0-alpine
         environment:
           POSTGRES_HOST_AUTH_METHOD: trust
@@ -44,6 +44,9 @@ jobs:
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
+      - run:
+          name: Install libvips
+          command: sudo apt-get install libvips
       - run:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432
