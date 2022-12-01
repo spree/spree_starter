@@ -14,9 +14,17 @@ services:
         fromDatabase:
           name: spree
           property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: spree_redis
+          property: connectionString
       - key: SECRET_KEY_BASE
         generateValue: true
       - key: ADMIN_EMAIL
         value: 'spree@example.com'
       - key: ADMIN_PASSWORD
         value: 'spree123'
+  - type: redis
+    name: spree_redis
+    ipAllowList: [] # only allow internal connections
