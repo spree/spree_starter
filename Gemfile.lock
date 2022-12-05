@@ -5,6 +5,103 @@ GIT
     sassc (2.4.0)
       ffi (~> 1.9)
 
+GIT
+  remote: https://github.com/spree/spree.git
+  revision: 96ee351573a090546b41bd13a0dbd9972f3b6c1c
+  branch: main
+  specs:
+    spree (4.5.0)
+      spree_api (= 4.5.0)
+      spree_cli (= 4.5.0)
+      spree_core (= 4.5.0)
+    spree_api (4.5.0)
+      bcrypt (~> 3.1)
+      doorkeeper (~> 5.3)
+      jsonapi-serializer (~> 2.1)
+      spree_core (= 4.5.0)
+    spree_cli (4.5.0)
+      thor (~> 1.0)
+    spree_core (4.5.0)
+      actionpack (>= 6.1)
+      actionview (>= 6.1)
+      active_storage_validations (~> 0.9, <= 0.9.5)
+      activejob (>= 6.1)
+      activemerchant (~> 1.67)
+      activemodel (>= 6.1)
+      activerecord (>= 6.1)
+      activerecord-typedstore
+      activestorage (>= 6.1)
+      activesupport (>= 6.1)
+      acts_as_list (>= 0.8)
+      auto_strip_attributes (~> 2.6)
+      awesome_nested_set (~> 3.3, >= 3.3.1)
+      cancancan (~> 3.2)
+      carmen (>= 1.0)
+      friendly_id (~> 5.2, >= 5.2.1)
+      highline (~> 2.0)
+      image_processing (~> 1.2)
+      kaminari (~> 1.2)
+      monetize (~> 1.9)
+      money (~> 6.13)
+      paranoia (~> 2.4)
+      railties (>= 6.1)
+      ransack (>= 2.3, < 3.0)
+      rexml
+      state_machines-activemodel (~> 0.7)
+      state_machines-activerecord (~> 0.6)
+      stringex
+      validates_zipcode
+    spree_emails (4.5.0)
+      actionmailer
+      spree_core (>= 4.5.0)
+      sprockets (>= 4.0)
+    spree_sample (4.5.0)
+      ffaker (~> 2.9)
+      spree_core (>= 4.5.0)
+
+GIT
+  remote: https://github.com/spree/spree_auth_devise.git
+  revision: b373a785c007316e77bc8a6c30ee10969dbde794
+  branch: main
+  specs:
+    spree_auth_devise (4.5.0)
+      devise (~> 4.7)
+      devise-encryptable (= 0.2.0)
+      spree_core (>= 4.5.0)
+      spree_extension
+
+GIT
+  remote: https://github.com/spree/spree_backend.git
+  revision: 933836af04865ce841bc1fd82c5794159a81d838
+  branch: main
+  specs:
+    spree_backend (4.5.0)
+      babel-transpiler (~> 0.7)
+      bootstrap (~> 4.0)
+      flag-icons-rails (~> 3.4)
+      flatpickr (~> 4.6)
+      glyphicons (~> 1.0)
+      hotwire-rails
+      inline_svg (~> 1.5)
+      jquery-rails (~> 4.3)
+      jquery-ui-rails (~> 6.0)
+      jsbundling-rails
+      responders
+      sass-rails (>= 5)
+      select2-rails (~> 4.0.6)
+      spree (>= 4.4.0)
+      sprockets (~> 4.0)
+      tinymce-rails (~> 5.0)
+
+GIT
+  remote: https://github.com/spree/spree_gateway.git
+  revision: f2ef7ae0b0fb69ed566524ba5bcd844f0eec13c7
+  branch: main
+  specs:
+    spree_gateway (3.10.0)
+      spree_core (>= 3.7.0)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -489,69 +586,6 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    spree (4.5.0)
-      spree_api (= 4.5.0)
-      spree_cli (= 4.5.0)
-      spree_core (= 4.5.0)
-    spree_api (4.5.0)
-      bcrypt (~> 3.1)
-      doorkeeper (~> 5.3)
-      jsonapi-serializer (~> 2.1)
-      spree_core (= 4.5.0)
-    spree_auth_devise (4.5.0)
-      devise (~> 4.7)
-      devise-encryptable (= 0.2.0)
-      spree_core (>= 4.5.0)
-      spree_extension
-    spree_backend (4.5.0)
-      babel-transpiler (~> 0.7)
-      bootstrap (~> 4.0)
-      flag-icons-rails (~> 3.4)
-      flatpickr (~> 4.6)
-      glyphicons (~> 1.0)
-      hotwire-rails
-      inline_svg (~> 1.5)
-      jquery-rails (~> 4.3)
-      jquery-ui-rails (~> 6.0)
-      jsbundling-rails
-      responders
-      sass-rails (>= 5)
-      select2-rails (~> 4.0.6)
-      spree (>= 4.4.0)
-      sprockets (~> 4.0)
-      tinymce-rails (~> 5.0)
-    spree_cli (4.5.0)
-      thor (~> 1.0)
-    spree_core (4.5.0)
-      actionpack (>= 6.1)
-      actionview (>= 6.1)
-      active_storage_validations (~> 0.9, <= 0.9.5)
-      activejob (>= 6.1)
-      activemerchant (~> 1.67)
-      activemodel (>= 6.1)
-      activerecord (>= 6.1)
-      activerecord-typedstore
-      activestorage (>= 6.1)
-      activesupport (>= 6.1)
-      acts_as_list (>= 0.8)
-      auto_strip_attributes (~> 2.6)
-      awesome_nested_set (~> 3.3, >= 3.3.1)
-      cancancan (~> 3.2)
-      carmen (>= 1.0)
-      friendly_id (~> 5.2, >= 5.2.1)
-      highline (~> 2.0)
-      image_processing (~> 1.2)
-      kaminari (~> 1.2)
-      monetize (~> 1.9)
-      money (~> 6.13)
-      paranoia (~> 2.4)
-      railties (>= 6.1)
-      ransack (>= 2.3, < 3.0)
-      rexml
-      state_machines-activemodel (~> 0.7)
-      state_machines-activerecord (~> 0.6)
-      stringex
-      validates_zipcode
     spree_dev_tools (0.2.0)
       appraisal
       awesome_print
@@ -580,25 +614,15 @@ GEM
       spree_core
       timecop
       webdrivers (~> 4.3)
-    spree_emails (4.5.0)
-      actionmailer
-      spree_core (>= 4.5.0)
-      sprockets (>= 4.0)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
-    spree_gateway (3.10.0)
-      spree_core (>= 3.7.0)
-      spree_extension
     spree_i18n (5.1.0)
       i18n_data
       kaminari-i18n
       rails-i18n
       spree_core (>= 4.2.0.rc3)
       spree_extension
-    spree_sample (4.5.0)
-      ffaker (~> 2.9)
-      spree_core (>= 4.5.0)
     spring (4.1.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
@@ -697,14 +721,14 @@ DEPENDENCIES
   sendgrid-actionmailer
   sentry-raven
   sidekiq
-  spree (~> 4.5)
-  spree_auth_devise (~> 4.5)
-  spree_backend (~> 4.5)
+  spree!
+  spree_auth_devise!
+  spree_backend!
   spree_dev_tools
-  spree_emails (~> 4.5)
-  spree_gateway (~> 3.10)
+  spree_emails!
+  spree_gateway!
   spree_i18n (~> 5.1)
-  spree_sample (~> 4.5)
+  spree_sample!
   spring
   stackprof
   terser
