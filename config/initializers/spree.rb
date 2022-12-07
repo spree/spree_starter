@@ -9,12 +9,10 @@
 #
 # In order to initialize a setting do:
 # config.setting_name = 'new value'
-Rails.application.config.after_initialize do
-  Spree.config do |config|
-    # Example:
-    # Uncomment to stop tracking inventory levels in the application
-    # config.track_inventory_levels = false
-  end
+Spree.config do |config|
+  # Example:
+  # Uncomment to stop tracking inventory levels in the application
+  # config.track_inventory_levels = false
 end
 
 Spree.user_class = 'Spree::User'
