@@ -152,6 +152,8 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     cancancan (3.4.0)
+    canonical-rails (0.2.14)
+      rails (>= 4.1, <= 7.1)
     capybara (3.37.1)
       addressable
       matrix
@@ -587,6 +589,20 @@ GEM
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
+    spree_frontend (4.5.0)
+      babel-transpiler (~> 0.7)
+      bootstrap (~> 4.0)
+      canonical-rails (~> 0.2, >= 0.2.10)
+      glyphicons (~> 1.0)
+      inline_svg (~> 1.5)
+      jquery-rails (~> 4.3)
+      jsbundling-rails
+      responders
+      sass-rails (>= 5)
+      spree_api (>= 4.5.0)
+      spree_core (>= 4.5.0)
+      sprockets (~> 4.0)
+      turbo-rails
     spree_gateway (3.10.0)
       spree_core (>= 3.7.0)
       spree_extension
@@ -678,6 +694,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.1, >= 2.1.1)
   flamegraph
   font_assets
+  jsbundling-rails
   letter_opener
   listen
   memory_profiler
@@ -702,12 +719,14 @@ DEPENDENCIES
   spree_backend (~> 4.5)
   spree_dev_tools
   spree_emails (~> 4.5)
+  spree_frontend (~> 4.5)
   spree_gateway (~> 3.10)
   spree_i18n (~> 5.1)
   spree_sample (~> 4.5)
   spring
   stackprof
   terser
+  turbo-rails
   vcr
   web-console (~> 4.0)
   webmock
