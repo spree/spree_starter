@@ -1,6 +1,6 @@
 databases:
   - name: spree_4.5
-    databaseName: spree_4.5
+    databaseName: spree_4_5
     user: spree
 
 services:
