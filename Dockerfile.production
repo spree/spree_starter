@@ -33,6 +33,7 @@ ENV BUNDLE_GEMFILE=/app/Gemfile \
   GEM_HOME=/bundle
 ENV PATH="${BUNDLE_BIN}:${PATH}"
 
+COPY spree-main spree-main
 COPY Gemfile Gemfile.lock ./
 RUN bundle install --binstubs --without development test
 

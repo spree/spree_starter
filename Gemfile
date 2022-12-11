@@ -70,6 +70,8 @@ gem 'rack-cache' # http caching
 gem 'sidekiq'
 
 # Spree gems
+gem 'spree_api', path: "./spree-main/api"
+gem 'spree_core', path: "./spree-main/core"
 gem 'spree', '~> 4.5'
 gem 'spree_sample', '~> 4.5'
 gem 'spree_emails', '~> 4.5'
