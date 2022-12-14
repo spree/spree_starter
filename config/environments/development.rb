@@ -74,7 +74,7 @@ Rails.application.configure do
 
   routes.default_url_options = config.action_mailer.default_url_options = {
     host: ENV.fetch('APPLICATION_HOST', 'localhost'),
-    port: ENV.fetch('APPLICATION_PORT', 3000).to_i
+    port: ENV.fetch('APPLICATION_PORT', 4000).to_i
   }
 
   config.hosts.clear
