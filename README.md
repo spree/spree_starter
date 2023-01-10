@@ -61,7 +61,7 @@ docker-compose up
 #### Install required tools and dependencies:
 
 * [Docker](https://www.docker.com/community-edition#/download)
-* Ruby 3.0.3
+* Ruby 3.1.3
 * [libvips](https://www.libvips.org/install.html)
 
 #### Run setup script
@@ -96,7 +96,7 @@ docker-compose run web rake spree_sample:load
 
 3. RVM - https://rvm.io/
 4. NVM - https://github.com/nvm-sh/nvm
-5. Ruby - `rvm install 3.0.3`
+5. Ruby - `rvm install 3.1.3`
 6. Node - `nvm install`
 7. Yarn - `npm -g install yarn`
 
@@ -185,6 +185,21 @@ This issue is specific to running with [spree_legacy_frontend](https://github.co
 
 If you notice that the 'Add to Cart' button is disabled on product pages, try the [troubleshooting instructions](https://github.com/spree/spree_legacy_frontend#disabled-add-to-cart-button-issue) found in the spree_legacy_frontend ReadMe.
 
+### uninitialized constant Spree::Preference (NameError)
+
+If upgrading your spree app to Rails 7, you may run into the following error:
+```shell
+/lib/spree/core/preferences/store.rb:96:in `should_persist?': 
+uninitialized constant Spree::Preference (NameError)
+```
+To fix this error, you'll need to update your spree config initializer. In `config/initializers/spree.rb`, wrap the `Spree.config` block in a `Rails.application.config.after_initialize` block, like so:
+```ruby
+Rails.application.config.after_initialize do
+  Spree.config do |config|
+    # config settings initialized here
+  end
+end
+```
 
 ## License
 
