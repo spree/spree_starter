@@ -7,21 +7,21 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 96ee351573a090546b41bd13a0dbd9972f3b6c1c
+  revision: 8f4ceda4e24a2c9f9819e7158030cd0691f4cf2d
   branch: main
   specs:
-    spree (4.5.0)
-      spree_api (= 4.5.0)
-      spree_cli (= 4.5.0)
-      spree_core (= 4.5.0)
-    spree_api (4.5.0)
+    spree (4.6.0.alpha)
+      spree_api (= 4.6.0.alpha)
+      spree_cli (= 4.6.0.alpha)
+      spree_core (= 4.6.0.alpha)
+    spree_api (4.6.0.alpha)
       bcrypt (~> 3.1)
       doorkeeper (~> 5.3)
       jsonapi-serializer (~> 2.1)
-      spree_core (= 4.5.0)
-    spree_cli (4.5.0)
+      spree_core (= 4.6.0.alpha)
+    spree_cli (4.6.0.alpha)
       thor (~> 1.0)
-    spree_core (4.5.0)
+    spree_core (4.6.0.alpha)
       actionpack (>= 6.1)
       actionview (>= 6.1)
       active_storage_validations (~> 0.9, <= 0.9.5)
@@ -51,17 +51,17 @@ GIT
       state_machines-activerecord (~> 0.6)
       stringex
       validates_zipcode
-    spree_emails (4.5.0)
+    spree_emails (4.6.0.alpha)
       actionmailer
-      spree_core (>= 4.5.0)
+      spree_core (>= 4.6.0.alpha)
       sprockets (>= 4.0)
-    spree_sample (4.5.0)
+    spree_sample (4.6.0.alpha)
       ffaker (~> 2.9)
-      spree_core (>= 4.5.0)
+      spree_core (>= 4.6.0.alpha)
 
 GIT
   remote: https://github.com/spree/spree_auth_devise.git
-  revision: b373a785c007316e77bc8a6c30ee10969dbde794
+  revision: a74f86b2c096b226b1278a58ff17e8472655d48f
   branch: main
   specs:
     spree_auth_devise (4.5.0)
@@ -72,10 +72,10 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_backend.git
-  revision: 933836af04865ce841bc1fd82c5794159a81d838
+  revision: 2b48b4140779f2a0ddfb60c9d6d9ccda3dd6e005
   branch: main
   specs:
-    spree_backend (4.5.0)
+    spree_backend (4.6.0.alpha)
       babel-transpiler (~> 0.7)
       bootstrap (~> 4.0)
       flag-icons-rails (~> 3.4)
@@ -280,6 +280,7 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
+    date (3.3.3)
     devise (4.8.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -296,7 +297,7 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
-    erubi (1.11.0)
+    erubi (1.12.0)
     execjs (2.8.1)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
@@ -331,7 +332,7 @@ GEM
       activesupport (>= 5.0)
     glyphicons (1.0.2)
     hashdiff (1.0.1)
-    highline (2.0.3)
+    highline (2.1.0)
     hotwire-rails (0.1.3)
       rails (>= 6.0.0)
       stimulus-rails
@@ -353,7 +354,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
-    jsbundling-rails (1.0.3)
+    jsbundling-rails (1.1.1)
       railties (>= 6.0.0)
     json (2.6.2)
     jsonapi-rspec (0.0.11)
@@ -383,35 +384,39 @@ GEM
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.19.0)
+    loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.7.1)
+    mail (2.8.0)
       mini_mime (>= 0.1.1)
+      net-imap
+      net-pop
+      net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
     memory_profiler (1.0.0)
     method_source (1.0.0)
-    mini_magick (4.11.0)
+    mini_magick (4.12.0)
     mini_mime (1.1.2)
     mini_portile2 (2.8.1)
-    minitest (5.16.3)
+    minitest (5.17.0)
     monetize (1.12.0)
       money (~> 6.12)
     money (6.16.0)
       i18n (>= 0.6.4, <= 2)
     msgpack (1.5.6)
     multi_json (1.15.0)
-    net-imap (0.3.1)
+    net-imap (0.3.4)
+      date
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.1.3)
+    net-protocol (0.2.1)
       timeout
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.13.9)
+    nokogiri (1.13.10)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     octokit (4.25.1)
@@ -439,8 +444,8 @@ GEM
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
-    racc (1.6.0)
-    rack (2.2.4)
+    racc (1.6.2)
+    rack (2.2.5)
     rack-cache (1.13.0)
       rack (>= 0.4)
     rack-cors (1.1.1)
@@ -471,8 +476,8 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.3)
-      loofah (~> 2.3)
+    rails-html-sanitizer (1.4.4)
+      loofah (~> 2.19, >= 2.19.1)
     rails-i18n (7.0.6)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
@@ -622,9 +627,9 @@ GEM
       spree_core (>= 4.2.0.rc3)
       spree_extension
     spring (4.1.0)
-    sprockets (4.1.1)
+    sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
-      rack (> 1, < 3)
+      rack (>= 2.2.4, < 4)
     sprockets-rails (3.4.2)
       actionpack (>= 5.2)
       activesupport (>= 5.2)
@@ -646,9 +651,9 @@ GEM
     thor (1.2.1)
     tilt (2.0.11)
     timecop (0.9.5)
-    timeout (0.3.0)
+    timeout (0.3.1)
     timers (4.3.4)
-    tinymce-rails (5.10.6)
+    tinymce-rails (5.10.7)
       railties (>= 3.1.1)
     traces (0.7.0)
     turbo-rails (1.3.2)
