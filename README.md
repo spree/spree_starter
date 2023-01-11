@@ -61,7 +61,7 @@ docker-compose up
 #### Install required tools and dependencies:
 
 * [Docker](https://www.docker.com/community-edition#/download)
-* Ruby 3.1.3
+* Ruby 3.2.0
 * [libvips](https://www.libvips.org/install.html)
 
 #### Run setup script
@@ -96,7 +96,7 @@ docker-compose run web rake spree_sample:load
 
 3. RVM - https://rvm.io/
 4. NVM - https://github.com/nvm-sh/nvm
-5. Ruby - `rvm install 3.1.3`
+5. Ruby - `rvm install 3.2.0`
 6. Node - `nvm install`
 7. Yarn - `npm -g install yarn`
 
