@@ -4,6 +4,6 @@ set -o errexit
 export DB_HOST=127.0.0.1
 export DB_PORT=5432
 
-bin/start-dependency-containers
+bin/start-db-redis-containers
 
 bundle exec rails server

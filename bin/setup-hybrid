@@ -6,7 +6,7 @@ export DB_PORT=5432
 
 rm -rf .env
 cp -f .env.sample .env
-bin/start-dependency-containers
+bin/start-db-redis-containers
 (bundle check || bundle install)
 bundle exec rails db:drop
 bundle exec rails db:create
