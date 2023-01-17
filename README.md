@@ -70,16 +70,17 @@ docker-compose up
 bin/setup-hybrid
 ```
 
-After loading all docker dependencies launch local server with:
-
-```bash
-bin/start-hybrid
-```
 
 #### (Optional) Import sample data such as products, categories, etc
 
 ```bash
 bundle exec rake spree_sample:load
+```
+
+#### After loading all docker dependencies launch local server with:
+
+```bash
+bin/start-hybrid
 ```
 
 ### Without Docker (not recommended for beginners)
