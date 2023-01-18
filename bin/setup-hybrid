@@ -13,3 +13,6 @@ bundle exec rails db:create
 bundle exec rails db:migrate
 bundle exec rails db:seed
 rm -rf tmp/latest.dump
+
+yarn install
+yarn build
