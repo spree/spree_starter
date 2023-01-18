@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -o errexit
+
+docker-compose up -d redis postgres
+bin/wait-for-services
