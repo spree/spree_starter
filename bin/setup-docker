@@ -1,7 +1,13 @@
+#!/bin/bash
+set -o errexit
 
-rm -rf .env && cp -f .env.sample .env &&
-docker-compose pull &&
-docker-compose build web &&
+rm -rf .env
+cp -f .env.sample .env
+
+export DB_HOST=127.0.0.1
+export DB_PORT=5432
+bin/start-db-redis-containers
+
 docker-compose run --rm web bash -c '
   bin/wait-for-services &&
   (bundle check || bundle install) &&

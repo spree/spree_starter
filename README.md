@@ -40,10 +40,8 @@ After that, you'll be ready to deploy to render.
 #### Run setup script
 
 ```bash
-bin/start-docker
+bin/setup-docker
 ```
-
-This will automatically launch the application at `http://localhost:4000/admin`
 
 #### (Optional) Import sample data such as products, categories, etc
 
@@ -51,10 +49,10 @@ This will automatically launch the application at `http://localhost:4000/admin`
 docker-compose run web rake spree_sample:load
 ```
 
-#### Launching local server
+#### After the setup is finished, launch the webserver with:
 
 ```bash
-docker-compose up
+bin/start-docker
 ```
 
 ### Using Hybrid installation
