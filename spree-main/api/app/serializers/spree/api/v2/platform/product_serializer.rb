@@ -55,7 +55,7 @@ module Spree
                   id_method_name: :default_variant_id,
                   record_type: :variant,
                   serializer: :variant
-
+                  
           has_many :variants
           has_many :option_types
           has_many :product_properties
@@ -72,7 +72,7 @@ module Spree
                    id_method_name: :variant_image_ids,
                    record_type: :image,
                    serializer: :image
-
+          has_many :stores
           # TODO: add stock items
           # TODO: add prices
         end

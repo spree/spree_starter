@@ -4,13 +4,9 @@ module Spree
       module Platform
         class StoresController < ResourceController
           private
-
           def model_class
             Spree::Store
-          end
-
-
-          
+          end  
         end
       end
     end

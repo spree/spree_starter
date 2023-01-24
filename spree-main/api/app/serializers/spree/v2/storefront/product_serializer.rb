@@ -70,6 +70,7 @@ module Spree
                 id_method_name: :master_id,
                 record_type: :variant,
                 serializer: :variant
+        has_many :stores
       end
     end
   end
