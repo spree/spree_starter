@@ -4,12 +4,23 @@ module Spree
       module Storefront
         module Account
           class CreditCardsController < ::Spree::Api::V2::ResourceController
+            include Gateway::HyperPayCardProcessor::HyperPayCardProcessor
             before_action :require_spree_current_user
 
             def destroy
               spree_authorize! :destroy, resource, resource
 
               destroy_service.call(card: resource)
+            end
+
+
+            def start_registeration
+              render status: 200, json: start_card_registeration
+            end
+              
+            def complete_registeration
+              result=complete_card_registeration(params[:checkout_id],spree_current_user)
+              render_result(result)
             end
 
             private
