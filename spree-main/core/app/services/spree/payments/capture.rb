@@ -4,20 +4,24 @@ module Spree
       prepend Spree::ServiceModule::Base
       def call(payment:)
         ApplicationRecord.transaction do
-          run :prepare_payment_attributes
+          run :capture_payment
         end
       end
       
       protected
 
-      def prepare_payment_attributes(payment:)
+      def capture_payment(payment:)
         return failure(nil, 'error in payment state') if payment.state  != 'pending'
 
         capturable_amount = payment.amount
         cents = (capturable_amount * 100).to_i
 
-        result=payment.capture!(cents)
-        success(payment.reload)
+        begin
+          result=payment.capture!(cents)
+          success(payment.reload)
+        rescue Spree::Core::GatewayError => e
+          return failure(nil, 'could not perform capture operation, payment move to failure state')
+        end        
 
       end
 

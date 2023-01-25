@@ -39,6 +39,10 @@ module Spree
           payments.select(&:checkout?)
         end
 
+        def completed_payments
+          payments.select(&:completed?)
+        end
+
         private
 
         def process_payments_with(method)
