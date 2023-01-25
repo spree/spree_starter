@@ -19,7 +19,7 @@ module Spree
             end
               
             def complete_registeration
-              result=complete_card_registeration(params[:checkout_id],spree_current_user)
+              result=complete_card_registeration(params[:payment_method_id],params[:checkout_id],spree_current_user)
               render_result(result)
             end
 

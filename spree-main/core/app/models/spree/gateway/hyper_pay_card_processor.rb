@@ -14,7 +14,7 @@ module Spree
       end
 
 
-      def complete_card_registeration(checkout_id, user)
+      def complete_card_registeration(payment_method_id,checkout_id, user)
         result = get_registeration(checkout_id)
 
         result_json = JSON.parse(result.to_json)
@@ -30,7 +30,7 @@ module Spree
           "name": card_response["holder"]
         }
        
-        current = Spree::PaymentMethod.find_by(id: 3)
+        current = Spree::PaymentMethod.find_by(id: payment_method_id)
 
         result2 = Wallet::CreatePaymentSource.call(
           payment_method: current,
