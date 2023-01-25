@@ -42,6 +42,7 @@ Spree::Core::Engine.add_routes do
               collection do
               post :start_registeration
               post :complete_registeration
+              end
             end
           end
 
