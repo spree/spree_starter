@@ -46,7 +46,7 @@ bin/setup-docker
 #### (Optional) Import sample data such as products, categories, etc
 
 ```bash
-docker-compose run web rake spree_sample:load
+docker compose run web rake spree_sample:load
 ```
 
 #### After the setup is finished, launch the webserver with:
@@ -116,7 +116,7 @@ Spree is a [headless e-commerce platform](https://dev-docs.spreecommerce.org/get
 
 ### Connect to the docker container
 ```bash
-docker-compose run web bash
+docker compose run web bash
 ```
 
 ### Run update commands
@@ -134,13 +134,13 @@ For additional instructions please visit [Spree Upgrade Guides](https://dev-docs
 ### Launching rails console
 
 ```bash
-docker-compose run web rails c
+docker compose run web rails c
 ```
 
 ### Launching bash console
 
 ```bash
-docker-compose run web bash
+docker compose run web bash
 ```
 
 ## Customization
@@ -150,13 +150,13 @@ Update `Gemfile` and run
 
 ```bash
 bundle install
-docker-compose build
+docker compose build
 ```
 
 You will need to restart the server if running:
 
 ```bash
-docker-compose restart
+docker compose restart
 ```
 
 ## Environment variables

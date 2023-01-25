@@ -8,7 +8,7 @@ export DB_HOST=127.0.0.1
 export DB_PORT=5432
 bin/start-db-redis-containers
 
-docker-compose run --rm web bash -c '
+docker compose run --rm web bash -c '
   bin/wait-for-services &&
   (bundle check || bundle install) &&
   bundle exec rails db:drop &&

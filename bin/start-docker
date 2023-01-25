@@ -1,4 +1,4 @@
 #!/bin/bash
 set -o errexit
 
-docker-compose up
+docker compose up
