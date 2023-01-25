@@ -120,6 +120,9 @@ Spree::Core::Engine.add_routes do
 
         # Payments API
         resources :payments do
+          member do
+            patch :capture
+          end
           # TODO: support custom actions
           # member do
           #   patch :authorize
