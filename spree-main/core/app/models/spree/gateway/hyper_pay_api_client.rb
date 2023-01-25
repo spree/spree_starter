@@ -10,10 +10,10 @@ module Spree
         http.use_ssl = true
         req = Net::HTTP::Post.new(uri.path)
         req.set_form_data({
-          'entityId' => '8ac7a4c8814d6dee0181582f41ce4364',
+          'entityId' => $CONF[:hyper_pay_entityId],
           'createRegistration' => true
           })
-        req["Authorization"] = "Bearer OGFjN2E0Yzg4MTRkNmRlZTAxODE1ODJlZTBjNzQzNjB8UktxRFBNQ0o3cg=="
+        req["Authorization"] = "Bearer " + $CONF[:hyper_pay_token]
         res = http.request(req)
         
         raise Core::GatewayError, 'could not complete get new checkout id for card registeration ' unless res.code == '200'
@@ -27,13 +27,11 @@ module Spree
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = true
         req = Net::HTTP::Get.new(uri.path)
-        params = {'entityId'=>'8ac7a4c8814d6dee0181582f41ce4364'}
+        params = {'entityId'=>$CONF[:hyper_pay_entityId]}
         req.set_form_data( params )
-              # req.set_form_data({
-              #   'entityId' => '8ac7a4c8814d6dee0181582f41ce4364'
-              # })
+           
         req = Net::HTTP::Get.new( uri.path+ '?' + req.body ) 
-        req["Authorization"] = "Bearer OGFjN2E0Yzg4MTRkNmRlZTAxODE1ODJlZTBjNzQzNjB8UktxRFBNQ0o3cg=="
+        req["Authorization"] = "Bearer " + $CONF[:hyper_pay_token]
         
         res = http.request(req)
         raise Core::GatewayError, 'could not complete registeration of checkout id ' + checkout_id unless res.code == '200'
@@ -47,13 +45,13 @@ module Spree
         http.use_ssl = true
         req = Net::HTTP::Post.new(uri.path)
         req.set_form_data({
-          'entityId' => '8ac7a4c8814d6dee0181582f41ce4364',
+          'entityId' => $CONF[:hyper_pay_entityId],
           'amount' => amount,
           'currency' => 'SAR',
           'paymentType' => 'PA',
           'shopperResultUrl' => 'google.com'
           })
-        req["Authorization"] = "Bearer OGFjN2E0Yzg4MTRkNmRlZTAxODE1ODJlZTBjNzQzNjB8UktxRFBNQ0o3cg=="
+        req["Authorization"] = "Bearer " + $CONF[:hyper_pay_token]
         res = http.request(req)
 
         raise Core::GatewayError, 'could not authorize request ' + card_registeration_id unless res.code == '200'
@@ -69,12 +67,12 @@ module Spree
         http.use_ssl = true
         req = Net::HTTP::Post.new(uri.path)
         req.set_form_data({
-          'entityId' => '8ac7a4c8814d6dee0181582f41ce4364',
+          'entityId' => $CONF[:hyper_pay_entityId],
           'amount' => amount,
           'currency' => 'SAR',
           'paymentType' => 'CP'
           })
-        req["Authorization"] = "Bearer OGFjN2E0Yzg4MTRkNmRlZTAxODE1ODJlZTBjNzQzNjB8UktxRFBNQ0o3cg=="
+        req["Authorization"] = "Bearer " + $CONF[:hyper_pay_token]
 
         res = http.request(req)
 
