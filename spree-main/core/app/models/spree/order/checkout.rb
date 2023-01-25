@@ -75,12 +75,26 @@ module Spree
               before_transition to: :complete, do: :ensure_line_items_are_in_stock
 
               if states[:payment]
-                before_transition to: :complete do |order|
+                before_transition to: :confirm do |order|
                   if order.payment_required? && order.payments.valid.empty?
                     order.errors.add(:base, Spree.t(:no_payment_found))
                     false
                   elsif order.payment_required?
                     order.process_payments!
+                  end
+                end
+
+                # added custom rule before transition to complete, check payment status 
+                before_transition to: :complete do |order|
+                  if order.completed_payments.empty?
+                    if order.pending_payments.empty?
+                      order.cancel!
+                      order.errors.add(:base, "neither pending nor completed payments were found, order is canceled")
+                      false
+                    else
+                      order.errors.add(:base, "payments needs to be completed")
+                      false
+                    end
                   end
                 end
 
