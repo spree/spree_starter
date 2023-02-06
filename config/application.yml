@@ -1,0 +1,15 @@
+defaults: &defaults
+  hyper_pay_entityId: 8ac7a4c8814d6dee0181582f41ce4364
+  hyper_pay_token: OGFjN2E0Yzg4MTRkNmRlZTAxODE1ODJlZTBjNzQzNjB8UktxRFBNQ0o3cg==
+  
+  
+test:
+  <<: *defaults
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+
