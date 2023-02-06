@@ -20,7 +20,7 @@ module Spree
         :line_item_create_service, :line_item_update_service, :line_item_destroy_service,
         :order_approve_service, :order_cancel_service, :shipment_change_state_service, :shipment_update_service,
         :shipment_create_service, :shipment_add_item_service, :shipment_remove_item_service,
-        :payment_create_service, :address_create_service, :address_update_service,
+        :payment_create_service, :payment_capture_service, :address_create_service, :address_update_service,
         :checkout_select_shipping_method_service
       ].freeze
 
@@ -107,6 +107,7 @@ module Spree
         @line_item_destroy_service = 'Spree::LineItems::Destroy'
 
         @payment_create_service = 'Spree::Payments::Create'
+        @payment_capture_service = 'Spree::Payments::Capture'
 
         # errors
         @error_handler = 'Spree::ErrorReporter'

@@ -43,7 +43,7 @@ Spree::Core::Engine.add_routes do
               post :complete_registeration
             end
           end
-          
+
           resources :orders, controller: :orders, only: %i[index show]
         end
 
@@ -126,6 +126,9 @@ Spree::Core::Engine.add_routes do
 
         # Payments API
         resources :payments do
+          member do
+            patch :capture
+          end
           # TODO: support custom actions
           # member do
           #   patch :authorize
