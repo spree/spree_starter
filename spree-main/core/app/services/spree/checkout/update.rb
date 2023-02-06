@@ -11,6 +11,7 @@ module Spree
         params[:order][:bill_address_attributes] = replace_country_iso_with_id(params[:order][:bill_address_attributes]) if bill_changed
         order.state = 'address' if (ship_changed || bill_changed) && order.has_checkout_step?('address')
         order.state = 'delivery' if selected_shipping_rate_present?(params) && order.has_checkout_step?('delivery')
+        order.buyer_note = params[:order][:buyer_note]
         return success(order) if order.update_from_params(params, permitted_attributes, request_env)
 
         failure(order)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_05_093605) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -535,6 +535,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
     t.jsonb "public_metadata"
     t.jsonb "private_metadata"
     t.text "internal_note"
+    t.text "buyer_note"
     t.index ["approver_id"], name: "index_spree_orders_on_approver_id"
     t.index ["bill_address_id"], name: "index_spree_orders_on_bill_address_id"
     t.index ["canceler_id"], name: "index_spree_orders_on_canceler_id"
