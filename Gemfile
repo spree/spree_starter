@@ -67,7 +67,7 @@ gem 'dalli' # memcache
 gem 'rack-cache' # http caching
 
 # sidekiq
-gem 'sidekiq'
+gem 'sidekiq', '>= 7.0.8'
 
 # Spree gems
 gem 'spree', '~> 4.5'
