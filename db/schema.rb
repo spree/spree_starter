@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_31_154171) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,9 +68,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
     t.string "scope"
     t.datetime "created_at", precision: nil
     t.datetime "deleted_at", precision: nil
+    t.string "locale"
     t.index ["deleted_at"], name: "index_friendly_id_slugs_on_deleted_at"
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["locale"], name: "index_friendly_id_slugs_on_locale"
+    t.index ["slug", "sluggable_type", "locale"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_locale"
+    t.index ["slug", "sluggable_type", "scope", "locale"], name: "index_friendly_id_slugs_unique", unique: true
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
@@ -268,6 +270,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
     t.index ["store_id"], name: "index_spree_customer_returns_on_store_id"
   end
 
+  create_table "spree_data_feeds", force: :cascade do |t|
+    t.bigint "store_id"
+    t.string "name"
+    t.string "type"
+    t.string "slug"
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id", "slug", "type"], name: "index_spree_data_feeds_on_store_id_and_slug_and_type"
+    t.index ["store_id"], name: "index_spree_data_feeds_on_store_id"
+  end
+
   create_table "spree_digital_links", force: :cascade do |t|
     t.bigint "digital_id"
     t.bigint "line_item_id"
@@ -446,6 +460,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
     t.index ["prototype_id"], name: "index_spree_option_type_prototypes_on_prototype_id"
   end
 
+  create_table "spree_option_type_translations", force: :cascade do |t|
+    t.string "name"
+    t.string "presentation"
+    t.string "locale", null: false
+    t.bigint "spree_option_type_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_spree_option_type_translations_on_locale"
+    t.index ["spree_option_type_id", "locale"], name: "unique_option_type_id_per_locale", unique: true
+  end
+
   create_table "spree_option_types", force: :cascade do |t|
     t.string "name", limit: 100
     t.string "presentation", limit: 100
@@ -458,6 +483,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
     t.index ["filterable"], name: "index_spree_option_types_on_filterable"
     t.index ["name"], name: "index_spree_option_types_on_name"
     t.index ["position"], name: "index_spree_option_types_on_position"
+  end
+
+  create_table "spree_option_value_translations", force: :cascade do |t|
+    t.string "name"
+    t.string "presentation"
+    t.string "locale", null: false
+    t.bigint "spree_option_value_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_spree_option_value_translations_on_locale"
+    t.index ["spree_option_value_id", "locale"], name: "unique_option_value_id_per_locale", unique: true
   end
 
   create_table "spree_option_value_variants", force: :cascade do |t|
@@ -679,8 +715,37 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
     t.index ["property_id"], name: "index_spree_product_properties_on_property_id"
   end
 
+  create_table "spree_product_property_translations", force: :cascade do |t|
+    t.string "value"
+    t.string "filter_param"
+    t.string "locale", null: false
+    t.bigint "spree_product_property_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_spree_product_property_translations_on_locale"
+    t.index ["spree_product_property_id", "locale"], name: "unique_product_property_id_per_locale", unique: true
+  end
+
+  create_table "spree_product_translations", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "locale", null: false
+    t.bigint "spree_product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "meta_description"
+    t.string "meta_keywords"
+    t.string "meta_title"
+    t.string "slug"
+    t.datetime "deleted_at", precision: nil
+    t.index ["deleted_at"], name: "index_spree_product_translations_on_deleted_at"
+    t.index ["locale", "slug"], name: "unique_slug_per_locale", unique: true
+    t.index ["locale"], name: "index_spree_product_translations_on_locale"
+    t.index ["spree_product_id", "locale"], name: "unique_product_id_per_locale", unique: true
+  end
+
   create_table "spree_products", force: :cascade do |t|
-    t.string "name", default: "", null: false
+    t.string "name", default: ""
     t.text "description"
     t.datetime "available_on", precision: nil
     t.datetime "deleted_at", precision: nil
@@ -830,7 +895,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
 
   create_table "spree_properties", force: :cascade do |t|
     t.string "name"
-    t.string "presentation", null: false
+    t.string "presentation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "filterable", default: false, null: false
@@ -850,6 +915,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
     t.index ["property_id"], name: "index_spree_property_prototypes_on_property_id"
     t.index ["prototype_id", "property_id"], name: "index_property_prototypes_on_prototype_id_and_property_id", unique: true
     t.index ["prototype_id"], name: "index_spree_property_prototypes_on_prototype_id"
+  end
+
+  create_table "spree_property_translations", force: :cascade do |t|
+    t.string "name"
+    t.string "presentation"
+    t.string "filter_param"
+    t.string "locale", null: false
+    t.bigint "spree_property_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_spree_property_translations_on_locale"
+    t.index ["spree_property_id", "locale"], name: "unique_property_id_per_locale", unique: true
   end
 
   create_table "spree_prototype_taxons", force: :cascade do |t|
@@ -1222,6 +1299,29 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
     t.index ["user_id"], name: "index_spree_store_credits_on_user_id"
   end
 
+  create_table "spree_store_translations", force: :cascade do |t|
+    t.string "name"
+    t.text "meta_description"
+    t.text "meta_keywords"
+    t.string "seo_title"
+    t.string "facebook"
+    t.string "twitter"
+    t.string "instagram"
+    t.string "customer_support_email"
+    t.text "description"
+    t.text "address"
+    t.string "contact_phone"
+    t.string "new_order_notifications_email"
+    t.string "locale", null: false
+    t.bigint "spree_store_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "deleted_at", precision: nil
+    t.index ["deleted_at"], name: "index_spree_store_translations_on_deleted_at"
+    t.index ["locale"], name: "index_spree_store_translations_on_locale"
+    t.index ["spree_store_id", "locale"], name: "index_spree_store_translations_on_spree_store_id_locale", unique: true
+  end
+
   create_table "spree_stores", force: :cascade do |t|
     t.string "name"
     t.string "url"
@@ -1287,8 +1387,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
     t.index ["zone_id"], name: "index_spree_tax_rates_on_zone_id"
   end
 
+  create_table "spree_taxon_translations", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "locale", null: false
+    t.bigint "spree_taxon_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "meta_title"
+    t.string "meta_description"
+    t.string "meta_keywords"
+    t.string "permalink"
+    t.index ["locale", "permalink"], name: "unique_permalink_per_locale", unique: true
+    t.index ["locale"], name: "index_spree_taxon_translations_on_locale"
+    t.index ["spree_taxon_id", "locale"], name: "index_spree_taxon_translations_on_spree_taxon_id_and_locale", unique: true
+  end
+
   create_table "spree_taxonomies", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position", default: 0
@@ -1300,10 +1416,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
     t.index ["store_id"], name: "index_spree_taxonomies_on_store_id"
   end
 
+  create_table "spree_taxonomy_translations", force: :cascade do |t|
+    t.string "name"
+    t.string "locale", null: false
+    t.bigint "spree_taxonomy_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_spree_taxonomy_translations_on_locale"
+    t.index ["spree_taxonomy_id", "locale"], name: "index_spree_taxonomy_translations_on_spree_taxonomy_id_locale", unique: true
+  end
+
   create_table "spree_taxons", force: :cascade do |t|
     t.bigint "parent_id"
     t.integer "position", default: 0
-    t.string "name", null: false
+    t.string "name"
     t.string "permalink"
     t.bigint "taxonomy_id"
     t.bigint "lft"
@@ -1372,6 +1498,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
     t.datetime "confirmation_sent_at", precision: nil
     t.string "first_name"
     t.string "last_name"
+    t.string "selected_locale"
     t.index ["bill_address_id"], name: "index_spree_users_on_bill_address_id"
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at"
     t.index ["email"], name: "email_idx_unique", unique: true
@@ -1431,6 +1558,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
     t.jsonb "subscriptions"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+    t.string "secret_key", null: false
     t.index ["active"], name: "index_spree_webhooks_subscribers_on_active"
   end
 
@@ -1486,6 +1614,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_093612) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "spree_oauth_access_grants", "spree_oauth_applications", column: "application_id"
   add_foreign_key "spree_oauth_access_tokens", "spree_oauth_applications", column: "application_id"
+  add_foreign_key "spree_option_type_translations", "spree_option_types"
+  add_foreign_key "spree_option_value_translations", "spree_option_values"
   add_foreign_key "spree_payment_sources", "spree_payment_methods", column: "payment_method_id"
   add_foreign_key "spree_payment_sources", "spree_users", column: "user_id"
+  add_foreign_key "spree_product_property_translations", "spree_product_properties"
+  add_foreign_key "spree_product_translations", "spree_products"
+  add_foreign_key "spree_property_translations", "spree_properties"
+  add_foreign_key "spree_store_translations", "spree_stores"
+  add_foreign_key "spree_taxon_translations", "spree_taxons"
+  add_foreign_key "spree_taxonomy_translations", "spree_taxonomies"
 end

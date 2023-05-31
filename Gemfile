@@ -70,10 +70,10 @@ gem 'rack-cache' # http caching
 gem 'sidekiq'
 
 # Spree gems
-gem 'spree', '~> 4.5'
-gem 'spree_sample', '~> 4.5'
-gem 'spree_emails', '~> 4.5'
-gem 'spree_backend', '~> 4.5'
+gem 'spree', '~> 4.6'
+gem 'spree_sample', '~> 4.6'
+gem 'spree_emails', '~> 4.6'
+gem 'spree_backend', '~> 4.6'
 gem 'spree_gateway', '~> 3.10'
 gem 'spree_auth_devise', '~> 4.5'
 gem 'spree_i18n', '~> 5.1'
