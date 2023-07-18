@@ -361,7 +361,7 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.7)
-    rack-cache (1.13.0)
+    rack-cache (1.14.0)
       rack (>= 0.4)
     rack-cors (2.0.1)
       rack (>= 2.0.0)
@@ -708,7 +708,7 @@ DEPENDENCIES
   oj
   pg
   puma
-  rack-cache
+  rack-cache (>= 1.14.0)
   rack-cors
   rack-mini-profiler
   rack-timeout
@@ -740,4 +740,4 @@ RUBY VERSION
    ruby 3.2.0p0
 
 BUNDLED WITH
-   2.4.1
+   2.4.6
