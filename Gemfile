@@ -34,7 +34,7 @@ group :development, :test do
 
   # monitoring
   gem 'bullet'
-  gem 'rack-mini-profiler', require: false
+  gem 'rack-mini-profiler', '>= 3.1.1', require: false
   gem 'flamegraph'
   gem 'stackprof'
   gem 'memory_profiler'
