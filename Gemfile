@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '3.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7'
+gem 'rails', '~> 7', '>= 7.1.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -44,7 +44,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 4.0'
+  gem 'web-console', '~> 4.2', '>= 4.2.1'
 
   gem 'letter_opener'
 end
@@ -73,7 +73,7 @@ gem 'sidekiq'
 gem 'spree', '~> 4.6'
 gem 'spree_sample', '~> 4.6'
 gem 'spree_emails', '~> 4.6'
-gem 'spree_backend', '~> 4.6'
+gem 'spree_backend', '~> 4.6', '>= 4.6.1'
 gem 'spree_gateway', '~> 3.10'
 gem 'spree_auth_devise', '~> 4.5'
 gem 'spree_i18n', '~> 5.3'
