@@ -239,9 +239,6 @@ GEM
       popper_js (>= 1.16.1, < 2)
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
-    bullet (7.0.7)
-      activesupport (>= 3.0.0)
-      uniform_notifier (~> 1.11)
     cancancan (3.5.0)
     capybara (3.39.1)
       addressable
@@ -703,7 +700,6 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
-    uniform_notifier (1.16.0)
     validates_zipcode (0.5.2)
       activemodel (>= 4.2.0)
     vcr (6.1.0)
@@ -741,7 +737,6 @@ DEPENDENCIES
   awesome_print
   aws-sdk-s3
   bootsnap
-  bullet
   dalli
   dotenv-rails (~> 2.1, >= 2.1.1)
   flamegraph

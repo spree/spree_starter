@@ -33,7 +33,7 @@ group :development, :test do
   gem 'rspec_junit_formatter'
 
   # monitoring
-  gem 'bullet'
+  # gem 'bullet'
   gem 'rack-mini-profiler', require: false
   gem 'flamegraph'
   gem 'stackprof'
