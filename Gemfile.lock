@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree.git
-  revision: d3ed3832010540e65cda386898a8f22d4896c907
+  revision: 913bbdad50547936444c6a7294a00f4b0b8b4e31
   branch: main
   specs:
     spree (5.0.0.alpha)
@@ -48,7 +48,7 @@ GIT
       money (~> 6.13)
       paranoia (~> 2.4)
       railties (>= 6.1)
-      ransack (>= 3.1, < 4.0)
+      ransack (>= 4.1)
       rexml
       state_machines-activemodel (~> 0.7)
       state_machines-activerecord (~> 0.6)
@@ -64,7 +64,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_backend.git
-  revision: 2ad29845ae7d32bfc9645fe81789fb00833c0664
+  revision: ebaf266ef1811c066b8d0f1cb06e9b8ae14cedb5
   branch: main
   specs:
     spree_backend (5.0.0.alpha)
@@ -84,6 +84,27 @@ GIT
       spree (>= 4.6.0)
       sprockets (~> 4.0)
       tinymce-rails (~> 5.0)
+
+GIT
+  remote: https://github.com/spree/spree_rails_frontend.git
+  revision: 6d8b85608a35374b9621a6b95634e005e1f30eaf
+  branch: main
+  specs:
+    spree_frontend (4.6.0)
+      babel-transpiler (~> 0.7)
+      bootstrap (~> 4.0)
+      canonical-rails (~> 0.2, >= 0.2.10)
+      flag-icons-rails (~> 3.4)
+      glyphicons (~> 1.0)
+      inline_svg (~> 1.5)
+      jquery-rails (~> 4.3)
+      jsbundling-rails
+      responders
+      sass-rails (>= 5)
+      spree_api (>= 4.6.0)
+      spree_core (>= 4.6.0)
+      sprockets (~> 4.0)
+      turbo-rails
 
 GEM
   remote: https://rubygems.org/
@@ -175,29 +196,30 @@ GEM
       tzinfo (~> 2.0)
     acts_as_list (1.1.0)
       activerecord (>= 4.2)
-    addressable (2.8.4)
+    addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
-    appraisal (2.4.1)
+    appraisal (2.5.0)
       bundler
       rake
       thor (>= 0.14.0)
     ast (2.4.2)
-    async (2.5.1)
+    async (2.6.5)
       console (~> 1.10)
+      fiber-annotation
       io-event (~> 1.1)
       timers (~> 4.1)
-    async-http (0.60.1)
+    async-http (0.61.0)
       async (>= 1.25)
       async-io (>= 1.28)
       async-pool (>= 0.2)
-      protocol-http (~> 0.24.0)
-      protocol-http1 (~> 0.15.0)
+      protocol-http (~> 0.25.0)
+      protocol-http1 (~> 0.16.0)
       protocol-http2 (~> 0.15.0)
-      traces (>= 0.8.0)
+      traces (>= 0.10.0)
     async-http-faraday (0.12.0)
       async-http (~> 0.42)
       faraday
-    async-io (1.34.3)
+    async-io (1.36.1)
       async
     async-pool (0.4.0)
       async (>= 1.25)
@@ -209,20 +231,20 @@ GEM
       activerecord (>= 4.0.0, < 7.2)
     awesome_print (1.9.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.772.0)
-    aws-sdk-core (3.173.1)
+    aws-partitions (1.844.0)
+    aws-sdk-core (3.186.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.651.0)
       aws-sigv4 (~> 1.5)
       jmespath (~> 1, >= 1.6.1)
-    aws-sdk-kms (1.64.0)
-      aws-sdk-core (~> 3, >= 3.165.0)
+    aws-sdk-kms (1.72.0)
+      aws-sdk-core (~> 3, >= 3.184.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.122.0)
-      aws-sdk-core (~> 3, >= 3.165.0)
+    aws-sdk-s3 (1.136.0)
+      aws-sdk-core (~> 3, >= 3.181.0)
       aws-sdk-kms (~> 1)
-      aws-sigv4 (~> 1.4)
-    aws-sigv4 (1.5.2)
+      aws-sigv4 (~> 1.6)
+    aws-sigv4 (1.6.1)
       aws-eventstream (~> 1, >= 1.0.2)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -232,7 +254,7 @@ GEM
     bcrypt (3.1.19)
     bigdecimal (3.1.4)
     bindex (0.8.1)
-    bootsnap (1.16.0)
+    bootsnap (1.17.0)
       msgpack (~> 1.2)
     bootstrap (4.6.2)
       autoprefixer-rails (>= 9.1.0)
@@ -240,7 +262,9 @@ GEM
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
     cancancan (3.5.0)
-    capybara (3.39.1)
+    canonical-rails (0.2.15)
+      actionview (>= 4.1, <= 7.2)
+    capybara (3.39.2)
       addressable
       matrix
       mini_mime (>= 0.1.3)
@@ -258,12 +282,13 @@ GEM
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
-    console (1.16.2)
+    console (1.23.2)
+      fiber-annotation
       fiber-local
     crack (0.4.5)
       rexml
     crass (1.0.6)
-    dalli (3.2.4)
+    dalli (3.2.6)
     database_cleaner (2.0.2)
       database_cleaner-active_record (>= 2, < 3)
     database_cleaner-active_record (2.1.0)
@@ -271,7 +296,7 @@ GEM
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
     date (3.3.3)
-    devise (4.9.2)
+    devise (4.9.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -290,17 +315,19 @@ GEM
     drb (2.1.1)
       ruby2_keywords
     erubi (1.12.0)
-    execjs (2.8.1)
+    execjs (2.9.1)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
-    faraday (2.7.5)
+    faraday (2.7.11)
+      base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-http-cache (2.5.0)
       faraday (>= 0.8)
     faraday-net_http (3.0.2)
-    ffaker (2.22.0)
-    ffi (1.15.5)
+    ffaker (2.23.0)
+    ffi (1.16.3)
+    fiber-annotation (0.2.0)
     fiber-local (1.0.0)
     flag-icons-rails (3.4.6.1)
       sass-rails
@@ -343,7 +370,7 @@ GEM
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
     io-console (0.6.0)
-    io-event (1.2.2)
+    io-event (1.3.3)
     irb (1.8.3)
       rdoc
       reline (>= 0.3.8)
@@ -377,6 +404,7 @@ GEM
     kaminari-i18n (0.5.0)
       kaminari
       rails
+    language_server-protocol (3.17.0.3)
     launchy (2.5.2)
       addressable (~> 2.8)
     letter_opener (1.8.1)
@@ -384,7 +412,7 @@ GEM
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.21.3)
+    loofah (2.21.4)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -409,10 +437,10 @@ GEM
       money (~> 6.12)
     money (6.16.0)
       i18n (>= 0.6.4, <= 2)
-    msgpack (1.7.1)
+    msgpack (1.7.2)
     multi_json (1.15.0)
     mutex_m (0.1.2)
-    net-imap (0.3.7)
+    net-imap (0.4.3)
       date
       net-protocol
     net-pop (0.1.2)
@@ -422,8 +450,6 @@ GEM
     net-smtp (0.4.0)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.15.4-arm64-darwin)
-      racc (~> 1.4)
     nokogiri (1.15.4-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
@@ -431,18 +457,19 @@ GEM
     octokit (4.25.1)
       faraday (>= 1, < 3)
       sawyer (~> 0.9)
-    oj (3.14.3)
+    oj (3.16.1)
     orm_adapter (0.5.0)
     parallel (1.23.0)
     paranoia (2.6.3)
       activerecord (>= 5.1, < 7.2)
-    parser (3.2.2.1)
+    parser (3.2.2.4)
       ast (~> 2.4.1)
-    pg (1.5.3)
+      racc
+    pg (1.5.4)
     popper_js (1.16.1)
     protocol-hpack (1.4.2)
-    protocol-http (0.24.7)
-    protocol-http1 (0.15.1)
+    protocol-http (0.25.0)
+    protocol-http1 (0.16.0)
       protocol-http (~> 0.22)
     protocol-http2 (0.15.1)
       protocol-hpack (~> 1.4)
@@ -452,25 +479,25 @@ GEM
       method_source (~> 1.0)
     psych (5.1.1.1)
       stringio
-    public_suffix (5.0.1)
-    puma (6.3.1)
+    public_suffix (5.0.3)
+    puma (6.4.0)
       nio4r (~> 2.0)
-    racc (1.7.1)
-    rack (2.2.8)
+    racc (1.7.2)
+    rack (3.0.8)
     rack-cache (1.14.0)
       rack (>= 0.4)
     rack-cors (2.0.1)
       rack (>= 2.0.0)
     rack-mini-profiler (3.1.1)
       rack (>= 1.2.0)
-    rack-session (1.0.1)
-      rack (< 3)
+    rack-session (2.0.0)
+      rack (>= 3.0.0)
     rack-test (2.1.0)
       rack (>= 1.3)
     rack-timeout (0.6.3)
-    rackup (1.0.0)
-      rack (< 3)
-      webrick
+    rackup (2.1.0)
+      rack (>= 3)
+      webrick (~> 1.8)
     rails (7.1.1)
       actioncable (= 7.1.1)
       actionmailbox (= 7.1.1)
@@ -508,8 +535,8 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
-    rake (13.0.6)
-    ransack (3.2.1)
+    rake (13.1.0)
+    ransack (4.1.1)
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
@@ -518,18 +545,17 @@ GEM
       ffi (~> 1.0)
     rdoc (6.5.0)
       psych (>= 4.0.0)
-    redis (5.0.6)
-      redis-client (>= 0.9.0)
-    redis-client (0.14.1)
+    redis (4.8.1)
+    redis-client (0.18.0)
       connection_pool
-    regexp_parser (2.8.0)
+    regexp_parser (2.8.2)
     reline (0.3.9)
       io-console (~> 0.5)
     remote_syslog_logger (1.0.4)
       syslog_protocol
     request_store (1.5.1)
       rack (>= 1.4)
-    responders (3.1.0)
+    responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.6)
@@ -542,7 +568,7 @@ GEM
     rspec-expectations (3.12.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
-    rspec-mocks (3.12.5)
+    rspec-mocks (3.12.6)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-rails (4.1.2)
@@ -555,27 +581,28 @@ GEM
       rspec-support (~> 3.10)
     rspec-retry (0.6.2)
       rspec-core (> 3.3)
-    rspec-support (3.12.0)
+    rspec-support (3.12.1)
     rspec_junit_formatter (0.6.0)
       rspec-core (>= 2, < 4, != 2.12.0)
-    rubocop (1.51.0)
+    rubocop (1.57.2)
       json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
-      parser (>= 3.2.0.0)
+      parser (>= 3.2.2.4)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml (>= 3.2.5, < 4.0)
-      rubocop-ast (>= 1.28.0, < 2.0)
+      rubocop-ast (>= 1.28.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.28.1)
+    rubocop-ast (1.30.0)
       parser (>= 3.2.1.0)
-    rubocop-rails (2.19.1)
+    rubocop-rails (2.22.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
     ruby-progressbar (1.13.0)
-    ruby-vips (2.1.4)
+    ruby-vips (2.2.0)
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
     ruby_http_client (3.5.5)
@@ -594,7 +621,7 @@ GEM
     scout_apm (5.3.5)
       parser
     select2-rails (4.0.13)
-    selenium-webdriver (4.9.1)
+    selenium-webdriver (4.15.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -605,7 +632,7 @@ GEM
       ruby_http_client (~> 3.4)
     sentry-raven (3.1.2)
       faraday (>= 1.0)
-    sidekiq (7.1.1)
+    sidekiq (7.2.0)
       concurrent-ruby (< 2)
       connection_pool (>= 2.3.0)
       rack (>= 2.2.4)
@@ -663,7 +690,7 @@ GEM
       spree_core (>= 4.2.0.rc3)
       spree_extension
     spring (4.1.1)
-    sprockets (4.2.0)
+    sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
     sprockets-rails (3.4.2)
@@ -683,29 +710,29 @@ GEM
     stringex (2.8.6)
     stringio (3.0.8)
     syslog_protocol (0.9.2)
-    terser (1.1.15)
+    terser (1.1.19)
       execjs (>= 0.3.0, < 3)
-    thor (1.2.2)
-    tilt (2.1.0)
-    timecop (0.9.6)
+    thor (1.3.0)
+    tilt (2.3.0)
+    timecop (0.9.8)
     timeout (0.4.0)
     timers (4.3.5)
     tinymce-rails (5.10.7.1)
       railties (>= 3.1.1)
-    traces (0.9.1)
+    traces (0.11.1)
     turbo-rails (1.5.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (2.4.2)
+    unicode-display_width (2.5.0)
     validates_zipcode (0.5.2)
       activemodel (>= 4.2.0)
-    vcr (6.1.0)
+    vcr (6.2.0)
     warden (1.2.9)
       rack (>= 2.0.9)
-    web-console (4.2.0)
+    web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
@@ -714,21 +741,20 @@ GEM
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
       selenium-webdriver (> 3.141, < 5.0)
-    webmock (3.18.1)
+    webmock (3.19.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
     webrick (1.8.1)
-    websocket (1.2.9)
+    websocket (1.2.10)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.11)
+    zeitwerk (2.6.12)
 
 PLATFORMS
-  arm64-darwin-21
   x86_64-darwin-22
   x86_64-linux
 
@@ -752,6 +778,7 @@ DEPENDENCIES
   rack-mini-profiler
   rack-timeout
   rails (~> 7.1)
+  redis (~> 4.0)
   remote_syslog_logger
   rspec_junit_formatter
   sass-rails
@@ -767,6 +794,7 @@ DEPENDENCIES
   spree_core!
   spree_dev_tools
   spree_emails!
+  spree_frontend!
   spree_gateway (~> 3.10)
   spree_i18n
   spree_sample!

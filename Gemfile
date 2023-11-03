@@ -76,6 +76,7 @@ gem 'spree_api', github: 'spree/spree', branch: 'main'
 gem 'spree_sample', github: 'spree/spree', branch: 'main'
 gem 'spree_emails', github: 'spree/spree', branch: 'main'
 gem 'spree_backend', github: 'spree/spree_backend', branch: 'main'
+gem 'spree_frontend', github: 'spree/spree_rails_frontend', branch: 'main'
 gem 'spree_gateway', '~> 3.10'
 gem 'spree_auth_devise'
 gem 'spree_i18n'
@@ -103,3 +104,6 @@ gem 'oj'
 
 # Fix SCSS errors with Ruby 3 on MacOS
 gem 'sassc', github: 'sass/sassc-ruby', group: :development
+
+# Use Redis for Action Cable
+gem "redis", "~> 4.0"

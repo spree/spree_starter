@@ -1,9 +1,10 @@
 {
   "dependencies": {
+    "@hotwired/turbo-rails": "^7.3.0",
     "@spree/dashboard": "^0.1.0",
-    "esbuild": "^0.14.1"
+    "esbuild": "^0.19.5"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets"
   }
 }
