@@ -7,7 +7,7 @@ services:
   - type: web
     name: spree
     env: ruby
-    buildCommand: "./bin/render-build.sh"
+    buildCommand: "./bin/render-build-legacy-frontend.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
