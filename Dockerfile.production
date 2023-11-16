@@ -3,7 +3,7 @@ FROM ruby:3.2.0
 RUN apt-get update -yq \
   && apt-get upgrade -yq \
   #ESSENTIALS
-  && apt-get install -y -qq --no-install-recommends build-essential curl git-core vim passwd unzip cron gcc wget netcat \
+  && apt-get install -y -qq --no-install-recommends build-essential curl git-core vim passwd unzip cron gcc wget netcat-traditional \
   # RAILS PACKAGES NEEDED
   && apt-get update \
   && apt-get install -y --no-install-recommends imagemagick postgresql-client libvips \
