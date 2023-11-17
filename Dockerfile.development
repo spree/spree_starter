@@ -10,8 +10,7 @@ RUN apt-get update -yq \
   # INSTALL NODE
   && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
   && apt-get install -y --no-install-recommends nodejs \
-  # INSTALL NPM
-  && apt install npm \
+  && apt-get install -y --no-install-recommends npm \
   # INSTALL YARN
   && npm install -g yarn
 
