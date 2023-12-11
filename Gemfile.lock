@@ -171,6 +171,8 @@ GEM
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
     cancancan (3.5.0)
+    canonical-rails (0.2.15)
+      actionview (>= 4.1, <= 7.2)
     capybara (3.39.2)
       addressable
       matrix
@@ -655,6 +657,21 @@ GEM
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
+    spree_frontend (4.7.0)
+      babel-transpiler (~> 0.7)
+      bootstrap (~> 4.0)
+      canonical-rails (~> 0.2, >= 0.2.10)
+      flag-icons-rails (~> 3.4)
+      glyphicons (~> 1.0)
+      inline_svg (~> 1.5)
+      jquery-rails (~> 4.3)
+      jsbundling-rails
+      responders
+      sass-rails (>= 5)
+      spree_api (>= 4.7.0)
+      spree_core (>= 4.7.0)
+      sprockets (~> 4.0)
+      turbo-rails
     spree_gateway (3.10.0)
       spree_core (>= 3.7.0)
       spree_extension
@@ -773,6 +790,7 @@ DEPENDENCIES
   spree_core (~> 4.7.0)
   spree_dev_tools
   spree_emails (~> 4.7.0)
+  spree_frontend (~> 4.7.0)
   spree_gateway (~> 3.10.0)
   spree_i18n (~> 5.3.0)
   spree_sample (~> 4.7.0)
