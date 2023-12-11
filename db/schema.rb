@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_31_154171) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_11_192657) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -652,10 +652,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_154171) do
     t.jsonb "public_metadata"
     t.jsonb "private_metadata"
     t.string "intent_client_key"
+    t.string "stripe_payment_intent_id"
+    t.string "stripe_payment_intent_client_secret"
     t.index ["number"], name: "index_spree_payments_on_number", unique: true
     t.index ["order_id"], name: "index_spree_payments_on_order_id"
     t.index ["payment_method_id"], name: "index_spree_payments_on_payment_method_id"
     t.index ["source_id", "source_type"], name: "index_spree_payments_on_source_id_and_source_type"
+    t.index ["stripe_payment_intent_id"], name: "index_spree_payments_on_stripe_payment_intent_id"
   end
 
   create_table "spree_preferences", force: :cascade do |t|
@@ -1499,6 +1502,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_154171) do
     t.string "first_name"
     t.string "last_name"
     t.string "selected_locale"
+    t.jsonb "stripe_customer_id"
     t.index ["bill_address_id"], name: "index_spree_users_on_bill_address_id"
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at"
     t.index ["email"], name: "email_idx_unique", unique: true
