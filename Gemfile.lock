@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/upsidelab/spree_stripe.git
-  revision: b23cd3e35c237dc8aad6d2c02f6a6edcccf1da6f
+  revision: 59161773abf9052ab21029ba04be3b085587aa65
   specs:
     spree_stripe (1.0.0.beta)
       spree (>= 4.6.1)
