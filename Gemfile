@@ -69,14 +69,16 @@ gem 'rack-cache' # http caching
 gem 'sidekiq'
 
 # Spree gems
-gem 'spree', '~> 4.7.0'
-gem 'spree_core', '~> 4.7.0'
-gem 'spree_api', '~> 4.7.0'
-gem 'spree_sample', '~> 4.7.0'
-gem 'spree_emails', '~> 4.7.0'
-gem 'spree_backend', '~> 4.7.0'
-gem 'spree_gateway', '~> 3.10.0'
+gem 'spree', path: '../spree'
+gem 'spree_core', path: '../spree'
+gem 'spree_api', path: '../spree'
+gem 'spree_sample', path: '../spree'
+gem 'spree_emails', path: '../spree'
+gem 'spree_backend', path: '../spree_backend'
+gem 'spree_gateway', path: '../spree_gateway'
+gem 'spree_stripe', path: '../spree_stripe'
 gem 'spree_auth_devise', '~> 4.6.0'
+gem 'spree_frontend'
 gem 'spree_i18n', '~> 5.3.0'
 gem 'spree_dev_tools', require: false, group: %w[test development]
 

@@ -5,3 +5,6 @@ common: &defaults
 
 production:
   <<: *defaults
+
+development:
+  <<: *defaults
