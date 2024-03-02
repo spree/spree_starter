@@ -1,4 +1,4 @@
-Copyright (c) 2015-2021 Spark Solutions Sp. z o.o.
+Copyright (c) 2015-2024 Spark Solutions Sp. z o.o., Vendo Connect Inc.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,

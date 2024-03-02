@@ -1,8 +1,4 @@
-# See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
-#
-# To ban all spiders from the entire site uncomment the next two lines:
-# User-agent: *
-# Disallow: /
+# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
 User-agent: *
 Disallow: /checkout
 Disallow: /cart
@@ -11,3 +7,6 @@ Disallow: /user
 Disallow: /account
 Disallow: /api
 Disallow: /password
+Disallow: /api_tokens
+Disallow: /cart_link
+Disallow: /account_link
