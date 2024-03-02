@@ -66,6 +66,10 @@ group :test do
   gem "selenium-webdriver"
 end
 
+# Use Solid Queue for background jobs
+gem "solid_queue"
+gem "mission_control-jobs"
+
 # Spree gems
 spree_opts = { github: "spree/spree", branch: "main"}
 gem "spree", spree_opts

@@ -1,3 +1,4 @@
 release: bin/rails db:migrate
 web: bundle exec puma -C config/puma.rb
-cache: bundle exec rails cache:clear
+worker: bin/rake solid_queue:start
+cache: bin/rails cache:clear
