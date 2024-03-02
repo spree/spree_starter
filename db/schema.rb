@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_02_160001) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_02_161355) do
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
     t.string "message_id", null: false
@@ -72,6 +72,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_02_160001) do
     t.index ["slug", "sluggable_type", "scope", "locale"], name: "index_friendly_id_slugs_unique", unique: true
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "solid_cache_entries", force: :cascade do |t|
+    t.binary "key", limit: 1024, null: false
+    t.binary "value", limit: 536870912, null: false
+    t.datetime "created_at", null: false
+    t.integer "key_hash", limit: 8, null: false
+    t.integer "byte_size", limit: 4, null: false
+    t.index ["byte_size"], name: "index_solid_cache_entries_on_byte_size"
+    t.index ["key_hash", "byte_size"], name: "index_solid_cache_entries_on_key_hash_and_byte_size"
+    t.index ["key_hash"], name: "index_solid_cache_entries_on_key_hash", unique: true
   end
 
   create_table "solid_queue_blocked_executions", force: :cascade do |t|

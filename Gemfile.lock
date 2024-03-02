@@ -59,6 +59,9 @@ GIT
       actionmailer
       spree_core (>= 4.8.0.beta)
       sprockets (>= 4.0)
+    spree_sample (4.8.0.beta)
+      ffaker (~> 2.9)
+      spree_core (>= 4.8.0.beta)
 
 GIT
   remote: https://github.com/spree/spree_auth_devise.git
@@ -267,6 +270,7 @@ GEM
     drb (2.2.1)
     erubi (1.12.0)
     execjs (2.9.1)
+    ffaker (2.23.0)
     ffi (1.16.3)
     flag-icons-rails (3.4.6.1)
       sass-rails
@@ -466,6 +470,10 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     simple_po_parser (1.1.6)
+    solid_cache (0.5.3)
+      activejob (>= 7)
+      activerecord (>= 7)
+      railties (>= 7)
     solid_queue (0.2.1)
       rails (~> 7.1)
     spree_extension (0.1.0)
@@ -554,6 +562,7 @@ DEPENDENCIES
   redis (>= 4.0.1)
   sassc!
   selenium-webdriver
+  solid_cache
   solid_queue
   spree!
   spree_auth_devise!
@@ -562,6 +571,7 @@ DEPENDENCIES
   spree_frontend!
   spree_gateway
   spree_i18n
+  spree_sample!
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails

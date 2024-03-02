@@ -70,10 +70,14 @@ end
 gem "solid_queue"
 gem "mission_control-jobs"
 
+# Use Solid Cache for caching
+gem "solid_cache"
+
 # Spree gems
 spree_opts = { github: "spree/spree", branch: "main"}
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
+gem "spree_sample",  spree_opts
 gem "spree_backend", { github: "spree/spree_backend", branch: "main" }
 gem "spree_frontend", { github: "spree/spree_rails_frontend", branch: "main" }
 gem "spree_auth_devise", { github: "spree/spree_auth_devise", branch: "main" }
