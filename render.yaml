@@ -2,13 +2,16 @@ databases:
   - name: spree
     databaseName: spree
     user: spree
+    plan: free
 
 services:
   - type: web
     name: spree
     env: ruby
+    plan: free
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "bundle exec rails server"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -19,12 +22,20 @@ services:
           type: redis
           name: spree_redis
           property: connectionString
-      - key: SECRET_KEY_BASE
-        generateValue: true
+      - fromGroup: spree-settings
+  - type: redis # we only need redis for action cable, in future Rails versions this will be optional
+    name: spree_redis
+    ipAllowList: [] # only allow internal connections
+    plan: free
+
+envVarGroups:
+  - name: spree-settings
+    envVars:
+      - key: SECRET_KEY_BASE # for production installs comment out this lines
+        generateValue: true # for production installs comment out this lines
+      #- key: RAILS_MASTER_KEY # for production installs uncomment this line
+      #  sync: false # for production installs uncomment this line
       - key: ADMIN_EMAIL
         value: 'spree@example.com'
       - key: ADMIN_PASSWORD
         value: 'spree123'
-  - type: redis
-    name: spree_redis
-    ipAllowList: [] # only allow internal connections
