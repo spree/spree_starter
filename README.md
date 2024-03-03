@@ -2,6 +2,15 @@
 
 This is a starter kit for [Spree Commerce](https://spreecommerce.org) - the open-source e-commerce platform for Rails. It is a great starting point for any Rails developer to quickly build an e-commerce store.
 
+This starter uses:
+
+* Spree Commerce 4.8 which includes Admin Dashboard, API and Storefront
+* Ruby 3.3 and Ruby on Rails 7.1
+* Solid Queue with Mission Control UI (access only to Spree admins) for background jobs
+* Solid Cache for excellent caching and performance
+
+You don't need to install any additional tools or libraries to start developing with Spree Starter. Everything is already set up for you.
+
 ## Installation
 
 ```bash
@@ -12,6 +21,22 @@ If you want to use sample data (products, categories), you can load it using the
 
 ```bash
 bin/rake spree_sample:load
+```
+
+### Switching to PostgreSQL
+
+By default, Spree Starter uses SQLite. If you want to switch to PostgreSQL, you can do so by running the following command:
+
+```bash
+bin/rails db:system:change --to=postgresql
+```
+
+### Switching to MySQL
+
+If you want to switch to MySQL, you can do so by running the following command:
+
+```bash
+bin/rails db:system:change --to=mysql
 ```
 
 ### Launch local server

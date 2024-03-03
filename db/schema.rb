@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_02_161355) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
     t.string "message_id", null: false
@@ -1278,8 +1278,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_02_161355) do
     t.index ["country_id"], name: "index_spree_states_on_country_id"
   end
 
-# Could not dump table "spree_stock_items" because of following NoMethodError
-#   undefined method `size' for nil
+  create_table "spree_stock_items", force: :cascade do |t|
+    t.bigint "stock_location_id"
+    t.bigint "variant_id"
+    t.integer "count_on_hand", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "backorderable", default: false
+    t.datetime "deleted_at", precision: nil
+    t.json "public_metadata"
+    t.json "private_metadata"
+    t.index ["backorderable"], name: "index_spree_stock_items_on_backorderable"
+    t.index ["deleted_at"], name: "index_spree_stock_items_on_deleted_at"
+    t.index ["stock_location_id", "variant_id", "deleted_at"], name: "stock_item_by_loc_var_id_deleted_at", unique: true
+    t.index ["stock_location_id", "variant_id"], name: "stock_item_by_loc_and_var_id"
+    t.index ["stock_location_id"], name: "index_spree_stock_items_on_stock_location_id"
+    t.index ["variant_id", "stock_location_id"], name: "index_spree_stock_items_unique_without_deleted_at", unique: true, where: "deleted_at IS NULL"
+    t.index ["variant_id"], name: "index_spree_stock_items_on_variant_id"
+  end
 
   create_table "spree_stock_locations", force: :cascade do |t|
     t.string "name"
