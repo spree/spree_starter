@@ -7,7 +7,7 @@ databases:
 services:
   - type: web
     name: spree
-    env: ruby
+    runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
@@ -23,6 +23,15 @@ services:
           name: spree_redis
           property: connectionString
       - fromGroup: spree-settings
+  # uncomment the following lines if you want to use a background worker
+  # - type: worker
+  #   name: spree-worker
+  #   runtime: ruby
+  #   plan: free
+  #   buildCommand: bundle install
+  #   startCommand: bundle exec rake solid_queue:start
+  #   envVars:
+  #     - fromGroup: spree-settings
   - type: redis # we only need redis for action cable, in future Rails versions this will be optional
     name: spree_redis
     ipAllowList: [] # only allow internal connections
