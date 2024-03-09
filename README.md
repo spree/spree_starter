@@ -23,17 +23,9 @@ If you want to use sample data (products, categories), you can load it using the
 bin/rake spree_sample:load
 ```
 
-### Switching to PostgreSQL
-
-By default, Spree Starter uses SQLite. If you want to switch to PostgreSQL, you can do so by running the following command:
-
-```bash
-bin/rails db:system:change --to=postgresql
-```
-
 ### Switching to MySQL
 
-If you want to switch to MySQL, you can do so by running the following command:
+By default, Spree Starter uses PostgreSQL. If you want to switch to MySQL, you can do so by running the following command:
 
 ```bash
 bin/rails db:system:change --to=mysql
