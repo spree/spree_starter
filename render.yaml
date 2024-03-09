@@ -7,6 +7,7 @@ services:
   - type: web
     name: spree-web
     runtime: ruby
+    plan: standard
     buildCommand: "./bin/render-build.sh"
     preDeployCommand: "bundle exec rails db:migrate && bundle exec rails db:seed"
     startCommand: "bundle exec rails server"
