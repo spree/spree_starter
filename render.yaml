@@ -8,7 +8,7 @@ services:
     name: spree-web
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
-    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    preDeployCommand: "bundle exec rails db:migrate && bundle exec rails db:seed"
     startCommand: "bundle exec rails server"
     envVars:
       - key: DATABASE_URL
@@ -24,8 +24,8 @@ services:
   - type: worker
     name: spree-worker
     runtime: ruby
-    buildCommand: bundle install
-    startCommand: bundle exec rake solid_queue:start
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec rake solid_queue:start"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
