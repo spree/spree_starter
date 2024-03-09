@@ -65,7 +65,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_auth_devise.git
-  revision: 064d1566be933f814653faac8869afcac931083e
+  revision: 3f07f9ebad3c4e1a30df50aebd25927f38cf27b2
   branch: main
   specs:
     spree_auth_devise (4.6.1)
@@ -284,7 +284,7 @@ GEM
       activesupport (>= 6.1)
     glyphicons (1.0.2)
     highline (2.1.0)
-    i18n (1.14.1)
+    i18n (1.14.4)
       concurrent-ruby (~> 1.0)
     i18n_data (0.17.1)
       simple_po_parser (~> 1.1)
@@ -299,7 +299,7 @@ GEM
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
     io-console (0.7.2)
-    irb (1.11.2)
+    irb (1.12.0)
       rdoc
       reline (>= 0.4.2)
     jbuilder (2.11.5)
@@ -354,7 +354,7 @@ GEM
       ransack (>= 1.8.0, < 5.0)
     monetize (1.13.0)
       money (~> 6.12)
-    money (6.16.0)
+    money (6.19.0)
       i18n (>= 0.6.4, <= 2)
     msgpack (1.7.2)
     mutex_m (0.2.0)
@@ -440,7 +440,7 @@ GEM
       psych (>= 4.0.0)
     redis (5.1.0)
       redis-client (>= 0.17.0)
-    redis-client (0.20.0)
+    redis-client (0.21.0)
       connection_pool
     regexp_parser (2.9.0)
     reline (0.4.3)
@@ -475,7 +475,7 @@ GEM
       activejob (>= 7)
       activerecord (>= 7)
       railties (>= 7)
-    solid_queue (0.2.1)
+    solid_queue (0.2.2)
       rails (~> 7.1)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
@@ -512,7 +512,7 @@ GEM
     timeout (0.4.1)
     tinymce-rails (5.10.9)
       railties (>= 3.1.1)
-    turbo-rails (2.0.4)
+    turbo-rails (2.0.5)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)

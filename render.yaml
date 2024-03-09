@@ -52,3 +52,5 @@ envVarGroups:
         value: 'spree@example.com'
       - key: ADMIN_PASSWORD
         value: 'spree123'
+      - key: AUTO_ACCEPT
+        value: 'true'
