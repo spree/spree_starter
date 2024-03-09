@@ -52,7 +52,6 @@ bin/rails s
 Note that sample data does not automatically get loaded when deploying to Render with the default configuration. In order to add sample data, run the following commands in the web service shell:
 
 ```bash
-bin/rails db:seed
 bin/rake spree_sample:load
 ```
 
