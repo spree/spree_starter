@@ -1,2 +1,0 @@
-web: bin/rails server -p 4000
-js: yarn build --watch

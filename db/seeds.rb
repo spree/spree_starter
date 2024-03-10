@@ -1,10 +1,12 @@
+# This file should ensure the existence of records required to run the application in every environment (production,
+# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
-# Place all seeds in /seeds/ folder.
+# Example:
 #
+#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
+#     MovieGenre.find_or_create_by!(name: genre_name)
+#   end
 
-Spree::Webhooks.disable_webhooks do
-  Dir[File.dirname(__FILE__) + '/seeds/*.rb'].sort.each do |file|
-    puts "Seeds #{file} ..."
-    require file
-  end
-end
+Spree::Core::Engine.load_seed if defined?(Spree::Core)
+Spree::Auth::Engine.load_seed if defined?(Spree::Auth)

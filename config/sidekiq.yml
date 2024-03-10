@@ -1,9 +1,0 @@
----
-:concurrency: 5
-:queues:
-  - default
-  - mailers
-  - sentry
-  - active_storage_analysis
-  - spree_stock_location_stock_items
-  - spree_webhooks
