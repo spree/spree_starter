@@ -79,6 +79,4 @@ test:
 #
 production:
   <<: *default
-  database: spree_starter_production
-  username: spree_starter
-  password: <%= ENV["SPREE_STARTER_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
