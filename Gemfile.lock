@@ -76,7 +76,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_backend.git
-  revision: 28ca2f6c3d6027939a782e0031d54f4da72c23d8
+  revision: c0003210c20d9960fe2c00ef1f1a5b6da6ae2fbc
   branch: main
   specs:
     spree_backend (4.7.0)
@@ -101,7 +101,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_rails_frontend.git
-  revision: 964304f3e95973e4c9079db59ca036fa1866ab72
+  revision: 6f6a77e66d1d51fa568e02cce968fd307ffed21a
   branch: main
   specs:
     spree_frontend (4.7.0)
