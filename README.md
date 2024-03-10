@@ -39,10 +39,6 @@ bin/rails s
 
 ## Deployment
 
-### Using Heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
 ### Using Render
 
 <a href="https://render.com/deploy?repo=https://github.com/spree/spree_starter/tree/main">
@@ -55,7 +51,13 @@ Note that sample data does not automatically get loaded when deploying to Render
 bin/rake spree_sample:load
 ```
 
-After that, you'll be ready to deploy to render.
+### Using Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+### Other platforms
+
+Spree Starter is a standard Rails application, so you can deploy it to any platform that supports Ruby on Rails applications. You can also use Docker to deploy it to any container-based platform. Please check [Spree Guides](https://guides.spreecommerce.org/developer/deployment.html) for more information.
 
 ## Troubleshooting
 
@@ -68,22 +70,3 @@ LoadError: Could not open library 'vips.so.42'
 ```
 
 Please check that libvips is installed with `vips -v`, and if it is not installed, follow [installation instructions here](https://www.libvips.org/install.html).
-
-## License
-
-Spree Starter (formerly Spark Starter Kit) is copyright © 2015-2024
-[Spark Solutions Sp. z o.o.][spark]. It is free software,
-and may be redistributed under the terms specified in the
-[LICENSE](LICENSE.md) file.
-
-## About Spark Solutions
-
-[![Spark Solutions](http://sparksolutions.co/wp-content/uploads/2015/01/logo-ss-tr-221x100.png)][spark]
-
-Spree Starter is maintained and funded by [Spark Solutions Sp. z o.o.](http://sparksolutions.co?utm_source=github)
-The names and logos are trademarks of Spark Solutions Sp. z o.o.
-
-We are passionate about open source software.
-We are [available for hire][spark].
-
-[spark]:http://sparksolutions.co?utm_source=github
