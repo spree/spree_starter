@@ -13,6 +13,11 @@ You don't need to install any additional tools or libraries to start developing 
 
 ## Installation
 
+Make sure you have the following installed:
+* Docker with Docker Compose - [installation instructions](https://docs.docker.com/get-docker/)
+* Ruby 3.3 - [installation instructions](https://www.ruby-lang.org/en/documentation/installation/)
+* Vips - [installation instructions](https://libvips.github.io/libvips/install.html)
+
 ```bash
 bin/setup
 ```
@@ -30,6 +35,8 @@ By default, Spree Starter uses PostgreSQL. If you want to switch to MySQL, you c
 ```bash
 bin/rails db:system:change --to=mysql
 ```
+
+You will also need to run `bin/setup` again to install the MySQL adapter and create the database.
 
 ### Launch local server
 
