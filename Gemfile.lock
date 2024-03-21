@@ -76,7 +76,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_backend.git
-  revision: c0003210c20d9960fe2c00ef1f1a5b6da6ae2fbc
+  revision: a3ff98ea57e24ee0cfe293d2e7a98d1ceda618eb
   branch: main
   specs:
     spree_backend (4.7.0)
@@ -88,7 +88,7 @@ GIT
       importmap-rails
       inline_svg (~> 1.5)
       jquery-rails (~> 4.3)
-      jquery-ui-rails (~> 6.0)
+      jquery-ui-rails (>= 6, < 8)
       requestjs-rails
       responders
       sass-rails (>= 5)
@@ -227,7 +227,7 @@ GEM
       execjs (~> 2.0)
     base64 (0.2.0)
     bcrypt (3.1.20)
-    bigdecimal (3.1.6)
+    bigdecimal (3.1.7)
     bindex (0.8.1)
     bootsnap (1.18.3)
       msgpack (~> 1.2)
@@ -269,6 +269,8 @@ GEM
       railties (>= 5)
     drb (2.2.1)
     erubi (1.12.0)
+    et-orbi (1.2.9)
+      tzinfo
     execjs (2.9.1)
     ffaker (2.23.0)
     ffi (1.16.3)
@@ -280,6 +282,9 @@ GEM
     friendly_id-mobility (1.0.4)
       friendly_id (>= 5.0.0, < 5.5)
       mobility (>= 1.0.1, < 2.0)
+    fugit (1.9.0)
+      et-orbi (~> 1, >= 1.2.7)
+      raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
     glyphicons (1.0.2)
@@ -309,7 +314,7 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (6.0.1)
+    jquery-ui-rails (7.0.0)
       railties (>= 3.2.16)
     jsonapi-serializer (2.2.0)
       activesupport (>= 4.2)
@@ -340,8 +345,8 @@ GEM
     matrix (0.4.2)
     mini_magick (4.12.0)
     mini_mime (1.1.5)
-    minitest (5.22.2)
-    mission_control-jobs (0.1.1)
+    minitest (5.22.3)
+    mission_control-jobs (0.2.0)
       importmap-rails
       rails (~> 7.1)
       stimulus-rails
@@ -367,18 +372,18 @@ GEM
       timeout
     net-smtp (0.4.0.1)
       net-protocol
-    nio4r (2.7.0)
-    nokogiri (1.16.2-aarch64-linux)
+    nio4r (2.7.1)
+    nokogiri (1.16.3-aarch64-linux)
       racc (~> 1.4)
-    nokogiri (1.16.2-arm-linux)
+    nokogiri (1.16.3-arm-linux)
       racc (~> 1.4)
-    nokogiri (1.16.2-arm64-darwin)
+    nokogiri (1.16.3-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.16.2-x86-linux)
+    nokogiri (1.16.3-x86-linux)
       racc (~> 1.4)
-    nokogiri (1.16.2-x86_64-darwin)
+    nokogiri (1.16.3-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.16.2-x86_64-linux)
+    nokogiri (1.16.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     paranoia (2.6.3)
@@ -390,8 +395,9 @@ GEM
     public_suffix (5.0.4)
     puma (6.4.2)
       nio4r (~> 2.0)
+    raabro (1.4.0)
     racc (1.7.3)
-    rack (3.0.9.1)
+    rack (3.0.10)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -420,7 +426,7 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    rails-i18n (7.0.8)
+    rails-i18n (7.0.9)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
     railties (7.1.3.2)
@@ -436,7 +442,7 @@ GEM
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
-    rdoc (6.6.2)
+    rdoc (6.6.3.1)
       psych (>= 4.0.0)
     redis (5.1.0)
       redis-client (>= 0.17.0)
@@ -471,12 +477,16 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     simple_po_parser (1.1.6)
-    solid_cache (0.5.3)
+    solid_cache (0.6.0)
       activejob (>= 7)
       activerecord (>= 7)
       railties (>= 7)
-    solid_queue (0.2.2)
-      rails (~> 7.1)
+    solid_queue (0.3.0)
+      activejob (>= 7.1)
+      activerecord (>= 7.1)
+      concurrent-ruby (~> 1.2.2)
+      fugit (~> 1.9.0)
+      railties (>= 7.1)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
