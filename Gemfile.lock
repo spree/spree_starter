@@ -254,7 +254,7 @@ GEM
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.4)
-    debug (1.9.1)
+    debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
     devise (4.9.3)
@@ -449,7 +449,7 @@ GEM
     redis-client (0.21.0)
       connection_pool
     regexp_parser (2.9.0)
-    reline (0.4.3)
+    reline (0.5.4)
       io-console (~> 0.5)
     request_store (1.6.0)
       rack (>= 1.4)
