@@ -80,7 +80,7 @@ gem "spree_emails", spree_opts
 gem "spree_sample",  spree_opts
 gem "spree_backend", { github: "spree/spree_backend", branch: "main" }
 gem "spree_frontend", { github: "spree/spree_rails_frontend", branch: "main" }
-gem "spree_auth_devise", { github: "spree/spree_auth_devise", branch: "main" }
+gem "spree_auth_devise"
 gem "spree_gateway"
 gem "spree_i18n"
 

@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree.git
-  revision: d3927a3f646f0b4e72b137bf72606c885ec59829
+  revision: 8aeceef4470c20dc778482a13329e15f8ac2eb85
   branch: main
   specs:
     spree (4.8.0.beta)
@@ -64,17 +64,6 @@ GIT
       spree_core (>= 4.8.0.beta)
 
 GIT
-  remote: https://github.com/spree/spree_auth_devise.git
-  revision: 3f07f9ebad3c4e1a30df50aebd25927f38cf27b2
-  branch: main
-  specs:
-    spree_auth_devise (4.6.1)
-      devise (~> 4.7)
-      devise-encryptable (= 0.2.0)
-      spree_core (>= 4.5.0)
-      spree_extension
-
-GIT
   remote: https://github.com/spree/spree_backend.git
   revision: a3ff98ea57e24ee0cfe293d2e7a98d1ceda618eb
   branch: main
@@ -101,7 +90,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_rails_frontend.git
-  revision: 6f6a77e66d1d51fa568e02cce968fd307ffed21a
+  revision: 96857bb4b605b143f3e59fa3ac37430c1104f1f2
   branch: main
   specs:
     spree_frontend (4.7.0)
@@ -115,8 +104,8 @@ GIT
       jquery-rails (~> 4.3)
       responders
       sass-rails (>= 5)
-      spree_api (>= 4.7.0)
-      spree_core (>= 4.7.0)
+      spree_api (~> 4.7)
+      spree_core (~> 4.7)
       sprockets (~> 4.0)
       stimulus-rails
       turbo-rails
@@ -257,7 +246,7 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    devise (4.9.3)
+    devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -265,11 +254,11 @@ GEM
       warden (~> 1.2.3)
     devise-encryptable (0.2.0)
       devise (>= 2.1.0)
-    doorkeeper (5.6.9)
+    doorkeeper (5.7.0)
       railties (>= 5)
     drb (2.2.1)
     erubi (1.12.0)
-    et-orbi (1.2.9)
+    et-orbi (1.2.11)
       tzinfo
     execjs (2.9.1)
     ffaker (2.23.0)
@@ -392,7 +381,7 @@ GEM
     popper_js (1.16.1)
     psych (5.1.2)
       stringio
-    public_suffix (5.0.4)
+    public_suffix (5.0.5)
     puma (6.4.2)
       nio4r (~> 2.0)
     raabro (1.4.0)
@@ -487,11 +476,16 @@ GEM
       concurrent-ruby (~> 1.2.2)
       fugit (~> 1.9.0)
       railties (>= 7.1)
+    spree_auth_devise (4.6.2)
+      devise (~> 4.7)
+      devise-encryptable (= 0.2.0)
+      spree_core (>= 4.5.0)
+      spree_extension
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
-    spree_gateway (3.10.0)
-      spree_core (>= 3.7.0)
+    spree_gateway (3.11.0)
+      spree_core (>= 3.7)
       spree_extension
     spree_i18n (5.3.0)
       i18n_data
@@ -571,7 +565,7 @@ DEPENDENCIES
   solid_cache
   solid_queue
   spree!
-  spree_auth_devise!
+  spree_auth_devise
   spree_backend!
   spree_emails!
   spree_frontend!
