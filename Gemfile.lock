@@ -65,7 +65,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_backend.git
-  revision: a3ff98ea57e24ee0cfe293d2e7a98d1ceda618eb
+  revision: 2cf8a1ded5355e309660018244e57f322232d737
   branch: main
   specs:
     spree_backend (4.7.0)
@@ -293,8 +293,8 @@ GEM
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
     io-console (0.7.2)
-    irb (1.12.0)
-      rdoc
+    irb (1.13.1)
+      rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     jbuilder (2.12.0)
       actionview (>= 5.0.0)
@@ -438,9 +438,9 @@ GEM
     redis-client (0.22.1)
       connection_pool
     regexp_parser (2.9.0)
-    reline (0.5.4)
+    reline (0.5.5)
       io-console (~> 0.5)
-    request_store (1.6.0)
+    request_store (1.7.0)
       rack (>= 1.4)
     requestjs-rails (0.0.11)
       railties (>= 6.1.0)
