@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 8aeceef4470c20dc778482a13329e15f8ac2eb85
+  revision: cf9235bdefbea4b7c996d449920966c6b8075131
   branch: main
   specs:
     spree (4.8.0.beta)
@@ -25,7 +25,7 @@ GIT
     spree_core (4.8.0.beta)
       actionpack (>= 6.1, < 7.2)
       actionview (>= 6.1, < 7.2)
-      active_storage_validations (~> 1.1.0)
+      active_storage_validations (~> 1.1)
       activejob (>= 6.1, < 7.2)
       activemerchant (~> 1.67)
       activemodel (>= 6.1, < 7.2)
@@ -39,12 +39,12 @@ GIT
       cancancan (~> 3.2)
       carmen (>= 1.0)
       friendly_id (~> 5.2, >= 5.2.1)
-      friendly_id-mobility (~> 1.0.4)
-      highline (~> 2.0)
+      friendly_id-mobility (~> 1.0)
+      highline (>= 2, < 4)
       image_processing (~> 1.2)
       kaminari (~> 1.2)
-      mobility (~> 1.2.9)
-      mobility-ransack (~> 1.2.1)
+      mobility (~> 1.2)
+      mobility-ransack (~> 1.2)
       monetize (~> 1.9)
       money (~> 6.13)
       paranoia (~> 2.4)
@@ -216,7 +216,7 @@ GEM
       execjs (~> 2.0)
     base64 (0.2.0)
     bcrypt (3.1.20)
-    bigdecimal (3.1.7)
+    bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.3)
       msgpack (~> 1.2)
@@ -277,8 +277,8 @@ GEM
     globalid (1.2.1)
       activesupport (>= 6.1)
     glyphicons (1.0.2)
-    highline (2.1.0)
-    i18n (1.14.4)
+    highline (3.0.1)
+    i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     i18n_data (0.17.1)
       simple_po_parser (~> 1.1)
@@ -352,7 +352,7 @@ GEM
       i18n (>= 0.6.4, <= 2)
     msgpack (1.7.2)
     mutex_m (0.2.0)
-    net-imap (0.4.10)
+    net-imap (0.4.11)
       date
       net-protocol
     net-pop (0.1.2)
@@ -361,7 +361,7 @@ GEM
       timeout
     net-smtp (0.5.0)
       net-protocol
-    nio4r (2.7.1)
+    nio4r (2.7.3)
     nokogiri (1.16.4-aarch64-linux)
       racc (~> 1.4)
     nokogiri (1.16.4-arm-linux)
@@ -386,7 +386,7 @@ GEM
       nio4r (~> 2.0)
     raabro (1.4.0)
     racc (1.7.3)
-    rack (3.0.10)
+    rack (3.0.11)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -438,7 +438,7 @@ GEM
     redis-client (0.22.1)
       connection_pool
     regexp_parser (2.9.0)
-    reline (0.5.5)
+    reline (0.5.6)
       io-console (~> 0.5)
     request_store (1.7.0)
       rack (>= 1.4)
@@ -484,7 +484,7 @@ GEM
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
-    spree_gateway (3.11.0)
+    spree_gateway (3.11.1)
       spree_core (>= 3.7)
       spree_extension
     spree_i18n (5.3.0)
