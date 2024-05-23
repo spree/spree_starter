@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_23_142511) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -159,6 +159,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
     t.index ["job_id"], name: "index_solid_queue_ready_executions_on_job_id", unique: true
     t.index ["priority", "job_id"], name: "index_solid_queue_poll_all"
     t.index ["queue_name", "priority", "job_id"], name: "index_solid_queue_poll_by_queue"
+  end
+
+  create_table "solid_queue_recurring_executions", force: :cascade do |t|
+    t.bigint "job_id", null: false
+    t.string "task_key", null: false
+    t.datetime "run_at", null: false
+    t.datetime "created_at", null: false
+    t.index ["job_id"], name: "index_solid_queue_recurring_executions_on_job_id", unique: true
+    t.index ["task_key", "run_at"], name: "index_solid_queue_recurring_executions_on_task_key_and_run_at", unique: true
   end
 
   create_table "solid_queue_scheduled_executions", force: :cascade do |t|
@@ -566,7 +575,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
   end
 
   create_table "spree_option_type_translations", force: :cascade do |t|
-    t.string "name"
     t.string "presentation"
     t.string "locale", null: false
     t.bigint "spree_option_type_id", null: false
@@ -591,7 +599,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
   end
 
   create_table "spree_option_value_translations", force: :cascade do |t|
-    t.string "name"
     t.string "presentation"
     t.string "locale", null: false
     t.bigint "spree_option_value_id", null: false
@@ -822,7 +829,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
 
   create_table "spree_product_property_translations", force: :cascade do |t|
     t.string "value"
-    t.string "filter_param"
     t.string "locale", null: false
     t.bigint "spree_product_property_id", null: false
     t.datetime "created_at", null: false
@@ -850,7 +856,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
   end
 
   create_table "spree_products", force: :cascade do |t|
-    t.string "name", default: ""
+    t.string "name", default: "", null: false
     t.text "description"
     t.datetime "available_on", precision: nil
     t.datetime "deleted_at", precision: nil
@@ -1000,7 +1006,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
 
   create_table "spree_properties", force: :cascade do |t|
     t.string "name"
-    t.string "presentation"
+    t.string "presentation", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "filterable", default: false, null: false
@@ -1023,9 +1029,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
   end
 
   create_table "spree_property_translations", force: :cascade do |t|
-    t.string "name"
     t.string "presentation"
-    t.string "filter_param"
     t.string "locale", null: false
     t.bigint "spree_property_id", null: false
     t.datetime "created_at", null: false
@@ -1504,13 +1508,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
     t.string "meta_description"
     t.string "meta_keywords"
     t.string "permalink"
-    t.index ["locale", "permalink"], name: "unique_permalink_per_locale", unique: true
     t.index ["locale"], name: "index_spree_taxon_translations_on_locale"
     t.index ["spree_taxon_id", "locale"], name: "index_spree_taxon_translations_on_spree_taxon_id_and_locale", unique: true
   end
 
   create_table "spree_taxonomies", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position", default: 0
@@ -1535,7 +1538,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
   create_table "spree_taxons", force: :cascade do |t|
     t.bigint "parent_id"
     t.integer "position", default: 0
-    t.string "name"
+    t.string "name", null: false
     t.string "permalink"
     t.bigint "taxonomy_id"
     t.bigint "lft"
@@ -1632,6 +1635,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
     t.jsonb "public_metadata"
     t.jsonb "private_metadata"
     t.string "barcode"
+    t.string "weight_unit"
+    t.string "dimensions_unit"
     t.index ["barcode"], name: "index_spree_variants_on_barcode"
     t.index ["deleted_at"], name: "index_spree_variants_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_variants_on_discontinue_on"
@@ -1722,6 +1727,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_203734) do
   add_foreign_key "solid_queue_claimed_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_failed_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_ready_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
+  add_foreign_key "solid_queue_recurring_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_scheduled_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "spree_oauth_access_grants", "spree_oauth_applications", column: "application_id"
   add_foreign_key "spree_oauth_access_tokens", "spree_oauth_applications", column: "application_id"
