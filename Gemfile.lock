@@ -189,7 +189,7 @@ GEM
     friendly_id-mobility (1.0.4)
       friendly_id (>= 5.0.0, < 5.5)
       mobility (>= 1.0.1, < 2.0)
-    fugit (1.9.0)
+    fugit (1.10.1)
       et-orbi (~> 1, >= 1.2.7)
       raabro (~> 1.4)
     globalid (1.2.1)
@@ -389,11 +389,11 @@ GEM
       activejob (>= 7)
       activerecord (>= 7)
       railties (>= 7)
-    solid_queue (0.3.0)
+    solid_queue (0.3.1)
       activejob (>= 7.1)
       activerecord (>= 7.1)
       concurrent-ruby (~> 1.2.2)
-      fugit (~> 1.9.0)
+      fugit (~> 1.10.1)
       railties (>= 7.1)
     spree (4.8.0)
       spree_api (= 4.8.0)
@@ -528,7 +528,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.14)
+    zeitwerk (2.6.15)
 
 PLATFORMS
   aarch64-linux
