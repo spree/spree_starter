@@ -78,7 +78,7 @@ gem "spree"
 gem "spree_emails"
 gem "spree_sample"
 gem "spree_backend"
-gem "spree_frontend", { github: "spree/spree_rails_frontend", branch: "main" }
+gem "spree_frontend"
 gem "spree_auth_devise"
 gem "spree_gateway"
 gem "spree_i18n"

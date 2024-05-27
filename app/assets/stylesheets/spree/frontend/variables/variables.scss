@@ -1,11 +1,11 @@
 // main spree variables
-$primary-color: #0074c2;
+$primary-color: #000;
 $secondary-color: #4c4c4c;
 $primary-background: #ffffff;
 $secondary-background: #f2f2f2;
 $input-background: #ffffff;
 $font-color: black;
-$font-family: "Montserrat", sans-serif;
+$font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $header-font-color: $font-color;
 $header-background: $primary-background;
 $meganav-font-color: $font-color;
@@ -17,8 +17,8 @@ $global-border-style: #e2e2e2;
 $second-global-border: #e2e2e2;
 $spree-header-max-width: 1440px;
 $spree-header-mobile-height: 50px;
-$spree-header-tablet-height: 75px;
-$spree-header-desktop-height: 75px;
+$spree-header-tablet-height: 50px;
+$spree-header-desktop-height: 50px;
 
 // bootstrap overrides
 $grid-gutter-width: 1rem;
@@ -38,9 +38,23 @@ $theme-colors: (
   "overlay": rgba(76, 76, 76, 0.5),
   "shadow": rgba(0, 0, 0, 0.16)
 );
-$enable-rounded: false;
-$enable-shadows: false;
-$enable-gradients: false;
+
+$enable-responsive-font-sizes: true;
+$font-size-base:   0.813rem !default;
+$font-size-plus:   0.875rem !default;
+$font-size-sm:    0.75rem !default;
+$font-size-lg:    1rem !default;
+
+$border-radius: 0.5rem !default;
+$border-radius-sm: 0.4rem !default;
+$border-radius-lg: 0.75rem !default;
+
+$dropdown-item-padding-y:           .5rem !default;
+$dropdown-item-padding-x:           1rem !default;
+
+$input-btn-padding-y:         .7rem !default;
+$input-btn-padding-x:         .75rem !default;
+
 $font-family-sans-serif: $font-family;
 $font-weight-medium: 500;
 .font-weight-medium {
