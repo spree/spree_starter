@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby File.read('.ruby-version').strip.to_s
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.3"
+gem "rails", "~> 7.1.3", ">= 7.1.3.4"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -67,7 +67,7 @@ group :test do
 end
 
 # Use Solid Queue for background jobs
-gem "solid_queue"
+gem "solid_queue", ">= 0.3.2"
 gem "mission_control-jobs"
 
 # Use Solid Cache for caching
