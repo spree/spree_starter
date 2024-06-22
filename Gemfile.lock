@@ -256,7 +256,7 @@ GEM
       i18n (>= 0.6.4, <= 2)
     msgpack (1.7.2)
     mutex_m (0.2.0)
-    net-imap (0.4.12)
+    net-imap (0.4.13)
       date
       net-protocol
     net-pop (0.1.2)
@@ -449,9 +449,9 @@ GEM
       state_machines-activerecord (~> 0.6)
       stringex
       validates_zipcode
-    spree_emails (4.8.2)
+    spree_emails (4.8.3)
       actionmailer
-      spree_core (>= 4.8.2)
+      spree_core (>= 4.8.3)
       sprockets (>= 4.0)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
