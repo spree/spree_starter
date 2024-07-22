@@ -377,7 +377,7 @@ GEM
       activejob (>= 7)
       activerecord (>= 7)
       railties (>= 7)
-    solid_queue (0.3.3)
+    solid_queue (0.3.4)
       activejob (>= 7.1)
       activerecord (>= 7.1)
       concurrent-ruby (>= 1.3.1)
