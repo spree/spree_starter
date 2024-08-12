@@ -374,7 +374,7 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     simple_po_parser (1.1.6)
-    solid_cache (0.6.0)
+    solid_cache (0.7.0)
       activejob (>= 7)
       activerecord (>= 7)
       railties (>= 7)
