@@ -228,6 +228,11 @@ GEM
     kaminari-i18n (0.5.0)
       kaminari
       rails
+    libv8-node (22.5.1.0)
+    libv8-node (22.5.1.0-aarch64-linux)
+    libv8-node (22.5.1.0-arm64-darwin)
+    libv8-node (22.5.1.0-x86_64-darwin)
+    libv8-node (22.5.1.0-x86_64-linux)
     logger (1.6.0)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -241,6 +246,8 @@ GEM
     matrix (0.4.2)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
+    mini_racer (0.13.0)
+      libv8-node (~> 22.5.1.0)
     minitest (5.24.1)
     mission_control-jobs (0.2.1)
       importmap-rails
@@ -553,6 +560,7 @@ DEPENDENCIES
   image_processing (~> 1.13)
   importmap-rails
   jbuilder
+  mini_racer
   mission_control-jobs
   pg (~> 1.5)
   puma (>= 5.0)

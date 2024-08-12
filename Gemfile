@@ -1,12 +1,13 @@
 source "https://rubygems.org"
 
-ruby File.read('.ruby-version').strip.to_s
+ruby '3.3.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.4"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
+gem "mini_racer" # fixes Could not find a JavaScript runtime. See https://github.com/rails/execjs for a list of available runtimes. (ExecJS::RuntimeUnavailable) in Docker env
 
 # Use pg as the database for Active Record
 gem "pg", "~> 1.5"
