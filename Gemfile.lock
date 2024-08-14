@@ -248,7 +248,7 @@ GEM
     mini_mime (1.1.5)
     mini_racer (0.13.0)
       libv8-node (~> 22.5.1.0)
-    minitest (5.24.1)
+    minitest (5.25.0)
     mission_control-jobs (0.2.1)
       importmap-rails
       rails (~> 7.1)
@@ -266,7 +266,7 @@ GEM
       i18n (>= 0.6.4, <= 2)
     msgpack (1.7.2)
     mutex_m (0.2.0)
-    net-imap (0.4.13)
+    net-imap (0.4.14)
       date
       net-protocol
     net-pop (0.1.2)
@@ -341,7 +341,7 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rake (13.2.1)
-    ransack (4.2.0)
+    ransack (4.2.1)
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
@@ -361,7 +361,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.3.4)
+    rexml (3.3.5)
       strscan
     ruby-vips (2.2.2)
       ffi (~> 1.12)
@@ -393,15 +393,15 @@ GEM
       concurrent-ruby (>= 1.3.1)
       fugit (~> 1.11.0)
       railties (>= 7.1)
-    spree (4.8.3)
-      spree_api (= 4.8.3)
-      spree_cli (= 4.8.3)
-      spree_core (= 4.8.3)
-    spree_api (4.8.3)
+    spree (4.9.0)
+      spree_api (= 4.9.0)
+      spree_cli (= 4.9.0)
+      spree_core (= 4.9.0)
+    spree_api (4.9.0)
       bcrypt (~> 3.1)
       doorkeeper (~> 5.3)
       jsonapi-serializer (~> 2.1)
-      spree_core (= 4.8.3)
+      spree_core (= 4.9.0)
     spree_auth_devise (4.6.3)
       devise (~> 4.7)
       devise-encryptable (= 0.2.0)
@@ -426,9 +426,9 @@ GEM
       stimulus-rails
       tinymce-rails (~> 5.0)
       turbo-rails
-    spree_cli (4.8.3)
+    spree_cli (4.9.0)
       thor (~> 1.0)
-    spree_core (4.8.3)
+    spree_core (4.9.0)
       actionpack (>= 6.1, < 8.0)
       actionview (>= 6.1, < 8.0)
       active_storage_validations (~> 1.1)
@@ -456,14 +456,15 @@ GEM
       paranoia (~> 2.4)
       railties (>= 6.1, < 8.0)
       ransack (>= 4.1)
+      request_store (~> 1.7)
       rexml
       state_machines-activemodel (~> 0.7)
       state_machines-activerecord (~> 0.6)
       stringex
       validates_zipcode
-    spree_emails (4.8.3)
+    spree_emails (4.9.0)
       actionmailer
-      spree_core (>= 4.8.3)
+      spree_core (>= 4.9.0)
       sprockets (>= 4.0)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
@@ -494,9 +495,9 @@ GEM
       rails-i18n
       spree_core (>= 4.2.0.rc3)
       spree_extension
-    spree_sample (4.8.3)
+    spree_sample (4.9.0)
       ffaker (~> 2.9)
-      spree_core (>= 4.8.3)
+      spree_core (>= 4.9.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
