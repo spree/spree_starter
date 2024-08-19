@@ -248,7 +248,7 @@ GEM
     mini_mime (1.1.5)
     mini_racer (0.13.0)
       libv8-node (~> 22.5.1.0)
-    minitest (5.25.0)
+    minitest (5.25.1)
     mission_control-jobs (0.2.1)
       importmap-rails
       rails (~> 7.1)
@@ -512,7 +512,7 @@ GEM
     state_machines-activerecord (0.9.0)
       activerecord (>= 6.0)
       state_machines-activemodel (>= 0.9.0)
-    stimulus-rails (1.3.3)
+    stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringex (2.8.6)
     stringio (3.1.1)
