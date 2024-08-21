@@ -68,7 +68,7 @@ group :test do
 end
 
 # Use Solid Queue for background jobs
-gem "solid_queue", ">= 0.3.2"
+gem "solid_queue", ">= 0.5.0"
 gem "mission_control-jobs"
 
 # Use Solid Cache for caching
