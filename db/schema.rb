@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_14_121345) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_06_121215) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -1512,7 +1512,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_14_121345) do
     t.string "meta_description"
     t.string "meta_keywords"
     t.string "permalink"
+    t.string "pretty_name"
     t.index ["locale"], name: "index_spree_taxon_translations_on_locale"
+    t.index ["pretty_name"], name: "index_spree_taxon_translations_on_pretty_name"
     t.index ["spree_taxon_id", "locale"], name: "index_spree_taxon_translations_on_spree_taxon_id_and_locale", unique: true
   end
 
@@ -1557,6 +1559,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_14_121345) do
     t.boolean "hide_from_nav", default: false
     t.jsonb "public_metadata"
     t.jsonb "private_metadata"
+    t.string "pretty_name"
     t.index ["lft"], name: "index_spree_taxons_on_lft"
     t.index ["name", "parent_id", "taxonomy_id"], name: "index_spree_taxons_on_name_and_parent_id_and_taxonomy_id", unique: true
     t.index ["name"], name: "index_spree_taxons_on_name"
@@ -1564,6 +1567,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_14_121345) do
     t.index ["permalink", "parent_id", "taxonomy_id"], name: "index_spree_taxons_on_permalink_and_parent_id_and_taxonomy_id", unique: true
     t.index ["permalink"], name: "index_taxons_on_permalink"
     t.index ["position"], name: "index_spree_taxons_on_position"
+    t.index ["pretty_name"], name: "index_spree_taxons_on_pretty_name"
     t.index ["rgt"], name: "index_spree_taxons_on_rgt"
     t.index ["taxonomy_id"], name: "index_taxons_on_taxonomy_id"
   end
