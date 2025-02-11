@@ -37,5 +37,8 @@ module SpreeStarter
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.mission_control.jobs.base_controller_class = "Spree::Admin::BaseController"
+
+  # https://github.com/rails/rails/issues/45826
+    config.active_record.yaml_column_permitted_classes = [Symbol, BigDecimal, Date, Time, ActiveSupport::TimeWithZone, ActiveSupport::TimeZone, ActiveSupport::HashWithIndifferentAccess]
   end
 end
