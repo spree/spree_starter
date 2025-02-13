@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/spree/spree.git
-  revision: ceef66020bce9564ca961867d6ea8edeb4a96ce0
+  revision: a3b8bbca5716b4766740f24fdca842c3646863c6
   branch: main
   specs:
     spree (5.0.0.alpha)
@@ -355,7 +355,7 @@ GEM
       kaminari
       rails
     local_time (3.0.2)
-    logger (1.6.5)
+    logger (1.6.6)
     loofah (2.24.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -433,6 +433,7 @@ GEM
       frozen_record
       railties (>= 5.0)
       sassc-rails
+    pg (1.5.9)
     popper_js (1.16.1)
     pp (0.6.2)
       prettyprint
@@ -445,7 +446,7 @@ GEM
       nio4r (~> 2.0)
     raabro (1.4.0)
     racc (1.8.1)
-    rack (3.1.9)
+    rack (3.1.10)
     rack-session (2.1.0)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -564,12 +565,6 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    sqlite3 (2.5.0-aarch64-linux-gnu)
-    sqlite3 (2.5.0-arm-linux-gnu)
-    sqlite3 (2.5.0-arm64-darwin)
-    sqlite3 (2.5.0-x86-linux-gnu)
-    sqlite3 (2.5.0-x86_64-darwin)
-    sqlite3 (2.5.0-x86_64-linux-gnu)
     state_machines (0.6.0)
     state_machines-activemodel (0.9.0)
       activemodel (>= 6.0)
@@ -639,6 +634,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   mission_control-jobs
+  pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.4)
   selenium-webdriver
@@ -650,7 +646,6 @@ DEPENDENCIES
   spree_i18n
   spree_sample!
   spree_storefront!
-  sqlite3 (>= 1.4)
   stimulus-rails
   turbo-rails
   tzinfo-data

@@ -8,39 +8,27 @@ services:
     name: spree-web
     runtime: ruby
     plan: standard
-    buildCommand: "./bin/render-build.sh"
-    preDeployCommand: "bundle exec rails db:migrate && bundle exec rails db:seed"
-    startCommand: "bundle exec rails server"
+    buildCommand: bin/render-build.sh
+    preDeployCommand: bin/rails db:migrate && bin/rails db:seed
+    startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
           name: spree-db
           property: connectionString
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: spree-redis
-          property: connectionString
       - fromGroup: spree-settings
   - type: worker
     name: spree-worker
     runtime: ruby
-    buildCommand: "./bin/render-build.sh"
+    plan: standard
+    buildCommand: bin/render-build.sh
     startCommand: "bundle exec rake solid_queue:start"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
           name: spree-db
           property: connectionString
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: spree-redis
-          property: connectionString
       - fromGroup: spree-settings
-  - type: redis # we only need redis for action cable, in future Rails versions this will be optional
-    name: spree-redis
-    ipAllowList: [] # only allow internal connections
 
 envVarGroups:
   - name: spree-settings
@@ -49,9 +37,3 @@ envVarGroups:
         generateValue: true # for production installs comment out this lines
       #- key: RAILS_MASTER_KEY # for production installs uncomment this line
       #  sync: false # for production installs uncomment this line
-      - key: ADMIN_EMAIL
-        value: 'spree@example.com'
-      - key: ADMIN_PASSWORD
-        value: 'spree123'
-      - key: AUTO_ACCEPT
-        value: 'true'
