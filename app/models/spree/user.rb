@@ -1,4 +1,4 @@
-class Spree::User < ApplicationRecord
+class Spree::User < Spree::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
