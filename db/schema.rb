@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_10_131731) do
+ActiveRecord::Schema[7.2].define(version: 2025_02_22_135729) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,14 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_10_131731) do
     t.datetime "updated_at", null: false
     t.string "locale", default: "en", null: false
     t.index ["record_type", "record_id", "name", "locale"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
+
+  create_table "action_text_video_embeds", force: :cascade do |t|
+    t.string "url", null: false
+    t.string "thumbnail_url", null: false
+    t.text "raw_html", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
