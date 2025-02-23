@@ -1,7 +1,11 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: ["app/views/spree/**/*.erb", "app/views/devise/**/*.erb"],
+  content: [
+    "app/views/spree/**/*.erb",
+    "app/views/devise/**/*.erb",
+    "../vendo/engines/spree/storefront/app/views/**/*.erb",
+  ],
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),

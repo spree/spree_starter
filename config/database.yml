@@ -19,7 +19,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-development:
+development: &development
   <<: *default
   database: spree_starter_development
   host: <%= ENV.fetch('DB_HOST', 'localhost') %>
@@ -58,7 +58,7 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
+  <<: *development
   database: spree_starter_test
 
 # As with config/credentials.yml, you never want to store sensitive information,

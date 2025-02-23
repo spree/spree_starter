@@ -26,8 +26,11 @@ module Spree
     end
 
     def assign_user_to_guest_ahoy_visits
-      visits = Ahoy::Visit.where(visitor_token: ahoy.visitor_token)
-      events = Ahoy::Event.where(visit: visits)
+      return unless try_spree_current_user
+      return unless defined?(Spree::Visit) && defined?(Spree::Event)
+
+      visits = Spree::Visit.where(visitor_token: ahoy.visitor_token)
+      events = Spree::Event.where(visit: visits)
 
       visits.update_all(user_id: try_spree_current_user.id, updated_at: Time.current)
       events.update_all(user_id: try_spree_current_user.id, updated_at: Time.current)
