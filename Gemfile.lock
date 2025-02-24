@@ -1,5 +1,7 @@
-PATH
-  remote: ../vendo/engines/spree
+GIT
+  remote: https://github.com/spree/spree.git
+  revision: 8f6e6747b1c2df4dc646848acca4b3484c92c50b
+  branch: feature/storefront-v5
   specs:
     spree (5.0.0.alpha)
       spree_api (= 5.0.0.alpha)
@@ -515,7 +517,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    selenium-webdriver (4.29.0)
+    selenium-webdriver (4.29.1)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
