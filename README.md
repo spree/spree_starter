@@ -51,13 +51,7 @@ curl -fsSL https://rbenv.org/install.sh | bash
 Install Ruby 3.3:
 
 ```bash
-rbenv install
-```
-
-Ensure that the Ruby version is set to 3.3:
-
-```bash
-rbenv global 3.3.0
+rbenv init && rbenv install && rbenv global 3.3.0
 ```
 
 ### Setup the application
