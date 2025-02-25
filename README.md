@@ -5,10 +5,11 @@ This is a starter kit for [Spree Commerce](https://spreecommerce.org) - the open
 This starter uses:
 
 * Spree Commerce 5 which includes Admin Dashboard, API and Storefront
-* Ruby 3.3 and Ruby on Rails 7.1
-* Devise for authentication
-* Solid Queue with Mission Control UI (access only to Spree admins) for background jobs
-* Solid Cache for excellent caching and performance
+* Ruby 3.3 and Ruby on Rails 7.2
+* [Devise](https://github.com/heartcombo/devise) for authentication
+* [Solid Queue](https://github.com/rails/solid_queue) with Mission Control UI (access only to Spree admins) for background jobs
+* [Solid Cache](https://github.com/rails/solid_cache) for excellent caching and performance
+* PostgreSQL as a database
 
 You don't need to install any additional tools or libraries to start developing with Spree Starter. Everything is already set up for you.
 
@@ -39,7 +40,7 @@ Make sure you have the following installed:
 On MacOS you can install the dependencies using [Homebrew package manager](https://brew.sh/):
 
 ```bash
-brew install vips
+brew install vips libpq
 ```
 
 Install [rbenv (ruby version manager)](https://github.com/rbenv/rbenv):
