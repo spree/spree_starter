@@ -77,7 +77,7 @@ gem "devise"
 spree_opts = if ENV['SPREE_PATH']
                 { 'path': ENV['SPREE_PATH'] }
               else
-                { 'github': 'spree/spree', 'branch': 'feature/storefront-v5' }
+                { 'github': 'spree/spree', 'branch': 'main' }
               end
 gem "spree", spree_opts
 gem "spree_emails", spree_opts

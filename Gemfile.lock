@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 8f6e6747b1c2df4dc646848acca4b3484c92c50b
-  branch: feature/storefront-v5
+  revision: 04723fa02fda190b44b61a1e75729ec690627b85
+  branch: main
   specs:
     spree (5.0.0.alpha)
       spree_api (= 5.0.0.alpha)
@@ -495,18 +495,18 @@ GEM
       ffi (~> 1.12)
       logger
     rubyzip (2.4.1)
-    sass-embedded (1.85.0)
+    sass-embedded (1.85.1)
       google-protobuf (~> 4.29)
       rake (>= 13)
-    sass-embedded (1.85.0-aarch64-linux-gnu)
+    sass-embedded (1.85.1-aarch64-linux-gnu)
       google-protobuf (~> 4.29)
-    sass-embedded (1.85.0-arm-linux-gnueabihf)
+    sass-embedded (1.85.1-arm-linux-gnueabihf)
       google-protobuf (~> 4.29)
-    sass-embedded (1.85.0-arm64-darwin)
+    sass-embedded (1.85.1-arm64-darwin)
       google-protobuf (~> 4.29)
-    sass-embedded (1.85.0-x86_64-darwin)
+    sass-embedded (1.85.1-x86_64-darwin)
       google-protobuf (~> 4.29)
-    sass-embedded (1.85.0-x86_64-linux-gnu)
+    sass-embedded (1.85.1-x86_64-linux-gnu)
       google-protobuf (~> 4.29)
     sassc (2.4.0)
       ffi (~> 1.9)
