@@ -36,14 +36,28 @@ Make sure you have the following installed:
 * Ruby 3.3 - [installation instructions](https://www.ruby-lang.org/en/documentation/installation/)
 * Vips - [installation instructions](https://libvips.github.io/libvips/install.html)
 
-On MacOS you can install the dependencies using [Homebrew package manager](https://brew.sh/) with [asdf](https://asdf-vm.com/) to manage the Ruby version:
+On MacOS you can install the dependencies using [Homebrew package manager](https://brew.sh/):
 
 ```bash
-brew install vips asdf
+brew install vips
 ```
 
+Install [rbenv (ruby version manager)](https://github.com/rbenv/rbenv):
+
 ```bash
-asdf plugin add ruby && asdf install ruby
+curl -fsSL https://rbenv.org/install.sh | bash
+```
+
+Install Ruby 3.3:
+
+```bash
+rbenv install
+```
+
+Ensure that the Ruby version is set to 3.3:
+
+```bash
+rbenv global 3.3.0
 ```
 
 ### Setup the application
