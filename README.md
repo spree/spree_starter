@@ -40,8 +40,10 @@ On MacOS you can install the dependencies using [Homebrew package manager](https
 
 ```bash
 brew install vips asdf
-asdf plugin add ruby
-asdf install ruby
+```
+
+```bash
+asdf plugin add ruby && asdf install ruby
 ```
 
 ### Setup the application
