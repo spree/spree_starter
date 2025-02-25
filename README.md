@@ -22,6 +22,13 @@ You can quickly use Render to deploy a new Spree Starter instance.
 
 ## Local Installation
 
+### Clone the repository
+
+```bash
+git clone https://github.com/spree/spree_starter.git
+cd spree_starter
+```
+
 ### Prerequisites
 
 Make sure you have the following installed:
@@ -29,13 +36,21 @@ Make sure you have the following installed:
 * Ruby 3.3 - [installation instructions](https://www.ruby-lang.org/en/documentation/installation/)
 * Vips - [installation instructions](https://libvips.github.io/libvips/install.html)
 
-On MacOS you can install the dependencies using [Homebrew package manager](https://brew.sh/):
+On MacOS you can install the dependencies using [Homebrew package manager](https://brew.sh/) with [asdf](https://asdf-vm.com/) to manage the Ruby version:
 
 ```bash
-brew install vips ruby@3.3
+brew install vips asdf
+asdf plugin add ruby
+asdf install ruby
 ```
 
 ### Setup the application
+
+Start docker containers with the following command:
+
+```bash
+docker compose up -d
+```
 
 Run the following command to install the dependencies and prepare the database:
 
