@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # We ask that you don't use the :as option here, as Spree relies on it being
   # the default of "spree".
   mount Spree::Core::Engine, at: '/'
+  devise_for :users, class_name: "Spree::User"
 
   # https://github.com/basecamp/mission_control-jobs?tab=readme-ov-file#basic-configuration
   mount MissionControl::Jobs::Engine, at: "/jobs"
@@ -19,5 +20,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "spree/home#index"
 end

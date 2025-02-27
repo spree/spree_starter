@@ -1,12 +1,1 @@
 # See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
-User-agent: *
-Disallow: /checkout
-Disallow: /cart
-Disallow: /orders
-Disallow: /user
-Disallow: /account
-Disallow: /api
-Disallow: /password
-Disallow: /api_tokens
-Disallow: /cart_link
-Disallow: /account_link

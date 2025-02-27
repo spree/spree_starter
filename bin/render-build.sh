@@ -2,6 +2,6 @@
 # exit on error
 set -o errexit
 
-bundle install
-bundle exec rails assets:precompile
-bundle exec rails assets:clean
+bundle install --deployment
+bin/rails assets:precompile
+bin/rails assets:clean

@@ -4,19 +4,66 @@ This is a starter kit for [Spree Commerce](https://spreecommerce.org) - the open
 
 This starter uses:
 
-* Spree Commerce 4.8 which includes Admin Dashboard, API and Storefront
-* Ruby 3.3 and Ruby on Rails 7.1
-* Solid Queue with Mission Control UI (access only to Spree admins) for background jobs
-* Solid Cache for excellent caching and performance
+* Spree Commerce 5 which includes Admin Dashboard, API and Storefront
+* Ruby 3.3 and Ruby on Rails 7.2
+* [Devise](https://github.com/heartcombo/devise) for authentication
+* [Solid Queue](https://github.com/rails/solid_queue) with Mission Control UI (access only to Spree admins) for background jobs
+* [Solid Cache](https://github.com/rails/solid_cache) for excellent caching and performance
+* PostgreSQL as a database
 
 You don't need to install any additional tools or libraries to start developing with Spree Starter. Everything is already set up for you.
 
-## Installation
+## Quick Start
+
+You can quickly use Render to deploy a new Spree Starter instance.
+
+<a href="https://render.com/deploy?repo=https://github.com/spree/spree_starter/tree/main">
+  <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height=32>
+</a>
+
+## Local Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/spree/spree_starter.git
+cd spree_starter
+```
+
+### Prerequisites
 
 Make sure you have the following installed:
 * Docker with Docker Compose - [installation instructions](https://docs.docker.com/get-docker/)
 * Ruby 3.3 - [installation instructions](https://www.ruby-lang.org/en/documentation/installation/)
 * Vips - [installation instructions](https://libvips.github.io/libvips/install.html)
+
+On MacOS you can install the dependencies using [Homebrew package manager](https://brew.sh/):
+
+```bash
+brew install vips libpq
+```
+
+Install [rbenv (ruby version manager)](https://github.com/rbenv/rbenv):
+
+```bash
+curl -fsSL https://rbenv.org/install.sh | bash
+```
+
+Install Ruby 3.3:
+
+```bash
+rbenv init && rbenv install && rbenv global 3.3.0
+```
+
+### Setup the application
+
+Start docker containers with the following command:
+
+```bash
+docker compose up -d
+```
+
+Run the following command to install the dependencies and prepare the database:
 
 ```bash
 bin/setup
@@ -28,67 +75,24 @@ If you want to use sample data (products, categories), you can load it using the
 bin/rake spree_sample:load
 ```
 
-#### Full docker setup
-
-If you're having trouble with Ruby/etc setup and just want to get everything up and running, you can use the following command to start the docker containers.
-
-```bash
-docker pull vendoconnect/spree_starter
-docker run -p 3000:3000 vendoconnect/spree_starter
-```
-
-This will start the docker containers and automatically start the rails server.
-
-To sign in into the admin dashboard go to `https://localhost:3000/admin` and use the following credentials:
-
-```bash
-Email: spree@example.com
-Password: spree123
-```
-
-### Switching to PostgreSQL
-
-```bash
-bin/rails db:system:change --to=postgresql
-```
-
-### Switching to MySQL
-
-By default, Spree Starter uses PostgreSQL. If you want to switch to MySQL, you can do so by running the following command:
-
-```bash
-bin/rails db:system:change --to=mysql
-```
-
-You will also need to run `bin/setup` again to install the MySQL adapter and create the database.
-
 ### Launch local server
 
 ```bash
-bin/rails s
+bin/dev
 ```
 
-## Deployment
+### Access the application
 
-### Using Render
+Go to [http://localhost:3000](http://localhost:3000) to see the application.
 
-<a href="https://render.com/deploy?repo=https://github.com/spree/spree_starter/tree/main">
-  <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height=32>
-</a>
+Admin Dashboard is available at [http://localhost:3000/admin](http://localhost:3000/admin).
 
-Note that sample data does not automatically get loaded when deploying to Render with the default configuration. In order to add sample data, run the following commands in the web service shell:
+Credentials for the admin user are:
 
-```bash
-bin/rake spree_sample:load
 ```
-
-### Using Heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-### Other platforms
-
-Spree Starter is a standard Rails application, so you can deploy it to any platform that supports Ruby on Rails applications. You can also use Docker to deploy it to any container-based platform. Please check [Spree Guides](https://guides.spreecommerce.org/developer/deployment.html) for more information.
+Email: spree@example.com
+Password: spree123
+```
 
 ## Troubleshooting
 

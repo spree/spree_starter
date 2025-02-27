@@ -1,0 +1,3 @@
+web: bin/rails server -p 3000
+admin_css: bin/rails dartsass:watch
+storefront_css: bin/rails tailwindcss:watch

@@ -3,14 +3,10 @@ source "https://rubygems.org"
 ruby '3.3.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.4"
+gem 'rails', '~> 7.2.1.2'
 
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
-gem "mini_racer", platforms: %i[ ruby jruby ] # fixes Could not find a JavaScript runtime. See https://github.com/rails/execjs for a list of available runtimes. (ExecJS::RuntimeUnavailable) in Docker env
-
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", ">= 1.4"
+# Use pg as the database for Active Record
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -74,15 +70,18 @@ gem "mission_control-jobs"
 # Use Solid Cache for caching
 gem "solid_cache"
 
-# Spree gems
-gem "spree"
-gem "spree_emails"
-gem "spree_sample"
-gem "spree_backend"
-gem "spree_frontend"
-gem "spree_auth_devise"
-gem "spree_gateway"
-gem "spree_i18n"
+# Use Devise for authentication
+gem "devise"
 
-# only needed for MacOS and Ruby 3.0
-gem 'sassc', github: 'sass/sassc-ruby', branch: 'master'
+# Spree gems
+spree_opts = if ENV['SPREE_PATH']
+                { 'path': ENV['SPREE_PATH'] }
+              else
+                { 'github': 'spree/spree', 'branch': 'main' }
+              end
+gem "spree", spree_opts
+gem "spree_emails", spree_opts
+gem "spree_sample", spree_opts
+gem "spree_admin", spree_opts
+gem "spree_storefront", spree_opts
+gem "spree_i18n"
