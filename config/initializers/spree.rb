@@ -89,3 +89,8 @@ Spree.user_class = 'Spree::User'
 Rails.application.config.to_prepare do
   require_dependency 'spree/authentication_helpers'
 end
+
+if defined?(Devise) && Devise.respond_to?(:parent_controller)
+  Devise.parent_controller = "Spree::StoreController"
+  Devise.parent_mailer = "Spree::BaseMailer"
+end

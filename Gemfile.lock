@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 53e110fc34014163c998cdc10c14b87e4fea1e70
+  revision: 3a8e5223cd45d06af51f8dd88a9291269080b5bc
   branch: main
   specs:
     spree (5.0.0.alpha)
@@ -21,7 +21,6 @@ GIT
       local_time (~> 3.0)
       mapkick-rb (~> 0.1)
       payment_icons
-      responders
       ruby-oembed (~> 0.18)
       spree_api (>= 5.0.0.alpha)
       spree_core (>= 5.0.0.alpha)
@@ -86,7 +85,6 @@ GIT
       local_time (~> 3.0)
       mail_form
       payment_icons
-      spree_api (>= 5.0.0.alpha)
       spree_core (>= 5.0.0.alpha)
       sprockets (>= 4.0)
       stimulus-rails
