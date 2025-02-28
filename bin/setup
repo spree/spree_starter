@@ -28,6 +28,10 @@ FileUtils.chdir APP_ROOT do
   puts "\n== Seeding database =="
   system! "bin/rails db:seed"
 
+  puts "\n== Setup credentials =="
+  system! "bin/rails g master_key"
+  system! "bin/rails g credentials"
+
   puts "\n== Removing old logs and tempfiles =="
   system! "bin/rails log:clear tmp:clear"
 
