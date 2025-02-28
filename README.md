@@ -23,76 +23,7 @@ You can quickly use Render to deploy a new Spree Starter instance.
 
 ## Local Installation
 
-### Clone the repository
-
-```bash
-git clone https://github.com/spree/spree_starter.git
-cd spree_starter
-```
-
-### Prerequisites
-
-Make sure you have the following installed:
-* Docker with Docker Compose - [installation instructions](https://docs.docker.com/get-docker/)
-* Ruby 3.3 - [installation instructions](https://www.ruby-lang.org/en/documentation/installation/)
-* Vips - [installation instructions](https://libvips.github.io/libvips/install.html)
-
-On MacOS you can install the dependencies using [Homebrew package manager](https://brew.sh/):
-
-```bash
-brew install vips libpq
-```
-
-Install [rbenv (ruby version manager)](https://github.com/rbenv/rbenv):
-
-```bash
-curl -fsSL https://rbenv.org/install.sh | bash
-```
-
-Install Ruby 3.3:
-
-```bash
-rbenv init && rbenv install && rbenv global 3.3.0
-```
-
-### Setup the application
-
-Start docker containers with the following command:
-
-```bash
-docker compose up -d
-```
-
-Run the following command to install the dependencies and prepare the database:
-
-```bash
-bin/setup
-```
-
-If you want to use sample data (products, categories), you can load it using the following command:
-
-```bash
-bin/rake spree_sample:load
-```
-
-### Launch local server
-
-```bash
-bin/dev
-```
-
-### Access the application
-
-Go to [http://localhost:3000](http://localhost:3000) to see the application.
-
-Admin Dashboard is available at [http://localhost:3000/admin](http://localhost:3000/admin).
-
-Credentials for the admin user are:
-
-```
-Email: spree@example.com
-Password: spree123
-```
+Please follow [Spree Quickstart guide](https://spreecommerce.org/docs/developer/getting-started/quickstart) to setup your Spree application using Spree starter.
 
 ## Troubleshooting
 
