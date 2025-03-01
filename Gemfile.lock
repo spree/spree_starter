@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 19f00fa9c245bb768a832e4115e7bb4257ba2415
+  revision: f77300825dcf80c97ee81b2ab4770e131c73d15a
   branch: main
   specs:
     spree (5.0.0.alpha)
@@ -649,4 +649,4 @@ RUBY VERSION
    ruby 3.3.0p0
 
 BUNDLED WITH
-   2.5.3
+   2.6.5
