@@ -16,7 +16,10 @@ services:
         fromDatabase:
           name: spree-db
           property: connectionString
-      - fromGroup: spree-settings
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default
   - type: worker
     name: spree-worker
     runtime: ruby
@@ -28,12 +31,5 @@ services:
         fromDatabase:
           name: spree-db
           property: connectionString
-      - fromGroup: spree-settings
-
-envVarGroups:
-  - name: spree-settings
-    envVars:
-      - key: SECRET_KEY_BASE # for production installs comment out this lines
-        generateValue: true # for production installs comment out this lines
-      #- key: RAILS_MASTER_KEY # for production installs uncomment this line
-      #  sync: false # for production installs uncomment this line
+      - key: RAILS_MASTER_KEY
+        sync: false
