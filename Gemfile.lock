@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/spree/spree.git
-  revision: f77300825dcf80c97ee81b2ab4770e131c73d15a
+  revision: 729d73f8ab51d0a017bba6b711ecf2e9b345b895
   branch: main
   specs:
     spree (5.0.0.alpha)
@@ -21,7 +21,6 @@ GIT
       local_time (~> 3.0)
       mapkick-rb (~> 0.1)
       payment_icons
-      ruby-oembed (~> 0.18)
       spree_api (>= 5.0.0.alpha)
       spree_core (>= 5.0.0.alpha)
       sprockets (>= 4.0)
@@ -64,6 +63,7 @@ GIT
       ransack (>= 4.1)
       request_store (~> 1.7)
       rexml
+      ruby-oembed (~> 0.18)
       state_machines-activemodel (~> 0.7)
       state_machines-activerecord (~> 0.6)
       stringex
@@ -584,9 +584,9 @@ GEM
     tracking_number (2.0.1)
       activesupport (>= 4.2.5)
       json (>= 1.8.3)
-    turbo-rails (2.0.11)
-      actionpack (>= 6.0.0)
-      railties (>= 6.0.0)
+    turbo-rails (2.0.13)
+      actionpack (>= 7.1.0)
+      railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unaccent (0.4.0)
