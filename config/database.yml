@@ -20,12 +20,21 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development: &development
-  <<: *default
-  database: spree_starter_development
-  host: <%= ENV.fetch('DB_HOST', 'localhost') %>
-  username: <%= ENV.fetch('DB_USER', 'postgres') %>
-  password: <%= ENV.fetch('DB_PASSWORD', 'password') %>
-  port: <%= ENV.fetch('DB_PORT', 5432) %>
+  primary:
+    <<: *default
+    database: spree_starter_development
+    host: <%= ENV.fetch('DB_HOST', 'localhost') %>
+    username: <%= ENV.fetch('DB_USER', 'postgres') %>
+    password: <%= ENV.fetch('DB_PASSWORD', 'password') %>
+    port: <%= ENV.fetch('DB_PORT', 5432) %>
+  queue:
+    <<: *default
+    database: spree_starter_development_queue
+    host: <%= ENV.fetch('QUEUE_DB_HOST', 'localhost') %>
+    username: <%= ENV.fetch('QUEUE_DB_USER', 'postgres') %>
+    password: <%= ENV.fetch('QUEUE_DB_PASSWORD', 'password') %>
+    port: <%= ENV.fetch('QUEUE_DB_PORT', 5433) %>
+    migrations_paths: db/queue_migrate
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -58,8 +67,21 @@ development: &development
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *development
-  database: spree_starter_test
+  primary:
+    <<: *default
+    database: spree_starter_test
+    host: <%= ENV.fetch('DB_HOST', 'localhost') %>
+    username: <%= ENV.fetch('DB_USER', 'postgres') %>
+    password: <%= ENV.fetch('DB_PASSWORD', 'password') %>
+    port: <%= ENV.fetch('DB_PORT', 5432) %>
+  queue:
+    <<: *default
+    database: spree_starter_test_queue
+    host: <%= ENV.fetch('QUEUE_DB_HOST', 'localhost') %>
+    username: <%= ENV.fetch('QUEUE_DB_USER', 'postgres') %>
+    password: <%= ENV.fetch('QUEUE_DB_PASSWORD', 'password') %>
+    port: <%= ENV.fetch('QUEUE_DB_PORT', 5433) %>
+    migrations_paths: db/queue_migrate
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,5 +104,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  primary:
+    <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
+  queue:
+    <<: *default
+    url: <%= ENV['QUEUE_DATABASE_URL'] %>
