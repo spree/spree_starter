@@ -1,6 +1,6 @@
 # Spree Starter
 
-This is a starter kit for [Spree Commerce](https://spreecommerce.org) - the open-source e-commerce platform for Rails. It is a great starting point for any Rails developer to quickly build an e-commerce store.
+This is a starter kit for [Spree Commerce](https://spreecommerce.org) - the open-source e-commerce platform for Rails. It is a great starting point for any Rails developer to quickly build an e-commerce application.
 
 This starter uses:
 
@@ -13,17 +13,13 @@ This starter uses:
 
 You don't need to install any additional tools or libraries to start developing with Spree Starter. Everything is already set up for you.
 
-## Quick Start
-
-You can quickly use Render to deploy a new Spree Starter instance.
-
-<a href="https://render.com/deploy?repo=https://github.com/spree/spree_starter/tree/main">
-  <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height=32>
-</a>
-
 ## Local Installation
 
-Please follow [Spree Quickstart guide](https://spreecommerce.org/docs/developer/getting-started/quickstart) to setup your Spree application using Spree starter.
+Please follow [Spree Quickstart guide](https://spreecommerce.org/docs/developer/getting-started/quickstart) to setup your Spree application using the Spree starter.
+
+## Deployment
+
+Please follow [Deployment guide](https://spreecommerce.org/docs/developer/deployment/render) to quickly deploy your production-ready Spree application.
 
 ## Troubleshooting
 
