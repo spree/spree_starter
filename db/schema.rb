@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_02_22_135729) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_05_135849) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -614,7 +614,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_22_135729) do
     t.datetime "updated_at", null: false
     t.datetime "deleted_at", precision: nil
     t.index ["pageable_id", "name"], name: "index_spree_pages_on_pageable_id_and_name"
-    t.index ["pageable_id", "pageable_type", "slug"], name: "index_spree_pages_on_pageable_id_and_pageable_type_and_slug", unique: true, where: "((deleted_at IS NULL) AND (slug IS NOT NULL))"
     t.index ["pageable_id", "pageable_type", "type"], name: "index_spree_pages_on_pageable_id_and_pageable_type_and_type"
     t.index ["pageable_id", "pageable_type"], name: "index_spree_pages_on_pageable_id_and_pageable_type"
     t.index ["pageable_type", "pageable_id"], name: "index_spree_pages_on_pageable"
@@ -717,7 +716,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_22_135729) do
     t.datetime "deleted_at", precision: nil
     t.index ["author_id"], name: "index_spree_posts_on_author_id"
     t.index ["post_category_id"], name: "index_spree_posts_on_post_category_id"
-    t.index ["slug", "store_id"], name: "index_spree_posts_on_slug_and_store_id", unique: true, where: "(deleted_at IS NULL)"
     t.index ["store_id"], name: "index_spree_posts_on_store_id"
     t.index ["title"], name: "index_spree_posts_on_title"
   end
@@ -1580,7 +1578,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_22_135729) do
     t.datetime "deleted_at", precision: nil
     t.index ["deleted_at"], name: "index_spree_themes_on_deleted_at"
     t.index ["parent_id"], name: "index_spree_themes_on_parent_id"
-    t.index ["store_id", "default"], name: "index_spree_themes_on_store_id_and_default", unique: true, where: "((deleted_at IS NULL) AND (\"default\" = true))"
     t.index ["store_id"], name: "index_spree_themes_on_store_id"
   end
 
