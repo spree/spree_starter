@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_05_135849) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_06_141008) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -1071,6 +1071,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_05_135849) do
     t.decimal "total", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "performed_by_id"
     t.index ["customer_return_id"], name: "index_spree_reimbursements_on_customer_return_id"
     t.index ["number"], name: "index_spree_reimbursements_on_number", unique: true
     t.index ["order_id"], name: "index_spree_reimbursements_on_order_id"
