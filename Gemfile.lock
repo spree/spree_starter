@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 265a87c0aba38db695a38fa183b8b6051163cc3e
+  revision: c816878a9718416303204c748984bbc9666e7248
   branch: main
   specs:
     spree (5.0.0.alpha)
