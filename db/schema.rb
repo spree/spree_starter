@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_06_141008) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_11_134929) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -231,8 +231,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_06_141008) do
     t.datetime "deleted_at", precision: nil
     t.jsonb "public_metadata"
     t.jsonb "private_metadata"
+    t.bigint "gateway_customer_id"
     t.index ["address_id"], name: "index_spree_credit_cards_on_address_id"
     t.index ["deleted_at"], name: "index_spree_credit_cards_on_deleted_at"
+    t.index ["gateway_customer_id"], name: "index_spree_credit_cards_on_gateway_customer_id"
     t.index ["payment_method_id"], name: "index_spree_credit_cards_on_payment_method_id"
     t.index ["user_id"], name: "index_spree_credit_cards_on_user_id"
   end
@@ -307,6 +309,17 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_06_141008) do
     t.index ["number"], name: "index_spree_exports_on_number", unique: true
     t.index ["store_id"], name: "index_spree_exports_on_store_id"
     t.index ["user_id"], name: "index_spree_exports_on_user_id"
+  end
+
+  create_table "spree_gateway_customers", force: :cascade do |t|
+    t.string "profile_id", null: false
+    t.bigint "payment_method_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["payment_method_id"], name: "index_spree_gateway_customers_on_payment_method_id"
+    t.index ["user_id", "payment_method_id"], name: "index_spree_gateway_customers_on_user_id_and_payment_method_id", unique: true
+    t.index ["user_id"], name: "index_spree_gateway_customers_on_user_id"
   end
 
   create_table "spree_gateways", force: :cascade do |t|
