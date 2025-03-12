@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_11_134929) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_12_171228) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -1462,6 +1462,41 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_11_134929) do
     t.index ["default"], name: "index_spree_stores_on_default"
     t.index ["deleted_at"], name: "index_spree_stores_on_deleted_at"
     t.index ["url"], name: "index_spree_stores_on_url"
+  end
+
+  create_table "spree_stripe_payment_intents", force: :cascade do |t|
+    t.decimal "amount", precision: 10, scale: 2, default: "0.0", null: false
+    t.bigint "order_id", null: false
+    t.bigint "payment_method_id", null: false
+    t.string "stripe_id", null: false
+    t.string "client_secret", null: false
+    t.string "customer_id"
+    t.string "ephemeral_key_secret"
+    t.string "stripe_payment_method_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id", "stripe_id"], name: "index_spree_stripe_payment_intents_on_order_id_and_stripe_id", unique: true
+    t.index ["order_id"], name: "index_spree_stripe_payment_intents_on_order_id"
+    t.index ["payment_method_id"], name: "index_spree_stripe_payment_intents_on_payment_method_id"
+  end
+
+  create_table "spree_stripe_payment_methods_webhook_keys", force: :cascade do |t|
+    t.bigint "payment_method_id", null: false
+    t.bigint "webhook_key_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["payment_method_id", "webhook_key_id"], name: "index_payment_method_id_webhook_key_id_uniqueness", unique: true
+    t.index ["payment_method_id"], name: "index_payment_methods_webhook_keys_on_payment_method_id"
+    t.index ["webhook_key_id"], name: "index_payment_methods_webhook_keys_on_webhook_key_id"
+  end
+
+  create_table "spree_stripe_webhook_keys", force: :cascade do |t|
+    t.string "stripe_id", null: false
+    t.string "signing_secret", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["signing_secret"], name: "index_spree_stripe_webhook_keys_on_signing_secret", unique: true
+    t.index ["stripe_id"], name: "index_spree_stripe_webhook_keys_on_stripe_id", unique: true
   end
 
   create_table "spree_tax_categories", force: :cascade do |t|
