@@ -325,7 +325,7 @@ GEM
     jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    json (2.10.1)
+    json (2.10.2)
     jsonapi-serializer (2.2.0)
       activesupport (>= 4.2)
     kaminari (1.2.2)
