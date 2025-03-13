@@ -4,14 +4,14 @@ This is a starter kit for [Spree Commerce](https://spreecommerce.org) - the open
 
 This starter uses:
 
-* Spree Commerce 5 which includes Admin Dashboard, API and Storefront
-* Ruby 3.3 and Ruby on Rails 7.2
+* Spree Commerce 5 which includes Admin Dashboard, API and Storefront - everything you need to start developing your new eCommerce application/store/marketeplace
+* Stripe for payment processing, thanks to [Spree Stripe gem](https://github.com/spree/spree_stripe)
 * [Devise](https://github.com/heartcombo/devise) for authentication
 * [Solid Queue](https://github.com/rails/solid_queue) with Mission Control UI (access only to Spree admins) for background jobs
 * [Solid Cache](https://github.com/rails/solid_cache) for excellent caching and performance
 * PostgreSQL as a database
 
-You don't need to install any additional tools or libraries to start developing with Spree Starter. Everything is already set up for you.
+You don't need to install additional tools or libraries to start developing with Spree Starter. Everything is already set up for you.
 
 ## Local Installation
 
