@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 138a1ad5bc79fd25fc6abd3b7f4847d6719c0770
+  revision: fd9927c332b634699fee9f19fd400e7098f993b1
   branch: main
   specs:
     spree (5.0.0.alpha)
@@ -293,19 +293,19 @@ GEM
       csv (>= 3.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    google-protobuf (4.30.0)
+    google-protobuf (4.30.1)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.30.0-aarch64-linux)
+    google-protobuf (4.30.1-aarch64-linux)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.30.0-arm64-darwin)
+    google-protobuf (4.30.1-arm64-darwin)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.30.0-x86_64-darwin)
+    google-protobuf (4.30.1-x86_64-darwin)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.30.0-x86_64-linux)
+    google-protobuf (4.30.1-x86_64-linux)
       bigdecimal
       rake (>= 13)
     groupdate (6.5.1)
@@ -368,7 +368,7 @@ GEM
     libv8-node (23.6.1.0-x86_64-darwin)
     libv8-node (23.6.1.0-x86_64-linux)
     libv8-node (23.6.1.0-x86_64-linux-musl)
-    local_time (3.0.2)
+    local_time (3.0.3)
     logger (1.6.6)
     loofah (2.24.0)
       crass (~> 1.0.2)

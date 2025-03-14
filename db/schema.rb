@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_12_171228) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_14_114825) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -770,6 +770,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_12_171228) do
     t.bigint "promotion_rule_id"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
+    t.index ["product_id", "promotion_rule_id"], name: "idx_on_product_id_promotion_rule_id_aaea0385c9", unique: true
     t.index ["product_id"], name: "index_products_promotion_rules_on_product_id"
     t.index ["promotion_rule_id", "product_id"], name: "index_products_promotion_rules_on_promotion_rule_and_product"
   end
@@ -877,6 +878,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_12_171228) do
     t.integer "quantity", default: 1
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
+    t.index ["promotion_action_id", "variant_id"], name: "idx_on_promotion_action_id_variant_id_90d181a88a", unique: true
     t.index ["promotion_action_id"], name: "index_spree_promotion_action_line_items_on_promotion_action_id"
     t.index ["variant_id"], name: "index_spree_promotion_action_line_items_on_variant_id"
   end
@@ -906,6 +908,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_12_171228) do
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.index ["promotion_rule_id"], name: "index_spree_promotion_rule_taxons_on_promotion_rule_id"
+    t.index ["taxon_id", "promotion_rule_id"], name: "idx_on_taxon_id_promotion_rule_id_3c91a6f5d7", unique: true
     t.index ["taxon_id"], name: "index_spree_promotion_rule_taxons_on_taxon_id"
   end
 
@@ -915,6 +918,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_12_171228) do
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.index ["promotion_rule_id"], name: "index_promotion_rules_users_on_promotion_rule_id"
+    t.index ["user_id", "promotion_rule_id"], name: "idx_on_user_id_promotion_rule_id_ad0307a89b", unique: true
     t.index ["user_id", "promotion_rule_id"], name: "index_promotion_rules_users_on_user_id_and_promotion_rule_id"
   end
 
@@ -1158,8 +1162,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_12_171228) do
     t.bigint "user_id"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
+    t.string "user_type", null: false
     t.index ["role_id"], name: "index_spree_role_users_on_role_id"
     t.index ["user_id"], name: "index_spree_role_users_on_user_id"
+    t.index ["user_type"], name: "index_spree_role_users_on_user_type"
   end
 
   create_table "spree_roles", force: :cascade do |t|
