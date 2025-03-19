@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_14_114825) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_19_151854) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -1515,10 +1515,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_14_114825) do
     t.datetime "created_at", precision: nil
     t.string "tenant", limit: 128
     t.index ["context"], name: "index_spree_taggings_on_context"
-    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "spree_taggings_idx", unique: true
     t.index ["tag_id"], name: "index_spree_taggings_on_tag_id"
-    t.index ["taggable_id", "taggable_type", "context"], name: "taggings_taggable_context_idx"
-    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+    t.index ["taggable_id", "taggable_type", "context"], name: "spree_taggings_taggable_context_idx"
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "spree_taggings_idy"
     t.index ["taggable_id"], name: "index_spree_taggings_on_taggable_id"
     t.index ["taggable_type", "taggable_id"], name: "index_spree_taggings_on_taggable_type_and_taggable_id"
     t.index ["taggable_type"], name: "index_spree_taggings_on_taggable_type"
@@ -1533,6 +1533,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_14_114825) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "taggings_count", default: 0
+    t.index "lower((name)::text) varchar_pattern_ops", name: "index_spree_tags_on_lower_name"
     t.index ["name"], name: "index_spree_tags_on_name", unique: true
   end
 
@@ -1831,7 +1832,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_14_114825) do
   add_foreign_key "spree_product_translations", "spree_products"
   add_foreign_key "spree_property_translations", "spree_properties"
   add_foreign_key "spree_store_translations", "spree_stores"
-  add_foreign_key "spree_taggings", "spree_tags", column: "tag_id"
   add_foreign_key "spree_taxon_translations", "spree_taxons"
   add_foreign_key "spree_taxonomy_translations", "spree_taxonomies"
 end
