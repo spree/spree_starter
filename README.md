@@ -13,6 +13,10 @@ This starter uses:
 
 You don't need to install additional tools or libraries to start developing with Spree Starter. Everything is already set up for you.
 
+If you like what you see, consider giving this repo a GitHub star :star:
+
+Thank you for supporting Spree open-source :heart:
+
 ## Local Installation
 
 Please follow [Spree Quickstart guide](https://spreecommerce.org/docs/developer/getting-started/quickstart) to setup your Spree application using the Spree starter.
