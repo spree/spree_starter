@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/spree/spree.git
-  revision: ba96ff7b6b09eeab53d2777de3056c7b940ed0ef
+  revision: c5d3dc028cb3038dbe4c2ed033275550c0eaca50
   branch: main
   specs:
     spree (5.0.0.alpha)
@@ -245,7 +245,7 @@ GEM
     country_select (8.0.3)
       countries (~> 5.0)
     crass (1.0.6)
-    csv (3.3.2)
+    csv (3.3.3)
     currency_select (8.1.0)
       actionview (>= 7.0.0, < 8.1)
       money (~> 6.0)
