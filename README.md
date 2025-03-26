@@ -1,11 +1,13 @@
 # Spree Starter
 
-This is a starter kit for [Spree Commerce](https://spreecommerce.org) - the open-source e-commerce platform for Rails. It is a great starting point for any Rails developer to quickly build an e-commerce application.
+This is a starter kit for [Spree Commerce](https://spreecommerce.org) - the [open-source eCommerce platform](https://spreecommerce.org) for [Rails](https://spreecommerce.org/category/ruby-on-rails/). 
+
+It is a great starting point for any Rails developer to quickly build an eCommerce application.
 
 This starter uses:
 
-* Spree Commerce 5 which includes Admin Dashboard, API and Storefront - everything you need to start developing your new eCommerce application/store/marketeplace
-* Stripe for payment processing, thanks to [Spree Stripe gem](https://github.com/spree/spree_stripe)
+* **Spree Commerce 5**, the biggest release ever, which includes Admin Dashboard, API and Storefront - everything you need to start developing your new eCommerce application/store/marketeplace
+* Stripe for payment processing, thanks to the official [Spree Stripe gem](https://github.com/spree/spree_stripe)
 * [Devise](https://github.com/heartcombo/devise) for authentication
 * [Solid Queue](https://github.com/rails/solid_queue) with Mission Control UI (access only to Spree admins) for background jobs
 * [Solid Cache](https://github.com/rails/solid_cache) for excellent caching and performance
@@ -25,6 +27,14 @@ Please follow [Spree Quickstart guide](https://spreecommerce.org/docs/developer/
 
 Please follow [Deployment guide](https://spreecommerce.org/docs/developer/deployment/render) to quickly deploy your production-ready Spree application.
 
+## Spree 5 Demo
+
+Check out this [Spree Commerce demo](https://demo.spreecommerce.org/) for yourself - this is what you're getting with this Spree starter. 
+
+This demo runs on Spree 5 which is the biggest Spree release ever. Stay tuned for the official announcement on all the exciting features and integrations - coming up soon!
+
+![Spree Commerce 5 version](https://vendo-production-res.cloudinary.com/image/upload/w_2000/q_auto/v1742985405/docs/github/Spree_Commerce_open-source_eCommerce_myzurl.jpg)
+
 ## Troubleshooting
 
 ### libvips error
@@ -36,3 +46,38 @@ LoadError: Could not open library 'vips.so.42'
 ```
 
 Please check that libvips is installed with `vips -v`, and if it is not installed, follow [installation instructions here](https://www.libvips.org/install.html).
+
+## Join the Community 
+
+[Join our Slack](https://slack.spreecommerce.org) to meet other 6k+ community members and get some support.
+
+## Need more support?
+
+[Contact us](https://spreecommerce.org/contact/) for enterprise support and custom development services. We offer:
+  * migrations and upgrades,
+  * delivering your Spree application,
+  * optimizing your Spree stack.
+
+## Enterprise Edition 
+
+Besides enterprise support we also offer the Spree Commerce [Enterprise Edition](https://spreecommerce.org/spree-commerce-version-comparison-community-edition-vs-enterprise-edition/) that gives you all the tools you need to launch your store or marketplace and provides you with ready-to-use integrations that will reduce your project's development time and cost.
+
+With the Enterprise Edition you could build:
+
+### A [Multi-vendor marketplace](https://spreecommerce.org/use-cases/multi-vendor-marketplace-demo/)
+Run your own marketplace with multiple suppliers, each with a dedicated supplier dashboard
+<img alt="Spree Commerce - Marketplace" src="https://github.com/spree/spree/assets/12614496/c4ddd118-df4c-464e-b1fe-d43862e5cf25">
+
+### A [B2B eCommerce](https://spreecommerce.org/use-cases/headless-b2b-ecommerce/)
+Start capturing 6+ figure orders from resellers with safe payments and a checkout process that fits your business model
+<img alt="Spree Commerce - B2B eCommerce" src="https://github.com/spree/spree/assets/12614496/e0a184f6-31ad-4f7f-b30b-6f8a501b6f63">
+
+### [Wholesale eCommerce](https://spreecommerce.org/use-cases/wholesale-ecommerce/)
+Run your wholesale operation the way your retail partners expect
+<img alt="Spree Commerce - Wholesale" src="https://github.com/spree/spree/assets/12614496/bac1e551-f629-47d6-a983-b385aa65b1bd">
+
+### A [white-label SaaS or multi-tenant eCommerce](https://spreecommerce.org/multi-tenant-white-label-ecommerce/) platform
+Launch a [multi-tenant eCommerce platform](https://spreecommerce.org/multi-tenant-white-label-ecommerce/) for your customers, resellers, affiliates in any configuration, eg. B2B2B, B2B2C, B2B2E
+<img alt="Spree Commerce - Multi-store" src="https://github.com/spree/spree/assets/12614496/cf651354-6180-4927-973f-c650b80ccdb0">
+
+To get access to Spree Enterprise (Vendo), contact our [Sales team](https://spreecommerce.org/get-started/)
