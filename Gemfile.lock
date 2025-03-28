@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 3d36356c890399b2e1f6ceab38943c32319d5927
+  revision: 839866a32845009d8a1fdf21cb7201e99f6ff49c
   branch: main
   specs:
     spree (5.0.0.alpha)
@@ -93,10 +93,10 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_stripe.git
-  revision: f04bad8916ea779a99dd0900020e9204ba5701f7
+  revision: d8384fca3b62c3953606cfda901b31128b5d15e4
   branch: main
   specs:
-    spree_stripe (1.0.0)
+    spree_stripe (1.0.1)
       importmap-rails
       spree (>= 5.0.0.alpha)
       spree_admin (>= 5.0.0.alpha)
