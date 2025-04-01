@@ -1,97 +1,4 @@
 GIT
-  remote: https://github.com/spree/spree.git
-  revision: 83324d74ea60b1b425043b9d53ae0d28059dc3f9
-  branch: main
-  specs:
-    spree (5.0.0.alpha)
-      spree_api (= 5.0.0.alpha)
-      spree_cli (= 5.0.0.alpha)
-      spree_core (= 5.0.0.alpha)
-    spree_admin (5.0.0.alpha)
-      active_link_to
-      bootstrap (~> 4.6, >= 4.6.2.1)
-      chartkick (~> 5.0)
-      country_select (~> 8.0)
-      currency_select
-      dartsass-rails (~> 0.5)
-      groupdate (~> 6.2)
-      hightop (~> 0.3)
-      importmap-rails
-      inline_svg (~> 1.5)
-      local_time (~> 3.0)
-      mapkick-rb (~> 0.1)
-      payment_icons
-      spree_api (>= 5.0.0.alpha)
-      spree_core (>= 5.0.0.alpha)
-      sprockets (>= 4.0)
-      stimulus-rails
-      tinymce-rails (~> 6.8.5)
-      turbo-rails
-    spree_api (5.0.0.alpha)
-      bcrypt (~> 3.1)
-      doorkeeper (~> 5.3)
-      jsonapi-serializer (~> 2.1)
-      spree_core (= 5.0.0.alpha)
-    spree_cli (5.0.0.alpha)
-      thor (~> 1.0)
-    spree_core (5.0.0.alpha)
-      active_storage_validations (= 1.3.0)
-      activemerchant (~> 1.67)
-      acts-as-taggable-on
-      acts_as_list (>= 0.8)
-      any_ascii (~> 0.3.2)
-      auto_strip_attributes (~> 2.6)
-      awesome_nested_set (~> 3.3, >= 3.3.1)
-      cancancan (~> 3.2)
-      carmen (>= 1.0)
-      countries
-      friendly_id (~> 5.2, >= 5.2.1)
-      friendly_id-mobility (~> 1.0)
-      geocoder
-      highline (>= 2, < 4)
-      image_processing (~> 1.2)
-      kaminari (~> 1.2)
-      mobility (~> 1.2)
-      mobility-actiontext (~> 1.1)
-      mobility-ransack (~> 1.2)
-      monetize (~> 1.9)
-      money (~> 6.13)
-      name_of_person (~> 1.1)
-      paranoia (>= 2.4)
-      rails (>= 7.2, < 8.0)
-      ransack (>= 4.1)
-      request_store (~> 1.7)
-      rexml
-      ruby-oembed (~> 0.18)
-      state_machines-activemodel (~> 0.7)
-      state_machines-activerecord (~> 0.6)
-      stringex
-      tracking_number
-      validates_zipcode
-      wannabe_bool
-    spree_emails (5.0.0.alpha)
-      spree_core (>= 5.0.0.alpha)
-      sprockets (>= 4.0)
-    spree_sample (5.0.0.alpha)
-      ffaker (~> 2.9)
-      spree_core (>= 5.0.0.alpha)
-    spree_storefront (5.0.0.alpha)
-      active_link_to
-      canonical-rails (~> 0.2.14)
-      heroicon
-      importmap-rails
-      inline_svg (~> 1.5)
-      local_time (~> 3.0)
-      mail_form
-      payment_icons
-      spree_core (>= 5.0.0.alpha)
-      sprockets (>= 4.0)
-      stimulus-rails
-      tailwindcss-rails
-      tailwindcss-ruby (~> 3.4.17)
-      turbo-rails
-
-GIT
   remote: https://github.com/spree/spree_stripe.git
   revision: d8384fca3b62c3953606cfda901b31128b5d15e4
   branch: main
@@ -239,8 +146,6 @@ GEM
     connection_pool (2.5.0)
     countries (5.7.2)
       unaccent (~> 0.3)
-    country_select (8.0.3)
-      countries (~> 5.0)
     crass (1.0.6)
     csv (3.3.3)
     currency_select (8.1.0)
@@ -324,9 +229,6 @@ GEM
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
-    inline_svg (1.10.0)
-      activesupport (>= 3.0)
-      nokogiri (>= 1.6)
     io-console (0.8.0)
     irb (1.15.1)
       pp (>= 0.6.0)
@@ -564,6 +466,73 @@ GEM
       fugit (~> 1.11.0)
       railties (>= 7.1)
       thor (~> 1.3.1)
+    spree (5.0.0.rc1)
+      spree_api (= 5.0.0.rc1)
+      spree_cli (= 5.0.0.rc1)
+      spree_core (= 5.0.0.rc1)
+    spree_admin (5.0.0.rc1)
+      active_link_to
+      bootstrap (~> 4.6, >= 4.6.2.1)
+      chartkick (~> 5.0)
+      currency_select
+      dartsass-rails (~> 0.5)
+      groupdate (~> 6.2)
+      hightop (~> 0.3)
+      importmap-rails
+      local_time (~> 3.0)
+      mapkick-rb (~> 0.1)
+      payment_icons
+      spree_api (>= 5.0.0.rc1)
+      spree_core (>= 5.0.0.rc1)
+      sprockets (>= 4.0)
+      stimulus-rails
+      tinymce-rails (~> 6.8.5)
+      turbo-rails
+    spree_api (5.0.0.rc1)
+      bcrypt (~> 3.1)
+      doorkeeper (~> 5.3)
+      jsonapi-serializer (~> 2.1)
+      spree_core (= 5.0.0.rc1)
+    spree_cli (5.0.0.rc1)
+      thor (~> 1.0)
+    spree_core (5.0.0.rc1)
+      active_storage_validations (= 1.3.0)
+      activemerchant (~> 1.67)
+      acts-as-taggable-on
+      acts_as_list (>= 0.8)
+      any_ascii (~> 0.3.2)
+      auto_strip_attributes (~> 2.6)
+      awesome_nested_set (~> 3.3, >= 3.3.1)
+      cancancan (~> 3.2)
+      carmen (>= 1.0)
+      countries
+      friendly_id (~> 5.2, >= 5.2.1)
+      friendly_id-mobility (~> 1.0)
+      geocoder
+      highline (>= 2, < 4)
+      image_processing (~> 1.2)
+      kaminari (~> 1.2)
+      mobility (~> 1.2)
+      mobility-actiontext (~> 1.1)
+      mobility-ransack (~> 1.2)
+      monetize (~> 1.9)
+      money (~> 6.13)
+      name_of_person (~> 1.1)
+      paranoia (>= 2.4)
+      rails (>= 7.2, < 8.0)
+      ransack (>= 4.1)
+      request_store (~> 1.7)
+      rexml
+      ruby-oembed (~> 0.18)
+      state_machines-activemodel (~> 0.7)
+      state_machines-activerecord (~> 0.6)
+      stringex
+      tracking_number
+      validates_zipcode
+      wannabe_bool
+    spree_emails (5.0.0.rc1)
+      spree_core (>= 5.0.0.rc1)
+      sprockets (>= 4.0)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
@@ -573,6 +542,23 @@ GEM
       rails-i18n
       spree_core (>= 4.2.0.rc3)
       spree_extension
+    spree_sample (5.0.0.rc1)
+      ffaker (~> 2.9)
+      spree_core (>= 5.0.0.rc1)
+    spree_storefront (5.0.0.rc1)
+      active_link_to
+      canonical-rails (~> 0.2.14)
+      heroicon
+      importmap-rails
+      local_time (~> 3.0)
+      mail_form
+      payment_icons
+      spree_core (>= 5.0.0.rc1)
+      sprockets (>= 4.0)
+      stimulus-rails
+      tailwindcss-rails
+      tailwindcss-ruby (~> 3.4.17)
+      turbo-rails
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -669,12 +655,12 @@ DEPENDENCIES
   selenium-webdriver
   solid_cache
   solid_queue (>= 0.3.2)
-  spree!
-  spree_admin!
-  spree_emails!
+  spree (~> 5.0.0.rc1)
+  spree_admin (~> 5.0.0.rc1)
+  spree_emails (~> 5.0.0.rc1)
   spree_i18n
-  spree_sample!
-  spree_storefront!
+  spree_sample (~> 5.0.0.rc1)
+  spree_storefront (~> 5.0.0.rc1)
   spree_stripe!
   stimulus-rails
   turbo-rails

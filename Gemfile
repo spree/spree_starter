@@ -80,11 +80,7 @@ gem "solid_cache"
 gem "devise"
 
 # Spree gems
-spree_opts = if ENV['SPREE_PATH']
-                { 'path': ENV['SPREE_PATH'] }
-              else
-                { 'github': 'spree/spree', 'branch': 'main' }
-              end
+spree_opts = '~> 5.0.0.rc1'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_sample", spree_opts
