@@ -2,9 +2,7 @@ envVarGroups:
   - name: spree-envs
     envVars:
       - key: DB_POOL
-        value: 50
-      - key: CACHE_POOL_SIZE
-        value: 15
+        value: 10
 
 databases:
   - name: spree-db
