@@ -27,7 +27,7 @@ gem "jbuilder"
 gem 'mini_racer', platforms: :ruby
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", ">= 4.0.1", group: :production
+gem "redis", ">= 4.0.1"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -104,9 +104,6 @@ end
 
 # Use Sidekiq for background jobs
 gem 'sidekiq'
-
-# Use Solid Cache for caching
-gem "solid_cache"
 
 # Use Devise for authentication
 gem "devise"
