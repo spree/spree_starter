@@ -38,3 +38,10 @@
 !/app/assets/builds/.keep
 
 .DS_Store
+
+# Ignore all environment files.
+.env
+.env.local
+.env.development
+.env.test
+.env.production

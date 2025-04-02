@@ -171,6 +171,10 @@ GEM
     docile (1.4.1)
     doorkeeper (5.8.1)
       railties (>= 5)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     drb (2.2.1)
     e2mmap (0.1.0)
     email_spec (2.3.0)
@@ -777,6 +781,7 @@ DEPENDENCIES
   database_cleaner
   debug
   devise
+  dotenv-rails (~> 2.1, >= 2.1.1)
   email_spec
   factory_bot
   factory_bot_rails
