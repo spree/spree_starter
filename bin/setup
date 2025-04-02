@@ -28,9 +28,22 @@ FileUtils.chdir APP_ROOT do
   puts "\n== Seeding database =="
   system! "bin/rails db:seed"
 
-  puts "\n== Setup credentials =="
-  system! "bin/rails g master_key"
-  system! "bin/rails g credentials"
+  puts "\n== Setup ENVs =="
+  unless File.exist?(".env")
+    puts "Creating .env file..."
+    FileUtils.cp ".env.example", ".env" if File.exist?(".env.example")
+
+    # If .env.example doesn't exist, create a basic .env file
+    unless File.exist?(".env")
+      File.open(".env", "w") do |f|
+        f.puts "SECRET_KEY_BASE=#{`bin/rails secret`.strip}"
+      end
+    end
+
+    puts "Created .env file"
+  else
+    puts ".env file already exists"
+  end
 
   puts "\n== Removing old logs and tempfiles =="
   system! "bin/rails log:clear tmp:clear"
