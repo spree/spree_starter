@@ -27,16 +27,31 @@ services:
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: redis
+          property: connectionString
   - type: worker
     name: spree-worker
     runtime: ruby
     plan: standard
     buildCommand: bin/render-build.sh
-    startCommand: "bundle exec rake solid_queue:start"
+    startCommand: bundle exec sidekiq
     envVars:
       - key: DATABASE_URL
         fromDatabase:
           name: spree-db
           property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: redis
+          property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
+  - type: redis
+    name: redis
+    ipAllowList: []
+    plan: standard
+    maxmemoryPolicy: noeviction

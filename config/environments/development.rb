@@ -76,9 +76,8 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions.
   config.action_controller.raise_on_missing_callback_actions = true
 
-  # solid queue
-  config.active_job.queue_adapter = :solid_queue
-  config.solid_queue.connects_to = { database: { writing: :queue } }
+  # sidekiq
+  config.active_job.queue_adapter = :sidekiq
 
   # letter opener
   config.action_mailer.delivery_method = :letter_opener
