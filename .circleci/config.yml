@@ -1,0 +1,80 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/ruby:3.3-browsers
+    working_directory: ~/app
+    environment:
+      RAILS_ENV: test
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - ruby-dependencies-v8-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v8
+      - run:
+          name: Set bundle path
+          command: bundle config --local path vendor/bundle
+      - run:
+          name: Bundle Install
+          command: |
+            bundle check || bundle install --deployment
+      - run:
+          name: Clean old gem versions
+          command: bundle clean --force
+      - save_cache:
+          paths:
+            - vendor/bundle
+          key: ruby-dependencies-v8-{{ checksum "Gemfile.lock" }}
+
+  run_tests:
+    docker:
+      - image: cimg/ruby:3.3-browsers
+      - image: cimg/redis:7.2
+      - image: cimg/postgres:16.2
+        environment:
+          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+    parallelism: 14
+    environment:
+      RAILS_ENV: test
+      CIRCLE_TEST_REPORTS: /tmp/test-results
+      CIRCLE_ARTIFACTS: /tmp/test-artifacts
+    working_directory: ~/app
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - ruby-dependencies-v8-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v8
+      - run:
+          name: Set bundle path
+          command: bundle config --local path vendor/bundle
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432
+      - run:
+          name: Setup DB
+          command: bundle exec rails db:create db:schema:load
+      - run:
+          name: Precompile assets
+          command: SECRET_KEY_BASE_DUMMY=1 bin/rails assets:precompile
+      - run:
+          name: Run Rspec
+          command: |
+            mkdir -p /tmp/test-results
+            bundle exec rake "knapsack_pro:queue:rspec[--format documentation --format RspecJunitFormatter --out /tmp/test-results/rspec.xml]"
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-artifacts
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build
+      - run_tests:
+          requires:
+            - build
