@@ -107,4 +107,10 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  # Fix for Render deployment
+  # this will set the store url to the render external url during db:seeds for the first time
+  if ENV['RENDER_EXTERNAL_URL'].present?
+    Rails.application.routes.default_url_options[:host] = ENV['RENDER_EXTERNAL_URL']
+  end
 end
