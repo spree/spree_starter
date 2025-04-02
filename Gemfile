@@ -56,6 +56,12 @@ group :development do
   # Preview emails in the browser [https://github.com/plataformatec/letter_opener]
   gem "letter_opener"
 
+  # LSP support for Ruby
+  gem 'solargraph'
+  gem 'solargraph-rails'
+  gem 'ruby-lsp'
+  gem 'ruby-lsp-rails'
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -63,10 +69,36 @@ group :development do
   # gem "spring"
 end
 
+group :development, :test do
+  gem 'brakeman'
+  gem 'rubocop', '~> 1.23.0'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'selenium-webdriver', '~> 4.7.1'
+
+  # monitoring
+  gem 'pry'
+  gem 'pry-remote'
+end
+
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
+  gem 'capybara', '~> 3.39'
+  gem 'capybara-screenshot', '~> 1.0'
+  gem 'email_spec'
+  gem 'factory_bot'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
+  gem 'rspec-activemodel-mocks', '~> 1.0'
+  gem 'rspec-rails', '~> 6.1'
+  gem 'rspec-retry'
+  gem 'rspec_junit_formatter'
+  gem 'rubocop-rspec'
+  gem 'jsonapi-rspec'
+  gem 'simplecov'
+  gem 'webmock', '~> 3.7', require: false
+  gem 'timecop'
+  gem 'rails-controller-testing'
+  gem 'webdrivers', '~> 5.0'
 end
 
 # Use Sidekiq for background jobs
