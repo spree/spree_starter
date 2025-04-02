@@ -6,7 +6,7 @@ It is a great starting point for any Rails developer to quickly build an eCommer
 
 This starter uses:
 
-* **Spree Commerce 5**, the biggest release ever, which includes Admin Dashboard, API and Storefront - everything you need to start developing your new eCommerce application/store/marketeplace
+* **[Spree Commerce 5](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/)**, the biggest release ever, which includes Admin Dashboard, API and Storefront - everything you need to start developing your new eCommerce application/store/marketeplace
 * Stripe for payment processing, thanks to the official [Spree Stripe gem](https://github.com/spree/spree_stripe)
 * [Devise](https://github.com/heartcombo/devise) for authentication
 * [Solid Queue](https://github.com/rails/solid_queue) with Mission Control UI (access only to Spree admins) for background jobs
@@ -27,13 +27,20 @@ Please follow [Spree Quickstart guide](https://spreecommerce.org/docs/developer/
 
 Please follow [Deployment guide](https://spreecommerce.org/docs/developer/deployment/render) to quickly deploy your production-ready Spree application.
 
-## Spree 5 Demo
+## Spree 5 Announcement & Demo
 
-Check out this [Spree Commerce demo](https://demo.spreecommerce.org/) for yourself - this is what you're getting with this Spree starter. 
+[![Spree Commerce 5 version](https://vendo-production-res.cloudinary.com/image/upload/w_2000/q_auto/v1742985405/docs/github/Spree_Commerce_open-source_eCommerce_myzurl.jpg)](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/)
 
-This demo runs on Spree 5 which is the biggest Spree release ever. Stay tuned for the official announcement on all the exciting features and integrations - coming up soon!
+We’re thrilled to unveil [Spree 5](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/
+) — the most powerful and feature-packed open-source release in Spree Commerce’s history, including:
+- A completly revamped Admin Dashboard experience: boost your team's productivity 
+- A Mobile-First, No-code Customizable Storefront: raise conversions and loyalty
+- New integrations: a native [Stripe integration](https://github.com/spree/spree_stripe), and also Stripe Connect, Klaviyo integrations available with the Enterprise Edition
+- Enterprise Edition Admin Features: Audit Log, [Multi-Vendor Marketplace](https://spreecommerce.org/marketplace-ecommerce/), [Multi-tenant / White-label SaaS eCommerce](https://spreecommerce.org/multi-tenant-white-label-ecommerce/)
 
-![Spree Commerce 5 version](https://vendo-production-res.cloudinary.com/image/upload/w_2000/q_auto/v1742985405/docs/github/Spree_Commerce_open-source_eCommerce_myzurl.jpg)
+Read the [full Spree 5 announcement here](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/).
+
+Check out the [Spree 5 demo](https://demo.spreecommerce.org/) for yourself.
 
 ## Troubleshooting
 
