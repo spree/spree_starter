@@ -27,6 +27,18 @@ Please follow [Spree Quickstart guide](https://spreecommerce.org/docs/developer/
 
 Please follow [Deployment guide](https://spreecommerce.org/docs/developer/deployment/render) to quickly deploy your production-ready Spree application.
 
+## Customizing
+
+Please follow [Customization guide](https://spreecommerce.org/docs/developer/customization/quickstart) to learn how to customize and extend your Spree application.
+
+## Running tests
+
+This repository is pre-configured for running tests of your Spree customizations. To run the full test suite, just type:
+
+```bash
+bundle exec rspec
+```
+
 ## Spree 5 Announcement & Demo
 
 [![Spree Commerce 5 version](https://vendo-production-res.cloudinary.com/image/upload/w_2000/q_auto/v1742985405/docs/github/Spree_Commerce_open-source_eCommerce_myzurl.jpg)](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/)
