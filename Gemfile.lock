@@ -577,10 +577,6 @@ GEM
     solargraph-rails (1.1.0)
       activesupport
       solargraph
-    solid_cache (1.0.7)
-      activejob (>= 7.2)
-      activerecord (>= 7.2)
-      railties (>= 7.2)
     sorbet-runtime (0.5.11980)
     spree (5.0.0.rc1)
       spree_api (= 5.0.0.rc1)
@@ -813,7 +809,6 @@ DEPENDENCIES
   simplecov
   solargraph
   solargraph-rails
-  solid_cache
   spree (~> 5.0.0.rc1)
   spree_admin (~> 5.0.0.rc1)
   spree_emails (~> 5.0.0.rc1)

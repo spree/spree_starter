@@ -1,7 +1,17 @@
+envVarGroups:
+  - name: spree-envs
+    envVars:
+      - key: DB_POOL
+        value: 50
+      - key: CACHE_POOL_SIZE
+        value: 15
+
 databases:
   - name: spree-db
     databaseName: spree
     user: spree
+    plan: basic-1gb
+    diskSizeGB: 10
 
 services:
   - type: web
@@ -22,8 +32,8 @@ services:
         value: 2 # sensible default
       - key: REDIS_URL
         fromService:
-          type: redis
-          name: redis
+          type: keyvalue
+          name: keyvalue
           property: connectionString
   - type: worker
     name: spree-worker
@@ -38,13 +48,26 @@ services:
           property: connectionString
       - key: REDIS_URL
         fromService:
-          type: redis
-          name: redis
+          type: keyvalue
+          name: keyvalue
           property: connectionString
       - key: SECRET_KEY_BASE
         sync: false
-  - type: redis
-    name: redis
+      - key: REDIS_CACHE_URL
+        fromService:
+          type: keyvalue
+          name: keyvalue-cache
+          property: connectionString
+      - fromGroup: spree-envs
+  
+  - type: keyvalue
+    name: keyvalue
     ipAllowList: []
-    plan: standard
+    plan: starter
     maxmemoryPolicy: noeviction
+
+  - type: keyvalue
+    name: keyvalue-cache
+    ipAllowList: []
+    plan: starter
+    maxmemoryPolicy: allkeys-lru

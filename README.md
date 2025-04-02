@@ -10,8 +10,8 @@ This starter uses:
 * Stripe for payment processing, thanks to the official [Spree Stripe gem](https://github.com/spree/spree_stripe)
 * [Devise](https://github.com/heartcombo/devise) for authentication
 * [Sidekiq](https://github.com/mperham/sidekiq) for background jobs
-* [Solid Cache](https://github.com/rails/solid_cache) for excellent caching and performance
 * PostgreSQL as a database
+* Redis for caching
 
 You don't need to install additional tools or libraries to start developing with Spree Starter. Everything is already set up for you.
 
