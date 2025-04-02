@@ -96,9 +96,5 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  primary:
-    <<: *default
-    url: <%= ENV['DATABASE_URL'] %>
-  queue:
-    <<: *default
-    url: <%= ENV['QUEUE_DATABASE_URL'] %>
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
