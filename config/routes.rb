@@ -1,3 +1,5 @@
+require "sidekiq/web" # require the web UI
+
 Rails.application.routes.draw do
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to
@@ -10,8 +12,7 @@ Rails.application.routes.draw do
   mount Spree::Core::Engine, at: '/'
   devise_for :users, class_name: "Spree::User"
 
-  # https://github.com/basecamp/mission_control-jobs?tab=readme-ov-file#basic-configuration
-  mount MissionControl::Jobs::Engine, at: "/jobs"
+  mount Sidekiq::Web => "/sidekiq" # access it at http://localhost:3000/sidekiq
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

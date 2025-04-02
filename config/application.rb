@@ -31,10 +31,6 @@ module SpreeStarter
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # https://github.com/basecamp/mission_control-jobs?tab=readme-ov-file#basic-configuration
-    config.mission_control.jobs.base_controller_class = "Spree::Admin::BaseController"
-    config.mission_control.jobs.http_basic_auth_enabled = false
-
     # https://github.com/rails/rails/issues/45826
     config.active_record.yaml_column_permitted_classes = [Symbol, BigDecimal, Date, Time, ActiveSupport::TimeWithZone, ActiveSupport::TimeZone, ActiveSupport::HashWithIndifferentAccess]
   end

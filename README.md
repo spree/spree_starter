@@ -9,7 +9,7 @@ This starter uses:
 * **[Spree Commerce 5](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/)**, the biggest release ever, which includes Admin Dashboard, API and Storefront - everything you need to start developing your new eCommerce application/store/marketeplace
 * Stripe for payment processing, thanks to the official [Spree Stripe gem](https://github.com/spree/spree_stripe)
 * [Devise](https://github.com/heartcombo/devise) for authentication
-* [Solid Queue](https://github.com/rails/solid_queue) with Mission Control UI (access only to Spree admins) for background jobs
+* [Sidekiq](https://github.com/mperham/sidekiq) for background jobs
 * [Solid Cache](https://github.com/rails/solid_cache) for excellent caching and performance
 * PostgreSQL as a database
 
