@@ -30,7 +30,6 @@ jobs:
   run_tests:
     docker:
       - image: cimg/ruby:3.3.0-browsers
-      - image: cimg/redis:7.2
       - image: cimg/postgres:16.2
         environment:
           POSTGRES_HOST_AUTH_METHOD: trust
@@ -63,7 +62,7 @@ jobs:
           name: Run Rspec
           command: |
             mkdir -p /tmp/test-results
-            bundle exec rake "knapsack_pro:queue:rspec[--format documentation --format RspecJunitFormatter --out /tmp/test-results/rspec.xml]"
+            circleci tests glob "spec/**/*_spec.rb" | circleci tests run --command="xargs bundle exec rspec --format progress --format RspecJunitFormatter -o /tmp/test-results/rspec.xml" --verbose --split-by=timings
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
