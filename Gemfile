@@ -109,7 +109,7 @@ gem 'sidekiq'
 gem "devise"
 
 # Spree gems
-spree_opts = '~> 5.0.0.rc1'
+spree_opts = '~> 5.0.0'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_sample", spree_opts
