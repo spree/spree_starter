@@ -1,3 +1,10 @@
+PATH
+  remote: /home/jeromes/spree/spree_shippo
+  specs:
+    spree_shippo (0.0.1)
+      spree (>= 4.10.1)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -161,6 +168,12 @@ GEM
     debug (1.10.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    deface (1.9.0)
+      actionview (>= 5.2)
+      nokogiri (>= 1.6)
+      polyglot
+      railties (>= 5.2)
+      rainbow (>= 2.1.0)
     devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -188,7 +201,6 @@ GEM
     factory_bot_rails (6.4.4)
       factory_bot (~> 6.5)
       railties (>= 5.0.0)
-    ffaker (2.24.0)
     ffi (1.17.1-aarch64-linux-gnu)
     ffi (1.17.1-aarch64-linux-musl)
     ffi (1.17.1-arm-linux-gnu)
@@ -370,6 +382,7 @@ GEM
       railties (>= 5.0)
       sassc-rails
     pg (1.5.9)
+    polyglot (0.3.5)
     popper_js (1.16.1)
     pp (0.6.2)
       prettyprint
@@ -654,9 +667,6 @@ GEM
       rails-i18n
       spree_core (>= 4.2.0.rc3)
       spree_extension
-    spree_sample (5.0.0)
-      ffaker (~> 2.9)
-      spree_core (>= 5.0.0)
     spree_storefront (5.0.0)
       active_link_to
       canonical-rails (~> 0.2.14)
@@ -776,6 +786,7 @@ DEPENDENCIES
   capybara-screenshot (~> 1.0)
   database_cleaner
   debug
+  deface
   devise
   dotenv-rails (~> 2.1, >= 2.1.1)
   email_spec
@@ -813,7 +824,7 @@ DEPENDENCIES
   spree_admin (~> 5.0.0)
   spree_emails (~> 5.0.0)
   spree_i18n
-  spree_sample (~> 5.0.0)
+  spree_shippo!
   spree_storefront (~> 5.0.0)
   spree_stripe (~> 1.1.0)
   stimulus-rails
