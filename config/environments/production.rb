@@ -82,6 +82,19 @@ Rails.application.configure do
   config.active_job.queue_adapter = :sidekiq
   # config.active_job.queue_name_prefix = "spree_starter_production"
 
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: ENV['MAIL_HOST'] }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name:      ENV['SMTP_USERNAME'],
+    password:       ENV['SMTP_PASSWORD'],
+    domain:         ENV['SMTP_HOST'],
+    address:        ENV['SMTP_ADDRESS'],
+    port:           ENV['SMTP_PORT'],
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
   # Disable caching for Action Mailer templates even if Action Controller
   # caching is enabled.
   config.action_mailer.perform_caching = false

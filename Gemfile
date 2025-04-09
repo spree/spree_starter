@@ -8,9 +8,6 @@ gem 'rails', '~> 7.2.1.2'
 # Use pg as the database for Active Record
 gem "pg", "~> 1.1"
 
-# Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
-
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
@@ -70,8 +67,10 @@ group :development do
 end
 
 group :development, :test do
+  # Use the Puma web server [https://github.com/puma/puma]
+  gem "puma", ">= 5.0"
+
   gem 'brakeman'
-  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
   gem 'rubocop', '~> 1.23.0'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
@@ -112,8 +111,15 @@ gem "devise"
 spree_opts = '~> 5.0.0'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
-gem "spree_sample", spree_opts
 gem "spree_admin", spree_opts
 gem "spree_storefront", spree_opts
 gem "spree_stripe", '~> 1.1.0'
 gem "spree_i18n"
+
+gem "spree_shippo", path: '/home/jeromes/spree/spree_shippo'
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+gem 'deface'
+
+group :production do
+  gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
+end
