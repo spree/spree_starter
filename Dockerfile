@@ -2,7 +2,7 @@
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
 # docker build -t my-app .
-# docker run -d -p 80:80 -p 443:443 --name my-app -e RAILS_MASTER_KEY=<value from config/master.key> my-app
+# docker run -d -p 80:80 -p 443:443 --name my-app -e SECRET_KEY_BASE=<value> my-app
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
 ARG RUBY_VERSION=3.3.0
@@ -13,10 +13,10 @@ WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 postgresql-client libpq-dev libvips && \
+    apt-get install --no-install-recommends -y curl libjemalloc2 postgresql-client libpq-dev libvips redis-tools && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
-ENV RAILS_ENV="development" \
+ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle"
 
