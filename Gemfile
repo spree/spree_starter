@@ -90,7 +90,7 @@ group :test do
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'rspec-activemodel-mocks', '~> 1.0'
-  gem 'rspec-rails', '~> 6.1'
+  gem 'rspec-rails', '~> 7.1'
   gem 'rspec-retry'
   gem 'rspec_junit_formatter'
   gem 'rubocop-rspec'
