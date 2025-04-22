@@ -292,6 +292,7 @@ GEM
     libv8-node (23.6.1.0-x86_64-darwin)
     libv8-node (23.6.1.0-x86_64-linux)
     libv8-node (23.6.1.0-x86_64-linux-musl)
+    lint_roller (1.1.0)
     local_time (3.0.3)
     logger (1.7.0)
     loofah (2.24.0)
@@ -482,15 +483,17 @@ GEM
     rspec-support (3.13.2)
     rspec_junit_formatter (0.6.0)
       rspec-core (>= 2, < 4, != 2.12.0)
-    rubocop (1.23.0)
+    rubocop (1.75.3)
+      json (~> 2.3)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.1.0)
       parallel (~> 1.10)
-      parser (>= 3.0.0.0)
+      parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
-      regexp_parser (>= 1.8, < 3.0)
-      rexml
-      rubocop-ast (>= 1.12.0, < 2.0)
+      regexp_parser (>= 2.9.3, < 3.0)
+      rubocop-ast (>= 1.44.0, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 3.0)
+      unicode-display_width (>= 2.4.0, < 4.0)
     rubocop-ast (1.44.1)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
@@ -725,7 +728,9 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unaccent (0.4.0)
-    unicode-display_width (2.6.0)
+    unicode-display_width (3.1.4)
+      unicode-emoji (~> 4.0, >= 4.0.4)
+    unicode-emoji (4.0.4)
     useragent (0.16.11)
     validates_zipcode (0.5.3)
       activemodel (>= 4.2.0)
@@ -799,7 +804,7 @@ DEPENDENCIES
   rspec-rails (~> 6.1)
   rspec-retry
   rspec_junit_formatter
-  rubocop (~> 1.23.0)
+  rubocop (~> 1.75.3)
   rubocop-performance
   rubocop-rails
   rubocop-rspec
