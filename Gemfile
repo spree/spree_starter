@@ -71,7 +71,7 @@ end
 
 group :development, :test do
   gem 'brakeman'
-  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+  gem 'dotenv-rails', '~> 3.1'
   gem 'rubocop', '~> 1.23.0'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
