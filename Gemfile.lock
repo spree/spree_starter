@@ -671,7 +671,7 @@ GEM
       tailwindcss-rails
       tailwindcss-ruby (~> 3.4.17)
       turbo-rails
-    spree_stripe (1.2.0)
+    spree_stripe (1.2.2)
       importmap-rails
       spree (>= 5.0.0.alpha)
       spree_admin (>= 5.0.0.alpha)
