@@ -508,8 +508,8 @@ GEM
       prism (>= 1.2, < 2.0)
       rbs (>= 3, < 4)
       sorbet-runtime (>= 0.5.10782)
-    ruby-lsp-rails (0.4.0)
-      ruby-lsp (>= 0.23.0, < 0.24.0)
+    ruby-lsp-rails (0.4.1)
+      ruby-lsp (>= 0.23.14, < 0.24.0)
     ruby-oembed (0.18.1)
     ruby-progressbar (1.13.0)
     ruby-vips (2.2.3)
@@ -577,7 +577,7 @@ GEM
     solargraph-rails (1.1.0)
       activesupport
       solargraph
-    sorbet-runtime (0.5.12028)
+    sorbet-runtime (0.5.12043)
     spree (5.0.2)
       spree_api (= 5.0.2)
       spree_cli (= 5.0.2)
