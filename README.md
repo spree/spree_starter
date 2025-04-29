@@ -12,6 +12,7 @@ This starter uses:
 * [Sidekiq](https://github.com/mperham/sidekiq) for background jobs
 * PostgreSQL as a database
 * Redis for caching
+* [Sentry](https://sentry.io) for error/performance monitoring
 
 You don't need to install additional tools or libraries to start developing with Spree Starter. Everything is already set up for you.
 

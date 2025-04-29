@@ -117,3 +117,8 @@ gem "spree_admin", spree_opts
 gem "spree_storefront", spree_opts
 gem "spree_stripe", '~> 1.2.0'
 gem "spree_i18n"
+
+# Sentry for error/performance monitoring
+gem 'sentry-ruby'
+gem 'sentry-rails'
+gem 'sentry-sidekiq'
