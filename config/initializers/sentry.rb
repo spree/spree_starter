@@ -9,7 +9,7 @@ if defined?(Sentry) && ENV['SENTRY_DSN'].present?
     config.traces_sample_rate = 0.5
 
     config.enabled_environments = %w[production staging]
-    config.enabled_environments << 'development' if ENV.fetch('SENTRY_REPORT_ON_DEVELOPMENT', false).to_b
+    config.enabled_environments << 'development' if ENV['SENTRY_REPORT_ON_DEVELOPMENT'].present?
 
     config.release = "spree@#{ENV['RENDER_GIT_COMMIT']}" if ENV['RENDER_GIT_COMMIT'].present?
 
