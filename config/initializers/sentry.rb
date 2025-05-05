@@ -22,13 +22,6 @@ if defined?(Sentry) && ENV['SENTRY_DSN'].present?
       'Aws::S3::Errors::NotFound'
     ]
 
-    config.before_send = lambda do |event, _hint|
-      filter_keys = [:password, :secret, :uid, :account_number, :site_id, :username, :identity, /\Acode\z/]
-      filter = ActiveSupport::ParameterFilter.new(filter_keys)
-
-      filter.filter(event.to_hash)
-    end
-
     # Use native Rails error subscriber
     # https://guides.rubyonrails.org/error_reporting.html
     config.rails.register_error_subscriber = true
