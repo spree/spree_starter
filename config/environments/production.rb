@@ -67,7 +67,7 @@ Rails.application.configure do
   # want to log everything, set the level to "debug".
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
 
-  if ENV['APP_DOMAIN'].present? && ENV['SENDGRID_API_KEY'].present?
+  if ENV['SENDGRID_API_KEY'].present?
     ActionMailer::Base.smtp_settings = {
       user_name: 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
       password: ENV['SENDGRID_API_KEY'], # This is the secret sendgrid API key which was issued during API key creation
