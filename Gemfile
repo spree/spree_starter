@@ -72,7 +72,7 @@ end
 group :development, :test do
   gem 'brakeman'
   gem 'dotenv-rails', '~> 3.1'
-  gem 'rubocop', '~> 1.23.0'
+  gem 'rubocop', '~> 1.75.5'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'selenium-webdriver', '~> 4.7.1'
