@@ -67,6 +67,18 @@ Rails.application.configure do
   # want to log everything, set the level to "debug".
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
 
+  if ENV['SENDGRID_API_KEY'].present?
+    ActionMailer::Base.smtp_settings = {
+      user_name: 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
+      password: ENV['SENDGRID_API_KEY'], # This is the secret sendgrid API key which was issued during API key creation
+      domain: Rails.application.routes.default_url_options[:host],
+      address: 'smtp.sendgrid.net',
+      port: 587,
+      authentication: :plain,
+      enable_starttls_auto: true
+    }
+  end
+
   # Use a different cache store in production.
   # https://guides.rubyonrails.org/caching_with_rails.html#activesupport-cache-rediscachestore
   if ENV['REDIS_CACHE_URL'].present?
