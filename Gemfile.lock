@@ -224,15 +224,15 @@ GEM
     google-protobuf (4.30.2-x86_64-linux)
       bigdecimal
       rake (>= 13)
-    groupdate (6.5.1)
-      activesupport (>= 7)
+    groupdate (6.6.0)
+      activesupport (>= 7.1)
     hashdiff (1.1.2)
     heroicon (1.0.0)
       rails (>= 5.2)
     highline (3.1.2)
       reline
-    hightop (0.5.0)
-      activesupport (>= 7)
+    hightop (0.6.0)
+      activesupport (>= 7.1)
     htmlentities (4.3.4)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
@@ -332,7 +332,7 @@ GEM
     msgpack (1.8.0)
     name_of_person (1.1.3)
       activesupport (>= 5.2.0)
-    net-imap (0.5.7)
+    net-imap (0.5.8)
       date
       net-protocol
     net-pop (0.1.2)
@@ -381,10 +381,10 @@ GEM
     pry-remote (0.1.8)
       pry (~> 0.9)
       slop (~> 3.0)
-    psych (5.2.3)
+    psych (5.2.4)
       date
       stringio
-    public_suffix (6.0.1)
+    public_suffix (6.0.2)
     puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.1)
@@ -463,10 +463,10 @@ GEM
       rspec-mocks (>= 2.99, < 4.0)
     rspec-core (3.13.3)
       rspec-support (~> 3.13.0)
-    rspec-expectations (3.13.3)
+    rspec-expectations (3.13.4)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-mocks (3.13.2)
+    rspec-mocks (3.13.4)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-rails (6.1.5)
@@ -479,7 +479,7 @@ GEM
       rspec-support (~> 3.13)
     rspec-retry (0.6.2)
       rspec-core (> 3.3)
-    rspec-support (3.13.2)
+    rspec-support (3.13.3)
     rspec_junit_formatter (0.6.0)
       rspec-core (>= 2, < 4, != 2.12.0)
     rubocop (1.23.0)
@@ -503,13 +503,13 @@ GEM
       rubocop (>= 1.7.0, < 2.0)
     rubocop-rspec (2.11.1)
       rubocop (~> 1.19)
-    ruby-lsp (0.23.15)
+    ruby-lsp (0.23.16)
       language_server-protocol (~> 3.17.0)
       prism (>= 1.2, < 2.0)
       rbs (>= 3, < 4)
       sorbet-runtime (>= 0.5.10782)
-    ruby-lsp-rails (0.4.1)
-      ruby-lsp (>= 0.23.14, < 0.24.0)
+    ruby-lsp-rails (0.4.2)
+      ruby-lsp (>= 0.23.16, < 0.24.0)
     ruby-oembed (0.18.1)
     ruby-progressbar (1.13.0)
     ruby-vips (2.2.3)
@@ -586,12 +586,12 @@ GEM
     solargraph-rails (1.1.0)
       activesupport
       solargraph
-    sorbet-runtime (0.5.12043)
-    spree (5.0.2)
-      spree_api (= 5.0.2)
-      spree_cli (= 5.0.2)
-      spree_core (= 5.0.2)
-    spree_admin (5.0.2)
+    sorbet-runtime (0.5.12067)
+    spree (5.0.3)
+      spree_api (= 5.0.3)
+      spree_cli (= 5.0.3)
+      spree_core (= 5.0.3)
+    spree_admin (5.0.3)
       active_link_to
       bootstrap (~> 4.6, >= 4.6.2.1)
       chartkick (~> 5.0)
@@ -603,20 +603,20 @@ GEM
       local_time (~> 3.0)
       mapkick-rb (~> 0.1)
       payment_icons
-      spree_api (>= 5.0.2)
-      spree_core (>= 5.0.2)
+      spree_api (>= 5.0.3)
+      spree_core (>= 5.0.3)
       sprockets (>= 4.0)
       stimulus-rails
       tinymce-rails (~> 6.8.5)
       turbo-rails
-    spree_api (5.0.2)
+    spree_api (5.0.3)
       bcrypt (~> 3.1)
       doorkeeper (~> 5.3)
       jsonapi-serializer (~> 2.1)
-      spree_core (= 5.0.2)
-    spree_cli (5.0.2)
+      spree_core (= 5.0.3)
+    spree_cli (5.0.3)
       thor (~> 1.0)
-    spree_core (5.0.2)
+    spree_core (5.0.3)
       active_storage_validations (= 1.3.0)
       activemerchant (~> 1.67)
       acts-as-taggable-on
@@ -651,8 +651,8 @@ GEM
       tracking_number
       validates_zipcode
       wannabe_bool
-    spree_emails (5.0.2)
-      spree_core (>= 5.0.2)
+    spree_emails (5.0.3)
+      spree_core (>= 5.0.3)
       sprockets (>= 4.0)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
@@ -663,10 +663,10 @@ GEM
       rails-i18n
       spree_core (>= 4.2.0.rc3)
       spree_extension
-    spree_sample (5.0.2)
+    spree_sample (5.0.3)
       ffaker (~> 2.9)
-      spree_core (>= 5.0.2)
-    spree_storefront (5.0.2)
+      spree_core (>= 5.0.3)
+    spree_storefront (5.0.3)
       active_link_to
       canonical-rails (~> 0.2.14)
       heroicon
@@ -674,7 +674,7 @@ GEM
       local_time (~> 3.0)
       mail_form
       payment_icons
-      spree_core (>= 5.0.2)
+      spree_core (>= 5.0.3)
       sprockets (>= 4.0)
       stimulus-rails
       tailwindcss-rails
