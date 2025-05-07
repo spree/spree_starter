@@ -73,8 +73,6 @@ jobs:
       - image: cimg/ruby:3.3.0-browsers
     environment:
       RAILS_ENV: test
-      CIRCLE_TEST_REPORTS: /tmp/test-results
-      CIRCLE_ARTIFACTS: /tmp/test-artifacts
     working_directory: ~/app
     steps:
       - checkout
@@ -87,9 +85,9 @@ jobs:
           command: bundle config --local path vendor/bundle
       - run:
           name: Run Brakeman
-          command: bundle exec brakeman --output-file /tmp/brakeman.out
+          command: bundle exec brakeman -f html -o /tmp/brakeman.html
       - store_artifacts:
-          path: /tmp/brakeman.out
+          path: /tmp/brakeman.html
 
 workflows:
   version: 2
