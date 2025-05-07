@@ -37,6 +37,8 @@ jobs:
           POSTGRES_PASSWORD: password
     environment:
       RAILS_ENV: test
+      SECRET_KEY_BASE: dummy
+      MAIL_FROM_ADDRESS: support@mystore.com
       CIRCLE_TEST_REPORTS: /tmp/test-results
       CIRCLE_ARTIFACTS: /tmp/test-artifacts
     working_directory: ~/app

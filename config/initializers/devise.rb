@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  config.secret_key = Rails.application.credentials.secret_key_base
+  config.secret_key = Rails.application.credentials.secret_key_base || ENV['SECRET_KEY_BASE']
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,13 +24,13 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = ENV.fetch('MAIL_FROM_ADDRESS', "support@#{Spree.root_domain}")
+  config.mailer_sender = ENV.fetch('MAIL_FROM_ADDRESS', "support@mystore.com")
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Spree::DeviseMailer'
 
   # Configure the parent class responsible to send e-mails.
-  # config.parent_mailer = 'Spree::BaseMailer'
+  config.parent_mailer = 'Spree::BaseMailer'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
