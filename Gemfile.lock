@@ -390,7 +390,7 @@ GEM
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.14)
-    rack-session (2.1.0)
+    rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
     rack-test (2.2.0)
@@ -470,10 +470,10 @@ GEM
     rspec-mocks (3.13.4)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-rails (6.1.5)
-      actionpack (>= 6.1)
-      activesupport (>= 6.1)
-      railties (>= 6.1)
+    rspec-rails (8.0.0)
+      actionpack (>= 7.2)
+      activesupport (>= 7.2)
+      railties (>= 7.2)
       rspec-core (~> 3.13)
       rspec-expectations (~> 3.13)
       rspec-mocks (~> 3.13)
@@ -812,7 +812,7 @@ DEPENDENCIES
   rails-controller-testing
   redis (>= 4.0.1)
   rspec-activemodel-mocks (~> 1.0)
-  rspec-rails (~> 6.1)
+  rspec-rails (~> 8.0)
   rspec-retry
   rspec_junit_formatter
   rubocop (~> 1.23)
