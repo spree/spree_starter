@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe 'API V2 Storefront Products Spec', type: :request do
-  let(:store)                      { @default_store }
-  let!(:products)                   { create_list(:product, 5, stores: [store]) }
+  let(:store) { @default_store }
+  let!(:products) { create_list(:product, 5, stores: [store]) }
 
   describe 'products#index' do
     context 'with no params' do
