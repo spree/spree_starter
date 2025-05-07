@@ -32,3 +32,11 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+cloudflare:
+  service: S3
+  endpoint: <%= ENV.fetch("CLOUDFLARE_ENDPOINT", "") %>
+  access_key_id: <%= ENV.fetch("CLOUDFLARE_ACCESS_KEY_ID", "") %>
+  secret_access_key: <%= ENV.fetch("CLOUDFLARE_SECRET_ACCESS_KEY", "") %>
+  region: auto
+  bucket: <%= ENV.fetch("CLOUDFLARE_BUCKET", "spree-#{Rails.env}") %>
