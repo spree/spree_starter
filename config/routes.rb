@@ -10,7 +10,25 @@ Rails.application.routes.draw do
   # We ask that you don't use the :as option here, as Spree relies on it being
   # the default of "spree".
   mount Spree::Core::Engine, at: '/'
-  devise_for :users, class_name: "Spree::User"
+
+  # Fix Devise for Storefront to utilize translations
+  Spree::Core::Engine.routes.draw do
+    # Storefront routes
+    scope '(:locale)', locale: /#{Spree.available_locales.join('|')}/, defaults: { locale: nil } do
+      # Authentication with Devise
+      devise_for(
+        Spree.user_class.model_name.singular_route_key,
+        class_name: Spree.user_class.to_s,
+        path: :user,
+        controllers: {
+          sessions: 'spree/user_sessions',
+          passwords: 'spree/user_passwords',
+          registrations: 'spree/user_registrations'
+        },
+        router_name: :spree
+      )
+    end
+  end
 
   mount Sidekiq::Web => "/sidekiq" # access it at http://localhost:3000/sidekiq
 
