@@ -13,6 +13,7 @@ This starter uses:
 * PostgreSQL as a database
 * Redis for caching
 * (Optional) [Sentry](https://sentry.io) for error/performance monitoring
+* (Optional) [SendGrid](https://sendgrid.com) for transactional email notifications
 
 You don't need to install additional tools or libraries to start developing with Spree Starter. Everything is already set up for you.
 
