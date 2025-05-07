@@ -68,11 +68,37 @@ jobs:
       - store_artifacts:
           path: /tmp/test-artifacts
 
+  run_brakeman:
+    docker:
+      - image: cimg/ruby:3.3.0-browsers
+    environment:
+      RAILS_ENV: test
+      CIRCLE_TEST_REPORTS: /tmp/test-results
+      CIRCLE_ARTIFACTS: /tmp/test-artifacts
+    working_directory: ~/app
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - ruby-dependencies-v8-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v8
+      - run:
+          name: Set bundle path
+          command: bundle config --local path vendor/bundle
+      - run:
+          name: Run Brakeman
+          command: bundle exec brakeman --output-file /tmp/brakeman.out
+      - store_artifacts:
+          path: /tmp/brakeman.out
+
 workflows:
   version: 2
   main:
     jobs:
       - build
       - run_tests:
+          requires:
+            - build
+      - run_brakeman:
           requires:
             - build
