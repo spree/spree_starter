@@ -546,7 +546,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    selenium-webdriver (4.7.1)
+    selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -821,7 +821,7 @@ DEPENDENCIES
   rubocop-rspec
   ruby-lsp
   ruby-lsp-rails
-  selenium-webdriver (~> 4.7.1)
+  selenium-webdriver (~> 4.10.0)
   sentry-rails
   sentry-ruby
   sentry-sidekiq
