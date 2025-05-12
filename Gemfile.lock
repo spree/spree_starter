@@ -279,7 +279,7 @@ GEM
       rexml (>= 3.3.9)
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
-    language_server-protocol (3.17.0.4)
+    language_server-protocol (3.17.0.5)
     launchy (3.1.1)
       addressable (~> 2.8)
       childprocess (~> 5.0)
@@ -439,7 +439,7 @@ GEM
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
-    rbs (3.9.2)
+    rbs (3.9.3)
       logger
     rdoc (6.13.1)
       psych (>= 4.0.0)
@@ -508,7 +508,7 @@ GEM
       rubocop-ast (>= 1.38.0, < 2.0)
     rubocop-rspec (2.11.1)
       rubocop (~> 1.19)
-    ruby-lsp (0.23.16)
+    ruby-lsp (0.23.17)
       language_server-protocol (~> 3.17.0)
       prism (>= 1.2, < 2.0)
       rbs (>= 3, < 4)
@@ -591,7 +591,7 @@ GEM
     solargraph-rails (1.1.0)
       activesupport
       solargraph
-    sorbet-runtime (0.5.12067)
+    sorbet-runtime (0.5.12087)
     spree (5.0.3)
       spree_api (= 5.0.3)
       spree_cli (= 5.0.3)
