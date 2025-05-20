@@ -59,7 +59,7 @@ jobs:
           command: bundle exec rails db:create db:schema:load
       - run:
           name: Precompile assets
-          command: SECRET_KEY_BASE_DUMMY=1 bin/rails assets:precompile
+          command: SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
       - run:
           name: Run Rspec
           command: |
