@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_19_151854) do
+ActiveRecord::Schema[7.2].define(version: 2025_05_20_122340) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -154,6 +154,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_19_151854) do
     t.datetime "updated_at", precision: nil
     t.jsonb "public_metadata"
     t.jsonb "private_metadata"
+    t.string "session_id"
     t.index ["position"], name: "index_spree_assets_on_position"
     t.index ["viewable_id"], name: "index_assets_on_viewable_id"
     t.index ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
@@ -326,6 +327,18 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_19_151854) do
     t.index ["test_mode"], name: "index_spree_gateways_on_test_mode"
   end
 
+  create_table "spree_integrations", force: :cascade do |t|
+    t.bigint "store_id", null: false
+    t.string "type", null: false
+    t.text "preferences"
+    t.boolean "active", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["active"], name: "index_spree_integrations_on_active"
+    t.index ["store_id"], name: "index_spree_integrations_on_store_id"
+    t.index ["type"], name: "index_spree_integrations_on_type"
+  end
+
   create_table "spree_inventory_units", force: :cascade do |t|
     t.string "state"
     t.bigint "variant_id"
@@ -342,6 +355,33 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_19_151854) do
     t.index ["original_return_item_id"], name: "index_spree_inventory_units_on_original_return_item_id"
     t.index ["shipment_id"], name: "index_inventory_units_on_shipment_id"
     t.index ["variant_id"], name: "index_inventory_units_on_variant_id"
+  end
+
+  create_table "spree_invitations", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "token", null: false
+    t.string "status", null: false
+    t.string "resource_type", null: false
+    t.bigint "resource_id", null: false
+    t.string "inviter_type", null: false
+    t.bigint "inviter_id", null: false
+    t.string "invitee_type"
+    t.bigint "invitee_id"
+    t.bigint "role_id", null: false
+    t.datetime "accepted_at"
+    t.datetime "expires_at"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deleted_at"], name: "index_spree_invitations_on_deleted_at"
+    t.index ["email"], name: "index_spree_invitations_on_email"
+    t.index ["expires_at"], name: "index_spree_invitations_on_expires_at"
+    t.index ["invitee_type", "invitee_id"], name: "index_spree_invitations_on_invitee"
+    t.index ["inviter_type", "inviter_id"], name: "index_spree_invitations_on_inviter"
+    t.index ["resource_type", "resource_id"], name: "index_spree_invitations_on_resource"
+    t.index ["role_id"], name: "index_spree_invitations_on_role_id"
+    t.index ["status"], name: "index_spree_invitations_on_status"
+    t.index ["token"], name: "index_spree_invitations_on_token", unique: true
   end
 
   create_table "spree_line_items", force: :cascade do |t|
@@ -1152,6 +1192,12 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_19_151854) do
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.string "user_type", null: false
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.bigint "invitation_id"
+    t.index ["invitation_id"], name: "index_spree_role_users_on_invitation_id"
+    t.index ["resource_id", "resource_type", "user_id", "user_type", "role_id"], name: "idx_on_resource_id_resource_type_user_id_user_type__5600304ec6", unique: true
+    t.index ["resource_type", "resource_id"], name: "index_spree_role_users_on_resource"
     t.index ["role_id"], name: "index_spree_role_users_on_role_id"
     t.index ["user_id"], name: "index_spree_role_users_on_user_id"
     t.index ["user_type"], name: "index_spree_role_users_on_user_type"
