@@ -1,21 +1,9 @@
 require "sidekiq/web" # require the web UI
 
 Rails.application.routes.draw do
-  # This line mounts Spree's routes at the root of your application.
-  # This means, any requests to URLs such as /products, will go to
-  # Spree::ProductsController.
-  # If you would like to change where this engine is mounted, simply change the
-  # :at option to something different.
-  #
-  # We ask that you don't use the :as option here, as Spree relies on it being
-  # the default of "spree".
-  mount Spree::Core::Engine, at: '/'
-
-  # Fix Devise for Storefront to utilize translations
-  Spree::Core::Engine.routes.draw do
+  Spree::Core::Engine.add_routes do
     # Storefront routes
     scope '(:locale)', locale: /#{Spree.available_locales.join('|')}/, defaults: { locale: nil } do
-      # Authentication with Devise
       devise_for(
         Spree.user_class.model_name.singular_route_key,
         class_name: Spree.user_class.to_s,
@@ -29,6 +17,15 @@ Rails.application.routes.draw do
       )
     end
   end
+  # This line mounts Spree's routes at the root of your application.
+  # This means, any requests to URLs such as /products, will go to
+  # Spree::ProductsController.
+  # If you would like to change where this engine is mounted, simply change the
+  # :at option to something different.
+  #
+  # We ask that you don't use the :as option here, as Spree relies on it being
+  # the default of "spree".
+  mount Spree::Core::Engine, at: '/'
 
   mount Sidekiq::Web => "/sidekiq" # access it at http://localhost:3000/sidekiq
 
