@@ -8,6 +8,7 @@ This starter uses:
 
 * **[Spree Commerce 5](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/)**, the biggest release ever, which includes Admin Dashboard, API and Storefront - everything you need to start developing your new eCommerce application/store/marketeplace
 * Stripe for payment processing, thanks to the official [Spree Stripe gem](https://github.com/spree/spree_stripe)
+* Google Analytics 4 integration, thanks to the official [Spree Google Analytics gem](https://github.com/spree/spree_google_analytics)
 * [Devise](https://github.com/heartcombo/devise) for authentication
 * [Sidekiq](https://github.com/mperham/sidekiq) for background jobs
 * PostgreSQL as a database
