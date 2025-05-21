@@ -2,43 +2,6 @@
 
 This is a technical assessment for Quality Engineering using Spree Commerce platform, Playwright, TypeScript, and Docker. 
 
-## To run Playwright tests locally 
-1. Clone the repository 
-```
-git clone https://github.com/spree/spree_starter.git
-```
-2. Go to the repository directory:
-``` 
-cd spree_starter
-```
-3. Follow the Local Installation Guide below 
-
-4. Go to the Playwright directory
-```
-cd playwright
-```
-5. Install Playwright dependencies
-``` 
-npm install
-```  
-6. Run Playwright test in normal headless mode:
-  ```
-  npx playwright test
-  ```
-7. Run Playwright in the UI mode: 
-  ```
-  npx playwright test --ui
-  ```
-8. Run Playwright in the debug mode:
-  ```
-  npx playwright test --debug
-  ```
-9. Run a specific Playwright spec file:
-  ```
-  npx playwright test file-name.spec.ts
-  ```
-
-
 ## Playwright Framework 
 
 The Playwright testing framework project is still work-in-progress, it is NOT 100% complete. The project was started to demonstrate understanding of the following Playwright features:
@@ -77,6 +40,41 @@ The Playwright testing framework project is still work-in-progress, it is NOT 10
 
 - Reporting is very minimal and is also not fully complete.
 
+## To run Playwright tests locally 
+1. Clone the repository 
+```
+git clone https://github.com/spree/spree_starter.git
+```
+2. Go to the repository directory:
+``` 
+cd spree_starter
+```
+3. Follow the Local Installation Guide below 
+
+4. Go to the Playwright directory
+```
+cd playwright
+```
+5. Install Playwright dependencies
+``` 
+npm install
+```  
+6. Run Playwright test in normal headless mode:
+  ```
+  npx playwright test
+  ```
+7. Run Playwright in the UI mode: 
+  ```
+  npx playwright test --ui
+  ```
+8. Run Playwright in the debug mode:
+  ```
+  npx playwright test --debug
+  ```
+9. Run a specific Playwright spec file:
+  ```
+  npx playwright test file-name.spec.ts
+  ```
 
 ## About Spree Commerce
 
