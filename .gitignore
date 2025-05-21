@@ -45,3 +45,14 @@
 .env.development
 .env.test
 .env.production
+/playwright/.env
+
+# Playwright
+/playwright/node_modules/
+/playwright/test-results/
+/playwright/playwright-report/
+/playwright/blob-report/
+/playwright/playwright/.cache/
+/playwright/.auth
+/playwright/storage
+/playwright/screenshots

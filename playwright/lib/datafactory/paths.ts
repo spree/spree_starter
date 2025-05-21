@@ -1,0 +1,17 @@
+export default {
+  home: '/',
+  products: '/products',
+  onSale: '/t/collections/on-sale',
+  newArrivals: 't/collections/new-arrivals',
+  blog: '/blog',
+  account: '/account',
+  orders: '/account/orders',
+  addresses: '/account/addresses',
+  personalDetail: '/account/profile/edit',
+  wishlist: '/account/wishlist',
+  credits: '/account/store_credits',
+  newsletter: '/account/newsletter/edit',
+  cart: '/cart',
+  checkout: '/checkout',
+  login: '/users/sign_in',
+};

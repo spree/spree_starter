@@ -1,0 +1,110 @@
+name: E2E Tests
+
+on:
+  push:
+    branches: 
+        - main
+  pull_request:
+    branches: 
+        - main
+
+jobs:
+  static-analysis:
+    name: Static Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: './playwright/package-lock.json'
+      
+      - name: Install dependencies
+        working-directory: ./playwright
+        run: npm ci
+      
+      - name: Check formatting with Prettier
+        working-directory: ./playwright
+        run: npx prettier --check './**/*.ts'
+      
+      - name: Run ESLint
+        working-directory: ./playwright
+        run: npx eslint . --ext .js,.ts
+
+      - name: Type check
+        working-directory: ./playwright
+        run: npm run type-check          
+
+  playwright:
+    name: Playwright Tests
+    runs-on: ubuntu-latest
+    needs: static-analysis
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Start database services
+        env:
+          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
+        run: |
+          docker compose -f docker-compose-test.yml up -d postgres postgres_queue redis
+      
+      - name: Wait for database services
+        run: |
+          echo "Waiting for database services..."
+          sleep 10
+      
+      - name: Start worker service
+        env:
+          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
+        run: |
+          docker compose -f docker-compose-test.yml up -d worker    
+
+      - name: Start web service
+        env:
+          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
+        run: |
+          docker compose -f docker-compose-test.yml up -d web
+      
+      - name: Wait for web service
+        run: |
+          echo "Waiting for web service to be ready..."
+          timeout 120 bash -c 'until curl -s http://localhost:3000 > /dev/null; do sleep 5; echo "Still waiting..."; done'
+          echo "Web service is ready"
+      - name: Load sample data
+        env:
+          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
+        run: |
+          docker compose -f docker-compose-test.yml exec web bin/rake spree_sample:load
+      - name: Run Playwright tests
+        env:
+          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
+        run: |
+          docker compose -f docker-compose-test.yml run playwright
+      
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright/playwright-report/
+          retention-days: 7
+          if-no-files-found: warn
+      
+      - name: Upload Playwright test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-test-results
+          path: playwright/test-results/
+          retention-days: 7
+          if-no-files-found: warn
+      
+      - name: Cleanup
+        if: always()
+        run: |
+          docker compose -f docker-compose-test.yml down -v --remove-orphans

@@ -1,0 +1,122 @@
+services:
+  # Reusing existing database configurations
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - 'postgres_test:/var/lib/postgresql/data'
+    ports:
+      - "5432:5432"
+    networks:
+      - spree_test_network
+
+  postgres_queue:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - 'postgres_queue_test:/var/lib/postgresql/data'
+    ports:
+      - "5433:5432"
+    networks:
+      - spree_test_network
+
+  # Redis for caching/job
+  redis:
+    image: redis:6
+    ports:
+      - "6379:6379"
+    networks:
+      - spree_test_network
+
+  # Building application using the existing Dockerfile
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - RAILS_ENV=test
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      - DB_HOST=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=password
+      - DB_PORT=5432
+      - QUEUE_DB_HOST=postgres_queue
+      - QUEUE_DB_USER=postgres
+      - QUEUE_DB_PASSWORD=password
+      - QUEUE_DB_PORT=5432
+      - REDIS_URL=redis://redis:6379/1
+    ports:
+      - "3000:3000"
+    networks:
+      - spree_test_network
+    depends_on:
+      - postgres
+      - postgres_queue
+      - redis
+    command: >
+      bash -c "
+        bin/rails db:prepare &&
+        bin/rails db:seed &&
+        bin/rails log:clear tmp:clear &&
+        bundle exec puma -C config/puma.rb
+        "
+  #Worker service for background jobs
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - RAILS_ENV=test
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      - DB_HOST=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=password
+      - DB_PORT=5432
+      - QUEUE_DB_HOST=postgres_queue
+      - QUEUE_DB_USER=postgres
+      - QUEUE_DB_PASSWORD=password
+      - QUEUE_DB_PORT=5432
+      - REDIS_URL=redis://redis:6379/1
+    networks:
+      - spree_test_network
+    depends_on:
+      - postgres
+      - postgres_queue
+      - redis
+      - web
+    command: bin/jobs  
+
+  # Playwright testing container
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.52.0-noble
+    working_dir: /app/playwright
+    volumes:
+      - .:/app
+      - playwright-cache:/root/.cache/ms-playwright
+      - ./playwright/playwright-report:/app/playwright/playwright-report
+      - ./playwright/test-results:/app/playwright/test-results
+    environment:
+      - BASE_URL=http://web:3000
+      - CI=true
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+    networks:
+      - spree_test_network
+    depends_on:
+      - web
+    command: >
+      /bin/sh -c "
+        npm ci &&
+        npx playwright test
+        "
+
+networks:
+  spree_test_network:
+
+volumes:
+  postgres_test:
+  postgres_queue_test:
+  playwright-cache:
