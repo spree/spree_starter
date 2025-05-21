@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { test as base, expect } from './instantiate';
 import { HomePage } from '../pages/homePage';
 import { User } from '../types/types';
@@ -41,9 +42,6 @@ export const test = base.extend<AuthenticatedFixtures>({
   authenticatedHomePage: async ({ loginPage, homePage, testUser, context }, use) => {
     await loginPage.goto();
     await loginPage.loginForm.doLogin(testUser);
-    // await homePage.goto();
-    // await homePage.navBar.navToAccount();
-    // await homePage.loginForm.doLogin(testUser);
 
     // Confirm login is successful
     await homePage.loginSuccess();
