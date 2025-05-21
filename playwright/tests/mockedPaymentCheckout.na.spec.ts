@@ -14,7 +14,7 @@ test('checkout flow with mocked payment confirmation', async ({
     if (request.method() === 'POST') {
       await route.fulfill({
         status: 200,
-        contentType: 'text/html',
+        contentType: 'text/html; charset=utf-8',
         body: successResponse,
       });
     } else {
