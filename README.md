@@ -17,19 +17,23 @@ cd spree_starter
 ```
 cd playwright
 ```
-5. Run Playwright test in normal headless mode:
+5. Install Playwright dependencies
+``` 
+npm install
+```  
+6. Run Playwright test in normal headless mode:
   ```
   npx playwright test
   ```
-6. Run Playwright in the UI mode: 
+7. Run Playwright in the UI mode: 
   ```
   npx playwright test --ui
   ```
-7. Run Playwright in the debug mode:
+8. Run Playwright in the debug mode:
   ```
   npx playwright test --debug
   ```
-8. Run a specific Playwright spec file:
+9. Run a specific Playwright spec file:
   ```
   npx playwright test file-name.spec.ts
   ```
@@ -41,15 +45,15 @@ The Playwright testing framework project is still work-in-progress, it is NOT 10
 
 - Page Object Model
 - Component Object Model
-- Playwright fixtures
-- Authentication 
-- API mocking 
+- Playwright custom fixtures to add authenticated state for a page and an api client
+- Authentication via .auth files 
+- Mocking API functionality  
 - API tests with Playwright
-- Test structure
+- Test structure 
 - Test planning
 - Use of TypeScript with Playwright
 
-### Project Structure and Navigation 
+### Playwright Project Navigation 
 - [Playwright directory](https://github.com/dinakazakevich/qe-spree-playwright/tree/main/playwright)
 - Dedicated [README on the Playwright framework and approach](https://github.com/dinakazakevich/qe-spree-playwright/blob/main/playwright/README.md)
 
@@ -57,7 +61,7 @@ The Playwright testing framework project is still work-in-progress, it is NOT 10
 - Using Playwright in a CI pipeline
 - Running Playwright in Docker containers locally and on CI. 
 
-## I implemented in particular:
+### I implemented in particular:
 - the entire Playwright project that lives in the /playwright directory 
 - the [CI pipeline workflow](.github/workflows/e2e-tests.yml) that runs the Playwright tests 
 - [docker-compose-test.yml](docker-compose-test.yml) configuration that is used by the CI pipeline

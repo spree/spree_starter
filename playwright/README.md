@@ -64,14 +64,14 @@ This quality engineering assignment began with a simple goal: design a test fram
 
 Below, I outline the testing priorities for the Spree Commerce platform, focusing on highest-risk areas first based on user traffic, revenue impact, security concerns, and feature complexity. Unfortunately, I ran out of available time to implement all of them but the overview might give you my thinking and approach. Depending on the resources available, either only high-risk or high-risk to medium-risk scenarios could be good candidates for automation. Also things like static code checks can be very beneficial while being very low effort and cost additions.
 
-1. Product Catalog & Discovery (High) <br>
+1. Product Catalog & Discovery (High)  
    **Rationale**: Directly affects revenue by impacting user conversion and referral rates
 
 - Search functionality, category navigation and filtering
 - Product detail page accuracy
 - Non-functional testing: image loading and optimization, performance under load, SEO elements and metadata, mobile responsiveness
 
-2. Payment Processing (Critical) <br>
+2. Payment Processing (Critical)  
    **Rationale**: Core revenue functionality with security implications
 
 - Payment gateway integrations (Stripe, PayPal) mocking gateway service
@@ -79,7 +79,7 @@ Below, I outline the testing priorities for the Spree Commerce platform, focusin
 - Transaction state management including refund and partial payment handling
 - Non-functional testing: concurrent payment stress testing, error recovery scenarios, security of payment data flow
 
-3. Checkout & Order Management (High) <br>
+3. Checkout & Order Management (High)  
    **Rationale**: Order lifecycle directly impacts customer satisfaction and revenue
 
 - Complete checkout flow end-to-end :heavy_check_mark:
@@ -90,7 +90,7 @@ Below, I outline the testing priorities for the Spree Commerce platform, focusin
 - Email notifications
 - Return and exchange processing
 
-4. User Account Management (High) <br>
+4. User Account Management (High)  
    **Rationale**: Affects user retention and repeat purchase behavior
 
 - Registration and authentication :heavy_check_mark:
@@ -101,7 +101,7 @@ Below, I outline the testing priorities for the Spree Commerce platform, focusin
 - Address book management
 - Permission boundaries
 
-5. Admin Operations (Medium) <br>
+5. Admin Operations (Medium)  
    **Rationale**: Impacts operational efficiency and inventory accuracy
 
 - Order processing workflows, inventory and product management 
@@ -111,7 +111,7 @@ Below, I outline the testing priorities for the Spree Commerce platform, focusin
 - Bulk operations handling
 - Dashboard performance
 
-6. Security & Compliance (High) <br>
+6. Security & Compliance (High)  
    **Rationale**: Automated static analysis checks are low effort but high impact
 
 - OWASP Top 10 vulnerability scanning
@@ -122,7 +122,7 @@ Below, I outline the testing priorities for the Spree Commerce platform, focusin
 - XSS prevention
 - Accessibility compliance (WCAG)
 
-7. Localization & International (Low) <br>
+7. Localization & International (Low)  
    **Rationale**: Affects total addressable market (TAM), higher priority for international platforms
 
 - Multi-currency support
@@ -157,13 +157,13 @@ Below, I outline the testing priorities for the Spree Commerce platform, focusin
 
 ## Assignments
 
-**3-5 high priority scenarios**
+### Assignment: 3-5 high priority scenarios
 
 - Authentication and authorization as an admin user vs as non-admin user.
 - Checkout for a guest user
 - Order persistence on the admin-side
 
-**Assignments: API mocking**
+### Assignment: API mocking
 For the API mocking assignment, the task was to automate the full checkout flow using API interactions. I began by experimenting with page.route and page.on methods provided by the Playwright page fixture, attempting to intercept and mock parts of the checkout process using the same APIs the client application relies on.
 
 Early on, I encountered some limitations related to the app’s server-side rendering architecture. This made interception and mocking less straightforward than it might be in purely client-rendered contexts. It raised an interesting question for me: when mocking in such setups, how much of the flow can—or should—be realistically simulated?
@@ -180,16 +180,16 @@ What I’m still sitting with is this: mocking works well when we’re testing h
 
 Curious how others have approached this—especially in SSR contexts where visibility and control over request flow isn’t always straightforward. When is mocking helpful in API testing, and when does it just give the illusion of coverage?
 
-**CI implementation**
+### Assignment: CI implementation
 
 - Disclaimer: One of the tests keeps failing when run by CI, I'm still investigating it, it passes when I run it locally.
 - Both local development testing and CI pipeline testing are covered
 - The approach follows DevOps best practices by automating the test process and integrating with your CI/CD workflow
 
-**Final E2E flow for both local and CI** 
+### Final E2E flow for both local and CI
 ![alt text](lib/localTestRunResults.png)
 
-**Usage of AI in the project\***
+### Usage of AI in the project
 
 I mostly relied on AI when getting familiar with Ruby architecture, I have never worked with a Ruby project so I needed some guidance on what package managers are used, what libraries exist for unit testing, how the gem-based architecture works since I figured most of the logic lived in the parent Spree repository and there was minimal backend logic in the Starter app.
 
@@ -211,43 +211,49 @@ As I've never setup a docker compose instance on a CI, I needed some quick entry
 Act as an experienced DevOps, ramp me up on what options exist for setting up docker containers that run on a CI pipeline.
 ```
 
-**Documentation**
+### Documentation
 For documenting requirements, the projects I've been working on used everything from Notion and Trello to Atlassian Jira and Confluence solutions. I personally lean towards more light-weight options whenever possible so I'd recommend starting with Notion and using a lot of visuals like Whimsical App and/or X-mind mind maps app, diagrams and of course Figma for designs.
 
 For capturing test related information, I believe this kind of READMEs works for automation frameworks, and I love to writes code that is self-explanatory and self documenting. I believe having a single source of truth is a must for any team that wants to be efficient. For capturing test strategies, mind maps and checklists have worked best for me. For test sessions and day-to-day notes, I'm using note-taking apps like Logseq or RoamResearch.
 
-# Running Playwright test against a local instance of the application
+### Running Playwright against a local instance of the app
 
-Explain what other scenarios could be included.
-Explain how you would document the requirements and how to ensure a confident release process.
-Create clear documentation around Playwright, Test Scenarios and anything else you think is relevant.
-This is a technical assessment for Quality Engineering using Spree Commerce platform.
-
-## About Spree Commerce
-
-This project uses [Spree Commerce](https://spreecommerce.org) - the open-source e-commerce platform for Rails. It is a great starting point for any Rails developer to quickly build an e-commerce application.
-
-## Local Installation
-
-Please follow [Spree Quickstart guide](https://spreecommerce.org/docs/developer/getting-started/quickstart) to set up your Spree application using the Spree starter.
-
-After following the above, use the steps below to run Playwright tests against the development instance running locally 
-
+1. Clone the repository 
 ```
-npx playwright test
+git clone https://github.com/spree/spree_starter.git
 ```
+2. Go to the repository directory:
+``` 
+cd spree_starter
+```
+3. Follow [Spree Quickstart guide](https://spreecommerce.org/docs/developer/getting-started/quickstart) to run the local instance of Spree starter app or follow the same steps in the main [README.md](../README.md)
+ 
+4. Go to the Playwright directory
+```
+cd playwright
+```
+5. Install Playwright dependencies
+``` 
+npm install
+```  
+6. Run Playwright test in normal headless mode:
+  ```
+  npx playwright test
+  ```
+7. Run Playwright in the UI mode: 
+  ```
+  npx playwright test --ui
+  ```
+8. Run Playwright in the debug mode:
+  ```
+  npx playwright test --debug
+  ```
+9. Run a specific Playwright spec file:
+  ```
+  npx playwright test file-name.spec.ts
+  ```
 
-To run tests in the playwright UI mode
-```
-npx playwright test --ui 
-```
-
-To run tests in a specific .spec.ts file
-```
-npx playwright test name-of-the-file.spec.ts
-```
-
-To run the new docker-compose-test instance locally
+### Running the new docker-compose-test instance locally
 
 ```bash
 # Start services
@@ -282,28 +288,11 @@ To run the CI locally use;
 ```bash
 brew install act
 act push
-act push
 ```
 
-OR for MacOS
+For MacOS
 
 ```bash
 brew install act
 act push --container-architecture linux/amd6
 ```
-
-## Deployment
-
-Please follow [Deployment guide](https://spreecommerce.org/docs/developer/deployment/render) to quickly deploy your production-ready Spree application.
-
-## Troubleshooting
-
-### libvips error
-
-If you encounter an error like the following:
-
-```bash
-LoadError: Could not open library 'vips.so.42'
-```
-
-Please check that libvips is installed with `vips -v`, and if it is not installed, follow [installation instructions here](https://www.libvips.org/install.html).

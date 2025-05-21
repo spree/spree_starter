@@ -40,7 +40,7 @@ test('abandoned cart scenario', async ({ browser, authenticatedHomePage, product
   const page2 = await reopenedBrowser.newPage();
 
   // Go to homepage and open the cart sidebar
-  await page2.goto('/');
+  await page2.goto('/', { waitUntil: 'networkidle' });
 
   await page2.getByRole('link', { name: 'Cart' }).click();
 
