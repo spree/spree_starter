@@ -54,6 +54,8 @@ test('checkout flow with mocked payment confirmation', async ({
   await checkoutPage.fillPaymentDetail();
   await checkoutPage.page.getByRole('button', { name: 'Pay' }).click();
 
+  await checkoutPage.page.waitForURL('*/**/checkout/**/update/payment');
+
   // Assert that the mocked order confirmation page with 'Strawberry' client name loaded
   await expect(homePage.page.getByText('Thanks Strawberry for your order!')).toBeVisible();
 });
