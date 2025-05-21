@@ -38,9 +38,12 @@ export const test = base.extend<AuthenticatedFixtures>({
     userClient.accessToken = authData.access_token;
     await use(userClient);
   },
-  authenticatedHomePage: async ({ loginPage, homePage, testUser, context }, use) => {
-    await loginPage.goto();
-    await loginPage.loginForm.doLogin(testUser);
+  authenticatedHomePage: async ({ homePage, testUser, context }, use) => {
+    // await loginPage.goto();
+    // await loginPage.loginForm.doLogin(testUser);
+    await homePage.goto();
+    await homePage.navBar.navToAccount();
+    await homePage.loginForm.doLogin(testUser);
 
     // Confirm login is successful
     await homePage.loginSuccess();

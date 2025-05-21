@@ -9,7 +9,7 @@ export class NavigationBar extends PageObject {
   protected readonly onSale: Locator = this.host.getByRole('link', { name: 'On sale' });
   protected readonly newArrivals: Locator = this.host.getByRole('link', { name: 'New arrivals' });
   protected readonly blog: Locator = this.host.getByRole('link', { name: 'Blog' });
-  protected readonly accountIcon: Locator = this.host.getByRole('button').nth(1); // TODO: the element is missing the #id and proper identifiers hence using `.first()`
+  protected readonly accountIcon: Locator = this.host.getByRole('button').nth(1); // TODO: the element is missing the #id and proper identifiers hence using `.nth()`
   protected readonly wishlistIcon: Locator = this.host.locator('#wishlist-icon');
   protected readonly cartIcon: Locator = this.host.getByRole('link', { name: 'Cart' });
 

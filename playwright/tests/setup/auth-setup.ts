@@ -1,8 +1,8 @@
 import { test as setup } from '../../lib/fixtures/authenticate';
 import { generateUser } from '../../lib/datafactory/testData';
 
-const adminFile = '.auth/admin.json';
-const testUserFile = '.auth/user.json';
+const adminFile = 'playwright/.auth/admin.json';
+const testUserFile = 'playwright/.auth/user.json';
 
 setup.describe('admin authentication', () => {
   setup.use({
@@ -12,8 +12,6 @@ setup.describe('admin authentication', () => {
     },
   });
   setup('authenticate as admin, persist session storage', async ({ homePage, testUser }) => {
-    // await loginPage.goto();
-    // await loginPage.loginForm.doLogin(testUser);
     await homePage.goto();
     await homePage.navBar.navToAccount();
     await homePage.loginForm.doLogin(testUser);

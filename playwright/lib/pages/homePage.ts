@@ -1,16 +1,16 @@
-import { expect } from '@playwright/test';
+import { expect, Page as PlaywrightPage } from '@playwright/test';
 import { Page } from './basePage';
 import { messages } from '../datafactory/constants';
-import { Page as PlaywrightPage } from '@playwright/test';
 
 export class HomePage extends Page {
   protected readonly url: string;
+
   constructor(page: PlaywrightPage) {
     super(page);
     this.url = '/';
   }
   async goto() {
-    await this.page.goto(this.url, { waitUntil: 'load' });
+    await this.page.goto(this.url, { waitUntil: 'networkidle' });
   }
 
   async returnToHomePage() {
