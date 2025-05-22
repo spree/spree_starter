@@ -13,7 +13,7 @@ test('checkout flow with mocked payment confirmation', async ({
 }) => {
   // Mock the api call for the final step of the checkout flow
 
-  await checkoutPage.page.route('*/**/checkout/**/update/payment', async (route, request) => {
+  await checkoutPage.page.route('*/**/checkout/**/confirm', async (route, request) => {
     if (request.method() === 'POST') {
       await route.fulfill({
         status: 200,
@@ -57,7 +57,10 @@ test('checkout flow with mocked payment confirmation', async ({
   await checkoutPage.fillPaymentDetail();
   await checkoutPage.page.getByRole('button', { name: 'Pay' }).click();
 
-  await checkoutPage.page.waitForURL('*/**/checkout/**/update/payment');
+  await checkoutPage.fillPaymentDetail();
+  await checkoutPage.page.getByRole('button', { name: 'Pay' }).click();
+
+  await checkoutPage.page.waitForURL('*/**/checkout/**/update/confirm');
 
   // Assert that the mocked order confirmation page with 'Strawberry' client name loaded
   await expect(checkoutPage.page.getByText('Thanks Strawberry for your order!')).toBeVisible();
