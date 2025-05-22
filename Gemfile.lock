@@ -1,94 +1,3 @@
-GIT
-  remote: https://github.com/spree/spree.git
-  revision: 5558a268b11c3656e60b5008300fc0aa7bb6d4b0
-  specs:
-    spree (5.1.0.beta)
-      spree_api (= 5.1.0.beta)
-      spree_cli (= 5.1.0.beta)
-      spree_core (= 5.1.0.beta)
-    spree_admin (5.1.0.beta)
-      active_link_to
-      bootstrap (~> 4.6, >= 4.6.2.1)
-      breadcrumbs_on_rails (~> 4.1)
-      chartkick (~> 5.0)
-      currency_select
-      dartsass-rails (~> 0.5)
-      groupdate (~> 6.2)
-      hightop (~> 0.3)
-      importmap-rails
-      local_time (~> 3.0)
-      mapkick-rb (~> 0.1)
-      payment_icons
-      spree_api (>= 5.1.0.beta)
-      spree_core (>= 5.1.0.beta)
-      sprockets (>= 4.0)
-      stimulus-rails
-      tinymce-rails (~> 6.8.5)
-      turbo-rails
-    spree_api (5.1.0.beta)
-      bcrypt (~> 3.1)
-      doorkeeper (~> 5.3)
-      jsonapi-serializer (~> 2.1)
-      spree_core (= 5.1.0.beta)
-    spree_cli (5.1.0.beta)
-      thor (~> 1.0)
-    spree_core (5.1.0.beta)
-      active_storage_validations (= 1.3.0)
-      activemerchant (~> 1.67)
-      acts-as-taggable-on
-      acts_as_list (>= 0.8)
-      any_ascii (~> 0.3.2)
-      auto_strip_attributes (~> 2.6)
-      awesome_nested_set (~> 3.3, >= 3.3.1)
-      cancancan (~> 3.2)
-      carmen (>= 1.0)
-      countries
-      friendly_id (~> 5.2, >= 5.2.1)
-      friendly_id-mobility (~> 1.0)
-      geocoder
-      highline (>= 2, < 4)
-      image_processing (~> 1.2)
-      kaminari (~> 1.2)
-      mobility (~> 1.2)
-      mobility-actiontext (~> 1.1)
-      mobility-ransack (~> 1.2)
-      monetize (~> 1.9)
-      money (~> 6.13)
-      name_of_person (~> 1.1)
-      paranoia (>= 2.4)
-      rails (>= 7.2, < 8.1)
-      ransack (>= 4.1)
-      request_store (~> 1.7)
-      rexml
-      ruby-oembed (~> 0.18)
-      safely_block (~> 0.4)
-      state_machines-activemodel (~> 0.7)
-      state_machines-activerecord (~> 0.6)
-      stringex
-      tracking_number
-      validates_zipcode
-      wannabe_bool
-    spree_emails (5.1.0.beta)
-      spree_core (>= 5.1.0.beta)
-      sprockets (>= 4.0)
-    spree_sample (5.1.0.beta)
-      ffaker (~> 2.9)
-      spree_core (>= 5.1.0.beta)
-    spree_storefront (5.1.0.beta)
-      active_link_to
-      canonical-rails (~> 0.2.14)
-      heroicon
-      importmap-rails
-      local_time (~> 3.0)
-      mail_form
-      payment_icons
-      spree_core (>= 5.1.0.beta)
-      sprockets (>= 4.0)
-      stimulus-rails
-      tailwindcss-rails
-      tailwindcss-ruby (~> 3.4.17)
-      turbo-rails
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -702,6 +611,75 @@ GEM
       activesupport
       solargraph
     sorbet-runtime (0.5.12123)
+    spree (5.1.0.beta2)
+      spree_api (= 5.1.0.beta2)
+      spree_cli (= 5.1.0.beta2)
+      spree_core (= 5.1.0.beta2)
+    spree_admin (5.1.0.beta2)
+      active_link_to
+      bootstrap (~> 4.6, >= 4.6.2.1)
+      breadcrumbs_on_rails (~> 4.1)
+      chartkick (~> 5.0)
+      currency_select
+      dartsass-rails (~> 0.5)
+      groupdate (~> 6.2)
+      hightop (~> 0.3)
+      importmap-rails
+      local_time (~> 3.0)
+      mapkick-rb (~> 0.1)
+      payment_icons
+      spree_api (>= 5.1.0.beta2)
+      spree_core (>= 5.1.0.beta2)
+      sprockets (>= 4.0)
+      stimulus-rails
+      tinymce-rails (~> 6.8.5)
+      turbo-rails
+    spree_api (5.1.0.beta2)
+      bcrypt (~> 3.1)
+      doorkeeper (~> 5.3)
+      jsonapi-serializer (~> 2.1)
+      spree_core (= 5.1.0.beta2)
+    spree_cli (5.1.0.beta2)
+      thor (~> 1.0)
+    spree_core (5.1.0.beta2)
+      active_storage_validations (= 1.3.0)
+      activemerchant (~> 1.67)
+      acts-as-taggable-on
+      acts_as_list (>= 0.8)
+      any_ascii (~> 0.3.2)
+      auto_strip_attributes (~> 2.6)
+      awesome_nested_set (~> 3.3, >= 3.3.1)
+      cancancan (~> 3.2)
+      carmen (>= 1.0)
+      countries
+      friendly_id (~> 5.2, >= 5.2.1)
+      friendly_id-mobility (~> 1.0)
+      geocoder
+      highline (>= 2, < 4)
+      image_processing (~> 1.2)
+      kaminari (~> 1.2)
+      mobility (~> 1.2)
+      mobility-actiontext (~> 1.1)
+      mobility-ransack (~> 1.2)
+      monetize (~> 1.9)
+      money (~> 6.13)
+      name_of_person (~> 1.1)
+      paranoia (>= 2.4)
+      rails (>= 7.2, < 8.1)
+      ransack (>= 4.1)
+      request_store (~> 1.7)
+      rexml
+      ruby-oembed (~> 0.18)
+      safely_block (~> 0.4)
+      state_machines-activemodel (~> 0.7)
+      state_machines-activerecord (~> 0.6)
+      stringex
+      tracking_number
+      validates_zipcode
+      wannabe_bool
+    spree_emails (5.1.0.beta2)
+      spree_core (>= 5.1.0.beta2)
+      sprockets (>= 4.0)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
@@ -716,6 +694,23 @@ GEM
       rails-i18n
       spree_core (>= 4.2.0.rc3)
       spree_extension
+    spree_sample (5.1.0.beta2)
+      ffaker (~> 2.9)
+      spree_core (>= 5.1.0.beta2)
+    spree_storefront (5.1.0.beta2)
+      active_link_to
+      canonical-rails (~> 0.2.14)
+      heroicon
+      importmap-rails
+      local_time (~> 3.0)
+      mail_form
+      payment_icons
+      spree_core (>= 5.1.0.beta2)
+      sprockets (>= 4.0)
+      stimulus-rails
+      tailwindcss-rails
+      tailwindcss-ruby (~> 3.4.17)
+      turbo-rails
     spree_stripe (1.2.2)
       importmap-rails
       spree (>= 5.0.0.alpha)
@@ -863,13 +858,13 @@ DEPENDENCIES
   simplecov
   solargraph
   solargraph-rails
-  spree!
-  spree_admin!
-  spree_emails!
+  spree (~> 5.1.0.beta)
+  spree_admin (~> 5.1.0.beta)
+  spree_emails (~> 5.1.0.beta)
   spree_google_analytics (~> 1.0)
   spree_i18n
-  spree_sample!
-  spree_storefront!
+  spree_sample (~> 5.1.0.beta)
+  spree_storefront (~> 5.1.0.beta)
   spree_stripe (~> 1.2)
   stimulus-rails
   timecop
