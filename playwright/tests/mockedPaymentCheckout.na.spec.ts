@@ -1,12 +1,15 @@
-import { test, expect } from '../lib/fixtures/instantiate';
+import { test, expect } from '../lib/fixtures/authenticate';
 import { faker } from '@faker-js/faker';
 import { successResponse } from '../lib/datafactory/mockCheckoutConfirmation';
+import { generateUser } from '../lib/datafactory/testData';
 
+const testUser = generateUser();
+test.use({ userParams: testUser });
 test('checkout flow with mocked payment confirmation', async ({
-  homePage,
   productsPage,
   productDetailsPage,
   checkoutPage,
+  authenticatedHomePage,
 }) => {
   // Mock the api call for the final step of the checkout flow
 
@@ -22,7 +25,7 @@ test('checkout flow with mocked payment confirmation', async ({
     }
   });
 
-  await homePage.page.goto('/products');
+  await authenticatedHomePage.page.goto('/products');
 
   // Select a random product
   await productsPage.selectProduct();
@@ -41,7 +44,7 @@ test('checkout flow with mocked payment confirmation', async ({
   await productDetailsPage.cartSidebar.proceedToCheckout();
 
   // Fill out customer email
-  await checkoutPage.fillEmail(faker.internet.email());
+  // await checkoutPage.fillEmail(faker.internet.email());
 
   // Submit shipping address
   await checkoutPage.fillShippingAddress();
@@ -57,5 +60,5 @@ test('checkout flow with mocked payment confirmation', async ({
   await checkoutPage.page.waitForURL('*/**/checkout/**/update/payment');
 
   // Assert that the mocked order confirmation page with 'Strawberry' client name loaded
-  await expect(homePage.page.getByText('Thanks Strawberry for your order!')).toBeVisible();
+  await expect(checkoutPage.page.getByText('Thanks Strawberry for your order!')).toBeVisible();
 });
