@@ -94,7 +94,8 @@ export class UserClient extends BaseApiClient {
   async retrieveCart() {
     const response = await this.get(apiRoutes.storefront.retrieveCart);
     const responseJson = await response.json();
-    this._existingCartObject = responseJson;
+    this.cartToken = responseJson.data.attributes.token;
+    this.existingCartObject = responseJson;
     return responseJson;
   }
 
