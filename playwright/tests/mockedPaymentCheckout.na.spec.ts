@@ -81,6 +81,12 @@ test('checkout flow with mocked payment confirmation', async ({
   await checkoutPage.fillPaymentDetail();
   await checkoutPage.page.getByRole('button', { name: 'Pay' }).click();
 
+  /** There is a known limitation in playwright where it won't intercept redirected URLs.
+   * The Playwright team has confirmed it is "by-design".
+   * Issue https://github.com/microsoft/playwright/issues/3993
+   * Confirmation from the team https://github.com/microsoft/playwright/pull/3994#issuecomment-700980039
+   * Below I'm simulating the behavior if this bug was fixed by explicitly going to the URL and mocking the API response.
+   * */
   await checkoutPage.page.goto('/checkout/${cartToken}/complete');
 
   // Assert that the mocked order confirmation page with 'Strawberry' client name loaded

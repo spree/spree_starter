@@ -1,4 +1,3 @@
-import { FullConfig } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
 
@@ -7,7 +6,7 @@ const CART_STORAGE = path.resolve(__dirname, 'playwright/.auth/cart-session.json
 const ADMIN_SESSION_STORAGE = path.resolve(__dirname, 'playwright/.auth/admin.json');
 const USER_SESSION_STORAGE = path.resolve(__dirname, 'playwright/.auth/user.json');
 
-async function globalTeardown(config: FullConfig) {
+async function globalTeardown() {
   // eslint-disable-next-line no-console
   console.log('Global Teardown: Cleaning up after all tests.');
 
