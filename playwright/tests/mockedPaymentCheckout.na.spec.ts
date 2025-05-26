@@ -2,7 +2,6 @@ import { test, expect } from '../lib/fixtures/instantiate';
 import { successResponse } from '../lib/datafactory/mockCheckoutConfirmation';
 import { generateUser } from '../lib/datafactory/testData';
 import { faker } from '@faker-js/faker';
-import { request } from 'http';
 
 const testUser = generateUser();
 test.use({ userParams: testUser });
@@ -17,12 +16,10 @@ test('checkout flow with mocked payment confirmation', async ({
   await checkoutPage.page.route('*/**/checkout/**/update/confirm', async (route, request) => {
     if (request.method() === 'POST') {
       const cartURL = checkoutPage.page.url();
-      console.log('cartURL:', cartURL);
       const cartTokenArray = cartURL.split('/');
       cartToken = cartTokenArray[cartTokenArray.length - 2];
 
       // await authenticatedUserClient.retrieveCart();
-      console.log('cartToken:', cartToken);
       await route.fulfill({
         status: 302,
         contentType: 'text/html',
@@ -37,10 +34,7 @@ test('checkout flow with mocked payment confirmation', async ({
   });
 
   // Mock the api call for the final step of the checkout flow
-  await checkoutPage.page.route('*/**/checkout/**/complete', async (route, request) => {
-    const originalResponse = await route.fetch();
-    console.log('FETCHED>>>>:', true);
-    // let body = await originalResponse.text();
+  await checkoutPage.page.route('*/**/checkout/**/complete', async (route) => {
     const cartURL = checkoutPage.page.url();
     // console.log('cartURL:', cartURL);
     const cartTokenArray = cartURL.split('/');
@@ -83,18 +77,6 @@ test('checkout flow with mocked payment confirmation', async ({
   // Submit in payment details
   await checkoutPage.fillPaymentDetail();
   await checkoutPage.page.getByRole('button', { name: 'Pay' }).click();
-  // await checkoutPage.page.waitForURL('**/checkout/**/confirm');
-
-  // await checkoutPage.page.waitForLoadState('networkidle');
-
-  checkoutPage.page.on('request', (request) => {
-    console.log('Request URL:', request.url());
-    console.log('Method:', request.method());
-  });
-
-  checkoutPage.page.on('response', (response) => {
-    console.log('Response Status:', response.status());
-  });
 
   await checkoutPage.fillPaymentDetail();
   await checkoutPage.page.getByRole('button', { name: 'Pay' }).click();
