@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_20_122340) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_29_102145) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -1353,6 +1353,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_20_122340) do
     t.boolean "propagate_all_variants", default: false
     t.string "admin_name"
     t.datetime "deleted_at", precision: nil
+    t.string "company"
     t.index ["active"], name: "index_spree_stock_locations_on_active"
     t.index ["backorderable_default"], name: "index_spree_stock_locations_on_backorderable_default"
     t.index ["country_id"], name: "index_spree_stock_locations_on_country_id"
