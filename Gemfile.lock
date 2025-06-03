@@ -200,6 +200,7 @@ GEM
     ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
     ffi (1.17.2-x86_64-linux-musl)
+    foreman (0.88.1)
     friendly_id (5.4.2)
       activerecord (>= 4.0.0)
     friendly_id-mobility (1.0.4)
@@ -832,6 +833,7 @@ DEPENDENCIES
   email_spec
   factory_bot
   factory_bot_rails
+  foreman
   image_processing (~> 1.13)
   importmap-rails
   jbuilder
