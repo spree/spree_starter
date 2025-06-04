@@ -57,6 +57,8 @@ Rails.application.configure do
       write_timeout:      0.2, # Defaults to 1 second
       reconnect_attempts: 2,   # Defaults to 1
     }
+  else
+    config.cache_store = :memory_store
   end
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
