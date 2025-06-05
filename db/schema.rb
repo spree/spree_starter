@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_29_102145) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_05_101817) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -732,6 +732,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_29_102145) do
     t.index ["order_id"], name: "index_spree_payments_on_order_id"
     t.index ["payment_method_id"], name: "index_spree_payments_on_payment_method_id"
     t.index ["source_id", "source_type"], name: "index_spree_payments_on_source_id_and_source_type"
+  end
+
+  create_table "spree_paypal_checkout_orders", force: :cascade do |t|
+    t.bigint "order_id", null: false
+    t.bigint "payment_method_id", null: false
+    t.string "paypal_id", null: false
+    t.decimal "amount", precision: 10, scale: 2, null: false
+    t.jsonb "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id", "paypal_id"], name: "index_spree_paypal_checkout_orders_on_order_id_and_paypal_id", unique: true
+    t.index ["order_id"], name: "index_spree_paypal_checkout_orders_on_order_id"
+    t.index ["payment_method_id"], name: "index_spree_paypal_checkout_orders_on_payment_method_id"
   end
 
   create_table "spree_post_categories", force: :cascade do |t|

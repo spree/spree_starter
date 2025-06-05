@@ -124,3 +124,5 @@ gem "spree_i18n"
 gem 'sentry-ruby'
 gem 'sentry-rails'
 gem 'sentry-sidekiq'
+
+gem "spree_paypal_checkout", "~> 0.5.2"
