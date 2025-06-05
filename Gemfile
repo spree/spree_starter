@@ -108,6 +108,11 @@ gem 'sidekiq'
 # Use Devise for authentication
 gem "devise"
 
+# Sentry for error/performance monitoring
+gem 'sentry-ruby'
+gem 'sentry-rails'
+gem 'sentry-sidekiq'
+
 # Spree gems
 spree_opts = '~> 5.1.0.beta'
 gem "spree", spree_opts
@@ -115,12 +120,8 @@ gem "spree_emails", spree_opts
 gem "spree_sample", spree_opts
 gem "spree_admin", spree_opts
 gem "spree_storefront", spree_opts
+gem "spree_i18n"
 gem "spree_stripe", '~> 1.2'
 gem "spree_google_analytics", "~> 1.0"
 gem "spree_klaviyo", "~> 1.0"
-gem "spree_i18n"
-
-# Sentry for error/performance monitoring
-gem 'sentry-ruby'
-gem 'sentry-rails'
-gem 'sentry-sidekiq'
+gem "spree_paypal_checkout", "~> 0.5"
