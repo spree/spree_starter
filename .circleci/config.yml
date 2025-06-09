@@ -64,7 +64,7 @@ jobs:
           name: Run Rspec
           command: |
             mkdir -p /tmp/test-results
-            circleci tests glob "spec/**/*_spec.rb" | circleci tests run --command="xargs bundle exec rspec --format progress --format RspecJunitFormatter -o /tmp/test-results/rspec.xml" --verbose --split-by=timings
+            circleci tests glob "spec/**/*_spec.rb" | circleci tests run --command="xargs bundle exec rspec --format documentation --format RspecJunitFormatter -o /tmp/test-results/rspec.xml" --verbose --split-by=timings
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
