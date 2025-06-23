@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_05_101817) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_23_212019) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+  enable_extension "pg_trgm"
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -1760,6 +1761,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_05_101817) do
     t.boolean "accepts_email_marketing", default: false, null: false
     t.string "spree_api_key", limit: 48
     t.index ["accepts_email_marketing"], name: "index_spree_users_on_accepts_email_marketing"
+    t.index ["bill_address_id"], name: "index_spree_users_on_bill_address_id"
+    t.index ["ship_address_id"], name: "index_spree_users_on_ship_address_id"
     t.index ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
   end
 
