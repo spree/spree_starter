@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_23_212019) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_02_154146) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -328,6 +328,45 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_23_212019) do
     t.index ["test_mode"], name: "index_spree_gateways_on_test_mode"
   end
 
+  create_table "spree_gift_card_batches", force: :cascade do |t|
+    t.bigint "store_id", null: false
+    t.bigint "created_by_id"
+    t.integer "codes_count", default: 1, null: false
+    t.decimal "amount", precision: 10, scale: 2, null: false
+    t.string "currency", null: false
+    t.string "prefix"
+    t.date "expires_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["created_by_id"], name: "index_spree_gift_card_batches_on_created_by_id"
+    t.index ["store_id"], name: "index_spree_gift_card_batches_on_store_id"
+  end
+
+  create_table "spree_gift_cards", force: :cascade do |t|
+    t.bigint "store_id", null: false
+    t.bigint "user_id"
+    t.bigint "gift_card_batch_id"
+    t.bigint "created_by_id"
+    t.string "code", null: false
+    t.string "state", null: false
+    t.decimal "amount", precision: 10, scale: 2, null: false
+    t.decimal "amount_authorized", precision: 10, scale: 2, default: "0.0", null: false
+    t.decimal "amount_used", precision: 10, scale: 2, default: "0.0", null: false
+    t.string "currency", null: false
+    t.date "expires_at"
+    t.datetime "redeemed_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_spree_gift_cards_on_code", unique: true
+    t.index ["created_by_id"], name: "index_spree_gift_cards_on_created_by_id"
+    t.index ["expires_at"], name: "index_spree_gift_cards_on_expires_at"
+    t.index ["gift_card_batch_id"], name: "index_spree_gift_cards_on_gift_card_batch_id"
+    t.index ["redeemed_at"], name: "index_spree_gift_cards_on_redeemed_at"
+    t.index ["state"], name: "index_spree_gift_cards_on_state"
+    t.index ["store_id"], name: "index_spree_gift_cards_on_store_id"
+    t.index ["user_id"], name: "index_spree_gift_cards_on_user_id"
+  end
+
   create_table "spree_integrations", force: :cascade do |t|
     t.bigint "store_id", null: false
     t.string "type", null: false
@@ -584,6 +623,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_23_212019) do
     t.text "internal_note"
     t.boolean "accept_marketing", default: false
     t.boolean "signup_for_an_account", default: false
+    t.bigint "gift_card_id"
     t.index ["approver_id"], name: "index_spree_orders_on_approver_id"
     t.index ["bill_address_id"], name: "index_spree_orders_on_bill_address_id"
     t.index ["canceler_id"], name: "index_spree_orders_on_canceler_id"
@@ -591,6 +631,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_23_212019) do
     t.index ["confirmation_delivered"], name: "index_spree_orders_on_confirmation_delivered"
     t.index ["considered_risky"], name: "index_spree_orders_on_considered_risky"
     t.index ["created_by_id"], name: "index_spree_orders_on_created_by_id"
+    t.index ["gift_card_id"], name: "index_spree_orders_on_gift_card_id"
     t.index ["number"], name: "index_spree_orders_on_number", unique: true
     t.index ["ship_address_id"], name: "index_spree_orders_on_ship_address_id"
     t.index ["store_id"], name: "index_spree_orders_on_store_id"
