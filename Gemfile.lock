@@ -659,7 +659,7 @@ GEM
     solargraph-rails (1.2.0)
       activesupport
       solargraph (= 0.56.0)
-    sorbet-runtime (0.5.12216)
+    sorbet-runtime (0.5.12219)
     spree (5.1.0)
       spree_api (= 5.1.0)
       spree_cli (= 5.1.0)
