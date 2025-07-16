@@ -200,7 +200,7 @@ GEM
       htmlentities (~> 4.3.3)
       launchy (>= 2.1, < 4.0)
       mail (~> 2.7)
-    erb (5.0.1)
+    erb (5.0.2)
     erubi (1.13.1)
     execjs (2.10.0)
     factory_bot (6.5.4)
@@ -292,7 +292,7 @@ GEM
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
-    io-console (0.8.0)
+    io-console (0.8.1)
     irb (1.15.2)
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
@@ -504,7 +504,7 @@ GEM
       psych (>= 4.0.0)
     redis (5.4.0)
       redis-client (>= 0.22.0)
-    redis-client (0.25.0)
+    redis-client (0.25.1)
       connection_pool
     regexp_parser (2.10.0)
     reline (0.6.1)
@@ -658,7 +658,7 @@ GEM
     solargraph-rails (1.2.0)
       activesupport
       solargraph (= 0.56.0)
-    sorbet-runtime (0.5.12222)
+    sorbet-runtime (0.5.12225)
     spree (5.1.2)
       spree_api (= 5.1.2)
       spree_cli (= 5.1.2)
@@ -771,7 +771,7 @@ GEM
       tailwindcss-rails
       tailwindcss-ruby (~> 3.4.17)
       turbo-rails
-    spree_stripe (1.2.5)
+    spree_stripe (1.2.6)
       importmap-rails
       spree (>= 5.0.0.alpha)
       spree_admin (>= 5.0.0.alpha)
