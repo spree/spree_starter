@@ -16,6 +16,19 @@ Rails.application.routes.draw do
         router_name: :spree
       )
     end
+
+    # Admin authentication
+    devise_for(
+      Spree.admin_user_class.model_name.singular_route_key,
+      class_name: Spree.admin_user_class.to_s,
+      controllers: {
+        sessions: 'spree/admin/user_sessions',
+        passwords: 'spree/admin/user_passwords'
+      },
+      skip: :registrations,
+      path: :admin_user,
+      router_name: :spree
+    )
   end
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to
