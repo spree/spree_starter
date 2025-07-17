@@ -1,7 +1,6 @@
 require "sidekiq/web" # require the web UI
 
 Rails.application.routes.draw do
-  devise_for :admin_users, class_name: "Spree::AdminUser"
   Spree::Core::Engine.add_routes do
     # Storefront routes
     scope '(:locale)', locale: /#{Spree.available_locales.join('|')}/, defaults: { locale: nil } do
