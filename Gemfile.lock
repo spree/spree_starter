@@ -428,7 +428,7 @@ GEM
       apimatic_core_interfaces (~> 0.2.1)
       apimatic_faraday_client_adapter (~> 0.1.4)
     pg (1.5.9)
-    phonelib (0.10.10)
+    phonelib (0.10.11)
     popper_js (1.16.1)
     pp (0.6.2)
       prettyprint
@@ -770,7 +770,7 @@ GEM
       tailwindcss-rails
       tailwindcss-ruby (~> 3.4.17)
       turbo-rails
-    spree_stripe (1.2.6)
+    spree_stripe (1.2.7)
       importmap-rails
       spree (>= 5.0.0.alpha)
       spree_admin (>= 5.0.0.alpha)
@@ -929,7 +929,7 @@ DEPENDENCIES
   spree_paypal_checkout (~> 0.5)
   spree_sample (~> 5.1)
   spree_storefront (~> 5.1)
-  spree_stripe (~> 1.2)
+  spree_stripe
   stimulus-rails
   timecop
   turbo-rails
