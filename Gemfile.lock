@@ -208,7 +208,7 @@ GEM
     factory_bot_rails (6.5.0)
       factory_bot (~> 6.5)
       railties (>= 6.1.0)
-    faraday (2.13.3)
+    faraday (2.13.4)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
@@ -416,7 +416,7 @@ GEM
     parallel (1.27.0)
     paranoia (3.0.1)
       activerecord (>= 6, < 8.1)
-    parser (3.3.8.0)
+    parser (3.3.9.0)
       ast (~> 2.4.1)
       racc
     payment_icons (1.7.56)
@@ -770,7 +770,7 @@ GEM
       tailwindcss-rails
       tailwindcss-ruby (~> 3.4.17)
       turbo-rails
-    spree_stripe (1.2.7)
+    spree_stripe (1.2.8)
       importmap-rails
       spree (>= 5.0.0.alpha)
       spree_admin (>= 5.0.0.alpha)
@@ -786,7 +786,7 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    state_machines (0.100.0)
+    state_machines (0.100.1)
     state_machines-activemodel (0.100.0)
       activemodel (>= 7.2)
       state_machines (>= 0.100.0)
