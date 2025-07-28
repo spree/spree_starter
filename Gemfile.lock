@@ -427,7 +427,11 @@ GEM
       apimatic_core (~> 0.3.11)
       apimatic_core_interfaces (~> 0.2.1)
       apimatic_faraday_client_adapter (~> 0.1.4)
-    pg (1.5.9)
+    pg (1.6.0)
+    pg (1.6.0-aarch64-linux)
+    pg (1.6.0-arm64-darwin)
+    pg (1.6.0-x86_64-darwin)
+    pg (1.6.0-x86_64-linux)
     phonelib (0.10.11)
     popper_js (1.16.1)
     pp (0.6.2)
@@ -895,7 +899,7 @@ DEPENDENCIES
   jsonapi-rspec
   letter_opener
   mini_racer
-  pg (~> 1.1)
+  pg (~> 1.6)
   pry
   pry-remote
   puma (>= 5.0)
