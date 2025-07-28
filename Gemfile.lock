@@ -301,7 +301,7 @@ GEM
     jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    json (2.13.1)
+    json (2.13.2)
     jsonapi-rspec (0.0.11)
       rspec-core
       rspec-expectations
@@ -742,7 +742,7 @@ GEM
       rails-i18n
       spree_core (>= 4.2.0.rc3)
       spree_extension
-    spree_klaviyo (1.0.1)
+    spree_klaviyo (1.0.2)
       spree (>= 5.1.0.beta2)
       spree_admin (>= 5.1.0.beta2)
       spree_extension
@@ -813,7 +813,7 @@ GEM
     tilt (2.6.1)
     timecop (0.9.10)
     timeout (0.4.3)
-    tinymce-rails (6.8.5)
+    tinymce-rails (6.8.6.1)
       railties (>= 3.1.1)
     tracking_number (2.2.0)
       activesupport (>= 4.2.5)
