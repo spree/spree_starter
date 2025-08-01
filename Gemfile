@@ -83,23 +83,8 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 3.39'
-  gem 'capybara-screenshot', '~> 1.0'
-  gem 'email_spec'
-  gem 'factory_bot'
-  gem 'factory_bot_rails'
-  gem 'database_cleaner'
-  gem 'rspec-activemodel-mocks', '~> 1.0'
-  gem 'rspec-rails', '~> 8.0'
-  gem 'rspec-retry'
-  gem 'rspec_junit_formatter'
-  gem 'rubocop-rspec'
-  gem 'jsonapi-rspec'
-  gem 'simplecov'
-  gem 'webmock', '~> 3.7', require: false
-  gem 'timecop'
+  gem 'spree_dev_tools'
   gem 'rails-controller-testing'
-  gem 'webdrivers', '~> 5.0'
 end
 
 # Use Sidekiq for background jobs
