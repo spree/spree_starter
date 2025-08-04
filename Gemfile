@@ -53,7 +53,7 @@ group :development, :test do
   gem 'rubocop', '~> 1.23'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
-  gem 'selenium-webdriver', '~> 4.10.0'
+  gem 'selenium-webdriver', '~> 4.34.0'
 
   # monitoring
   gem 'pry'
