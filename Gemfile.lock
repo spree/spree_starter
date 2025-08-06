@@ -116,7 +116,7 @@ GEM
       rake
       thor (>= 0.14.0)
     ast (2.4.3)
-    async (2.27.0)
+    async (2.27.2)
       console (~> 1.29)
       fiber-annotation
       io-event (~> 1.11)
@@ -608,7 +608,7 @@ GEM
     rspec-support (3.13.4)
     rspec_junit_formatter (0.6.0)
       rspec-core (>= 2, < 4, != 2.12.0)
-    rubocop (1.79.1)
+    rubocop (1.79.2)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -645,21 +645,21 @@ GEM
       logger
     rubyzip (2.4.1)
     safely_block (0.5.0)
-    sass-embedded (1.89.2-aarch64-linux-gnu)
+    sass-embedded (1.90.0-aarch64-linux-gnu)
       google-protobuf (~> 4.31)
-    sass-embedded (1.89.2-aarch64-linux-musl)
+    sass-embedded (1.90.0-aarch64-linux-musl)
       google-protobuf (~> 4.31)
-    sass-embedded (1.89.2-arm-linux-gnueabihf)
+    sass-embedded (1.90.0-arm-linux-gnueabihf)
       google-protobuf (~> 4.31)
-    sass-embedded (1.89.2-arm-linux-musleabihf)
+    sass-embedded (1.90.0-arm-linux-musleabihf)
       google-protobuf (~> 4.31)
-    sass-embedded (1.89.2-arm64-darwin)
+    sass-embedded (1.90.0-arm64-darwin)
       google-protobuf (~> 4.31)
-    sass-embedded (1.89.2-x86_64-darwin)
+    sass-embedded (1.90.0-x86_64-darwin)
       google-protobuf (~> 4.31)
-    sass-embedded (1.89.2-x86_64-linux-gnu)
+    sass-embedded (1.90.0-x86_64-linux-gnu)
       google-protobuf (~> 4.31)
-    sass-embedded (1.89.2-x86_64-linux-musl)
+    sass-embedded (1.90.0-x86_64-linux-musl)
       google-protobuf (~> 4.31)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -725,11 +725,11 @@ GEM
     solargraph-rails (1.2.0)
       activesupport
       solargraph (= 0.56.0)
-    spree (5.1.4)
-      spree_api (= 5.1.4)
-      spree_cli (= 5.1.4)
-      spree_core (= 5.1.4)
-    spree_admin (5.1.4)
+    spree (5.1.5)
+      spree_api (= 5.1.5)
+      spree_cli (= 5.1.5)
+      spree_core (= 5.1.5)
+    spree_admin (5.1.5)
       active_link_to
       bootstrap (~> 4.6, >= 4.6.2.1)
       breadcrumbs_on_rails (~> 4.1)
@@ -742,20 +742,20 @@ GEM
       local_time (~> 3.0)
       mapkick-rb (~> 0.1)
       payment_icons
-      spree_api (>= 5.1.4)
-      spree_core (>= 5.1.4)
+      spree_api (>= 5.1.5)
+      spree_core (>= 5.1.5)
       sprockets (>= 4.0)
       stimulus-rails
       tinymce-rails (~> 6.8.5)
       turbo-rails
-    spree_api (5.1.4)
+    spree_api (5.1.5)
       bcrypt (~> 3.1)
       doorkeeper (~> 5.3)
       jsonapi-serializer (~> 2.1)
-      spree_core (= 5.1.4)
-    spree_cli (5.1.4)
+      spree_core (= 5.1.5)
+    spree_cli (5.1.5)
       thor (~> 1.0)
-    spree_core (5.1.4)
+    spree_core (5.1.5)
       active_storage_validations (= 1.3.0)
       activemerchant (~> 1.67)
       acts-as-taggable-on
@@ -822,8 +822,8 @@ GEM
       spree (>= 5.0)
       timecop
       webdrivers
-    spree_emails (5.1.4)
-      spree_core (>= 5.1.4)
+    spree_emails (5.1.5)
+      spree_core (>= 5.1.5)
       sprockets (>= 4.0)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
@@ -850,10 +850,10 @@ GEM
       spree_admin (>= 5.1.0.beta4)
       spree_extension
       spree_storefront (>= 5.1.0.beta4)
-    spree_sample (5.1.4)
+    spree_sample (5.1.5)
       ffaker (~> 2.9)
-      spree_core (>= 5.1.4)
-    spree_storefront (5.1.4)
+      spree_core (>= 5.1.5)
+    spree_storefront (5.1.5)
       active_link_to
       canonical-rails (~> 0.2.14)
       heroicon
@@ -861,7 +861,7 @@ GEM
       local_time (~> 3.0)
       mail_form
       payment_icons
-      spree_core (>= 5.1.4)
+      spree_core (>= 5.1.5)
       sprockets (>= 4.0)
       stimulus-rails
       tailwindcss-rails
