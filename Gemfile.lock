@@ -995,7 +995,6 @@ DEPENDENCIES
   rubocop-rails
   ruby-lsp
   ruby-lsp-rails
-  selenium-webdriver (~> 4.10.0)
   sentry-rails
   sentry-ruby
   sentry-sidekiq
