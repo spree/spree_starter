@@ -163,8 +163,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_02_154146) do
     t.string "last_name"
     t.string "selected_locale"
     t.string "login"
-    t.json "public_metadata"
-    t.json "private_metadata"
+    t.jsonb "public_metadata"
+    t.jsonb "private_metadata"
     t.index ["confirmation_token"], name: "index_spree_admin_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_spree_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_spree_admin_users_on_reset_password_token", unique: true
