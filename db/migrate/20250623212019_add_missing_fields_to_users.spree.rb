@@ -7,29 +7,29 @@ class AddMissingFieldsToUsers < ActiveRecord::Migration[7.2]
     admin_users_table = Spree.admin_user_class.table_name
 
     change_table users_table do |t|
-      add_column users_table, :login, :string, if_not_exists: true
+      t.string :login unless column_exists?(users_table, :login)
 
       if t.respond_to? :jsonb
-        add_column users_table, :public_metadata, :jsonb, if_not_exists: true
-        add_column users_table, :private_metadata, :jsonb, if_not_exists: true
+        t.jsonb :public_metadata unless column_exists?(users_table, :public_metadata)
+        t.jsonb :private_metadata unless column_exists?(users_table, :private_metadata)
       else
-        add_column users_table, :public_metadata, :json, if_not_exists: true
-        add_column users_table, :private_metadata, :json, if_not_exists: true
+        t.json :public_metadata unless column_exists?(users_table, :public_metadata)
+        t.json :private_metadata unless column_exists?(users_table, :private_metadata)
       end
-
-      add_reference users_table, :bill_address, if_not_exists: true
-      add_reference users_table, :ship_address, if_not_exists: true
     end
 
+    add_reference users_table, :bill_address, if_not_exists: true
+    add_reference users_table, :ship_address, if_not_exists: true
+
     change_table admin_users_table do |t|
-      add_column admin_users_table, :login, :string, if_not_exists: true
+      t.string :login unless column_exists?(admin_users_table, :login)
 
       if t.respond_to? :jsonb
-        add_column admin_users_table, :public_metadata, :jsonb, if_not_exists: true
-        add_column admin_users_table, :private_metadata, :jsonb, if_not_exists: true
+        t.jsonb :public_metadata unless column_exists?(admin_users_table, :public_metadata)
+        t.jsonb :private_metadata unless column_exists?(admin_users_table, :private_metadata)
       else
-        add_column admin_users_table, :public_metadata, :json, if_not_exists: true
-        add_column admin_users_table, :private_metadata, :json, if_not_exists: true
+        t.json :public_metadata unless column_exists?(admin_users_table, :public_metadata)
+        t.json :private_metadata unless column_exists?(admin_users_table, :private_metadata)
       end
     end
   end
