@@ -85,3 +85,8 @@ gem "spree_sample", spree_opts
 gem "spree_admin", spree_opts
 gem "spree_storefront", spree_opts
 gem "spree_i18n"
+
+
+# Link: https://github.com/spree/spree_auth_devise
+# Name: Spree Auth Devise
+gem 'spree_auth_devise'
