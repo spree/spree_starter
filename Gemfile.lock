@@ -990,7 +990,7 @@ DEPENDENCIES
   pry
   pry-remote
   puma (>= 5.0)
-  rails (~> 8.0.0)
+  rails (~> 8.0.2)
   rails-controller-testing
   redis (>= 4.0.1)
   rubocop (~> 1.23)
