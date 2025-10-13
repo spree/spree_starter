@@ -346,7 +346,7 @@ GEM
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.15.0)
+    json (2.15.1)
     jsonapi-rspec (0.0.11)
       rspec-core
       rspec-expectations
@@ -510,7 +510,7 @@ GEM
     puma (7.0.4)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.2.1)
+    rack (3.2.3)
     rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -686,7 +686,7 @@ GEM
     sentry-sidekiq (5.28.0)
       sentry-ruby (~> 5.28.0)
       sidekiq (>= 3.0)
-    sidekiq (8.0.7)
+    sidekiq (8.0.8)
       connection_pool (>= 2.5.0)
       json (>= 2.9.0)
       logger (>= 1.6.2)
