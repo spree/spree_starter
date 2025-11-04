@@ -8,6 +8,9 @@ gem 'rails', '~> 8.0.0'
 # Use pg as the database for Active Record
 gem "pg", "~> 1.6"
 
+# The modern asset pipeline for Rails [https://github.com/rails/propshaft]
+gem "propshaft"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
@@ -98,7 +101,7 @@ gem 'sentry-rails'
 gem 'sentry-sidekiq'
 
 # Spree gems
-spree_opts = '~> 5.1'
+spree_opts = '~> 5.2.0.rc1'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_sample", spree_opts
