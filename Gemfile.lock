@@ -719,11 +719,11 @@ GEM
     solargraph-rails (1.2.4)
       activesupport
       solargraph (>= 0.48.0, <= 0.57)
-    spree (5.2.0.rc1)
-      spree_api (= 5.2.0.rc1)
-      spree_cli (= 5.2.0.rc1)
-      spree_core (= 5.2.0.rc1)
-    spree_admin (5.2.0.rc1)
+    spree (5.2.0.rc2)
+      spree_api (= 5.2.0.rc2)
+      spree_cli (= 5.2.0.rc2)
+      spree_core (= 5.2.0.rc2)
+    spree_admin (5.2.0.rc2)
       active_link_to
       bootstrap (~> 4.6, >= 4.6.2.1)
       breadcrumbs_on_rails (~> 4.1)
@@ -735,19 +735,19 @@ GEM
       inline_svg (~> 1.10)
       local_time (~> 3.0)
       mapkick-rb (~> 0.1)
-      spree_api (>= 5.2.0.rc1)
-      spree_core (>= 5.2.0.rc1)
+      spree_api (>= 5.2.0.rc2)
+      spree_core (>= 5.2.0.rc2)
       stimulus-rails
       tinymce-rails (~> 6.8.5)
       turbo-rails
-    spree_api (5.2.0.rc1)
+    spree_api (5.2.0.rc2)
       bcrypt (~> 3.1)
       doorkeeper (~> 5.3)
       jsonapi-serializer (~> 2.1)
-      spree_core (= 5.2.0.rc1)
-    spree_cli (5.2.0.rc1)
+      spree_core (= 5.2.0.rc2)
+    spree_cli (5.2.0.rc2)
       thor (~> 1.0)
-    spree_core (5.2.0.rc1)
+    spree_core (5.2.0.rc2)
       active_storage_validations (= 1.3.0)
       activemerchant (~> 1.67)
       acts-as-taggable-on
@@ -813,8 +813,8 @@ GEM
       spree (>= 5.0)
       timecop
       webdrivers
-    spree_emails (5.2.0.rc1)
-      spree_core (>= 5.2.0.rc1)
+    spree_emails (5.2.0.rc2)
+      spree_core (>= 5.2.0.rc2)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
@@ -840,10 +840,10 @@ GEM
       spree_admin (>= 5.1.0.beta4)
       spree_extension
       spree_storefront (>= 5.1.0.beta4)
-    spree_sample (5.2.0.rc1)
+    spree_sample (5.2.0.rc2)
       ffaker (~> 2.9)
-      spree_core (>= 5.2.0.rc1)
-    spree_storefront (5.2.0.rc1)
+      spree_core (>= 5.2.0.rc2)
+    spree_storefront (5.2.0.rc2)
       active_link_to
       canonical-rails (~> 0.2.14)
       heroicon
@@ -851,7 +851,7 @@ GEM
       inline_svg (~> 1.10)
       local_time (~> 3.0)
       mail_form
-      spree_core (>= 5.2.0.rc1)
+      spree_core (>= 5.2.0.rc2)
       stimulus-rails
       tailwindcss-rails
       tailwindcss-ruby
