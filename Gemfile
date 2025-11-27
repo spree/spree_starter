@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '3.3.0'
+ruby '3.4.7'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 8.0.0'
@@ -101,7 +101,7 @@ gem 'sentry-rails'
 gem 'sentry-sidekiq'
 
 # Spree gems
-spree_opts = '>= 5.2.0.rc1'
+spree_opts = '~> 5.2'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_sample", spree_opts

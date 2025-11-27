@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/ruby:3.3.0-browsers
+      - image: cimg/ruby:3.4-browsers
     working_directory: ~/app
     environment:
       RAILS_ENV: test
@@ -10,8 +10,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v8-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v8
+            - ruby-dependencies-v9-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v9
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
@@ -25,11 +25,11 @@ jobs:
       - save_cache:
           paths:
             - vendor/bundle
-          key: ruby-dependencies-v8-{{ checksum "Gemfile.lock" }}
+          key: ruby-dependencies-v9-{{ checksum "Gemfile.lock" }}
 
   run_tests:
     docker:
-      - image: cimg/ruby:3.3.0-browsers
+      - image: cimg/ruby:3.4-browsers
       - image: cimg/postgres:16.2
         environment:
           POSTGRES_HOST_AUTH_METHOD: trust
@@ -46,8 +46,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v8-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v8
+            - ruby-dependencies-v9-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v9
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
@@ -72,7 +72,7 @@ jobs:
 
   run_brakeman:
     docker:
-      - image: cimg/ruby:3.3.0-browsers
+      - image: cimg/ruby:3.4-browsers
     environment:
       RAILS_ENV: test
     working_directory: ~/app
@@ -80,8 +80,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v8-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v8
+            - ruby-dependencies-v9-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v9
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
