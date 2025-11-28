@@ -54,7 +54,7 @@ We’re thrilled to unveil [Spree 5](https://spreecommerce.org/announcing-spree-
 - New integrations: a native [Stripe integration](https://github.com/spree/spree_stripe), and also Stripe Connect, Klaviyo integrations available with the Enterprise Edition
 - Enterprise Edition Admin Features: Audit Log, [Multi-Vendor Marketplace](https://spreecommerce.org/marketplace-ecommerce/), [Multi-tenant / White-label SaaS eCommerce](https://spreecommerce.org/multi-tenant-white-label-ecommerce/)
 
-Read the [full Spree 5 announcement here](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/).
+Read the [full Spree 5 announcement here](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/) and the [changelog of Spree 5](https://github.com/spree/spree/releases) followup improvements.
 
 Check out the [Spree 5 demo](https://demo.spreecommerce.org/) for yourself.
 
