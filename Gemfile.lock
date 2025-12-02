@@ -112,7 +112,7 @@ GEM
       faraday-net_http_persistent (~> 2.0)
       faraday-retry (~> 2.0)
     ast (2.4.3)
-    async (2.34.0)
+    async (2.35.0)
       console (~> 1.29)
       fiber-annotation
       io-event (~> 1.11)
@@ -336,7 +336,7 @@ GEM
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
     io-console (0.8.1)
-    io-endpoint (0.15.2)
+    io-endpoint (0.16.0)
     io-event (1.14.2)
     io-stream (0.11.0)
     irb (1.15.3)
@@ -425,7 +425,7 @@ GEM
     money (6.19.0)
       i18n (>= 0.6.4, <= 2)
     msgpack (1.8.0)
-    multi_json (1.17.0)
+    multi_json (1.18.0)
     multipart-post (2.4.1)
     name_of_person (1.1.3)
       activesupport (>= 5.2.0)
@@ -566,7 +566,7 @@ GEM
       i18n
     rbs (3.9.5)
       logger
-    rdoc (6.16.0)
+    rdoc (6.16.1)
       erb
       psych (>= 4.0.0)
       tsort
@@ -628,7 +628,7 @@ GEM
       lint_roller (~> 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.47.1, < 2.0)
-    rubocop-rails (2.34.1)
+    rubocop-rails (2.34.2)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
       rack (>= 1.1)
@@ -680,7 +680,7 @@ GEM
     sentry-sidekiq (6.2.0)
       sentry-ruby (~> 6.2.0)
       sidekiq (>= 5.0)
-    sidekiq (8.0.9)
+    sidekiq (8.0.10)
       connection_pool (>= 2.5.0)
       json (>= 2.9.0)
       logger (>= 1.6.2)
@@ -718,11 +718,11 @@ GEM
     solargraph-rails (1.2.4)
       activesupport
       solargraph (>= 0.48.0, <= 0.57)
-    spree (5.2.0)
-      spree_api (= 5.2.0)
-      spree_cli (= 5.2.0)
-      spree_core (= 5.2.0)
-    spree_admin (5.2.0)
+    spree (5.2.1)
+      spree_api (= 5.2.1)
+      spree_cli (= 5.2.1)
+      spree_core (= 5.2.1)
+    spree_admin (5.2.1)
       active_link_to
       bootstrap (~> 4.6, >= 4.6.2.1)
       breadcrumbs_on_rails (~> 4.1)
@@ -734,19 +734,19 @@ GEM
       inline_svg (~> 1.10)
       local_time (~> 3.0)
       mapkick-rb (~> 0.1)
-      spree_api (>= 5.2.0)
-      spree_core (>= 5.2.0)
+      spree_api (>= 5.2.1)
+      spree_core (>= 5.2.1)
       stimulus-rails
       tinymce-rails (~> 6.8.5)
       turbo-rails
-    spree_api (5.2.0)
+    spree_api (5.2.1)
       bcrypt (~> 3.1)
       doorkeeper (~> 5.3)
       jsonapi-serializer (~> 2.1)
-      spree_core (= 5.2.0)
-    spree_cli (5.2.0)
+      spree_core (= 5.2.1)
+    spree_cli (5.2.1)
       thor (~> 1.0)
-    spree_core (5.2.0)
+    spree_core (5.2.1)
       active_storage_validations (= 1.3.0)
       activemerchant (~> 1.67)
       acts-as-taggable-on
@@ -777,8 +777,8 @@ GEM
       rexml
       ruby-oembed (~> 0.18)
       safely_block (~> 0.4)
-      state_machines-activemodel (~> 0.10)
-      state_machines-activerecord (~> 0.10)
+      state_machines-activemodel (~> 0.100)
+      state_machines-activerecord (~> 0.100)
       stringex
       tracking_number
       validates_zipcode
@@ -809,8 +809,8 @@ GEM
       spree (>= 5.0)
       timecop
       webdrivers
-    spree_emails (5.2.0)
-      spree_core (>= 5.2.0)
+    spree_emails (5.2.1)
+      spree_core (>= 5.2.1)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
@@ -836,10 +836,10 @@ GEM
       spree_admin (>= 5.1.0)
       spree_extension
       spree_storefront (>= 5.1.0)
-    spree_sample (5.2.0)
+    spree_sample (5.2.1)
       ffaker (~> 2.9)
-      spree_core (>= 5.2.0)
-    spree_storefront (5.2.0)
+      spree_core (>= 5.2.1)
+    spree_storefront (5.2.1)
       active_link_to
       canonical-rails (~> 0.2.14)
       heroicon
@@ -847,7 +847,7 @@ GEM
       inline_svg (~> 1.10)
       local_time (~> 3.0)
       mail_form
-      spree_core (>= 5.2.0)
+      spree_core (>= 5.2.1)
       stimulus-rails
       tailwindcss-rails
       tailwindcss-ruby
@@ -870,7 +870,7 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringex (2.8.6)
-    stringio (3.1.8)
+    stringio (3.1.9)
     stripe (10.1.0)
     stripe_event (2.13.0)
       activesupport (>= 3.1)
