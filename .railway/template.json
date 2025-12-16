@@ -26,7 +26,7 @@
 {
   "name": "sidekiq",
   "source": {
-    "repo": "YOUR_GITHUB_USERNAME/spree_starter"
+    "repo": "Adity41150/spree_starter"
   },
   "startCommand": "bundle exec sidekiq",
   "variables": {
