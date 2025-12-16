@@ -1,0 +1,41 @@
+{
+  "name": "Spree Starter",
+  "description": "Deploy Spree Commerce Starter (Rails) with PostgreSQL, Redis, and Sidekiq on Railway",
+  "icon": "https://spreecommerce.org/favicon.ico",
+  "categories": ["ecommerce", "rails", "ruby"],
+  "services": [
+    {
+      "name": "web",
+      "source": {
+        "repo": "Aditya41150/spree_starter"
+      },
+      "variables": {
+        "RAILS_ENV": "production",
+        "RAILS_LOG_TO_STDOUT": "true",
+        "RAILS_SERVE_STATIC_FILES": "true"
+      }
+    },
+    {
+      "name": "postgres",
+      "template": "postgresql"
+    },
+{
+  "name": "redis",
+  "template": "redis"
+},
+{
+  "name": "sidekiq",
+  "source": {
+    "repo": "YOUR_GITHUB_USERNAME/spree_starter"
+  },
+  "startCommand": "bundle exec sidekiq",
+  "variables": {
+    "RAILS_ENV": "production"
+  }
+}
+
+    
+  ]
+  
+  
+}
