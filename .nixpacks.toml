@@ -3,6 +3,3 @@ nixPkgs = ["libvips", "postgresql"]
 
 [phases.build]
 cmds = ["bundle install"]
-
-[phases.start]
-cmd = "bundle exec rails db:prepare && bundle exec rails server -b 0.0.0.0 -p $PORT"
