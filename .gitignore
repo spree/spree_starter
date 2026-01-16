@@ -56,3 +56,5 @@
 /playwright/.auth
 /playwright/storage
 /playwright/screenshots
+
+coverage

@@ -17,104 +17,12 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 
-require 'rspec/rails'
-require 'rspec/active_model/mocks'
-require 'action_text/system_test_helper'
-require 'rspec/retry'
-require 'ffaker'
-require 'pry'
-require 'webdrivers/chromedriver'
-require 'factory_bot_rails'
-
+require 'dotenv/load'
 require 'sidekiq/testing'
 
-require 'spree/testing_support/authorization_helpers'
-require 'spree/testing_support/factories'
-require 'spree/testing_support/controller_requests'
-require 'spree/testing_support/url_helpers'
-require 'spree/testing_support/order_walkthrough'
-require 'spree/testing_support/capybara_ext'
-require 'spree/testing_support/capybara_config'
-require 'spree/testing_support/metadata'
-require 'spree/testing_support/next_instance_of'
-require 'spree/testing_support/i18n'
-require 'spree/testing_support/store'
-
-require 'spree/api/testing_support/matchers/webhooks'
-require 'spree/api/testing_support/factories'
-require 'jsonapi/rspec'
-require 'spree/api/testing_support/v2/current_order'
-require 'spree/api/testing_support/v2/platform_contexts'
-require 'spree/api/testing_support/v2/serializers_params'
-
-require 'spree/admin/testing_support/capybara_utils'
-
-require 'spree/core/controller_helpers/strong_parameters'
-
-require 'cancan/matchers'
-require 'spree/testing_support/ability_helpers'
+require 'spree_dev_tools/rspec/spec_helper'
 require 'spree_stripe/factories'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
-Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
-
-RSpec.configure do |config|
-  # Infer an example group's spec type from the file location.
-  config.infer_spec_type_from_file_location!
-
-  # == Mock Framework
-  #
-  # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
-  #
-  # config.mock_with :mocha
-  # config.mock_with :flexmock
-  # config.mock_with :rr
-  config.mock_with :rspec
-  config.color = true
-  config.default_formatter = 'doc'
-
-  config.use_transactional_fixtures = true
-  config.include FactoryBot::Syntax::Methods
-
-  config.fail_fast = ENV['FAIL_FAST'] || false
-  config.order = 'random'
-
-  # show retry status in spec process
-  config.verbose_retry = true
-  # show exception that triggers a retry if verbose_retry is set to true
-  config.display_try_failure_messages = true
-
-  config.include ActionText::SystemTestHelper, type: :feature
-  config.include ActiveJob::TestHelper
-
-  config.include Spree::TestingSupport::UrlHelpers
-  config.include Spree::TestingSupport::ControllerRequests, type: :controller
-  config.include Spree::TestingSupport::AuthHelpers, type: :feature
-  config.include Spree::Admin::TestingSupport::CapybaraUtils, type: :feature
-  config.include Spree::Core::ControllerHelpers::StrongParameters, type: :controller
-
-  # Spree API
-  config.include JSONAPI::RSpec
-  config.include Spree::TestingSupport::ApiHelpers
-  config.jsonapi_indifferent_hash = true
-
-  config.before(:each) do
-    ActiveStorage::Current.url_options = { host: 'localhost', port: 3000 }
-
-    # reset i18n to default
-    I18n.backend = I18n::Backend::Simple.new
-    I18n.backend.store_translations(:en,
-                                    number: {
-                                      currency: {
-                                        format: {
-                                          separator: '.',
-                                          delimiter: ','
-                                        }
-                                      }
-                                    })
-
-    # disable webhooks to speed up tests
-    Spree::Webhooks.disabled = true
-  end
-end
+Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].sort.each { |f| require f }

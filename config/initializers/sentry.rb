@@ -19,7 +19,8 @@ if defined?(Sentry) && ENV['SENTRY_DSN'].present?
       'Sidekiq::JobRetry::Skip',
       'Sidekiq::JobRetry::SilentRetry',
       'Aws::S3::Errors::NoSuchKey',
-      'Aws::S3::Errors::NotFound'
+      'Aws::S3::Errors::NotFound',
+      'ActiveStorage::FileNotFoundError'
     ]
 
     # Use native Rails error subscriber

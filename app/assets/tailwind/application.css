@@ -1,11 +1,107 @@
-@import url("https://esm.sh/photoswipe@5.4.4/dist/photoswipe.css");
-@import url("https://esm.sh/swiper@11.2.2/swiper-bundle.min.css");
-@import url("https://esm.sh/flag-icons@7.3.2/css/flag-icons.min.css");
+@import url('https://esm.sh/swiper@11.2.2/swiper-bundle.min.css');
+@import url('https://esm.sh/flag-icons@7.3.2/css/flag-icons.min.css');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind forms;
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/aspect-ratio";
+
+/* Link to JS config for content paths */
+@config '../../../config/tailwind.config.js';
+
+/* Tailwind v4 Base Layer - Set default border color */
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    border-color: var(--border-default-color, currentColor);
+  }
+}
+
+/* Tailwind v4 Theme Configuration */
+@theme {
+  /* Custom Colors */
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-neutral: var(--neutral);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+
+  --color-accent-100: var(--accent-100);
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+
+  --color-background: var(--background);
+  --color-section-background: var(--section-background, var(--background));
+  --color-text: var(--text);
+
+  --color-button: rgba(var(--button-rgb), <alpha-value>);
+  --color-button-text: var(--button-text);
+  --color-button-hover: var(--button-hover);
+  --color-button-hover-text: var(--button-hover-text);
+
+  --color-secondary-button: var(--secondary-button);
+  --color-secondary-button-text: var(--secondary-button-text);
+  --color-secondary-button-hover: var(--secondary-button-hover);
+  --color-secondary-button-hover-text: var(--secondary-button-hover-text);
+
+  --color-button-light: var(--button-light);
+  --color-button-light-text: var(--button-light-text);
+  --color-button-light-hover: var(--button-light-hover);
+  --color-button-light-hover-text: var(--button-light-hover-text);
+
+  --color-input: var(--input);
+  --color-input-bg: var(--input-bg);
+  --color-input-text: var(--input-text);
+  --color-input-focus: var(--input-focus);
+  --color-input-focus-bg: var(--input-focus-bg);
+  --color-input-focus-text: var(--input-focus-text);
+
+  /* Letter Spacing */
+  --letter-spacing-widest: 0.07rem;
+
+  /* Animations */
+  --animate-fadeIn: fadeIn 0.5s ease-in-out;
+
+  /* Typography - Prose Colors */
+  --prose-body: var(--text);
+  --prose-headings: var(--text);
+  --prose-bold: var(--text);
+  --prose-links: var(--text);
+  --prose-counters: var(--text);
+  --prose-bullets: var(--text);
+  --prose-lead: var(--text);
+  --prose-hr: var(--border-default-color);
+  --prose-th-borders: var(--border-default-color);
+  --prose-td-borders: var(--border-default-color);
+  --prose-quote-borders: var(--border-default-color);
+  --prose-quotes: var(--text);
+}
+
+/* Define fadeIn keyframes for animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Custom Variants */
+
+/* Variant for scrollbar rounded */
+@variant scrollbar {
+  &::-webkit-scrollbar {
+    @slot;
+  }
+}
 
 /*
   This is the storefront CSS
@@ -37,6 +133,10 @@
 
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body .section-header {
+  @apply sticky top-0 z-50;
 }
 
 .trix-content a {
@@ -79,7 +179,7 @@ html {
 }
 
 textarea.text-input {
-  height: auto;
+  height: auto !important;
   min-height: 3rem;
   border-radius: 0;
 }
@@ -164,10 +264,6 @@ textarea.text-input {
 }
 .menu-item:focus {
   outline: none;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
   border-radius: var(--button-border-radius);
 }
 
@@ -199,14 +295,8 @@ textarea.text-input {
   padding-bottom: 0.75rem;
   color: var(--button-text-color, var(--button-text));
   outline-offset: 0.5rem;
-  transition-property:
-    color,
-    background-color,
-    border-color,
-    text-decoration-color,
-    fill,
-    stroke,
-    -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, -webkit-text-decoration-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -406,7 +496,7 @@ textarea.text-input {
   h4,
   h5,
   h6 {
-    @apply text-xl pb-1;
+    @apply pb-1 text-xl;
   }
 }
 
@@ -445,9 +535,6 @@ textarea.text-input {
   height: 0.25rem;
   margin: 0.6rem 0;
   background-color: var(--text);
-}
-
-a:hover {
 }
 
 .delivery-list-item:last-child {
@@ -526,6 +613,7 @@ a:hover {
 .badge-ready,
 .badge-partial,
 .badge-active,
+.badge-balance_due,
 .badge-inactive {
   margin-right: 0.25rem;
   display: inline-block;
@@ -549,6 +637,7 @@ a:hover {
 .badge-void:last-child,
 .badge-pending:last-child,
 .badge-ready:last-child,
+.badge-balance_due:last-child,
 .badge-partial:last-child {
   margin-right: 0px;
 }
@@ -561,6 +650,7 @@ a:hover {
 
 .badge-warning,
 .badge-canceled,
+.badge-balance_due,
 .badge-failed {
   background-color: #f8e7e5;
 }
@@ -1122,6 +1212,7 @@ html[aria-busy="true"] .hide-on-load {
   opacity: 1;
   transition: all 0.2s;
   visibility: visible;
+  margin-bottom: 1rem;
 }
 
 .st-accordion button {
@@ -1147,7 +1238,7 @@ html[aria-busy="true"] .hide-on-load {
   display: none;
 }
 
-#slideover-cart #cart_contents {
+#slideover-cart .cart-contents {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1607,7 +1698,7 @@ html[aria-busy="true"] .hide-on-load {
 }
 
 /* PDP properties */
-.product-property {
+.product-property, .product-metafield {
   ul {
     list-style: disc;
     padding-left: 2rem;
@@ -1667,7 +1758,7 @@ html[aria-busy="true"] .hide-on-load {
   h4,
   h5,
   h6 {
-    @apply text-xl font-medium my-4;
+    @apply my-4 text-xl font-medium;
   }
 
   li {
@@ -1702,7 +1793,7 @@ html[aria-busy="true"] .hide-on-load {
   }
 
   .attachment__caption {
-    @apply text-center text-neutral-600 italic;
+    @apply italic text-center text-neutral-600;
   }
 }
 

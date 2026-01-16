@@ -1,12 +1,15 @@
 source "https://rubygems.org"
 
-ruby '3.3.0'
+ruby '3.4.7'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.2.1.2'
+gem 'rails', '~> 8.0.0'
 
 # Use pg as the database for Active Record
-gem "pg", "~> 1.1"
+gem "pg", "~> 1.6"
+
+# The modern asset pipeline for Rails [https://github.com/rails/propshaft]
+gem "propshaft"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -53,7 +56,6 @@ group :development, :test do
   gem 'rubocop', '~> 1.23'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
-  gem 'selenium-webdriver', '~> 4.10.0'
 
   # monitoring
   gem 'pry'
@@ -61,6 +63,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "foreman"
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
@@ -81,23 +85,8 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 3.39'
-  gem 'capybara-screenshot', '~> 1.0'
-  gem 'email_spec'
-  gem 'factory_bot'
-  gem 'factory_bot_rails'
-  gem 'database_cleaner'
-  gem 'rspec-activemodel-mocks', '~> 1.0'
-  gem 'rspec-rails', '~> 8.0'
-  gem 'rspec-retry'
-  gem 'rspec_junit_formatter'
-  gem 'rubocop-rspec'
-  gem 'jsonapi-rspec'
-  gem 'simplecov'
-  gem 'webmock', '~> 3.7', require: false
-  gem 'timecop'
+  gem 'spree_dev_tools'
   gem 'rails-controller-testing'
-  gem 'webdrivers', '~> 5.0'
 end
 
 # Use Sidekiq for background jobs
@@ -106,17 +95,20 @@ gem 'sidekiq'
 # Use Devise for authentication
 gem "devise"
 
+# Sentry for error/performance monitoring
+gem 'sentry-ruby'
+gem 'sentry-rails'
+gem 'sentry-sidekiq'
+
 # Spree gems
-spree_opts = '~> 5.0.0'
+spree_opts = '~> 5.2'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_sample", spree_opts
 gem "spree_admin", spree_opts
 gem "spree_storefront", spree_opts
-gem "spree_stripe", '~> 1.2.0'
 gem "spree_i18n"
-
-# Sentry for error/performance monitoring
-gem 'sentry-ruby'
-gem 'sentry-rails'
-gem 'sentry-sidekiq'
+gem "spree_stripe"
+gem "spree_google_analytics", "~> 1.1"
+gem "spree_klaviyo", "~> 1.1"
+gem "spree_paypal_checkout", "~> 0.5"

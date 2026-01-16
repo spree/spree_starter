@@ -38,11 +38,11 @@ module Spree
     end
 
     def spree_admin_login_path(opts = {})
-      spree_login_path(opts)
+      new_admin_user_session_path(opts)
     end
 
     def spree_admin_logout_path(opts = {})
-      spree_logout_path(opts)
+      destroy_admin_user_session_path(opts)
     end
   end
 end

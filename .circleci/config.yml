@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/ruby:3.3.0-browsers
+      - image: cimg/ruby:3.4.7-browsers
     working_directory: ~/app
     environment:
       RAILS_ENV: test
@@ -10,8 +10,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v8-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v8
+            - ruby-dependencies-v9-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v9
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
@@ -25,11 +25,11 @@ jobs:
       - save_cache:
           paths:
             - vendor/bundle
-          key: ruby-dependencies-v8-{{ checksum "Gemfile.lock" }}
+          key: ruby-dependencies-v9-{{ checksum "Gemfile.lock" }}
 
   run_tests:
     docker:
-      - image: cimg/ruby:3.3.0-browsers
+      - image: cimg/ruby:3.4.7-browsers
       - image: cimg/postgres:16.2
         environment:
           POSTGRES_HOST_AUTH_METHOD: trust
@@ -37,6 +37,8 @@ jobs:
           POSTGRES_PASSWORD: password
     environment:
       RAILS_ENV: test
+      SECRET_KEY_BASE: dummy
+      MAIL_FROM_ADDRESS: support@mystore.com
       CIRCLE_TEST_REPORTS: /tmp/test-results
       CIRCLE_ARTIFACTS: /tmp/test-artifacts
     working_directory: ~/app
@@ -44,8 +46,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v8-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v8
+            - ruby-dependencies-v9-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v9
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
@@ -57,12 +59,12 @@ jobs:
           command: bundle exec rails db:create db:schema:load
       - run:
           name: Precompile assets
-          command: SECRET_KEY_BASE_DUMMY=1 bin/rails assets:precompile
+          command: SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
       - run:
           name: Run Rspec
           command: |
             mkdir -p /tmp/test-results
-            circleci tests glob "spec/**/*_spec.rb" | circleci tests run --command="xargs bundle exec rspec --format progress --format RspecJunitFormatter -o /tmp/test-results/rspec.xml" --verbose --split-by=timings
+            circleci tests glob "spec/**/*_spec.rb" | circleci tests run --command="xargs bundle exec rspec --format documentation --format RspecJunitFormatter -o /tmp/test-results/rspec.xml" --verbose --split-by=timings
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
@@ -70,7 +72,7 @@ jobs:
 
   run_brakeman:
     docker:
-      - image: cimg/ruby:3.3.0-browsers
+      - image: cimg/ruby:3.4.7-browsers
     environment:
       RAILS_ENV: test
     working_directory: ~/app
@@ -78,8 +80,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - ruby-dependencies-v8-{{ checksum "Gemfile.lock" }}
-            - ruby-dependencies-v8
+            - ruby-dependencies-v9-{{ checksum "Gemfile.lock" }}
+            - ruby-dependencies-v9
       - run:
           name: Set bundle path
           command: bundle config --local path vendor/bundle
