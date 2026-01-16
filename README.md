@@ -30,9 +30,7 @@ The Playwright testing framework project is still work-in-progress, it is NOT 10
 - [docker-compose-test.yml](docker-compose-test.yml) configuration that is used by the CI pipeline
 
 ### Disclaimers 
-- the Spree app that I'm using in this project offers some sample test data set that is missing images, you can upload some manually into a local instance using free images form Unsplash 
-
-- I'm aware of the `fullyParallel` setting being set to false, I'm doing some experimenting, hence the setting. In a real life project, this can be tweaked based on the needs but most likely set to true 99% of the time. 
+- the Spree app version used in this project offers some sample test data set that is missing images, you can upload some manually into a local instance using free images form Unsplash 
 
 - The same for browsers, in this test project, I'm limiting the browser selection to just Chrome to speed up local and CI runs but in a real life project this will be adjusted based on the browsers that the project claims to support 
 
@@ -144,7 +142,12 @@ This will start the development server on http://localhost:3000.
 ```
 bin/rake spree_sample:load
 ```
-Note: The sample data set is missing images due to copyright concerns. You can upload some manually into a local instance using free images form Unsplash 
+Note: The sample data set is missing images due to copyright concerns. Images can be uploaded manually into a local instance (e.g. free images from Unsplash) via the admin panel http://localhost:3000/admin:
+ 
+```
+Username: spree@example.com
+Password: spree123
+```
 
 ## Deployment
 
