@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby '3.4.7'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 8.0.0'
+gem 'rails', '~> 8.1.0'
 
 # Use pg as the database for Active Record
 gem "pg", "~> 1.6"
@@ -91,6 +91,7 @@ end
 
 # Use Sidekiq for background jobs
 gem 'sidekiq'
+gem 'connection_pool', '~> 2.3' # lock to 2.3 to avoid breaking changes
 
 # Use Devise for authentication
 gem "devise"
