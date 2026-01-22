@@ -1,4 +1,4 @@
 web: bin/rails server -p 3000
 worker: bundle exec sidekiq
-admin_css: bin/rails dartsass:watch
 storefront_css: bin/rails tailwindcss:watch
+admin_css: bin/rails spree:admin:tailwindcss:watch
