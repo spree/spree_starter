@@ -65,6 +65,8 @@ end
 group :development do
   gem "foreman"
 
+  gem 'listen', '>= 3.0'
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
