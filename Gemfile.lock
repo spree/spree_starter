@@ -116,13 +116,13 @@ GEM
       faraday-retry (~> 2.0)
     ar_lazy_preload (2.1.0)
     ast (2.4.3)
-    async (2.35.3)
+    async (2.36.0)
       console (~> 1.29)
       fiber-annotation
       io-event (~> 1.11)
       metrics (~> 0.12)
       traces (~> 0.18)
-    async-http (0.94.0)
+    async-http (0.94.2)
       async (>= 2.10.2)
       async-pool (~> 0.11)
       io-endpoint (~> 0.14)
@@ -194,10 +194,10 @@ GEM
     debug (1.11.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    devise (4.9.4)
+    devise (5.0.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
+      railties (>= 7.0)
       responders
       warden (~> 1.2.3)
     diff-lcs (1.6.2)
@@ -225,7 +225,7 @@ GEM
     faraday-gzip (3.1.0)
       faraday (>= 2.0, < 3)
       zlib (~> 3.0)
-    faraday-http-cache (2.5.1)
+    faraday-http-cache (2.6.1)
       faraday (>= 0.8)
     faraday-multipart (1.2.0)
       multipart-post (~> 2.0)
@@ -251,10 +251,10 @@ GEM
     fiber-storage (1.0.1)
     foreman (0.90.0)
       thor (~> 1.4)
-    friendly_id (5.4.2)
+    friendly_id (5.5.1)
       activerecord (>= 4.0.0)
-    friendly_id-mobility (1.0.4)
-      friendly_id (>= 5.0.0, < 5.5)
+    friendly_id-mobility (1.0.5)
+      friendly_id (>= 5.0.0, < 5.6)
       mobility (>= 1.0.1, < 2.0)
     gem-release (2.2.4)
     geocoder (1.8.6)
@@ -306,7 +306,7 @@ GEM
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
     io-console (0.8.2)
-    io-endpoint (0.16.0)
+    io-endpoint (0.17.0)
     io-event (1.14.2)
     io-stream (0.11.1)
     irb (1.16.0)
@@ -338,8 +338,8 @@ GEM
     kaminari-i18n (0.5.0)
       kaminari
       rails
-    kramdown (2.5.1)
-      rexml (>= 3.3.9)
+    kramdown (2.5.2)
+      rexml (>= 3.4.4)
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     language_server-protocol (3.17.0.5)
@@ -442,7 +442,7 @@ GEM
     open3 (0.2.1)
     orm_adapter (0.5.0)
     ostruct (0.6.3)
-    pagy (43.2.7)
+    pagy (43.2.8)
       json
       yaml
     parallel (1.27.0)
@@ -472,8 +472,8 @@ GEM
       activesupport (>= 7.0.0)
       rack
     protocol-hpack (1.5.1)
-    protocol-http (0.58.0)
-    protocol-http1 (0.36.0)
+    protocol-http (0.58.1)
+    protocol-http1 (0.37.0)
       protocol-http (~> 0.58)
     protocol-http2 (0.24.0)
       protocol-hpack (~> 1.4)
@@ -490,7 +490,7 @@ GEM
       date
       stringio
     public_suffix (7.0.2)
-    puma (7.1.0)
+    puma (7.2.0)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.4)
@@ -555,7 +555,7 @@ GEM
       tsort
     redis (5.4.1)
       redis-client (>= 0.22.0)
-    redis-client (0.26.3)
+    redis-client (0.26.4)
       connection_pool
     regexp_parser (2.11.3)
     reline (0.6.3)
@@ -565,7 +565,7 @@ GEM
     responders (3.2.0)
       actionpack (>= 7.0)
       railties (>= 7.0)
-    reverse_markdown (3.0.1)
+    reverse_markdown (3.0.2)
       nokogiri
     rexml (3.4.4)
     rspec-activemodel-mocks (1.3.0)
@@ -617,7 +617,7 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.44.0, < 2.0)
-    ruby-lsp (0.26.4)
+    ruby-lsp (0.26.5)
       language_server-protocol (~> 3.17.0)
       prism (>= 1.2, < 2.0)
       rbs (>= 3, < 5)
@@ -661,7 +661,7 @@ GEM
     simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
     slop (3.6.0)
-    solargraph (0.58.1)
+    solargraph (0.58.2)
       ast (~> 2.4.3)
       backport (~> 1.2)
       benchmark (~> 0.4)
@@ -687,11 +687,11 @@ GEM
     solargraph-rails (1.3)
       activesupport
       solargraph (>= 0.48.0)
-    spree (5.3.0.rc2)
-      spree_api (= 5.3.0.rc2)
-      spree_cli (= 5.3.0.rc2)
-      spree_core (= 5.3.0.rc2)
-    spree_admin (5.3.0.rc2)
+    spree (5.3.0)
+      spree_api (= 5.3.0)
+      spree_cli (= 5.3.0)
+      spree_core (= 5.3.0)
+    spree_admin (5.3.0)
       active_link_to
       breadcrumbs_on_rails (~> 4.1)
       chartkick (~> 5.0)
@@ -702,21 +702,21 @@ GEM
       local_time (~> 3.0)
       mapkick-rb (~> 0.1)
       pagy (~> 43.0)
-      spree (>= 5.3.0.rc2)
+      spree (>= 5.3.0)
       stimulus-rails
       tailwindcss-rails (>= 4.0)
       tailwindcss-ruby (>= 4.0)
       tinymce-rails (~> 6.8.5)
       turbo-rails
-    spree_api (5.3.0.rc2)
+    spree_api (5.3.0)
       bcrypt (~> 3.1)
       doorkeeper (~> 5.3)
       jsonapi-serializer (~> 2.1)
       pagy (~> 43.0)
-      spree_core (= 5.3.0.rc2)
-    spree_cli (5.3.0.rc2)
+      spree_core (= 5.3.0)
+    spree_cli (5.3.0)
       thor (~> 1.0)
-    spree_core (5.3.0.rc2)
+    spree_core (5.3.0)
       active_storage_validations (= 1.3.0)
       activemerchant (~> 1.67)
       acts-as-taggable-on
@@ -780,8 +780,8 @@ GEM
       spree (>= 5.0)
       timecop
       webdrivers
-    spree_emails (5.3.0.rc2)
-      spree (>= 5.3.0.rc2)
+    spree_emails (5.3.0)
+      spree (>= 5.3.0)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
@@ -801,19 +801,19 @@ GEM
       spree_admin (>= 5.1.0.beta2)
       spree_extension
       spree_storefront (>= 5.1.0.beta2)
-    spree_page_builder (5.3.0.rc2)
-      spree (>= 5.3.0.rc2)
-      spree_admin (>= 5.3.0.rc2)
+    spree_page_builder (5.3.0)
+      spree (>= 5.3.0)
+      spree_admin (>= 5.3.0)
     spree_paypal_checkout (0.5.4)
       paypal-server-sdk (~> 1.1)
       spree (>= 5.1.0)
       spree_admin (>= 5.1.0)
       spree_extension
       spree_storefront (>= 5.1.0)
-    spree_sample (5.3.0.rc2)
+    spree_sample (5.3.0)
       ffaker (~> 2.9)
-      spree (>= 5.3.0.rc2)
-    spree_storefront (5.3.0.rc2)
+      spree (>= 5.3.0)
+    spree_storefront (5.3.0)
       active_link_to
       heroicon
       importmap-rails
@@ -821,8 +821,8 @@ GEM
       local_time (~> 3.0)
       mail_form
       pagy (~> 43.0)
-      spree (>= 5.3.0.rc2)
-      spree_page_builder (>= 5.3.0.rc2)
+      spree (>= 5.3.0)
+      spree_page_builder (>= 5.3.0)
       stimulus-rails
       tailwindcss-rails
       tailwindcss-ruby
