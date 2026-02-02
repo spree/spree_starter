@@ -53,7 +53,7 @@ group :development, :test do
 
   gem 'brakeman'
   gem 'dotenv-rails', '~> 3.1'
-  gem 'rubocop', '~> 1.23'
+  gem 'rubocop', '~> 1.84'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
 
