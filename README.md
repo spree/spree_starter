@@ -47,16 +47,11 @@ bundle exec rspec
 
 [![Spree Commerce 5 version](https://vendo-production-res.cloudinary.com/image/upload/w_2000/q_auto/v1742985405/docs/github/Spree_Commerce_open-source_eCommerce_myzurl.jpg)](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/)
 
-We’re thrilled to unveil [Spree 5](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/
-) — the most powerful and feature-packed open-source release in Spree Commerce’s history, including:
-- A completely revamped Admin Dashboard experience: boost your team's productivity 
-- A Mobile-First, No-code Customizable Storefront: raise conversions and loyalty
-- New integrations: a native [Stripe integration](https://github.com/spree/spree_stripe), and also Stripe Connect, Klaviyo integrations available with the Enterprise Edition
-- Enterprise Edition Admin Features: Audit Log, [Multi-Vendor Marketplace](https://spreecommerce.org/marketplace-ecommerce/), [Multi-tenant / White-label SaaS eCommerce](https://spreecommerce.org/multi-tenant-white-label-ecommerce/)
+[Spree 5](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/) is the most feature-packed open-source release in Spree Commerce's history — transforming the platform into an API-first, developer-friendly, enterprise-grade eCommerce solution that still adheres to its open-source roots.
 
-Read the [full Spree 5 announcement here](https://spreecommerce.org/announcing-spree-5-the-biggest-open-source-release-ever/) and the [changelog of Spree 5](https://github.com/spree/spree/releases) followup improvements.
-
-Check out the [Spree 5 demo](https://demo.spreecommerce.org/) for yourself.
+[View the latest Releases](https://github.com/spree/spree/releases) ·
+[View the Roadmap](https://github.com/orgs/spree/projects) ·
+[Get Enterprise Support](https://spreecommerce.org/get-started/)
 
 ## Troubleshooting
 
