@@ -41,7 +41,7 @@ jobs:
       - name: Precompile assets
         run: SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
       - name: Run RSpec
-        run: bundle exec rspec --format documentation
+        run: bundle exec rspec
 
   brakeman:
     runs-on: ubuntu-latest
