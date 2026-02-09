@@ -483,9 +483,6 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
       reline (>= 0.6.0)
-    pry-remote (0.1.8)
-      pry (~> 0.9)
-      slop (~> 3.0)
     psych (5.3.1)
       date
       stringio
@@ -661,7 +658,6 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
-    slop (3.6.0)
     solargraph (0.58.2)
       ast (~> 2.4.3)
       backport (~> 1.2)
@@ -947,8 +943,6 @@ DEPENDENCIES
   mini_racer
   pg (~> 1.6)
   propshaft
-  pry
-  pry-remote
   puma (>= 5.0)
   rails (~> 8.1.0)
   rails-controller-testing

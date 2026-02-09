@@ -57,9 +57,7 @@ group :development, :test do
   gem 'rubocop-performance'
   gem 'rubocop-rails'
 
-  # monitoring
-  gem 'pry'
-  gem 'pry-remote'
+
 end
 
 group :development do
