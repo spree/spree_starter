@@ -23,12 +23,6 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
-
-# Use Mini Racer for JavaScript runtime (required for asset precompilation)
-gem 'mini_racer', platforms: :ruby
-
 # Use Redis adapter to run Action Cable in production
 gem "redis", ">= 4.0.1"
 
@@ -72,8 +66,6 @@ group :development do
   gem "letter_opener"
 
   # LSP support for Ruby
-  gem 'solargraph'
-  gem 'solargraph-rails'
   gem 'ruby-lsp'
   gem 'ruby-lsp-rails'
 
