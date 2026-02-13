@@ -83,7 +83,7 @@ end
 
 # Use Sidekiq for background jobs
 gem 'sidekiq'
-gem 'connection_pool', '~> 2.3' # lock to 2.3 to avoid breaking changes
+gem 'connection_pool', '~> 3.0' # lock to 2.3 to avoid breaking changes
 
 # Use Devise for authentication
 gem "devise"
