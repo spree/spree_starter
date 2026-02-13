@@ -47,3 +47,5 @@
 .env.production
 
 coverage
+
+.claude

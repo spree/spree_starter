@@ -73,13 +73,6 @@ Rails.application.config.after_initialize do
   # Rails.application.config.spree.exports << Spree::Exports::Payments
   # Rails.application.config.spree.reports << Spree::Reports::MassivelyOvercomplexReportForCfo
 
-  # Themes and page builder
-  # Rails.application.config.spree.themes << Spree::Themes::NewShinyTheme
-  # Rails.application.config.spree.theme_layout_sections << Spree::PageSections::SuperImportantCeoBio
-  # Rails.application.config.spree.page_sections << Spree::PageSections::ContactFormToGetInTouch
-  # Rails.application.config.spree.page_blocks << Spree::PageBlocks::BigRedButtonToCallSales
-
-  # Rails.application.config.spree_storefront.head_partials << 'spree/shared/that_js_snippet_that_marketing_forced_me_to_include'
 end
 
 Spree.user_class = 'Spree::User'
