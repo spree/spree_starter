@@ -792,73 +792,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_22_155646) do
     t.index ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id"
   end
 
-  create_table "spree_page_blocks", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "deleted_at", precision: nil
-    t.string "name", null: false
-    t.integer "page_links_count", default: 0
-    t.integer "position", default: 1, null: false
-    t.text "preferences"
-    t.bigint "section_id", null: false
-    t.string "type", null: false
-    t.datetime "updated_at", null: false
-    t.index ["deleted_at"], name: "index_spree_page_blocks_on_deleted_at"
-    t.index ["section_id", "position"], name: "index_spree_page_blocks_on_section_w_position"
-    t.index ["section_id"], name: "index_spree_page_blocks_on_section_id"
-  end
-
-  create_table "spree_page_links", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.string "label"
-    t.bigint "linkable_id"
-    t.string "linkable_type"
-    t.boolean "open_in_new_tab", default: false
-    t.bigint "parent_id"
-    t.string "parent_type"
-    t.integer "position", default: 1, null: false
-    t.datetime "updated_at", null: false
-    t.string "url"
-    t.index ["linkable_type", "linkable_id"], name: "index_spree_page_links_on_linkable"
-    t.index ["parent_type", "parent_id", "position"], name: "index_spree_page_links_parent_with_position"
-    t.index ["parent_type", "parent_id"], name: "index_spree_page_links_on_parent"
-  end
-
-  create_table "spree_page_sections", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "deleted_at", precision: nil
-    t.string "name", null: false
-    t.integer "page_links_count", default: 0
-    t.bigint "pageable_id", null: false
-    t.string "pageable_type", null: false
-    t.integer "position", default: 1, null: false
-    t.text "preferences"
-    t.string "type", null: false
-    t.datetime "updated_at", null: false
-    t.index ["pageable_id", "pageable_type", "position"], name: "index_spree_page_sections_on_pageable_w_position"
-    t.index ["pageable_type", "pageable_id"], name: "index_spree_page_sections_on_pageable"
-  end
-
-  create_table "spree_pages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "deleted_at", precision: nil
-    t.string "meta_description"
-    t.string "meta_keywords"
-    t.string "meta_title"
-    t.string "name", null: false
-    t.bigint "pageable_id", null: false
-    t.string "pageable_type", null: false
-    t.bigint "parent_id"
-    t.text "preferences"
-    t.string "slug"
-    t.string "type", null: false
-    t.datetime "updated_at", null: false
-    t.index ["pageable_id", "name"], name: "index_spree_pages_on_pageable_id_and_name"
-    t.index ["pageable_id", "pageable_type", "type"], name: "index_spree_pages_on_pageable_id_and_pageable_type_and_type"
-    t.index ["pageable_id", "pageable_type"], name: "index_spree_pages_on_pageable_id_and_pageable_type"
-    t.index ["pageable_type", "pageable_id"], name: "index_spree_pages_on_pageable"
-    t.index ["parent_id"], name: "index_spree_pages_on_parent_id"
-  end
-
   create_table "spree_payment_capture_events", force: :cascade do |t|
     t.decimal "amount", precision: 10, scale: 2, default: "0.0"
     t.datetime "created_at", null: false
@@ -1967,23 +1900,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_22_155646) do
     t.index ["pretty_name"], name: "index_spree_taxons_on_pretty_name"
     t.index ["rgt"], name: "index_spree_taxons_on_rgt"
     t.index ["taxonomy_id"], name: "index_taxons_on_taxonomy_id"
-  end
-
-  create_table "spree_themes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.boolean "default", default: false, null: false
-    t.datetime "deleted_at", precision: nil
-    t.string "name"
-    t.bigint "parent_id"
-    t.text "preferences"
-    t.boolean "ready", default: true
-    t.bigint "store_id", null: false
-    t.string "type", default: "Spree::Themes::Default", null: false
-    t.datetime "updated_at", null: false
-    t.index ["deleted_at"], name: "index_spree_themes_on_deleted_at"
-    t.index ["parent_id"], name: "index_spree_themes_on_parent_id"
-    t.index ["store_id", "default"], name: "index_spree_themes_on_store_id_and_default"
-    t.index ["store_id"], name: "index_spree_themes_on_store_id"
   end
 
   create_table "spree_trackers", force: :cascade do |t|
